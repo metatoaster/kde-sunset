@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kmilo/kmilo-3.5.10.ebuild,v 1.7 2009/07/12 10:38:13 armin76 Exp $
 
-KMNAME=kdeutils
 EAPI="1"
+KMNAME=kdeutils
 inherit kde-meta eutils
 
 DESCRIPTION="kded module that can support various types of hardware input devices, such as those on keyboards."

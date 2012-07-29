@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/ark/ark-3.5.10.ebuild,v 1.8 2009/09/11 12:06:19 tampakrap Exp $
 
-KMNAME=kdeutils
 EAPI="1"
+KMNAME=kdeutils
 inherit kde-meta
 
 DESCRIPTION="KDE Archiving tool"

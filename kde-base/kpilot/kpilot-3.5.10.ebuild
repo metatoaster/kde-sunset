@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kpilot/kpilot-3.5.10.ebuild,v 1.5 2009/07/12 13:36:11 armin76 Exp $
 
-KMNAME=kdepim
 EAPI="1"
+KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KPilot - HotSync software for KDE."

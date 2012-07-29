@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kolf/kolf-3.5.10.ebuild,v 1.6 2009/07/12 12:18:14 armin76 Exp $
 
-KMNAME=kdegames
 EAPI="1"
+KMNAME=kdegames
 inherit kde-meta
 
 DESCRIPTION="KDE Minigolf Game"

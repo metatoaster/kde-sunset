@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/juk/juk-3.5.10.ebuild,v 1.7 2009/07/12 11:24:26 armin76 Exp $
 
-KMNAME=kdemultimedia
 EAPI="1"
+KMNAME=kdemultimedia
 inherit kde-meta eutils
 
 DESCRIPTION="Jukebox and music manager for KDE."

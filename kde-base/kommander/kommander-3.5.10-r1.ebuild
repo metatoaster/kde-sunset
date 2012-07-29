@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kommander/kommander-3.5.10.ebuild,v 1.7 2009/07/12 10:46:34 armin76 Exp $
 
-KMNAME=kdewebdev
 EAPI="1"
+KMNAME=kdewebdev
 inherit kde-meta
 
 DESCRIPTION="KDE dialog system for scripting"

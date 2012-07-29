@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/akregator/akregator-3.5.10.ebuild,v 1.8 2009/07/12 13:19:02 armin76 Exp $
 
+EAPI="1"
 KMNAME=kdepim
 
-EAPI="1"
 inherit kde-meta eutils
 
 SRC_URI="${SRC_URI}

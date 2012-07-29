@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kwifimanager/kwifimanager-3.5.10.ebuild,v 1.4 2009/06/06 11:16:41 maekke Exp $
 
+EAPI="1"
 KMNAME=kdenetwork
 KMMODULE=wifi
-EAPI="1"
 inherit kde-meta eutils
 
 DESCRIPTION="KDE wifi (wireless network) gui"

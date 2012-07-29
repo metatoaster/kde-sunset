@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/qtruby/qtruby-3.5.10.ebuild,v 1.7 2009/07/24 15:29:09 josejx Exp $
 
+EAPI="1"
 KMNAME=kdebindings
 KMCOPYLIB="libsmokeqt smoke/qt"
 KM_MAKEFILESREV=1
-EAPI="1"
 
 inherit kde-meta
 

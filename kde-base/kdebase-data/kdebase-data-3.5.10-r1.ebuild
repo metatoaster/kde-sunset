@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-data/kdebase-data-3.5.10.ebuild,v 1.7 2009/07/12 09:24:14 armin76 Exp $
 
+EAPI="1"
 RESTRICT="binchecks strip"
 
 KMNAME=kdebase
 KMNOMODULE=true
-EAPI="1"
 inherit kde-meta
 
 DESCRIPTION="Icons, localization data and .desktop files from kdebase. Includes l10n, pics and applnk subdirs."

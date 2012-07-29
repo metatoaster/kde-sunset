@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kitchensync/kitchensync-3.5.10.ebuild,v 1.6 2009/07/12 13:19:51 armin76 Exp $
 
-KMNAME=kdepim
 EAPI="1"
+KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="Synchronize Data with KDE"

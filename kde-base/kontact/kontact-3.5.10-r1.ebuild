@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kontact/kontact-3.5.10.ebuild,v 1.8 2009/07/12 13:11:46 armin76 Exp $
 
-KMNAME=kdepim
 EAPI="1"
+KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KDE personal information manager"
