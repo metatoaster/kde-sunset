@@ -2,6 +2,11 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/ChangeLog,v 1.586 2009/08/02 21:54:28 tommy Exp $
 
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> qt-meta-3.3.8b-r2.ebuild,
+  +files/qt-3.3.8b-cstddef.patch:
+  Added patch from https://github.com/gmt/my-kde-sunset to fix compilation with
+  >=gcc-4.6
+
 *qt-meta-3.3.8b-r2 (21 Mar 2013)
 *qt-meta-3.3.8b-r1 (21 Mar 2013)
 
