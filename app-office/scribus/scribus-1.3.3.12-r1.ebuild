@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.3.3.12-r1.ebuild,v 1.5 2008/11/21 13:30:04 hanno Exp $
 
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="cairo cups"
 
-DEPEND="x11-libs/qt-meta:3
+DEPEND="dev-qt/qt-meta:3
 	>=media-libs/freetype-2.3
 	>=media-libs/lcms-1.17
 	>=media-libs/tiff-3.6

@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-db/qt-unixODBC/qt-unixODBC-3.3.8b.ebuild,v 1.6 2009/01/17 16:39:16 nixnut Exp $
 
@@ -13,7 +13,7 @@ LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
 SLOT="3"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
-RDEPEND="~x11-libs/qt-meta-${PV}
+RDEPEND="~dev-qt/qt-meta-${PV}
 	dev-db/unixODBC"
 DEPEND="${RDEPEND}
 	>=dev-db/unixODBC-2.2.14"

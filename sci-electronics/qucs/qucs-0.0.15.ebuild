@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug"
 
-DEPEND="x11-libs/qt-meta:3"
-RDEPEND="x11-libs/qt-meta:3
+DEPEND="dev-qt/qt-meta:3"
+RDEPEND="dev-qt/qt-meta:3
 	>=sci-electronics/freehdl-0.0.7"
 
 src_configure() {

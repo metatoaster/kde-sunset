@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ IUSE="speex ilbc zrtp"
 
 RDEPEND=">=net-libs/ccrtp-1.6.0
 	dev-cpp/commoncpp2
-	x11-libs/qt-meta:3
+	dev-qt/qt-meta:3
 	media-libs/libsndfile
 	dev-libs/boost
 	speex? ( media-libs/speex )

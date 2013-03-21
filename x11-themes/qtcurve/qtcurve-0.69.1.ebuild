@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve/qtcurve-0.69.1.ebuild,v 1.4 2009/11/08 19:31:13 nixnut Exp $
 
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~alpha amd64 ~hppa ppc ~ppc64 ~sparc x86"
 IUSE=""
 
-RDEPEND="x11-libs/qt-meta:3"
+RDEPEND="dev-qt/qt-meta:3"
 DEPEND="${RDEPEND}"
 
 need-kde 3.5

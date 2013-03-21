@@ -1,6 +1,10 @@
 # ChangeLog for games-util/agistudio
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/games-util/agistudio/ChangeLog,v 1.13 2009/10/20 13:01:44 maekke Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> agistudio-1.2.2.ebuild,
+  agistudio-1.2.4.ebuild:
+  Fixed dependencies on qt packages.
 
   20 Oct 2009; Markus Meier <maekke@gentoo.org> agistudio-1.2.4.ebuild:
   x86 stable, bug #285394

@@ -1,6 +1,10 @@
 # ChangeLog for media-libs/dssi
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/media-libs/dssi/ChangeLog,v 1.21 2009/05/20 16:31:45 nixnut Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> dssi-0.9.1.ebuild,
+  dssi-0.9.1-r1.ebuild, dssi-0.9.1-r2.ebuild, dssi-1.0.0.ebuild:
+  Fixed dependencies on qt packages.
 
   20 May 2009; nixnut <nixnut@gentoo.org> dssi-0.9.1-r2.ebuild:
   ppc stable #264423

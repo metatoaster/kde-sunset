@@ -1,6 +1,9 @@
 # ChangeLog for sci-electronics/qucs
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header$
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> qucs-0.0.15.ebuild:
+  Fixed dependencies on qt packages.
 
   14 Apr 2010; Michał Górny <gentoo@mgorny.alt.pl> qucs-0.0.15.ebuild:
   Fix the application icon naming.

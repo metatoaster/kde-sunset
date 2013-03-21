@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-perl/PerlQt/PerlQt-3.009_beta2.ebuild,v 1.11 2009/11/11 12:31:31 ssuominen Exp $
 
@@ -23,7 +23,7 @@ S=${WORKDIR}/${P/_beta2/}
 #if kdebindings is installed compilation is really fast!
 # because libsmoke comes with kdebindings-3.1
 
-DEPEND="=x11-libs/qt-meta-3*
+DEPEND="=dev-qt/qt-meta-3*
 	kde-base/kdelibs
 	dev-lang/perl"
 

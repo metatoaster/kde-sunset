@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-libs/SoQt/SoQt-1.4.1.ebuild,v 1.6 2009/10/29 11:02:54 fauli Exp $
 
@@ -17,11 +17,11 @@ IUSE="doc qt4"
 
 RDEPEND=">=media-libs/coin-2.4.4
 	qt4? (
-		x11-libs/qt-gui:4[qt3support]
-		x11-libs/qt-opengl:4[qt3support]
-		x11-libs/qt-qt3support:4
+		dev-qt/qtgui:4[qt3support]
+		dev-qt/qtopengl:4[qt3support]
+		dev-qt/qt3support:4
 	)
-	!qt4? ( x11-libs/qt-meta:3[opengl] )"
+	!qt4? ( dev-qt/qt-meta:3[opengl] )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	doc? ( app-doc/doxygen )"

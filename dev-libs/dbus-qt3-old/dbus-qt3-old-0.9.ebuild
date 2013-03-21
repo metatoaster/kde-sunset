@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 inherit qt3
@@ -14,7 +14,7 @@ IUSE="debug"
 
 RDEPEND=">=sys-apps/dbus-0.91"
 DEPEND="${RDEPEND}
-	=x11-libs/qt-meta-3*"
+	=dev-qt/qt-meta-3*"
 
 S=${WORKDIR}/dbus-1-qt3-${PV}
 

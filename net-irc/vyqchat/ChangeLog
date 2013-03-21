@@ -1,6 +1,9 @@
 # ChangeLog for net-irc/vyqchat
-# Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/net-irc/vyqchat/ChangeLog,v 1.13 2007/02/22 22:20:17 armin76 Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> vyqchat-0.2.8.ebuild:
+  Fixed dependencies on qt packages.
 
   22 Feb 2007; Raúl Porcel <armin76@gentoo.org> -vyqchat-0.1.1.ebuild,
   -vyqchat-0.2.3.ebuild, -vyqchat-0.2.6.ebuild, vyqchat-0.2.8.ebuild:

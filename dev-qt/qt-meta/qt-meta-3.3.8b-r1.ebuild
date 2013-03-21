@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.8b-r2.ebuild,v 1.7 2009/12/03 18:25:47 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.8b-r1.ebuild,v 1.9 2009/12/03 18:25:47 yngwin Exp $
 
 # *** Please remember to update qt3.eclass when revbumping this ***
 
@@ -18,7 +18,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.gz
 LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
 
 SLOT="3"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="cups debug doc examples firebird ipv6 mysql nas nis odbc opengl postgres sqlite xinerama immqt immqt-bc"
 
 RDEPEND="
@@ -133,9 +133,6 @@ src_unpack() {
 
 	# Fix CJK script rendering, bug 229567
 	epatch "${FILESDIR}"/qt-3.3.8b-cjk-fix.patch
-
-	# Fix libpng-1.5 issues
-	epatch "${FILESDIR}"/qt-3.3.8-libpng15.patch
 
 	if use immqt || use immqt-bc ; then
 		epatch ../${IMMQT_P}.diff
@@ -292,7 +289,7 @@ src_install() {
 	doins "${S}"/lib/*.prl
 
 	# pkg-config file
-	insinto /usr/$(get_libdir)/pkgconfig
+	insinto ${QTBASE}/$(get_libdir)/pkgconfig
 	doins "${S}"/lib/*.pc
 
 	# List all the multilib libdirs
@@ -308,6 +305,7 @@ ROOTPATH=${QTBASE}/bin
 LDPATH=${libdirs:1}
 QMAKESPEC=${PLATFORM}
 MANPATH=${QTBASE}/doc/man
+PKG_CONFIG_PATH=${QTBASE}/$(get_libdir)/pkgconfig
 EOF
 
 	cat <<EOF > "${T}"/50qtdir3

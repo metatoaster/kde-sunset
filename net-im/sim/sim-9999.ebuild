@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-im/sim/sim-9999.ebuild,v 1.3 2008/05/11 13:24:42 pva Exp $
 
@@ -25,7 +25,7 @@ IUSE="debug gpg +jabber kde msn +oscar sms spell ssl weather yahoo livejournal"
 RDEPEND="kde? ( kde-base/kdelibs:3.5[spell=]
 				kde-base/kdebase-data:3.5 )
 		!kde? ( spell? ( app-text/aspell ) )
-		x11-libs/qt-meta:3
+		dev-qt/qt-meta:3
 		ssl? ( dev-libs/openssl )
 		gpg? ( app-crypt/gnupg )
 		dev-libs/libxml2

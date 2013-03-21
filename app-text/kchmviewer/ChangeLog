@@ -1,6 +1,10 @@
 # ChangeLog for app-text/kchmviewer
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/app-text/kchmviewer/ChangeLog,v 1.21 2009/11/14 19:30:28 wired Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org>
+  kchmviewer-3.1_p2-r1.ebuild:
+  Fixed dependencies on qt packages.
 
 *kchmviewer-3.1_p2-r1.ebuild (29 Oct 2010)
   29 Oct 2010; Roman v. Gemmeren <strowi@hasnoname.de> kchmviewer-3.1_p2-r1.ebuild:

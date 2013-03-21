@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-libs/qscintilla/qscintilla-2.3.2.ebuild,v 1.9 2009/06/01 22:28:49 yngwin Exp $
 
@@ -17,8 +17,8 @@ LICENSE="GPL-2"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="qt4 +python doc examples debug"
 
-RDEPEND="qt4? ( x11-libs/qt-gui:4 )
-	!qt4? ( x11-libs/qt-meta:3 )"
+RDEPEND="qt4? ( dev-qt/qtgui:4 )
+	!qt4? ( dev-qt/qt-meta:3 )"
 DEPEND="${RDEPEND}"
 # dev-python/PyQt needs qscintilla to build and qscintilla's python bindings
 # need dev-python/PyQt, bug 199543

@@ -1,6 +1,10 @@
 # ChangeLog for dev-db/qt-unixODBC
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-db/qt-unixODBC/ChangeLog,v 1.45 2009/04/27 20:06:56 hwoarang Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org>
+  qt-unixODBC-3.3.8b.ebuild, qt-unixODBC-3.3.8b-r1.ebuild:
+  Fixed dependencies on qt packages.
 
 *qt-unixODBC-3.3.8b-r1 (23 Mar 2010)
 

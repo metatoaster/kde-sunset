@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/avahi-0.6.30.ebuild,v 1.2 2011/08/06 09:41:21 zmedico Exp $
 
@@ -24,8 +24,8 @@ RDEPEND=">=dev-libs/libdaemon-0.14
 	dev-libs/expat
 	>=dev-libs/glib-2
 	gdbm? ( sys-libs/gdbm )
-	qt3? ( x11-libs/qt-meta:3 )
-	qt4? ( x11-libs/qt-core:4 )
+	qt3? ( dev-qt/qt-meta:3 )
+	qt4? ( dev-qt/qtcore:4 )
 	gtk? (
 		>=x11-libs/gtk+-2.14.0:2
 	)

@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-misc/styleclock/styleclock-0.5.1.ebuild,v 1.9 2009/10/13 22:00:06 ssuominen Exp $
 
@@ -15,6 +15,6 @@ KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 
 DEPEND="virtual/opengl
-	x11-libs/qt-meta:3[opengl]"
+	dev-qt/qt-meta:3[opengl]"
 
 need-kde 3.5

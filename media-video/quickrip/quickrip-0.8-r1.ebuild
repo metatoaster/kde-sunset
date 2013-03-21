@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-video/quickrip/quickrip-0.8-r1.ebuild,v 1.7 2009/09/23 14:34:08 ssuominen Exp $
 
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 -mips -ppc x86"
 IUSE=""
 
 DEPEND="dev-lang/python
-	x11-libs/qt-meta:3
+	dev-qt/qt-meta:3
 	>=dev-python/PyQt-3.5-r1
 	media-video/mplayer
 	media-video/transcode"

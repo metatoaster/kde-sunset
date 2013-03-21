@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-text/kchmviewer/kchmviewer-3.1_p2-r1.ebuild,v 1.4 2009/07/01 20:51:11 maekke Exp $
 
@@ -27,7 +27,7 @@ KEYWORDS="amd64 ppc x86"
 IUSE="kde"
 
 DEPEND="!<app-text/kchmviewer-3.1_p2-r1
-	x11-libs/qt-meta:3
+	dev-qt/qt-meta:3
 	dev-libs/chmlib
 	kde? ( kde-base/kdelibs:3.5 )"
 RDEPEND="${DEPEND}"

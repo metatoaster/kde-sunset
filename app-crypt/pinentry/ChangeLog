@@ -1,6 +1,10 @@
 # ChangeLog for app-crypt/pinentry
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/ChangeLog,v 1.104 2010/06/27 09:35:23 fauli Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> pinentry-0.7.5.ebuild,
+  pinentry-0.7.5-r1.ebuild, pinentry-0.7.6.ebuild, pinentry-0.8.0.ebuild:
+  Fixed dependencies on qt packages.
 
   27 Jun 2010; Christian Faulhammer <fauli@gentoo.org>
   pinentry-0.8.0.ebuild:

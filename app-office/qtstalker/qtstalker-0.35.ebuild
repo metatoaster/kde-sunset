@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-office/qtstalker/qtstalker-0.35.ebuild,v 1.4 2008/07/27 19:55:28 carlo Exp $
 
@@ -19,7 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="x11-libs/qt-meta:3
+DEPEND="dev-qt/qt-meta:3
 	>=sci-libs/ta-lib-0.4.0
 	>=sys-libs/db-4.3"
 

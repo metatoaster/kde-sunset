@@ -1,6 +1,11 @@
 # ChangeLog for kde-base/kopete
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kopete/ChangeLog,v 1.218 2009/10/12 23:58:47 abcd Exp $
+
+  21 Mar 2013; Lars Wendler <polynomial-c@gentoo.org> kopete-3.5.10.ebuild,
+  kopete-3.5.10-r2.ebuild, kopete-3.5.10-r4.ebuild, kopete-3.5.10-r5.ebuild,
+  kopete-3.5.10-r6.ebuild:
+  Fixed dependencies on qt packages.
 
   19 Sep 2010; Ladislav Láska <ladislav.laska@gmail.com>
   kopete-3.5.10-r6.ebuild:

@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/pinentry-0.7.5.ebuild,v 1.11 2009/05/02 20:34:01 swegener Exp $
 
@@ -17,7 +17,7 @@ IUSE="gtk ncurses qt3 caps"
 
 DEPEND="gtk? ( x11-libs/gtk+:2 )
 	ncurses? ( sys-libs/ncurses )
-	qt3? ( x11-libs/qt-meta:3 )
+	qt3? ( dev-qt/qt-meta:3 )
 	!gtk? ( !qt3? ( !ncurses? ( sys-libs/ncurses ) ) )
 	caps? ( sys-libs/libcap )"
 RDEPEND="${DEPEND}"

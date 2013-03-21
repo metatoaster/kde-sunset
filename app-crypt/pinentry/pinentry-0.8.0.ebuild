@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/pinentry-0.8.0.ebuild,v 1.6 2010/06/27 09:35:23 fauli Exp $
 
@@ -19,8 +19,8 @@ DEPEND="static? ( sys-libs/ncurses )
 	!static? (
 		gtk? ( x11-libs/gtk+:2 )
 		ncurses? ( sys-libs/ncurses )
-		qt3? ( x11-libs/qt-meta:3 )
-		qt4? ( >=x11-libs/qt-gui-4.4.1 )
+		qt3? ( dev-qt/qt-meta:3 )
+		qt4? ( >=dev-qt/qtgui-4.4.1 )
 		!gtk? ( !qt4? ( !qt3? ( !ncurses? ( sys-libs/ncurses ) ) ) )
 	)
 	caps? ( sys-libs/libcap )"

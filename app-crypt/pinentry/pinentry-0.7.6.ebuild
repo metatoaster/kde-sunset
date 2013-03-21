@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/pinentry-0.7.6.ebuild,v 1.3 2009/07/15 21:04:10 arfrever Exp $
 
@@ -19,8 +19,8 @@ DEPEND="static? ( sys-libs/ncurses )
 	!static? (
 		gtk? ( x11-libs/gtk+:2 )
 		ncurses? ( sys-libs/ncurses )
-		qt3? ( x11-libs/qt-meta:3 )
-		qt4? ( >=x11-libs/qt-gui-4.4.1 )
+		qt3? ( dev-qt/qt-meta:3 )
+		qt4? ( >=dev-qt/qtgui-4.4.1 )
 		!gtk? ( !qt4? ( !qt3? ( !ncurses? ( sys-libs/ncurses ) ) ) )
 	)
 	caps? ( sys-libs/libcap )"

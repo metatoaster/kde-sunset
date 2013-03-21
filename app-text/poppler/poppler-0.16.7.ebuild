@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-text/poppler/poppler-0.16.7.ebuild,v 1.5 2011/08/25 20:48:50 maekke Exp $
 
@@ -34,10 +34,10 @@ COMMON_DEPEND="
 	jpeg2k? ( media-libs/openjpeg )
 	lcms? ( =media-libs/lcms-1* )
 	png? ( >=media-libs/libpng-1.4 )
-	qt3? ( >=x11-libs/qt-meta-3.3:3 )
+	qt3? ( >=dev-qt/qt-meta-3.3:3 )
 	qt4? (
-		x11-libs/qt-core:4
-		x11-libs/qt-gui:4
+		dev-qt/qtcore:4
+		dev-qt/qtgui:4
 	)
 "
 DEPEND="${COMMON_DEPEND}
