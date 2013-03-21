@@ -30,7 +30,7 @@ RDEPEND=">=media-libs/xine-lib-1.1.9[xcb?]
 	xcb? ( >=x11-libs/libxcb-1.0 )
 	gstreamer? ( =media-libs/gstreamer-0.10*
 		=media-plugins/gst-plugins-xvideo-0.10* )
-	<dev-libs/libcdio-0.90
+	>=dev-libs/libcdio-paranoia-0.90
 	encode? ( media-sound/lame )
 	vorbis? ( media-libs/libvorbis )
 	x11-libs/libXtst"
@@ -45,6 +45,7 @@ need-kde 3.5.4
 PATCHES=(
 	"${FILESDIR}/kaffeine-0.8.7-respectcflags.patch"
 	"${FILESDIR}/kaffeine-0.8.8-kxinewidget.patch"
+	"${FILESDIR}/kaffeine-0.8.8-paranoia_include_fix.patch"
 	)
 
 src_configure() {

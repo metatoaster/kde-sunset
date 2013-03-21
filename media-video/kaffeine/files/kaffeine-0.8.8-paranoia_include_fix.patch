@@ -1,0 +1,136 @@
+--- kaffeine-0.8.8/configure
++++ kaffeine-0.8.8/configure
+@@ -34206,8 +34206,8 @@
+ 
+ 
+    if test "${ac_cv_header_cdio_cdda_h+set}" = set; then
+-  { $as_echo "$as_me:$LINENO: checking for cdio/cdda.h" >&5
+-$as_echo_n "checking for cdio/cdda.h... " >&6; }
++  { $as_echo "$as_me:$LINENO: checking for cdio/paranoia/cdda.h" >&5
++$as_echo_n "checking for cdio/paranoia/cdda.h... " >&6; }
+ if test "${ac_cv_header_cdio_cdda_h+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ fi
+@@ -34215,8 +34215,8 @@
+ $as_echo "$ac_cv_header_cdio_cdda_h" >&6; }
+ else
+   # Is the header compilable?
+-{ $as_echo "$as_me:$LINENO: checking cdio/cdda.h usability" >&5
+-$as_echo_n "checking cdio/cdda.h usability... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking cdio/paranoia/cdda.h usability" >&5
++$as_echo_n "checking cdio/paranoia/cdda.h usability... " >&6; }
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -34224,7 +34224,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <cdio/cdda.h>
++#include <cdio/paranoia/cdda.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (ac_try="$ac_compile"
+@@ -34257,15 +34257,15 @@
+ $as_echo "$ac_header_compiler" >&6; }
+ 
+ # Is the header present?
+-{ $as_echo "$as_me:$LINENO: checking cdio/cdda.h presence" >&5
+-$as_echo_n "checking cdio/cdda.h presence... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking cdio/paranoia/cdda.h presence" >&5
++$as_echo_n "checking cdio/paranoia/cdda.h presence... " >&6; }
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <cdio/cdda.h>
++#include <cdio/paranoia/cdda.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+ case "(($ac_try" in
+@@ -34299,30 +34299,30 @@
+ # So?  What about this header?
+ case $ac_header_compiler:$ac_header_preproc:$ac_cxx_preproc_warn_flag in
+   yes:no: )
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: accepted by the compiler, rejected by the preprocessor!" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: proceeding with the compiler's result" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: proceeding with the compiler's result" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: accepted by the compiler, rejected by the preprocessor!" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: proceeding with the compiler's result" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: proceeding with the compiler's result" >&2;}
+     ac_header_preproc=yes
+     ;;
+   no:yes:* )
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: present but cannot be compiled" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: present but cannot be compiled" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h:     check for missing prerequisite headers?" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h:     check for missing prerequisite headers?" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: see the Autoconf documentation" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: see the Autoconf documentation" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h:     section \"Present But Cannot Be Compiled\"" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h:     section \"Present But Cannot Be Compiled\"" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: proceeding with the preprocessor's result" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: proceeding with the preprocessor's result" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: cdio/cdda.h: in the future, the compiler will take precedence" >&5
+-$as_echo "$as_me: WARNING: cdio/cdda.h: in the future, the compiler will take precedence" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: present but cannot be compiled" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: present but cannot be compiled" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h:     check for missing prerequisite headers?" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h:     check for missing prerequisite headers?" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: see the Autoconf documentation" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: see the Autoconf documentation" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h:     section \"Present But Cannot Be Compiled\"" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h:     section \"Present But Cannot Be Compiled\"" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: proceeding with the preprocessor's result" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: proceeding with the preprocessor's result" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: cdio/paranoia/cdda.h: in the future, the compiler will take precedence" >&5
++$as_echo "$as_me: WARNING: cdio/paranoia/cdda.h: in the future, the compiler will take precedence" >&2;}
+ 
+     ;;
+ esac
+-{ $as_echo "$as_me:$LINENO: checking for cdio/cdda.h" >&5
+-$as_echo_n "checking for cdio/cdda.h... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking for cdio/paranoia/cdda.h" >&5
++$as_echo_n "checking for cdio/paranoia/cdda.h... " >&6; }
+ if test "${ac_cv_header_cdio_cdda_h+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+--- kaffeine-0.8.8/configure.in
++++ kaffeine-0.8.8/configure.in
+@@ -300,7 +300,7 @@
+ dnl check for cdparanoia
+ dnl --------------------
+ 
+-KDE_CHECK_HEADER([cdio/cdda.h], [with_cdparanoia=yes], [with_cdparanoia=no])
++KDE_CHECK_HEADER([cdio/paranoia/cdda.h], [with_cdparanoia=yes], [with_cdparanoia=no])
+ 
+ if test "$with_cdparanoia" != "yes" ; then
+ 	echo ""
+--- kaffeine-0.8.8/kaffeine/configure.in.in
++++ kaffeine-0.8.8/kaffeine/configure.in.in
+@@ -220,7 +220,7 @@
+ dnl check for cdparanoia
+ dnl --------------------
+ 
+-KDE_CHECK_HEADER([cdio/cdda.h], [with_cdparanoia=yes], [with_cdparanoia=no])
++KDE_CHECK_HEADER([cdio/paranoia/cdda.h], [with_cdparanoia=yes], [with_cdparanoia=no])
+ 
+ if test "$with_cdparanoia" != "yes" ; then
+ 	echo ""
+--- kaffeine-0.8.8/kaffeine/src/input/disc/paranoia.h
++++ kaffeine-0.8.8/kaffeine/src/input/disc/paranoia.h
+@@ -32,8 +32,8 @@
+ 
+ extern "C"
+ {
+-#include <cdio/cdda.h>
+-#include <cdio/paranoia.h>
++#include <cdio/paranoia/cdda.h>
++#include <cdio/paranoia/paranoia.h>
+ }
+ 
+ class KiloConfig : public ParanoiaSettings
