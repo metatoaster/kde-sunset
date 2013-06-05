@@ -8,11 +8,11 @@ inherit eutils flag-o-matic toolchain-funcs
 
 SRCTYPE="free"
 DESCRIPTION="The Qt toolkit is a comprehensive C++ application development framework."
-HOMEPAGE="http://qt.nokia.com/"
+HOMEPAGE="http://qt-project.org/"
 
 IMMQT_P="qt-x11-immodule-unified-qt3.3.8-20070321-gentoo"
 
-SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.gz
+SRC_URI="http://download.qt-project.org/archive/qt/3/qt-x11-${SRCTYPE}-${PV}.tar.gz
 	immqt? ( mirror://gentoo/${IMMQT_P}.diff.bz2 )
 	immqt-bc? ( mirror://gentoo/${IMMQT_P}.diff.bz2 )"
 LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
