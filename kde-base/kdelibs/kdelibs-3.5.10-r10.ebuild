@@ -161,6 +161,9 @@ src_unpack() {
 
 	# bug 267018
 	sed -i '/^SUBDIRS/s/ hicolor / /' pics/Makefile.{am,in}
+
+	# new versions of cups breaks
+	epatch "${FILESDIR}/kdelibs-3.5.10-cups-util.c.patch"
 }
 
 src_compile() {
