@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve/qtcurve-0.69.1.ebuild,v 1.4 2009/11/08 19:31:13 nixnut Exp $
 
-EAPI=1
+EAPI=5
 
 # Order is important, so we get src_compile from cmake-utils.
 inherit kde-functions qt3 cmake-utils
