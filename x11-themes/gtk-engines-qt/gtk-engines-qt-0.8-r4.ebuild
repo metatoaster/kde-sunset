@@ -40,12 +40,12 @@ PATCHES=(
 	"${FILESDIR}/gtk-engines-qt-0.8-optional-bonobo.patch"
 )
 
-src_compile() {
+src_configure() {
 	# enable or disable bonobo support based on gnome useflag (bug #206568)
 	mycmakeargs="${mycmakeargs}
 		$(cmake-utils_use_enable gnome BONOBO)"
 	CMAKE_IN_SOURCE_BUILD=1
-	cmake-utils_src_compile
+	cmake-utils_src_configure
 }
 
 src_install() {

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-kdepim/libopensync-plugin-kdepim-0.36.ebuild,v 1.2 2008/07/13 07:07:12 josejx Exp $
 
-EAPI=1
+EAPI=3
 
 inherit cmake-utils kde-functions
 

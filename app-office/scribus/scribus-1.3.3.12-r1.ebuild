@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.3.3.12-r1.ebuild,v 1.5 2008/11/21 13:30:04 hanno Exp $
 
-EAPI=1
+EAPI=5
 
 inherit qt3 eutils cmake-utils
 
@@ -25,22 +25,15 @@ DEPEND="dev-qt/qt-meta:3
 	dev-python/imaging
 	media-libs/fontconfig
 	cups? ( net-print/cups )
-	cairo? ( >=x11-libs/cairo-1.4.10 )"
+	cairo? ( >=x11-libs/cairo-1.4.10[X,svg] )"
 
 RDEPEND="${DEPEND}
 	app-text/ghostscript-gpl"
 
-pkg_setup() {
-	if ! built_with_use 'x11-libs/cairo' 'X' 'svg'; then
-		eerror "You must build cairo with X and svg support"
-		die "x11-libs/cairo built without X and/or svg"
-	fi
-}
-
-src_compile() {
+src_configure() {
 	local mycmakeargs="$(cmake-utils_use_want cairo CAIRO) \
 		$(cmake-utils_use_enable cups)"
-	cmake-utils_src_compile || die "compile failed"
+	cmake-utils_src_configure
 }
 
 src_install() {

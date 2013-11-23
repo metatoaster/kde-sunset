@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-misc/strigiapplet/strigiapplet-0.5.7.ebuild,v 1.4 2009/03/30 13:22:08 loki_val Exp $
 
+EAPI=3
+
 inherit kde multilib cmake-utils
 
 DESCRIPTION="KDE kicker applet to use strigi."
@@ -20,7 +22,9 @@ RDEPEND="${DEPEND}
 
 need-kde 3.5
 
-src_compile() {
+src_prepare() {
+	cmake-utils_src_prepare
+
 	# Fix multi-lib issues
 	sed -i -e "/SET (LIB_DESTINATION/s:\"lib\":\"$(get_libdir)\":" \
 		"${S}"/CMakeLists.txt || die "sed 1 for multilib failed"
@@ -46,6 +50,4 @@ src_compile() {
 		"${S}"/CMakeLists.txt || die "sed to include find_package(Qt3) failed."
 	sed -i -e 's:qt-mt:${QT_LIBRARIES}:' \
 		"${S}"/src/kickerapplet/CMakeLists.txt || die "sed to link libqt-mt.so failed."
-
-	cmake-utils_src_compile
 }

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-kdepim/libopensync-plugin-kdepim-0.22.ebuild,v 1.1 2007/03/28 20:20:29 peper Exp $
 
-EAPI=1
+EAPI=3
 
 inherit qt3
 
@@ -23,8 +23,11 @@ RDEPEND="${DEPEND}"
 # interactive and broken
 RESTRICT="test"
 
-src_compile() {
+src_configure() {
 	econf --without-arts
+}
+
+src_compile() {
 	emake || die "emake failed"
 }
 

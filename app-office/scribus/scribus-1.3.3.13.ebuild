@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.3.3.13.ebuild,v 1.1 2009/07/30 19:09:14 hanno Exp $
 
-EAPI=2
+EAPI=5
 
 inherit qt3 eutils cmake-utils
 
@@ -30,19 +30,16 @@ DEPEND="dev-qt/qt-meta:3
 RDEPEND="${DEPEND}
 	app-text/ghostscript-gpl"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-cheaders.diff" || die
-}
+PATCHES=( "${FILESDIR}/${P}-cheaders.diff" )
 
-src_compile() {
+src_configure() {
 	local mycmakeargs="$(cmake-utils_use_want cairo CAIRO) \
 		$(cmake-utils_use_enable cups)"
-	cmake-utils_src_compile || die "compile failed"
+	cmake-utils_src_configure
 }
 
 src_install() {
 	cmake-utils_src_install
-
 	domenu scribus.desktop
-	doicon scribus/icons/scribus.png || die "doicon failed"
+	doicon scribus/icons/scribus.png
 }
