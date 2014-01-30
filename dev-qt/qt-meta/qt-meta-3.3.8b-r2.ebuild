@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.8b-r2.ebuild,v 1.7 2009/12/03 18:25:47 yngwin Exp $
 
@@ -111,12 +111,12 @@ src_unpack() {
 	epatch "${FILESDIR}"/qt-3.3.8-uic-fix.patch
 
 	# KDE related patches
-	epatch "${FILESDIR}"/0001-dnd_optimization.patch
-	epatch "${FILESDIR}"/0002-dnd_active_window_fix.patch
-	epatch "${FILESDIR}"/0038-dragobject-dont-prefer-unknown.patch
-	epatch "${FILESDIR}"/0044-qscrollview-windowactivate-fix.diff
-	epatch "${FILESDIR}"/0047-fix-kmenu-widget.diff
-	epatch "${FILESDIR}"/0048-qclipboard_hack_80072.patch
+	epatch "${FILESDIR}"/0001-dnd_optimization.patch \
+		"${FILESDIR}"/0002-dnd_active_window_fix.patch \
+		"${FILESDIR}"/0038-dragobject-dont-prefer-unknown.patch \
+		"${FILESDIR}"/0044-qscrollview-windowactivate-fix.diff \
+		"${FILESDIR}"/0047-fix-kmenu-widget.diff \
+		"${FILESDIR}"/0048-qclipboard_hack_80072.patch
 
 	# ulibc patch (bug #100246)
 	epatch "${FILESDIR}"/qt-ulibc.patch
@@ -126,7 +126,7 @@ src_unpack() {
 
 	# Visibility patch, apply only on GCC 4.1 and later for safety
 	# [[ $(gcc-major-version)$(gcc-minor-version) -ge 41 ]] && \
-		epatch "${FILESDIR}"/qt-3.3.8-visibility.patch
+	epatch "${FILESDIR}"/qt-3.3.8-visibility.patch
 
 	# Fix configure to correctly pick up gcc version, bug 244732
 	epatch "${FILESDIR}"/qt-3.3.8-fix-compiler-detection.patch
@@ -139,6 +139,9 @@ src_unpack() {
 
 	# Fix libpng-1.5 issues
 	epatch "${FILESDIR}"/qt-3.3.8-libpng15.patch
+
+	# Fix detection of >=freetype-2.5.1
+	epatch "${FILESDIR}"/qt-3.3.8b-freetype251.patch
 
 	if use immqt || use immqt-bc ; then
 		epatch ../${IMMQT_P}.diff
