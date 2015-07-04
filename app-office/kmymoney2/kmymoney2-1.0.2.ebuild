@@ -23,7 +23,7 @@ COMMON_DEPEND="dev-libs/libxml2
 	sqlite? ( =dev-db/sqlite-3* )"
 
 DEPEND="${COMMON_DEPEND}
-	>=dev-util/pkgconfig-0.9.0
+	virtual/pkgconfig
 	test? ( >=dev-util/cppunit-1.8.0 )"
 
 RDEPEND="${COMMON_DEPEND}

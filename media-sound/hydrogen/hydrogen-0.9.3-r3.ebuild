@@ -22,7 +22,7 @@ RDEPEND="dev-libs/libxml2
 	ladspa? ( media-libs/liblrdf )"
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook-sgml-utils )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 need-qt 3
 

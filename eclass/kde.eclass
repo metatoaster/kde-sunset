@@ -61,7 +61,7 @@ if [[ -n ${USE_KEG_PACKAGING} && -n "${LANGS}${LANGS_DOC}" ]]; then
 fi
 
 DEPEND="sys-devel/make
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-lang/perl"
 
 if [[ ${CATEGORY} != "kde-base" ]] || [[ ${CATEGORY} == "kde-base" &&  ${PV##*.} -lt 10 ]] ; then

@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE="kdehiddenvisibility"
 
-DEPEND="dev-util/pkgconfig"
+DEPEND="virtual/pkgconfig"
 RDEPEND=""
 
 need-kde 3.4

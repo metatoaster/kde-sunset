@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND=">=media-libs/libexif-0.6.9"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 LANGS="ar bg br ca cs cy da de el en_GB es et fr ga gl is it ja lt mt nb nl nn
 pa pl pt pt_BR ru rw sk sr sr@Latn sv ta tr uk zh_CN"

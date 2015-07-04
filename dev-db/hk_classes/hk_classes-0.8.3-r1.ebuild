@@ -34,7 +34,7 @@ RDEPEND=">=media-libs/fontconfig-2.5.0-r1
 	xbase? ( dev-db/xbase )
 "
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 
 src_unpack() {

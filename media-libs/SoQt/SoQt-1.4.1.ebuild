@@ -23,7 +23,7 @@ RDEPEND=">=media-libs/coin-2.4.4
 	)
 	!qt4? ( dev-qt/qt-meta:3[opengl] )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )"
 
 src_prepare() {

@@ -25,7 +25,7 @@ RDEPEND=">=media-libs/alsa-lib-1.0
 	qt3? ( dev-qt/qt-meta:3 )"
 DEPEND="${RDEPEND}
 	sys-apps/sed
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}

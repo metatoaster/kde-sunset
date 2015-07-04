@@ -40,7 +40,7 @@ RDEPEND="${COMMON_DEPEND}
 	emovix? ( media-video/emovix )
 	vcd? ( media-video/vcdimager )"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${P/_}
 

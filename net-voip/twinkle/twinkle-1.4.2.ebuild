@@ -24,7 +24,7 @@ RDEPEND=">=net-libs/ccrtp-1.6.0
 	zrtp? ( >=net-libs/libzrtpcpp-1.3.0 )
 	media-libs/alsa-lib"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.4.1-kdedetect.patch

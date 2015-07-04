@@ -33,8 +33,8 @@ RDEPEND="
 	>=media-libs/liblo-0.7"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.15
-	>=dev-util/cmake-2.4.2"
+	>=dev-util/cmake-2.4.2
+	virtual/pkgconfig"
 
 need-kde 3.5
 

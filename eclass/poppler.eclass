@@ -20,7 +20,7 @@ RDEPEND="
 	!app-text/poppler-bindings
 	"
 DEPEND="
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	userland_GNU? ( >=sys-apps/findutils-4.4.0 )
 	"
 

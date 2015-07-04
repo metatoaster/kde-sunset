@@ -29,7 +29,7 @@ RDEPEND=">=media-libs/fontconfig-2.5.0-r1
 	postgres? ( >=virtual/postgresql-server-7.3 )
 	odbc? ( >=dev-db/unixODBC-2.0.6 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 
 src_unpack() {

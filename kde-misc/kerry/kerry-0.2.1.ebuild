@@ -15,8 +15,8 @@ IUSE=""
 
 RDEPEND=">=app-misc/beagle-0.2.5"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
-	=kde-base/libkonq-3.5*"
+	=kde-base/libkonq-3.5*
+	virtual/pkgconfig"
 
 need-kde 3.4
 

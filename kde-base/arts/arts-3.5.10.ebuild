@@ -32,7 +32,7 @@ RDEPEND="dev-qt/qt-meta:3
 	media-libs/audiofile"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	kde_src_unpack
