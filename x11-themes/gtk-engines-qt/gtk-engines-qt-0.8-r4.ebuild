@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-qt/gtk-engines-qt-0.8-r4.ebuild,v 1.7 2009/06/13 23:04:56 scarabeus Exp $
 
-EAPI=1
+EAPI=5
 
 ARTS_REQUIRED="never"
 
