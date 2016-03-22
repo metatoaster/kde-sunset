@@ -15,7 +15,7 @@ SLOT="3.5"
 KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 
-RDEPEND="kde-base/kate:3.5
+RDEPEND="kde-apps/kate:3.5
 	media-gfx/graphviz
 	dev-util/ctags
 	>=dev-util/cscope-15.5-r4"

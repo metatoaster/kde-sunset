@@ -10,7 +10,7 @@ DESCRIPTION="KDE kcal library for KOrganizer etc"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND=">=kde-base/ktnef-${PV}:${SLOT}
+DEPEND=">=kde-apps/ktnef-${PV}:${SLOT}
 	>=kde-base/libkmime-${PV}:${SLOT}"
 RDEPEND="${DEPEND}"
 

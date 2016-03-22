@@ -13,7 +13,7 @@ IUSE=""
 DEPEND=">=kde-base/mimelib-${PV}:${SLOT}
 >=kde-base/libkmime-${PV}:${SLOT}"
 RDEPEND="${DEPEND}
-	|| ( >=kde-base/kdebase-kioslaves-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
+	|| ( >=kde-apps/kdebase-kioslaves-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
 	>=kde-base/kdepim-kioslaves-${PV}:${SLOT}"
 
 KMCOPYLIB="libmimelib mimelib

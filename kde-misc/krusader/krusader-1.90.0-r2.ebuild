@@ -20,8 +20,8 @@ IUSE="javascript kde"
 
 DEPEND="
 	kde? (
-		kde-base/libkonq:3.5
-		kde-base/kdebase-kioslaves:3.5
+		kde-apps/libkonq:3.5
+		kde-apps/kdebase-kioslaves:3.5
 	)
 	javascript? ( kde-base/kjsembed:3.5 )"
 RDEPEND="${DEPEND}"

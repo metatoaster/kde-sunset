@@ -19,7 +19,7 @@ IUSE="cddb"
 
 RDEPEND="!app-cdr/kover
 	cddb? (
-		kde-base/libkcddb:3.5
+		kde-apps/libkcddb:3.5
 		kde-base/kdemultimedia-kioslaves:3.5
 	)"
 need-kde 3.5

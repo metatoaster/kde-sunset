@@ -9,7 +9,7 @@ DESCRIPTION="KDE: KLatin - a program to help revise Latin"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND=">=kde-base/libkdeedu-${PV}:${SLOT}"
+DEPEND=">=kde-apps/libkdeedu-${PV}:${SLOT}"
 RDEPEND="${DEPEND}"
 
 KMEXTRACTONLY="libkdeedu/kdeeducore"

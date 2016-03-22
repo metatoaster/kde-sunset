@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="kde-base/kate:3.5"
+DEPEND="kde-apps/kate:3.5"
 RDEPEND="${DEPEND}"
 
 need-kde 3.5

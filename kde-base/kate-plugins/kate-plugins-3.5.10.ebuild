@@ -11,5 +11,5 @@ DESCRIPTION="kate plugins and docs"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND="|| ( >=kde-base/kate-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
+DEPEND="|| ( >=kde-apps/kate-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
 RDEPEND="${DEPEND}"

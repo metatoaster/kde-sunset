@@ -10,6 +10,6 @@ inherit kde-meta
 DESCRIPTION="Plugins for KAB"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
-DEPEND="|| ( >=kde-base/kaddressbook-${PV}:${SLOT} >=kde-base/kdepim-${PV}:${SLOT} )"
+DEPEND="|| ( >=kde-apps/kaddressbook-${PV}:${SLOT} >=kde-base/kdepim-${PV}:${SLOT} )"
 
 RDEPEND="${DEPEND}"

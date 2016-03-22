@@ -10,7 +10,7 @@ DESCRIPTION="KDE Minigolf Game"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="kdehiddenvisibility"
 
-DEPEND=">=kde-base/libkdegames-${PV}:${SLOT}"
+DEPEND=">=kde-apps/libkdegames-${PV}:${SLOT}"
 RDEPEND="${DEPEND}"
 
 KMEXTRACTONLY=libkdegames

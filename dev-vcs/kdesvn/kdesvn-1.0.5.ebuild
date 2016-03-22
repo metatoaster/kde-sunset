@@ -21,7 +21,7 @@ IUSE="debug"
 
 RDEPEND="!<dev-util/kdesvn-1.0.5
 	>=dev-vcs/subversion-1.4
-	kde-base/kdesdk-kioslaves:3.5
+	kde-apps/kdesdk-kioslaves:3.5
 	dev-db/sqlite"
 
 DEPEND="${RDEPEND}
@@ -62,9 +62,9 @@ src_compile() {
 }
 
 pkg_postinst() {
-	if ! has_version 'kde-base/kompare'; then
+	if ! has_version 'kde-apps/kompare'; then
 		echo
-		elog "For nice graphical diffs, install kde-base/kompare."
+		elog "For nice graphical diffs, install kde-apps/kompare."
 		echo
 	fi
 }

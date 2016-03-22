@@ -12,7 +12,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/python
-	=kde-base/konqueror-3.5*"
+	=kde-apps/konqueror-3.5*"
 
 LANGS="de ru sk uk"
 

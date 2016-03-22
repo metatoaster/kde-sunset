@@ -16,7 +16,7 @@ SLOT="3.5"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND="kde-base/libkonq:3.5"
+RDEPEND="kde-apps/libkonq:3.5"
 DEPEND="${RDEPEND}"
 
 need-kde 3.5

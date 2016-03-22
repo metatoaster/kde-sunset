@@ -19,9 +19,9 @@ IUSE="calendar cddb yaz"
 
 RDEPEND=">=dev-libs/libxml2-2.6
 	>=dev-libs/libxslt-1.0.19
-	cddb?  ( =kde-base/libkcddb-3.5* )
+	cddb?  ( =kde-apps/libkcddb-3.5* )
 	calendar? (
-		=kde-base/ktnef-3.5*
+		=kde-apps/ktnef-3.5*
 		=kde-base/libkcal-3.5*
 	)
 	media-libs/taglib

@@ -20,10 +20,10 @@ KMCOMPILEONLY="kcontrol/background"
 DEPEND="pam? ( kde-base/kdebase-pam )
 	x11-libs/libXau
 	x11-libs/libXtst
-	>=kde-base/kcontrol-${PV}:${SLOT}"
+	>=kde-apps/kcontrol-${PV}:${SLOT}"
 	# Requires the desktop background settings and kdm kcontrol modules
 RDEPEND="${DEPEND}
-	>=kde-base/kdepasswd-${PV}:${SLOT}
+	>=kde-apps/kdepasswd-${PV}:${SLOT}
 	x11-apps/xinit
 	x11-apps/xmessage"
 PDEPEND=">=kde-base/kdesktop-${PV}:${SLOT}"

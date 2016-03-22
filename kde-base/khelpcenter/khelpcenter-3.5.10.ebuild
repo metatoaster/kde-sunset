@@ -19,5 +19,5 @@ KMEXTRA="doc/faq
 	doc/userguide
 	doc/visualdict"
 
-RDEPEND=">=kde-base/kdebase-kioslaves-${PV}:${SLOT}
+RDEPEND=">=kde-apps/kdebase-kioslaves-${PV}:${SLOT}
 		>=www-misc/htdig-3.2.0_beta6-r1"

@@ -12,9 +12,9 @@ KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}
-	>=kde-base/kontact-${PV}:${SLOT}
-	>=kde-base/kaddressbook-${PV}:${SLOT}
-	>=kde-base/korganizer-${PV}:${SLOT}
+	>=kde-apps/kontact-${PV}:${SLOT}
+	>=kde-apps/kaddressbook-${PV}:${SLOT}
+	>=kde-apps/korganizer-${PV}:${SLOT}
 	>=kde-base/libkholidays-${PV}:${SLOT}"
 RDEPEND="${DEPEND}
 	>=kde-base/libkdepim-3.5.6-r1:${SLOT}" # Force this version temporarily, #136810.

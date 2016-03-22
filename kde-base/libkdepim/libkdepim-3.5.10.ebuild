@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND=">=kde-base/libkcal-${PV}:${SLOT}
 	>=kde-base/libkmime-${PV}:${SLOT}
-		!<=kde-base/kmail-3.5.6-r1"
+		!<=kde-apps/kmail-3.5.6-r1"
 
 DEPEND="${RDEPEND}
 		x11-apps/xhost"

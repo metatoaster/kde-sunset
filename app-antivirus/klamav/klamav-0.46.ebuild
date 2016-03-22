@@ -21,7 +21,7 @@ IUSE=""
 
 DEPEND=">=app-antivirus/clamav-0.90"
 RDEPEND="${DEPEND}
-	>=kde-base/kdebase-kioslaves-3.5.9:3.5"
+	>=kde-apps/kdebase-kioslaves-3.5.9:3.5"
 
 need-kde 3.5
 

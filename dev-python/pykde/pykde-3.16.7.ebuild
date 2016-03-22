@@ -21,7 +21,7 @@ IUSE="debug doc examples"
 RDEPEND=">=dev-python/sip-4.2.0
 	>=dev-python/PyQt-3.17.6
 	=kde-base/kdelibs-3.5*"
-DEPEND="${RDEPEND} =kde-base/konsole-3.5*"
+DEPEND="${RDEPEND} =kde-apps/konsole-3.5*"
 
 src_compile() {
 	python_get_version

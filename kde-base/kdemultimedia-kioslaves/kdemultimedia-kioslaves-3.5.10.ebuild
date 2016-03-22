@@ -10,7 +10,7 @@ inherit kde-meta eutils
 DESCRIPTION="kioslaves from kdemultimedia package"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="encode flac mp3 vorbis"
-DEPEND=">=kde-base/libkcddb-${PV}:${SLOT}
+DEPEND=">=kde-apps/libkcddb-${PV}:${SLOT}
 	media-sound/cdparanoia
 	media-libs/taglib
 	encode? ( vorbis? ( media-libs/libvorbis )

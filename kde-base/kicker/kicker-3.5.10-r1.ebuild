@@ -13,8 +13,8 @@ DESCRIPTION="Kicker is the KDE application starter panel, also capable of some u
 KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="kdehiddenvisibility xcomposite"
 
-DEPEND=">=kde-base/libkonq-${PV}:${SLOT}
-	>=kde-base/kdebase-data-${PV}:${SLOT}
+DEPEND=">=kde-apps/libkonq-${PV}:${SLOT}
+	>=kde-apps/kdebase-data-${PV}:${SLOT}
 	x11-libs/libXfixes
 	x11-libs/libXrender
 	x11-libs/libXtst

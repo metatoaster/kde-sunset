@@ -21,8 +21,8 @@ DESCRIPTION="Based on the $ECLASS eclass"
 HOMEPAGE="http://www.kde.org/"
 IUSE="debug elibc_FreeBSD"
 
-
-if [[ ${CATEGORY} == "kde-base" ]]; then
+#CYKER - KLUDGE KLUDGE KLUDGE FUCK YOU kde-apps
+if [[ ${CATEGORY} == "kde-base" || "${CATEGORY}" == "kde-apps" ]]; then
 	if [[ ${PV##*.} -lt 10 ]] ; then
 		# Keep old ebuilds as is
 		IUSE="${IUSE} kdeenablefinal"

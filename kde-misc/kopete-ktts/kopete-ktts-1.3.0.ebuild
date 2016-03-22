@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="=kde-base/kttsd-3.5*
-		=kde-base/kopete-3.5*"
+		=kde-apps/kopete-3.5*"
 RDEPEND="${DEPEND}"
 
 need-kde 3.5

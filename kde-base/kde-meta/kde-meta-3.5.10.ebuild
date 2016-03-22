@@ -14,18 +14,18 @@ IUSE="accessibility nls"
 
 RDEPEND="~kde-base/kdelibs-${PV}
 >=kde-base/kdeaddons-meta-${PV}:${SLOT}
->=kde-base/kdeadmin-meta-${PV}:${SLOT}
+>=kde-apps/kdeadmin-meta-${PV}:${SLOT}
 >=kde-base/kdebase-meta-${PV}:${SLOT}
 >=kde-base/kdeedu-meta-${PV}:${SLOT}
 >=kde-base/kdegames-meta-${PV}:${SLOT}
 >=kde-base/kdegraphics-meta-${PV}:${SLOT}
->=kde-base/kdemultimedia-meta-${PV}:${SLOT}
->=kde-base/kdenetwork-meta-${PV}:${SLOT}
->=kde-base/kdepim-meta-${PV}:${SLOT}
->=kde-base/kdetoys-meta-${PV}:${SLOT}
->=kde-base/kdeutils-meta-${PV}:${SLOT}
->=kde-base/kdeartwork-meta-${PV}:${SLOT}
->=kde-base/kdewebdev-meta-${PV}:${SLOT}
-accessibility? ( >=kde-base/kdeaccessibility-meta-${PV}:${SLOT} )
+>=kde-apps/kdemultimedia-meta-${PV}:${SLOT}
+>=kde-apps/kdenetwork-meta-${PV}:${SLOT}
+>=kde-apps/kdepim-meta-${PV}:${SLOT}
+>=kde-apps/kdetoys-meta-${PV}:${SLOT}
+>=kde-apps/kdeutils-meta-${PV}:${SLOT}
+>=kde-apps/kdeartwork-meta-${PV}:${SLOT}
+>=kde-apps/kdewebdev-meta-${PV}:${SLOT}
+accessibility? ( >=kde-apps/kdeaccessibility-meta-${PV}:${SLOT} )
 nls? ( >=kde-base/kde-i18n-${PV}:${SLOT} )
 !kde-base/kde:3.5"

@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="=kde-base/kwin-3.5*
-	=kde-base/konqueror-3.5*"
+	=kde-apps/konqueror-3.5*"
 DEPEND="${RDEPEND}"
 
 PATCHES=( "${FILESDIR}/${P}-glibc-2.10.patch" )

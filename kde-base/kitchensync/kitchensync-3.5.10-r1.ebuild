@@ -15,7 +15,7 @@ IUSE=""
 
 # See #262397 about libopensync dependency -- MvG
 DEPEND="=app-pda/libopensync-0.36*
-	>=kde-base/kontact-${PV}:${SLOT}
+	>=kde-apps/kontact-${PV}:${SLOT}
 	>=kde-base/libkcal-${PV}:${SLOT}"
 
 RDEPEND="${DEPEND}"

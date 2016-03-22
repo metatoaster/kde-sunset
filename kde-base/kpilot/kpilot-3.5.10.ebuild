@@ -14,7 +14,7 @@ DEPEND=">=app-pda/pilot-link-0.12.0
 		>=dev-libs/libmal-0.44
 >=kde-base/libkcal-${PV}:${SLOT}
 >=kde-base/libkdepim-${PV}:${SLOT}
->=kde-base/kontact-${PV}:${SLOT}"
+>=kde-apps/kontact-${PV}:${SLOT}"
 
 RDEPEND="${DEPEND}"
 

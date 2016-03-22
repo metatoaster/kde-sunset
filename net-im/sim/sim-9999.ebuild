@@ -23,7 +23,7 @@ IUSE="debug gpg +jabber kde msn +oscar sms spell ssl weather yahoo livejournal"
 
 # kdebase-data provides the icon "licq.png"
 RDEPEND="kde? ( kde-base/kdelibs:3.5[spell=]
-				kde-base/kdebase-data:3.5 )
+				kde-apps/kdebase-data:3.5 )
 		!kde? ( spell? ( app-text/aspell ) )
 		dev-qt/qt-meta:3
 		ssl? ( dev-libs/openssl )

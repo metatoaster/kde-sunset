@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE=""
 
-DEPEND="=kde-base/kcontrol-3.5*"
+DEPEND="=kde-apps/kcontrol-3.5*"
 
 need-kde 3.5
 

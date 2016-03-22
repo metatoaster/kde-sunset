@@ -10,7 +10,7 @@ DESCRIPTION="KDE Time tracker tool"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 RDEPEND=">=kde-base/libkcal-${PV}:${SLOT}
-	>=kde-base/kdepim-kresources-${PV}:${SLOT}
+	>=kde-apps/kdepim-kresources-${PV}:${SLOT}
 	>=kde-base/libkdepim-${PV}:${SLOT}
 	x11-libs/libXScrnSaver"
 

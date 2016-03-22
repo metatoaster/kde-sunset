@@ -17,7 +17,7 @@ KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="~app-office/koffice-libs-1.6.3_p20090204
-	~kde-base/kcontrol-3.5.10:3.5"
+	~kde-apps/kcontrol-3.5.10:3.5"
 RDEPEND="${DEPEND}"
 
 KMCOPYLIB="

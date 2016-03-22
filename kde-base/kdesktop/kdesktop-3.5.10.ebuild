@@ -15,16 +15,16 @@ IUSE="kdehiddenvisibility xscreensaver"
 
 DEPEND="x11-libs/libXext
 	x11-libs/libXcursor
-	>=kde-base/libkonq-${PV}:${SLOT}
-	>=kde-base/kcontrol-${PV}:${SLOT}
+	>=kde-apps/libkonq-${PV}:${SLOT}
+	>=kde-apps/kcontrol-${PV}:${SLOT}
 	xscreensaver? ( x11-proto/scrnsaverproto )"
 	# Requires the desktop background settings module,
 	# so until we separate the kcontrol modules into separate ebuilds :-),
 	# there's a dep here
 RDEPEND="${DEPEND}
 	>=kde-base/kcheckpass-${PV}:${SLOT}
-	>=kde-base/kdialog-${PV}:${SLOT}
-	>=kde-base/konqueror-${PV}:${SLOT}
+	>=kde-apps/kdialog-${PV}:${SLOT}
+	>=kde-apps/konqueror-${PV}:${SLOT}
 	xscreensaver? ( x11-libs/libXScrnSaver )"
 
 KMCOPYLIB="libkonq libkonq/"

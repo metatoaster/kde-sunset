@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="arts"
 
-DEPEND="kde-base/kopete:3.5"
+DEPEND="kde-apps/kopete:3.5"
 RDEPEND="${DEPEND}"
 need-kde 3.5
 

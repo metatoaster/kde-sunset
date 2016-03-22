@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="=kde-base/kcontrol-3.5*
-	=kde-base/kdialog-3.5*"
+RDEPEND="=kde-apps/kcontrol-3.5*
+	=kde-apps/kdialog-3.5*"
 
 need-kde 3

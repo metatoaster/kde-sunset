@@ -19,7 +19,7 @@ KEYWORDS="amd64 x86"
 IUSE="gstreamer xine mplayer"
 RESTRICT="nomirror"
 
-DEPEND="|| ( kde-base/kate kde-base/kdebase )
+DEPEND="|| ( kde-apps/kate kde-base/kdebase )
         gstreamer? ( media-libs/gstreamer )
         xine? ( media-libs/xine-lib )
         mplayer? ( media-video/mplayer )"

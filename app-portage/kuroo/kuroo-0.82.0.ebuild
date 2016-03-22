@@ -20,7 +20,7 @@ DEPEND="dev-db/sqlite"
 RDEPEND="${DEPEND}
 	app-portage/gentoolkit
 	kde-misc/kdiff3
-	kde-base/kdesu"
+	kde-apps/kdesu"
 
 need-kde 3.5
 

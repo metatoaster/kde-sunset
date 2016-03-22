@@ -11,7 +11,7 @@ IUSE="akode alsa"
 
 DEPEND="akode? ( media-libs/akode )
 	alsa? ( media-libs/alsa-lib )
-	|| ( >=kde-base/kcontrol-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
+	|| ( >=kde-apps/kcontrol-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
 	!arts? ( !alsa? ( media-libs/akode ) )"
 RDEPEND="${DEPEND}
 	|| ( app-accessibility/festival

@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ppc ~sparc x86"
 IUSE="arts"
 
-RDEPEND="=kde-base/konsole-3.5*"
+RDEPEND="=kde-apps/konsole-3.5*"
 DEPEND="${RDEPEND}"
 
 need-kde 3.3

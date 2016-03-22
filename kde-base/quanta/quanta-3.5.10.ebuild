@@ -29,12 +29,12 @@ pkg_postinst() {
 	elog "${P} has some optional dependencies which you might want to emerge:"
 	elog "- app-text/htmltidy for HTML syntax checking."
 	elog "- app-crypt/gnupg for previewing browser configuration."
-	elog "- kde-base/kompare for comparing files by content."
+	elog "- kde-apps/kompare for comparing files by content."
 	elog "- kde-base/cervisia for enabling the CVS management plugin."
 	elog "- kde-base/kfilereplace for searching and replacing in files."
-	elog "- kde-base/kimagemapeditor for editing HTML image maps."
-	elog "- kde-base/klinkstatus for link validity checking."
+	elog "- kde-apps/kimagemapeditor for editing HTML image maps."
+	elog "- kde-apps/klinkstatus for link validity checking."
 	elog "- kde-base/kxsldbg for XSLT debugging."
-	elog "- kde-base/kommander for the QuickStart dialogue and other scripted dialogues."
+	elog "- kde-apps/kommander for the QuickStart dialogue and other scripted dialogues."
 	echo
 }

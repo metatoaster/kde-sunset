@@ -26,7 +26,7 @@ RDEPEND="x11-apps/xmessage
 	>=kde-base/ksmserver-${PV}:${SLOT}
 	>=kde-base/kwin-${PV}:${SLOT}
 	>=kde-base/kpersonalizer-${PV}:${SLOT}
-	>=kde-base/kreadconfig-${PV}:${SLOT}
+	>=kde-apps/kreadconfig-${PV}:${SLOT}
 	>=kde-base/ksplashml-${PV}:${SLOT}"
 
 PATCHES=( "${FILESDIR}/${PN}-3.5-gentoo.patch" )

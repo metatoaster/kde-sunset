@@ -20,7 +20,7 @@ SLOT="3.5"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND="kde-base/konsole:3.5"
+DEPEND="kde-apps/konsole:3.5"
 RDEPEND="${DEPEND}
 	!kde-misc/yakuake:0
 "

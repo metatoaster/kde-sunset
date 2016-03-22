@@ -11,7 +11,7 @@ xxdiff  - dev-util/xxdiff
 krename - kde-misc/krename
 kmail   - kde-base/kmail
 kget    - kde-base/kget
-kdesu   - kde-base/kdesu
+kdesu   - kde-apps/kdesu
 
 Packers
 arj     - app-arch/arj

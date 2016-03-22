@@ -29,7 +29,7 @@ DEPEND="!<net-p2p/ktorrent-2.2.8-r2
 	>=dev-libs/geoip-1.4.0-r1
 	avahi? ( >=net-dns/avahi-0.6.16-r1[qt3] )"
 RDEPEND="${DEPEND}
-	kde-base/kdebase-kioslaves:3.5"
+	kde-apps/kdebase-kioslaves:3.5"
 
 S="${WORKDIR}/${MY_P}"
 

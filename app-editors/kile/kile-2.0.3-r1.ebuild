@@ -68,7 +68,7 @@ pkg_postinst() {
 	elog "- Asymptote                    - media-gfx/asymptote"
 	elog "- Tex4ht (LaTeX to Web)        - dev-tex/tex4ht"
 	elog "- Lilypond (Music Typesetting) - media-sound/lilypond"
-	elog "- Web-Browser (any of)         - kde-base/konqueror"
+	elog "- Web-Browser (any of)         - kde-apps/konqueror"
 	elog "                               - www-client/mozilla-firefox"
 	elog "                               - www-client/seamonkey"
 	elog "For viewing BibTeX files:"

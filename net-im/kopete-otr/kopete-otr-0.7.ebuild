@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=net-libs/libotr-3.1.0
-	kde-base/kopete:3.5"
+	kde-apps/kopete:3.5"
 
 need-kde 3.5
 
