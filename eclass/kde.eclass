@@ -235,6 +235,13 @@ kde_src_prepare() {
 		ln -s "${WORKDIR}/admin" "${KDE_S}/admin" || die "Unable to symlink the new admin/ directory"
 		eend 0
 	fi
+
+	# >=autoconf-archive-2016.03.20 tries to include
+	# ax_cxx_compile_stdcxx.m4 which these old kde packages seek in ${S}.
+	# Create a symlink so we don't break the build.
+	if [[ -f "/usr/share/aclocal/ax_cxx_compile_stdcxx.m4" ]] ; then
+		ln -s /usr/share/aclocal/ax_cxx_compile_stdcxx.m4 "${S}" || die
+	fi
 }
 
 # @FUNCTION: kde_src_configure
