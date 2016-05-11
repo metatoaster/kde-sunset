@@ -28,7 +28,7 @@ RDEPEND=">=kde-base/kdebase-startkde-${PV}:${SLOT}
 >=kde-apps/kdialog-${PV}:${SLOT}
 >=kde-base/kdm-${PV}:${SLOT}
 >=kde-apps/kfind-${PV}:${SLOT}
->=kde-base/khelpcenter-${PV}:${SLOT}
+>=kde-apps/khelpcenter-${PV}:${SLOT}
 >=kde-base/khotkeys-${PV}:${SLOT}
 >=kde-base/kicker-${PV}:${SLOT}
 >=kde-apps/kdebase-kioslaves-${PV}:${SLOT}

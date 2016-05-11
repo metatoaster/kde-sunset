@@ -74,7 +74,7 @@ kde-base/kdebase kde-apps/kdesu
 kde-base/kdebase kde-apps/kdialog
 kde-base/kdebase kde-base/kdm
 kde-base/kdebase kde-apps/kfind
-kde-base/kdebase kde-base/khelpcenter
+kde-base/kdebase kde-apps/khelpcenter
 kde-base/kdebase kde-base/khotkeys
 kde-base/kdebase kde-base/kicker
 kde-base/kdebase kde-base/klipper

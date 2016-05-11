@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 	>=kde-base/kcminit-${PV}:${SLOT}
 	>=kde-apps/kdebase-data-${PV}:${SLOT}
 	>=kde-apps/kdesu-${PV}:${SLOT}
-	>=kde-base/khelpcenter-${PV}:${SLOT}
+	>=kde-apps/khelpcenter-${PV}:${SLOT}
 	>=kde-base/khotkeys-${PV}:${SLOT}"
 
 KMEXTRACTONLY="kwin/kwinbindings.cpp
