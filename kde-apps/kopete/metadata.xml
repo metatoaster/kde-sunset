@@ -29,5 +29,5 @@
 	<flag name="winpopup">Enable pop-up messages sending on windows. (same as good old "net send" messages ;])</flag>
 	<flag name="yahoo">Enable yahoo protocol support.</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>

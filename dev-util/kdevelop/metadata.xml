@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>kde</herd>
+  <!-- maintainer-needed -->
   <use>
     <flag name="ada">Support for the Ada programming language.</flag>
     <flag name="clearcase">Support for the ClearCase version control system.</flag>

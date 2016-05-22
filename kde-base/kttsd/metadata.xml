@@ -4,5 +4,5 @@
 <use>
 	<flag name="akode">Support for the aKode audio-decoding frame-work.</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>

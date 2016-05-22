@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>kde</herd>
+	<!-- maintainer-needed -->
 	<longdescription lang="en">
 		QuadKonsole is a program which embeds 4 Konsoles (other numbers can be
 		specified on the command-line). This way you save screen real estate,

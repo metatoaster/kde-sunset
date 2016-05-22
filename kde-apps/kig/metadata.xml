@@ -4,5 +4,5 @@
 <use>
 	<flag name="kig-scripting">Support Python scripting</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>

@@ -4,5 +4,5 @@
 <use>
 	<flag name="gnokii">Address synchronization with mobile phones via app-mobilephone/gnokii</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>

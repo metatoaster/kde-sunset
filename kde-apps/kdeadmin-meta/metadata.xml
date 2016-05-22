@@ -4,5 +4,5 @@
 <use>
 	<flag name="lilo">Install <pkg>lilo-config</pkg>, a frontend for the lilo boot loader</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>

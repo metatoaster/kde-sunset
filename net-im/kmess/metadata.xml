@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 <use>
 	<flag name="konqueror">Enable integration with konqueror</flag>
 </use>

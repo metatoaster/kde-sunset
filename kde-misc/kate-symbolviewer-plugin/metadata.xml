@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>kde</herd>
+	<!-- maintainer-needed -->
 	<longdescription lang="en">
 		Kate Symbol Viewer is a sidebar plugin for Kate that has been
 		integrated in KDE since version 3.2.0.

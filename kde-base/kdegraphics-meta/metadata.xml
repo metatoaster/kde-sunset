@@ -4,5 +4,5 @@
 <use>
 	<flag name="povray">Install <pkg>kde-base/kpovmodeler</pkg>, which needs POV-Ray</flag>
 </use>
-<herd>kde</herd>
+<!-- maintainer-needed -->
 </pkgmetadata>
