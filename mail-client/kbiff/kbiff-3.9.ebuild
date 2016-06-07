@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/mail-client/kbiff/kbiff-3.9.ebuild,v 1.2 2009/10/13 19:30:37 ssuominen Exp $
 
-ARTS_REQUIRED=never
 EAPI=2
+
+ARTS_REQUIRED=never
 inherit kde
 
 DESCRIPTION="KDE new mail notification utility (biff)"
