@@ -1,4 +1,4 @@
-#!/sbin/runscript
+#!/sbin/openrc-run
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-misc/mDNSResponder/files/mDNSResponderPosix.init.d,v 1.2 2011/10/23 18:15:50 polynomial-c Exp $

@@ -1,4 +1,4 @@
-#!/sbin/runscript
+#!/sbin/openrc-run
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-misc/mDNSResponder/files/dnsextd.init.d,v 1.3 2011/10/30 15:28:12 polynomial-c Exp $
