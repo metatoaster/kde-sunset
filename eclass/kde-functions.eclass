@@ -258,7 +258,7 @@ kde-base/kdepim kde-base/libkpimidentities
 kde-base/kdepim kde-base/libksieve
 kde-base/kdepim kde-base/mimelib
 kde-base/kdepim kde-base/networkstatus
-kde-base/kdesdk kde-apps/cervisia
+kde-base/kdesdk kde-base/cervisia
 kde-base/kdesdk kde-apps/kapptemplate
 kde-base/kdesdk kde-base/kbabel
 kde-base/kdesdk kde-base/kbugbuster
