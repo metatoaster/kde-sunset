@@ -29,7 +29,7 @@ IUSE="kde"
 DEPEND="!<app-text/kchmviewer-3.1_p2-r1
 	dev-qt/qt-meta:3
 	dev-libs/chmlib
-	kde? ( kde-base/kdelibs:3.5 )"
+	kde? ( kde-frameworks/kdelibs:3.5 )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-2)

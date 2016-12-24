@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 
-DEPEND="=kde-base/kdelibs-3.5*"
+DEPEND="=kde-frameworks/kdelibs-3.5*"
 
 need-kde 3.5
 

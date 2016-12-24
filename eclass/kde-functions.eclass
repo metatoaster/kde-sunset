@@ -391,14 +391,14 @@ need-kde() {
 		# If we're a kde-base package, we need at least our own version of kdelibs.
 		# Note: we only set RDEPEND if it is already set, otherwise
 		# we break packages relying on portage copying RDEPEND from DEPEND.
-		DEPEND="${DEPEND} ~kde-base/kdelibs-$PV"
-		RDEPEND="${x_DEPEND} ~kde-base/kdelibs-${PV}"
+		DEPEND="${DEPEND} ~kde-frameworks/kdelibs-$PV"
+		RDEPEND="${x_DEPEND} ~kde-frameworks/kdelibs-${PV}"
 	else
 		# Things outside kde-base need a minimum version,
-		# but kde-base/kdelibs:kde-4 mustn't satisfy it.
+		# but kde-frameworks/kdelibs:kde-4 mustn't satisfy it.
 		min-kde-ver ${KDEVER}
-		DEPEND="${DEPEND} =kde-base/kdelibs-3.5*"
-		RDEPEND="${x_DEPEND} =kde-base/kdelibs-3.5*"
+		DEPEND="${DEPEND} =kde-frameworks/kdelibs-3.5*"
+		RDEPEND="${x_DEPEND} =kde-frameworks/kdelibs-3.5*"
 	fi
 
 	qtver-from-kdever ${KDEVER}

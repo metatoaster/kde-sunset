@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-3.5.10-r6.ebuild,v 1.8 2009/08/01 07:12:04 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-frameworks/kdelibs/kdelibs-3.5.10-r6.ebuild,v 1.8 2009/08/01 07:12:04 ssuominen Exp $
 
 EAPI="1"
 inherit kde flag-o-matic eutils multilib
@@ -114,7 +114,7 @@ pkg_setup() {
 		echo ""
 		elog "On some setups, which rely on the correct update of utmp records, not using"
 		elog "utempter might not update them correctly. If you experience unexpected"
-		elog "behaviour, try to rebuild kde-base/kdelibs with utempter use-flag enabled."
+		elog "behaviour, try to rebuild kde-frameworks/kdelibs with utempter use-flag enabled."
 		echo ""
 	fi
 }

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-3.5.10-r6.ebuild,v 1.8 2009/08/01 07:12:04 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-frameworks/kdelibs/kdelibs-3.5.10-r6.ebuild,v 1.8 2009/08/01 07:12:04 ssuominen Exp $
 
 EAPI="1"
 inherit kde flag-o-matic eutils multilib
@@ -77,7 +77,6 @@ RDEPEND="
 	)
 	tiff? ( media-libs/tiff )
 	utempter? ( sys-libs/libutempter )
-	>=x11-themes/hicolor-icon-theme-0.12
 "
 
 DEPEND="${RDEPEND}
@@ -99,8 +98,6 @@ PDEPEND="
 # Testing code is rather broken and merely for developer purposes, so disable it.
 RESTRICT="test"
 
-PATCHES=( "${FILESDIR}/${PN}-p15-r1074156.patch" )
-
 pkg_setup() {
 	if use legacyssl ; then
 		echo ""
@@ -114,7 +111,7 @@ pkg_setup() {
 		echo ""
 		elog "On some setups, which rely on the correct update of utmp records, not using"
 		elog "utempter might not update them correctly. If you experience unexpected"
-		elog "behaviour, try to rebuild kde-base/kdelibs with utempter use-flag enabled."
+		elog "behaviour, try to rebuild kde-frameworks/kdelibs with utempter use-flag enabled."
 		echo ""
 	fi
 }
@@ -147,6 +144,9 @@ src_unpack() {
 	# patch that fixes kde4 in menus (adapted from archlinux)
 	epatch "${FILESDIR}/${P}-kde4-apps.patch"
 
+	#Fix glibc-2.10 compilation ( Bug 270404 )
+	epatch "${FILESDIR}/${P}-glibc-2.10.patch"
+
 	# bug 247817
 	epatch "${FILESDIR}/${PN}-3.5-perl.xml.patch"
 
@@ -156,11 +156,9 @@ src_unpack() {
 	# bug 243476
 	epatch "${FILESDIR}/${P}-khtml.patch"
 
-	# googlemaps
-	epatch "${FILESDIR}/${P}-62_fix_googlemaps_backport.diff"
-
-	# bug 267018
-	sed -i '/^SUBDIRS/s/ hicolor / /' pics/Makefile.{am,in}
+        # bug 271372 + googlemaps
+        epatch "${FILESDIR}/${P}-62_fix_googlemaps_backport.diff"
+        epatch "${FILESDIR}/${P}-63_fixed-layout-table.diff"
 }
 
 src_compile() {

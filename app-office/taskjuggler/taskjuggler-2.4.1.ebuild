@@ -18,7 +18,7 @@ SLOT="0"
 
 # Otherwise compilation will break for amd64 or when using -Os
 DEPEND="dev-qt/qt-meta:3
-	kde? ( kde-base/kdelibs:3.5
+	kde? ( kde-frameworks/kdelibs:3.5
 		kde-base/libkdepim:3.5
 		kde-base/libkcal:3.5 )
 	app-text/openjade

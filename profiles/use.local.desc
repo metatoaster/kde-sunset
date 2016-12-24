@@ -60,8 +60,8 @@ kde-base/kalzium:solver - Enable the equation solver
 kde-base/kcontrol:logitech-mouse -  Build the Control Center module to configure logitech mice 
 kde-base/kmilo:pbbuttonsd - Support for the Apple PMU daemon pbbuttonsd
 kde-base/kaddressbook:gnokii - Address synchronization with mobile phones via app-mobilephone/gnokii
-kde-base/kdelibs:legacyssl - Support for some deprecated ciphers. Don't use this flag unless you really need it
-kde-base/kdelibs:utempter - Records user logins. Useful on multi-user systems
+kde-frameworks/kdelibs:legacyssl - Support for some deprecated ciphers. Don't use this flag unless you really need it
+kde-frameworks/kdelibs:utempter - Records user logins. Useful on multi-user systems
 kde-base/kdeadmin-meta:lilo - Install lilo-config, a frontend for the lilo boot loader
 kde-base/kdvi:kpathsea - Enable integration with kpathsea search library (TeX related)
 kde-base/arts:artswrappersuid - Set artswrapper suid for realtime playing, which is a security hazard

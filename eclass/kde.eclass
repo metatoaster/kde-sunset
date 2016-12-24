@@ -98,20 +98,20 @@ kde_pkg_setup() {
 	if [[ ${PN} != "arts" ]] && [[ ${PN} != "kdelibs" ]] ; then
 		if [[ ${ARTS_REQUIRED} == 'yes' ]] || \
 			( [[ ${ARTS_REQUIRED} != "never" ]] && use arts )  ; then
-			if ! built_with_use =kde-base/kdelibs-3.5* arts ; then
+			if ! built_with_use =kde-frameworks/kdelibs-3.5* arts ; then
 				if has arts ${IUSE} && use arts; then
 					eerror "You are trying to compile ${CATEGORY}/${PF} with the \"arts\" USE flag enabled."
 				else
 					eerror "The package ${CATEGORY}/${PF} you're trying to merge requires aRTs."
 				fi
-				eerror "However, $(best_version =kde-base/kdelibs-3.5*) was compiled with the arts USE flag disabled."
+				eerror "However, $(best_version =kde-frameworks/kdelibs-3.5*) was compiled with the arts USE flag disabled."
 				eerror
 				if has arts ${IUSE} && use arts; then
 					eerror "You must either disable this USE flag, or recompile"
 				else
 					eerror "To build this package you have to recompile"
 				fi
-				eerror "$(best_version =kde-base/kdelibs-3.5*) with the arts USE flag enabled."
+				eerror "$(best_version =kde-frameworks/kdelibs-3.5*) with the arts USE flag enabled."
 				die "kdelibs missing arts"
 			fi
 		fi

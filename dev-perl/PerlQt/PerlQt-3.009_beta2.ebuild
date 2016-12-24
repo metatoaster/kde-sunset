@@ -24,7 +24,7 @@ S=${WORKDIR}/${P/_beta2/}
 # because libsmoke comes with kdebindings-3.1
 
 DEPEND="=dev-qt/qt-meta-3*
-	kde-base/kdelibs
+	kde-frameworks/kdelibs
 	dev-lang/perl"
 
 src_unpack() {

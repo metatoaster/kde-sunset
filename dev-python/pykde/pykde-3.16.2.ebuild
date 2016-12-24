@@ -20,7 +20,7 @@ IUSE="debug doc examples"
 
 RDEPEND=">=dev-python/sip-4.7.9
 	>=dev-python/PyQt-3.17.6
-	=kde-base/kdelibs-3.5*
+	=kde-frameworks/kdelibs-3.5*
 	!kde-base/pykde"
 DEPEND="${RDEPEND} =kde-apps/konsole-3.5*"
 

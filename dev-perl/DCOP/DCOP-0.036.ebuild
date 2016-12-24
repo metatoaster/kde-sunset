@@ -8,7 +8,7 @@ DESCRIPTION="Extensible inheritable Perl class to dcop."
 SRC_URI="mirror://cpan/authors/id/J/JC/JCMULLER/${P}.tar.gz"
 HOMEPAGE="http://www.cpan.org/modules/by-authors/id/J/JC/JCMULLER/${P}.readme"
 
-RDEPEND="kde-base/kdelibs"
+RDEPEND="kde-frameworks/kdelibs"
 
 IUSE=""
 

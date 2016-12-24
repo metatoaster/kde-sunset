@@ -22,7 +22,7 @@ IUSE="debug gpg +jabber kde msn +oscar sms spell ssl weather yahoo livejournal"
 # inside /etc/portage/env/net-im/sim to disable transparent plugin.
 
 # kdebase-data provides the icon "licq.png"
-RDEPEND="kde? ( kde-base/kdelibs:3.5[spell=]
+RDEPEND="kde? ( kde-frameworks/kdelibs:3.5[spell=]
 				kde-apps/kdebase-data:3.5 )
 		!kde? ( spell? ( app-text/aspell ) )
 		dev-qt/qt-meta:3

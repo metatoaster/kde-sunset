@@ -25,7 +25,7 @@ RDEPEND=">=sys-apps/hal-0.5.4
 	x11-libs/libXScrnSaver
 	x11-libs/libXext
 	x11-libs/libXtst
-	=kde-base/kdelibs-3*"
+	=kde-frameworks/kdelibs-3*"
 DEPEND="${RDEPEND}
 	x11-proto/scrnsaverproto"
 

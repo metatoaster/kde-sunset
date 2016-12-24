@@ -12,7 +12,7 @@ SLOT="3.5"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="accessibility nls"
 
-RDEPEND="~kde-base/kdelibs-${PV}
+RDEPEND="~kde-frameworks/kdelibs-${PV}
 >=kde-base/kdeaddons-meta-${PV}:${SLOT}
 >=kde-apps/kdeadmin-meta-${PV}:${SLOT}
 >=kde-base/kdebase-meta-${PV}:${SLOT}

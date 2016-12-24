@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="kde"
 
-RDEPEND="kde? ( =kde-base/kdelibs-3* )"
+RDEPEND="kde? ( =kde-frameworks/kdelibs-3* )"
 DEPEND="${RDEPEND}"
 
 src_unpack() {

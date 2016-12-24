@@ -17,7 +17,7 @@ need-kde 3.5
 SLOT="0"
 
 DEPEND="net-misc/networkmanager
-	=kde-base/kdelibs-3.5*
+	=kde-frameworks/kdelibs-3.5*
 	>=dev-libs/dbus-qt3-old-0.9
 	sys-apps/hal
 	net-wireless/wireless-tools
