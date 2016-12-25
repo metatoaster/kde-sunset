@@ -4,4 +4,4 @@
 
 # Lars Wendler <polynomial-c@gentoo.org> (25 Dec 2016)
 # Broken with newer cups releases
-kde-frameworks/kdelibs cups
+=kde-frameworks/kdelibs-3* cups
