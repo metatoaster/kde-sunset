@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/knemo/knemo-0.4.8.ebuild,v 1.5 2007/07/30 13:19:16 gustavoz Exp $
+# $Id$
 
 EAPI="1"
 
@@ -24,7 +24,7 @@ RDEPEND="kernel_linux? ( sys-apps/net-tools )
 need-kde 3.5
 
 src_unpack() {
-        kde_src_unpack
+	kde_src_unpack
 	epatch "${FILESDIR}/${P}-KILO.patch"
 }
 
