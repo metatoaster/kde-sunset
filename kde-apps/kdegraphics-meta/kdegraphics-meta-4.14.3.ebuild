@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-inherit kde4-meta-pkg
+inherit kde4-meta-pkg kde4-functions-extra
 
 DESCRIPTION="kdegraphics - merge this to pull in all kdegraphics-derived packages"
 HOMEPAGE="https://www.kde.org/applications/graphics/"
@@ -15,7 +15,7 @@ RDEPEND="
 	$(add_kdeapps_dep kamera)
 	$(add_kdeapps_dep kcolorchooser)
 	$(add_kdeapps_dep kdegraphics-mobipocket)
-	$(add_kdeapps_dep kgamma)
+	$(add_kdeplasma_dep kgamma)
 	$(add_kdeapps_dep kolourpaint)
 	$(add_kdeapps_dep kruler)
 	$(add_kdeapps_dep ksnapshot)
