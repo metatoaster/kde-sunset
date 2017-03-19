@@ -7,7 +7,7 @@ EAPI=5
 MY_PN="${PN}-kde"
 DECLARATIVE_REQUIRED="always"
 KDE_LINGUAS="ar bg bs ca cs da de es fi fr gl hu it ja ko lt nl pl pt pt_BR ro ru sk sv tr uk"
-inherit kde4-base
+inherit kde4-base kde4-functions-extra
 
 if [[ ${KDE_BUILD_TYPE} != live ]]; then
 	MY_P="${MY_PN}-${PV}"
@@ -33,7 +33,7 @@ COMMON_DEPEND="
 	x11-libs/libXtst
 "
 RDEPEND="${COMMON_DEPEND}
-	$(add_kdebase_dep plasma-workspace)
+	$(add_kdeplasma_dep plasma-workspace)
 	app-crypt/qca:2[ssl]
 "
 DEPEND="${COMMON_DEPEND}
