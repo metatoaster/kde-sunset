@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-inherit kde4-meta-pkg
+inherit kde4-meta-pkg kde4-functions-extra
 
 DESCRIPTION="KDE - merge this to pull in all split kde-base/* packages"
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
@@ -28,6 +28,6 @@ RDEPEND="
 		$(add_kdeapps_dep kdesdk-meta)
 		$(add_kdeapps_dep kdewebdev-meta)
 	)
-	!minimal? ( $(add_kdebase_dep kdeplasma-addons) )
+	!minimal? ( $(add_kdeplasma_dep kdeplasma-addons) )
 "
 REQUIRED_USE="minimal? ( !kdepim )"
