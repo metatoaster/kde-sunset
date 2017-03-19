@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-inherit kde4-meta-pkg
+inherit kde4-meta-pkg kde4-functions-extra
 
 DESCRIPTION="Merge this to pull in all kdebase-derived packages"
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
@@ -55,7 +55,7 @@ RDEPEND="
 		$(add_kdebase_dep libtaskmanager '' 4.11)
 		$(add_kdeapps_dep plasma-apps)
 		$(add_kdebase_dep plasma-workspace '' 4.11)
-		$(add_kdebase_dep powerdevil '' 4.11)
+		$(add_kdeplasma_dep powerdevil '' 4.11)
 		$(add_kdebase_dep qguiplatformplugin_kde '' 4.11)
 		$(add_kdebase_dep solid-actions-kcm '' 4.11)
 		$(add_kdebase_dep systemsettings '' 4.11)
