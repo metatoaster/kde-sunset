@@ -12,8 +12,7 @@ KEYWORDS="amd64 ~arm x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
-	!<kde-base/kactivities-4.13.3-r1
-	!kde-frameworks/kactivities
+	!<kde-frameworks/kactivities-4.13.3-r1
 "
 
 S=${WORKDIR}/${KMNAME}-${PV}

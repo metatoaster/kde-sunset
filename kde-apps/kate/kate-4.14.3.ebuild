@@ -7,7 +7,7 @@ KDE_HANDBOOK="optional"
 KMNAME="kate"
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
-inherit python-single-r1 kde4-meta
+inherit python-single-r1 kde4-meta kde4-functions-extra
 
 DESCRIPTION="Kate is an MDI texteditor"
 HOMEPAGE="https://www.kde.org/applications/utilities/kate http://kate-editor.org"
@@ -17,7 +17,7 @@ IUSE="debug python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 DEPEND="
-	$(add_kdebase_dep kactivities '' 4.13)
+	$(add_kdeframeworks_dep kactivities '' 4.13)
 	dev-libs/libxml2
 	dev-libs/libxslt
 	dev-libs/qjson
