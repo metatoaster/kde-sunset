@@ -50,7 +50,7 @@ RDEPEND="
 		$(add_kdeplasma_dep kwrited '' 4.11)
 		$(add_kdeplasma_dep libkworkspace '' 4.11)
 		$(add_kdeplasma_dep liboxygenstyle '' 4.11)
-		$(add_kdebase_dep libplasmaclock '' 4.11)
+		$(add_kdeplasma_dep libplasmaclock '' 4.11)
 		$(add_kdeplasma_dep libplasmagenericshell '' 4.11)
 		$(add_kdebase_dep libtaskmanager '' 4.11)
 		$(add_kdeapps_dep plasma-apps)
