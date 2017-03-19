@@ -23,7 +23,7 @@ KMEXTRA="
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	bluetooth? ( net-wireless/bluedevil:4 )
+	bluetooth? ( kde-plasma/bluedevil:4 )
 	networkmanager? ( || ( kde-misc/plasma-nm kde-misc/networkmanagement kde-plasma/plasma-nm ) )
 "
 
