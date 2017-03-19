@@ -34,7 +34,7 @@ RDEPEND="
 		$(add_kdebase_dep kdebase-startkde '' 4.11)
 		$(add_kdeapps_dep kdepasswd)
 		$(add_kdebase_dep kephal '' 4.11)
-		$(add_kdebase_dep khotkeys '' 4.11)
+		$(add_kdeplasma_dep khotkeys '' 4.11)
 		$(add_kdebase_dep kinfocenter '' 4.11)
 		$(add_kdebase_dep klipper '' 4.11)
 		$(add_kdeplasma_dep kmenuedit '' 4.11)
