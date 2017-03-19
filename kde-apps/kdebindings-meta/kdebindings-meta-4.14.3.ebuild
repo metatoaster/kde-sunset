@@ -20,7 +20,7 @@ RDEPEND="
 	)
 	python? (
 		$(add_kdeapps_dep kross-interpreters)
-		$(add_kdebase_dep pykde4)
+		$(add_kdeapps_dep pykde4)
 	)
 	ruby? (
 		$(add_kdebase_dep korundum)

@@ -23,7 +23,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}
 	$(add_kdeapps_dep kross-interpreters "${PYTHON_USEDEP}")
-	$(add_kdebase_dep pykde4 "${PYTHON_USEDEP}")
+	$(add_kdeapps_dep pykde4 "${PYTHON_USEDEP}")
 "
 
 pkg_setup() {

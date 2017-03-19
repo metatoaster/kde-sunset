@@ -17,7 +17,7 @@ IUSE="bluetooth"
 
 DEPEND=">=net-misc/anyremote-4.4[bluetooth?]
 	 dev-python/PyQt4[X]
-	 kde-base/pykde4
+	 kde-apps/pykde4
 	 bluetooth? ( dev-python/pybluez )"
 RDEPEND="${DEPEND}"
 
