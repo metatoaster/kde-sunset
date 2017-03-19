@@ -6,7 +6,7 @@ EAPI=5
 
 KDE_HANDBOOK="optional"
 OPENGL_REQUIRED="always"
-inherit kde4-base
+inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="KDE image viewer"
 HOMEPAGE="
@@ -29,7 +29,7 @@ DEPEND="
 	virtual/jpeg:0
 	x11-libs/libX11
 	kipi? ( $(add_kdeapps_dep libkipi) )
-	semantic-desktop? ( $(add_kdebase_dep baloo) )
+	semantic-desktop? ( $(add_kdeframeworks_dep baloo) )
 "
 RDEPEND="${DEPEND}"
 
