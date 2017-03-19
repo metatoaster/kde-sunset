@@ -37,7 +37,7 @@ RDEPEND="
 		$(add_kdebase_dep khotkeys '' 4.11)
 		$(add_kdebase_dep kinfocenter '' 4.11)
 		$(add_kdebase_dep klipper '' 4.11)
-		$(add_kdebase_dep kmenuedit '' 4.11)
+		$(add_kdeplasma_dep kmenuedit '' 4.11)
 		$(add_kdebase_dep krunner '' 4.11)
 		$(add_kdebase_dep kscreensaver '' 4.11)
 		$(add_kdebase_dep ksmserver '' 4.11)
