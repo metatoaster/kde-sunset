@@ -46,7 +46,7 @@ COMMONDEPEND="
 	>=net-libs/libktorrent-${LIBKT_VERSION_MIN}:4
 	infowidget? ( dev-libs/geoip )
 	mediaplayer? ( >=media-libs/taglib-1.5 )
-	plasma? ( $(add_kdebase_dep libtaskmanager) )
+	plasma? ( $(add_kdeplasma_dep libtaskmanager) )
 	rss? ( $(add_kdeapps_dep kdepimlibs) )
 	search? (
 		$(add_kdebase_dep kdelibs webkit 4.14.22)
