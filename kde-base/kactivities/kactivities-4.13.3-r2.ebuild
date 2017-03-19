@@ -6,7 +6,7 @@ EAPI=5
 
 DECLARATIVE_REQUIRED="always"
 EGIT_BRANCH="KDE/4.13"
-inherit kde4-base
+inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="KDE Activity Manager"
 
@@ -14,7 +14,7 @@ KEYWORDS="amd64 ~arm x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
-	|| ( $(add_kdebase_dep kactivitymanagerd) <kde-frameworks/kactivities-5.20.0:5 kde-plasma/kactivitymanagerd:5 )
+	|| ( $(add_kdeplasma_dep kactivitymanagerd) <kde-frameworks/kactivities-5.20.0:5 kde-plasma/kactivitymanagerd:5 )
 "
 
 src_configure() {
