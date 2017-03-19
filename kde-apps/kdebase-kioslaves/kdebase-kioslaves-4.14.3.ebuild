@@ -7,7 +7,7 @@ EAPI=5
 KDE_HANDBOOK="optional"
 KMNAME="kde-runtime"
 KMMODULE="kioslave"
-inherit kde4-meta
+inherit kde4-meta kde4-functions-extra
 
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 DESCRIPTION="kioslave: the kde VFS framework - kioslave plugins present a filesystem-like view of arbitrary data"
@@ -26,7 +26,7 @@ DEPEND="
 	sftp? ( >=net-libs/libssh-0.4.0:=[sftp] )
 "
 RDEPEND="${DEPEND}
-	$(add_kdebase_dep kdelibs 'bzip2?,lzma?')
+	$(add_kdeframeworks_dep kdelibs 'bzip2?,lzma?')
 	$(add_kdeapps_dep kdialog)
 	virtual/ssh
 	!aqua? ( !kernel_SunOS? ( virtual/eject ) )

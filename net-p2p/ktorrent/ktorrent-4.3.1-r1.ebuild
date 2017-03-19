@@ -49,7 +49,7 @@ COMMONDEPEND="
 	plasma? ( $(add_kdeplasma_dep libtaskmanager) )
 	rss? ( $(add_kdeapps_dep kdepimlibs) )
 	search? (
-		$(add_kdebase_dep kdelibs webkit 4.14.22)
+		$(add_kdeframeworks_dep kdelibs webkit 4.14.22)
 		dev-qt/qtwebkit:4
 	)
 	shutdown? ( $(add_kdeplasma_dep libkworkspace) )

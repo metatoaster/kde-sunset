@@ -5,7 +5,7 @@
 EAPI=5
 
 KDE_HANDBOOK="optional"
-inherit kde4-base
+inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="KDE multi-protocol IM client"
 HOMEPAGE="https://kopete.kde.org https://www.kde.org/applications/internet/kopete"
@@ -64,7 +64,7 @@ sms testbed winpopup +xmpp yahoo zeroconf"
 IUSE="${IUSE} ${PLUGINS} ${PROTOCOLS}"
 
 COMMONDEPEND="
-	$(add_kdebase_dep kdelibs 'zeroconf?')
+	$(add_kdeframeworks_dep kdelibs 'zeroconf?')
 	$(add_kdeapps_dep kdepimlibs)
 	dev-libs/libpcre
 	>=dev-qt/qtgui-4.4.0:4[mng]
