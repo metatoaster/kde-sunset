@@ -30,7 +30,7 @@ else
 	LIBKT_VERSION_MAX="99999999"
 fi
 
-inherit kde4-base
+inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="A BitTorrent program for KDE"
 HOMEPAGE="http://ktorrent.pwsp.net/"
@@ -52,7 +52,7 @@ COMMONDEPEND="
 		$(add_kdebase_dep kdelibs webkit 4.14.22)
 		dev-qt/qtwebkit:4
 	)
-	shutdown? ( $(add_kdebase_dep libkworkspace) )
+	shutdown? ( $(add_kdeplasma_dep libkworkspace) )
 "
 DEPEND="${COMMONDEPEND}
 	dev-libs/boost
