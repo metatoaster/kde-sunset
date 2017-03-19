@@ -45,7 +45,7 @@ RDEPEND="
 		$(add_kdebase_dep kstartupconfig '' 4.11)
 		$(add_kdeplasma_dep kstyles '' 4.11)
 		$(add_kdeplasma_dep ksysguard '' 4.11)
-		$(add_kdebase_dep ksystraycmd '' 4.11)
+		$(add_kdeplasma_dep ksystraycmd '' 4.11)
 		$(add_kdeplasma_dep kwin '' 4.11)
 		$(add_kdeplasma_dep kwrited '' 4.11)
 		$(add_kdebase_dep libkworkspace '' 4.11)
