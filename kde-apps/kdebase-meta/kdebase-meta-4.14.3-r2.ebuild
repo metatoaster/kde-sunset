@@ -29,7 +29,7 @@ RDEPEND="
 	!minimal? (
 		$(add_kdeplasma_dep freespacenotifier '' 4.11)
 		$(add_kdeplasma_dep kcheckpass '' 4.11.22-r1)
-		$(add_kdebase_dep kcminit '' 4.11)
+		$(add_kdeplasma_dep kcminit '' 4.11)
 		$(add_kdebase_dep kdebase-cursors '' 4.11)
 		$(add_kdebase_dep kdebase-startkde '' 4.11)
 		$(add_kdeapps_dep kdepasswd)
