@@ -58,7 +58,7 @@ RDEPEND="
 		$(add_kdeplasma_dep powerdevil '' 4.11)
 		$(add_kdebase_dep qguiplatformplugin_kde '' 4.11)
 		$(add_kdebase_dep solid-actions-kcm '' 4.11)
-		$(add_kdebase_dep systemsettings '' 4.11)
+		$(add_kdeplasma_dep systemsettings '' 4.11)
 		!prefix? ( display-manager? ( || ( $(add_kdebase_dep kdm '' 4.11) x11-misc/lightdm x11-misc/sddm ) ) )
 	)
 "
