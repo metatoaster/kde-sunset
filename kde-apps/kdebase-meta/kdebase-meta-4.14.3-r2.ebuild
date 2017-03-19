@@ -39,7 +39,7 @@ RDEPEND="
 		$(add_kdebase_dep klipper '' 4.11)
 		$(add_kdeplasma_dep kmenuedit '' 4.11)
 		$(add_kdebase_dep krunner '' 4.11)
-		$(add_kdebase_dep kscreensaver '' 4.11)
+		$(add_kdeplasma_dep kscreensaver '' 4.11)
 		$(add_kdebase_dep ksmserver '' 4.11)
 		$(add_kdebase_dep ksplash '' 4.11)
 		$(add_kdebase_dep kstartupconfig '' 4.11)

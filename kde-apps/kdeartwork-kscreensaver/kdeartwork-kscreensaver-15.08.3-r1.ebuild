@@ -8,7 +8,7 @@ KMMODULE="kscreensaver"
 KMNAME="kdeartwork"
 OPENGL_REQUIRED="optional"
 KDE_SCM="svn"
-inherit kde4-meta
+inherit kde4-meta kde4-functions-extra
 
 DESCRIPTION="Extra screensavers for kde"
 KEYWORDS="~amd64 ~arm ~x86"
@@ -16,7 +16,7 @@ IUSE="debug +eigen +kexiv2 xscreensaver"
 
 # libkworkspace - only as a stub to provide KDE4Workspace config
 RDEPEND="
-	$(add_kdebase_dep kscreensaver '' 4.11)
+	$(add_kdeplasma_dep kscreensaver '' 4.11)
 	$(add_kdebase_dep libkworkspace '' 4.11)
 	media-libs/libart_lgpl
 	x11-libs/libX11
