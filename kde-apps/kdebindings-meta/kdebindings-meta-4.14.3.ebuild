@@ -19,7 +19,7 @@ RDEPEND="
 		$(add_kdebase_dep perlqt)
 	)
 	python? (
-		$(add_kdebase_dep krosspython)
+		$(add_kdeapps_dep kross-interpreters)
 		$(add_kdebase_dep pykde4)
 	)
 	ruby? (
