@@ -6,7 +6,7 @@ EAPI=5
 
 KDE_HANDBOOK="optional"
 KMNAME="kde-baseapps"
-inherit kde4-meta
+inherit kde4-meta kde4-functions-extra
 
 DESCRIPTION="A KDE filemanager focusing on usability"
 HOMEPAGE="https://dolphin.kde.org https://www.kde.org/applications/system/dolphin"
@@ -21,7 +21,7 @@ DEPEND="
 	semantic-desktop? (
 		$(add_kdebase_dep baloo)
 		$(add_kdeapps_dep baloo-widgets)
-		$(add_kdebase_dep kfilemetadata)
+		$(add_kdeframeworks_dep kfilemetadata)
 	)
 "
 RDEPEND="${DEPEND}
