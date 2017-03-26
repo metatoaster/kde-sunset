@@ -38,12 +38,12 @@ DEPEND="${COMMONDEPEND}
 	x11-base/xorg-proto
 "
 RDEPEND="${COMMONDEPEND}
-	>=kde-frameworks/oxygen-icons-5.19.0:5
 	sys-libs/timezone-data
 	x11-apps/setxkbmap
 	x11-misc/xkeyboard-config
 	gtk? ( kde-plasma/kde-gtk-config:4 )
 	kscreen? ( kde-plasma/kscreen:4 )
+	|| ( $(add_kdebase_dep legacy-icons) >=kde-frameworks/oxygen-icons-5.19.0:5 )
 "
 
 KMEXTRA="
