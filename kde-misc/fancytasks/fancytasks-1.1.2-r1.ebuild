@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 KDE_LINGUAS="de en_GB es et fr km nds pl pt ru sv tr uk"
