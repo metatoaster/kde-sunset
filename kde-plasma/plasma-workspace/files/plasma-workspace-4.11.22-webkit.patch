@@ -1,0 +1,27 @@
+--- a/plasma/generic/applets/CMakeLists.txt	2017-11-20 19:53:37.811924571 +1300
++++ b/plasma/generic/applets/CMakeLists.txt	2017-11-20 20:00:26.912125869 +1300
+@@ -12,9 +12,9 @@
+ add_subdirectory(digital-clock)
+ add_subdirectory(quicklaunch)
+ 
+-if(QT_QTWEBKIT_FOUND)
++if(QT_QTWEBKIT_FOUND AND WITH_KDEWEBKIT)
+    add_subdirectory(webbrowser)
+-endif(QT_QTWEBKIT_FOUND)
++endif(QT_QTWEBKIT_FOUND AND WITH_KDEWEBKIT)
+ 
+ if(NOT WIN32)
+    add_subdirectory(system-monitor)
+--- a/plasma/generic/scriptengines/CMakeLists.txt	2017-11-20 20:06:38.679308797 +1300
++++ b/plasma/generic/scriptengines/CMakeLists.txt	2017-11-20 20:12:06.034469872 +1300
+@@ -1,8 +1,8 @@
+ macro_optional_add_subdirectory(ruby)
+ 
+-if(QT_QTWEBKIT_FOUND)
++if(QT_QTWEBKIT_FOUND AND WITH_KDEWEBKIT)
+     macro_optional_add_subdirectory(webkit)
+-endif(QT_QTWEBKIT_FOUND)
++endif(QT_QTWEBKIT_FOUND AND WITH_KDEWEBKIT)
+ 
+ if (PYTHONLIBRARY_FOUND AND NOT WIN32)
+     macro_optional_add_subdirectory(python)
