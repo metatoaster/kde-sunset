@@ -16,3 +16,4 @@ KEYWORDS="amd64 ~arm x86"
 IUSE="debug"
 
 RDEPEND=">=net-wireless/bluez-5"
+export QT_SELECT="4"
