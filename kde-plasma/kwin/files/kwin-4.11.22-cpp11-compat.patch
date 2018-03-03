@@ -1,0 +1,11 @@
+--- a/kwin/glxbackend.cpp       2018-03-04 01:43:21.569400530 +1300
++++ b/kwin/glxbackend.cpp       2018-03-04 01:43:24.717403237 +1300
+@@ -45,7 +45,7 @@
+     , window(None)
+     , fbconfig(NULL)
+     , glxWindow(None)
+-    , ctx(None)
++    , ctx(nullptr)
+     , m_bufferAge(0)
+     , haveSwapInterval(false)
+ {

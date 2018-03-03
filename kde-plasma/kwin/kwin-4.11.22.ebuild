@@ -57,6 +57,10 @@ KMEXTRACTONLY="
 
 PATCHES=( "${FILESDIR}/${P}-gcc6.patch" )
 
+PATCHES=(
+	"${FILESDIR}/${PN}-4.11.22-cpp11-compat.patch"
+)
+
 src_configure() {
 	# FIXME Remove when activity API moved away from libkworkspace
 	append-cppflags "-I${EPREFIX}/usr/include/kworkspace"
