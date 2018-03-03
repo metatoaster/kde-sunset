@@ -40,6 +40,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DDISABLE_Qt3Support=ON
 		-DWITH_QT3_SUPPORT=OFF
+		-DCMAKE_CXX_STANDARD=98
 		$(cmake-utils_use_disable declarative QtDeclarative)
 		$(cmake-utils_use_disable multimedia QtMultimedia)
 		$(cmake-utils_use_disable opengl QtOpenGL)
