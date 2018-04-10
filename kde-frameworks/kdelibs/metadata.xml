@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <!-- maintainer-needed -->
-  <use>
-    <flag name="legacyssl">Support for some deprecated ciphers. Don't use this flag unless you really need it</flag>
-    <flag name="utempter">Records user logins. Useful on multi-user systems</flag>
-  </use>
+	<!-- maintainer-needed -->
+	<use>
+		<flag name="legacyssl">Support for some deprecated ciphers. Don't use this flag unless you really need it</flag>
+		<flag name="qt3support">Enable kde3support/qt3support for very old applications</flag>
+		<flag name="utempter">Records user logins. Useful on multi-user systems</flag>
+	</use>
 </pkgmetadata>
