@@ -5,7 +5,7 @@
 # Removal on 2018-03-06.
 # @ECLASS: kde4-meta.eclass
 # @MAINTAINER:
-# kde@gentoo.org
+# kde-sunset overlay maintainers
 # @BLURB: Eclass for writing "split" KDE packages.
 # @DESCRIPTION:
 # This eclass provides all necessary functions for writing split KDE ebuilds.

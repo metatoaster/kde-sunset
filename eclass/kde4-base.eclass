@@ -5,7 +5,7 @@
 # Removal on 2018-05-03.
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
-# kde@gentoo.org
+# kde-sunset overlay maintainers
 # @BLURB: This eclass provides functions for kde 4.X ebuilds
 # @DESCRIPTION:
 # The kde4-base.eclass provides support for building KDE4 based ebuilds

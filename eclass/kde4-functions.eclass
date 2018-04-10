@@ -5,7 +5,7 @@
 # Removal on 2018-05-03.
 # @ECLASS: kde4-functions.eclass
 # @MAINTAINER:
-# kde@gentoo.org
+# kde-sunset overlay maintainers
 # @BLURB: Common ebuild functions for KDE 4 packages
 # @DESCRIPTION:
 # This eclass contains all functions shared by the different eclasses,
