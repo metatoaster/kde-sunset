@@ -31,7 +31,11 @@ add_kdeplasma_dep() {
 	debug-print-function ${FUNCNAME} "$@"
 
 	local ver
+	local use=${2}
 
+	if [[ -n ${use} ]] ; then
+		use="[${use}]"
+	fi
 	if [[ -n ${3} ]]; then
 		ver=${3}
 	elif [[ -n ${KDE_OVERRIDE_MINIMAL} ]]; then
@@ -49,9 +53,7 @@ add_kdeplasma_dep() {
 
 	[[ -z ${1} ]] && die "Missing parameter"
 
-	#FIXME
-	# Drop aqua= from kf5 packages
-	echo " >=kde-plasma/${1}-${ver}:4[aqua=${2:+,${2}}]"
+	echo " >=kde-plasma/${1}-${ver}:4${use}"
 }
 
 # @FUNCTION: add_kdeframeworks_dep
@@ -67,7 +69,11 @@ add_kdeframeworks_dep() {
 	debug-print-function ${FUNCNAME} "$@"
 
 	local ver
+	local use=${2}
 
+	if [[ -n ${use} ]] ; then
+		use="[${use}]"
+	fi
 	if [[ -n ${3} ]]; then
 		ver=${3}
 	elif [[ -n ${KDE_OVERRIDE_MINIMAL} ]]; then
@@ -85,9 +91,7 @@ add_kdeframeworks_dep() {
 
 	[[ -z ${1} ]] && die "Missing parameter"
 
-	#FIXME
-	# Drop aqua= from kf5 packages
-	echo " >=kde-frameworks/${1}-${ver}:4[aqua=${2:+,${2}}]"
+	echo " >=kde-frameworks/${1}-${ver}:4${use}"
 }
 
 fi
