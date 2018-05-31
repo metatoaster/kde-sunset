@@ -14,3 +14,6 @@ qt3 - Adds support for the Qt GUI/Application Toolkit version 3.x
 
 # dropped 2011-02-23 in 1.451
 hal - Enable Hardware Abstraction Layer (HAL) support (WARNING: Try to avoid this. Deprecated method of accessing hardware.)
+
+# dropped 2011-11-01 in 1.468
+v4l2 - Enable support for video4linux (DEPRECATED: Use USE v4l for your package to enable v4l2 or libv4l support)
