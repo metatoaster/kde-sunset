@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -15,21 +15,17 @@ KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug minimal"
 
 COMMONDEPEND="
-	!aqua? (
-		x11-libs/libX11
-		x11-libs/libXext
-		>=x11-libs/libxklavier-3.2
-		x11-libs/libXrender
-		x11-libs/libXtst
-		!minimal? ( $(add_kdeapps_dep libkonq) )
-	)
+	x11-libs/libX11
+	x11-libs/libXext
+	>=x11-libs/libxklavier-3.2
+	x11-libs/libXrender
+	x11-libs/libXtst
+	!minimal? ( $(add_kdeapps_dep libkonq) )
 "
 DEPEND="${COMMONDEPEND}
-	!aqua? (
-		x11-apps/bdftopcf
-		x11-proto/kbproto
-		x11-proto/renderproto
-	)
+	x11-apps/bdftopcf
+	x11-proto/kbproto
+	x11-proto/renderproto
 "
 RDEPEND="${COMMONDEPEND}
 	!<kde-apps/konsole-4.14.3-r2
