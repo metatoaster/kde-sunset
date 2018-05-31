@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -69,10 +69,8 @@ COMMONDEPEND="
 	>=dev-qt/qtgui-4.4.0:4[mng]
 	media-libs/phonon[qt4]
 	media-libs/qimageblitz
-	!aqua? (
-		x11-libs/libX11
-		x11-libs/libXScrnSaver
-	)
+	x11-libs/libX11
+	x11-libs/libXScrnSaver
 	gadu? ( >=net-libs/libgadu-1.8.0[threads] )
 	groupwise? ( app-crypt/qca:2[qt4(+)] )
 	jingle? (
@@ -112,8 +110,8 @@ RDEPEND="${COMMONDEPEND}
 "
 #	telepathy? ( net-libs/decibel )"
 DEPEND="${COMMONDEPEND}
+	x11-proto/scrnsaverproto
 	jingle? ( dev-libs/jsoncpp )
-	!aqua? ( x11-proto/scrnsaverproto )
 "
 
 src_configure() {
