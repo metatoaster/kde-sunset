@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -19,11 +19,9 @@ DEPEND="
 	kde-plasma/ksysguard:4
 	kde-plasma/libkworkspace:4
 	kde-plasma/libplasmagenericshell:4
-	!aqua? (
-		x11-libs/libX11
-		x11-libs/libXcursor
-		x11-libs/libXext
-	)
+	x11-libs/libX11
+	x11-libs/libXcursor
+	x11-libs/libXext
 "
 RDEPEND="${DEPEND}"
 
