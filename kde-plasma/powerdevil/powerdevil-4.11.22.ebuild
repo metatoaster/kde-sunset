@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -14,11 +14,9 @@ IUSE="debug +pm-utils"
 DEPEND="
 	kde-frameworks/kactivities:4
 	kde-plasma/libkworkspace:4
-	!aqua? (
-		x11-libs/libX11
-		x11-libs/libXext
-		x11-libs/libXrandr
-	)
+	x11-libs/libX11
+	x11-libs/libXext
+	x11-libs/libXrandr
 "
 RDEPEND="${DEPEND}
 	pm-utils? ( sys-power/pm-utils )
