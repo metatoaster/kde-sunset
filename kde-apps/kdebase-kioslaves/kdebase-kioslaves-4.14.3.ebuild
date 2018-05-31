@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,7 @@ RESTRICT="test"
 
 DEPEND="
 	virtual/jpeg:0
-	!aqua? ( x11-libs/libXcursor )
+	x11-libs/libXcursor
 	bzip2? ( app-arch/bzip2 )
 	exif? ( media-gfx/exiv2:= )
 	openexr? ( media-libs/openexr:= )
@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 	$(add_kdeframeworks_dep kdelibs 'bzip2?,lzma?')
 	$(add_kdeapps_dep kdialog)
 	virtual/ssh
-	!aqua? ( !kernel_SunOS? ( virtual/eject ) )
+	!kernel_SunOS? ( virtual/eject )
 "
 
 KMEXTRA="
