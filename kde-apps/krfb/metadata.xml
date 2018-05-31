@@ -2,4 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <!-- maintainer-needed -->
+	<use>
+		<flag name="ktp">Enable displaying of KDE Telepathy contacts</flag>
+		<flag name="telepathy">Enable desktop sharing through a telepathy client</flag>
+	</use>
 </pkgmetadata>
