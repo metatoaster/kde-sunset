@@ -20,7 +20,6 @@ inherit kde4-functions
 HOMEPAGE="https://www.kde.org/"
 
 LICENSE="metapackage"
-IUSE="aqua"
 
 SLOT=4
 
