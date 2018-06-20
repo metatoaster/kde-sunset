@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kde-l10n/kde-l10n-4.11.2.ebuild,v 1.5 2013/12/11 20:26:53 ago Exp $
 
@@ -7,7 +7,7 @@ EAPI=5
 inherit kde4-base
 
 DESCRIPTION="KDE internationalization package"
-HOMEPAGE="http://l10n.kde.org"
+HOMEPAGE="https://l10n.kde.org"
 
 DEPEND="
 	sys-devel/gettext
@@ -23,11 +23,12 @@ hi hr hu ia is it ja kk km ko lt lv mr nb nds nl nn pa pl pt pt_BR ro ru sk sl
 sr sv tg tr ug uk vi wa zh_CN zh_TW"
 
 URI_BASE="${SRC_URI/-${PV}.tar.xz/}"
+URI_BASE="${URI_BASE/${PN}/kde-l10n}"
 SRC_URI=""
 
 for MY_LANG in ${MY_LANGS} ; do
 	IUSE="${IUSE} linguas_${MY_LANG}"
-	SRC_URI="${SRC_URI} linguas_${MY_LANG}? ( ${URI_BASE}/${PN}-${MY_LANG}-${PV}.tar.xz )"
+	SRC_URI="${SRC_URI} linguas_${MY_LANG}? ( ${URI_BASE}/kde-l10n-${MY_LANG}-${PV}.tar.xz )"
 done
 
 S="${WORKDIR}"
@@ -51,7 +52,7 @@ src_unpack() {
 	# add all linguas to cmake
 	if [[ -n ${A} ]]; then
 		for LNG in ${LINGUAS}; do
-			DIR="${PN}-${LNG}-${PV}"
+			DIR="kde-l10n-${LNG}-${PV}"
 			if [[ -d "${DIR}" ]] ; then
 				echo "add_subdirectory( ${DIR} )" >> "${S}"/CMakeLists.txt
 			fi
@@ -66,7 +67,7 @@ src_prepare() {
 		-exec sed -i -e 's:^ *add_subdirectory( *kdepim *):# no kdepim:g' {} +
 
 	# bug 481106, please remove in 4.11.1 and later
-	use linguas_pl && rm "${S}"/${PN}-pl-${PV}/messages/kde-runtime/{accountwizard*,akonadi_*}.po
+	use linguas_pl && rm "${S}"/kde-l10n-pl-${PV}/messages/kde-runtime/{accountwizard*,akonadi_*}.po
 
 	kde4-base_src_prepare
 }
