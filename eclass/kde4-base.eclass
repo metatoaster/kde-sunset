@@ -360,25 +360,23 @@ kdecommondepend="
 "
 unset qtcoreuse
 
-if [[ ${PN} != kdelibs ]]; then
-	[[ -n ${kdelibsuse} ]] && kdelibsuse="[${kdelibsuse}]"
-	kdecommondepend+=" kde-frameworks/kdelibs:4${kdelibsuse}"
-	if [[ ${KDEBASE} = kdevelop ]]; then
-		if [[ ${PN} != kdevplatform ]]; then
-			# @ECLASS-VARIABLE: KDEVPLATFORM_REQUIRED
-			# @DESCRIPTION:
-			# Specifies whether kdevplatform is required. Possible values are 'always' (default) and 'never'.
-			# Applies to KDEBASE=kdevelop only.
-			KDEVPLATFORM_REQUIRED="${KDEVPLATFORM_REQUIRED:-always}"
-			case ${KDEVPLATFORM_REQUIRED} in
-				always)
-					kdecommondepend+="
-						>=dev-util/kdevplatform-${KDEVPLATFORM_VERSION}:4
-					"
-					;;
-				*) ;;
-			esac
-		fi
+[[ -n ${kdelibsuse} ]] && kdelibsuse="[${kdelibsuse}]"
+kdecommondepend+=" kde-frameworks/kdelibs:4${kdelibsuse}"
+if [[ ${KDEBASE} = kdevelop ]]; then
+	if [[ ${PN} != kdevplatform ]]; then
+		# @ECLASS-VARIABLE: KDEVPLATFORM_REQUIRED
+		# @DESCRIPTION:
+		# Specifies whether kdevplatform is required. Possible values are 'always' (default) and 'never'.
+		# Applies to KDEBASE=kdevelop only.
+		KDEVPLATFORM_REQUIRED="${KDEVPLATFORM_REQUIRED:-always}"
+		case ${KDEVPLATFORM_REQUIRED} in
+			always)
+				kdecommondepend+="
+					>=dev-util/kdevplatform-${KDEVPLATFORM_VERSION}:4
+				"
+				;;
+			*) ;;
+		esac
 	fi
 fi
 unset kdelibsuse
@@ -421,12 +419,12 @@ kdehandbookrdepend="
 case ${KDE_HANDBOOK} in
 	always)
 		kdedepend+=" ${kdehandbookdepend}"
-		[[ ${PN} != kdelibs ]] && kderdepend+=" ${kdehandbookrdepend}"
+		kderdepend+=" ${kdehandbookrdepend}"
 		;;
 	optional)
 		IUSE+=" +handbook"
 		kdedepend+=" handbook? ( ${kdehandbookdepend} )"
-		[[ ${PN} != kdelibs ]] && kderdepend+=" handbook? ( ${kdehandbookrdepend} )"
+		kderdepend+=" handbook? ( ${kdehandbookrdepend} )"
 		;;
 	*) ;;
 esac
@@ -720,10 +718,9 @@ kde4-base_src_prepare() {
 
 	# Enable/disable handbooks for kde4-base packages
 	# kde4-l10n inherits kde4-base but is metapackage, so no check for doc
-	# kdelibs inherits kde4-base but handle installing the handbook itself
 	if ! has kde4-meta ${INHERITED} && in_iuse handbook; then
 		if [[ ${KDEBASE} == kde-base ]]; then
-			if [[ ${PN} != kde4-l10n && ${PN} != kdepim-l10n && ${PN} != kdelibs ]] && use !handbook; then
+			if [[ ${PN} != kde4-l10n && ${PN} != kdepim-l10n ]] && use !handbook; then
 				# documentation in kde4-functions
 				: ${KDE_DOC_DIRS:=doc}
 				local dir
@@ -785,9 +782,6 @@ kde4-base_src_configure() {
 		# Handle common release builds
 		append-cppflags -DQT_NO_DEBUG
 	fi
-
-	# Set distribution name
-	[[ ${PN} = kdelibs ]] && cmakeargs+=(-DKDE_DISTRIBUTION_TEXT=Gentoo)
 
 	# Here we set the install prefix
 	tc-is-cross-compiler || cmakeargs+=(-DCMAKE_INSTALL_PREFIX="${EPREFIX}${PREFIX}")
