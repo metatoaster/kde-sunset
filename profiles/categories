@@ -3,7 +3,9 @@ app-arch
 app-backup
 app-cdr
 app-crypt
+app-doc
 app-editors
+app-eselect
 app-i18n
 app-laptop
 app-misc
@@ -12,11 +14,13 @@ app-office
 app-pda
 app-portage
 app-text
+dev-cpp
 dev-db
 dev-embedded
 dev-libs
 dev-perl
 dev-python
+dev-qt
 dev-util
 dev-vcs
 games-emulation
@@ -24,7 +28,9 @@ games-puzzle
 games-util
 kde-apps
 kde-base
+kde-frameworks
 kde-misc
+kde-plasma
 mail-client
 media-gfx
 media-libs
@@ -37,8 +43,10 @@ net-dns
 net-firewall
 net-im
 net-irc
+net-libs
 net-misc
 net-nds
+net-nntp
 net-p2p
 net-voip
 net-vpn
@@ -46,6 +54,9 @@ net-wireless
 sci-electronics
 sci-mathematics
 sci-misc
+sys-apps
+sys-auth
+sys-libs
 sys-power
 virtual
 www-client
