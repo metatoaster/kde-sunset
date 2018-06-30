@@ -14,8 +14,8 @@ KEYWORDS="amd64 ~arm ~arm64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 SLOT="4/4.14"
 IUSE="cpu_flags_x86_3dnow acl altivec +bzip2 debug doc fam +handbook jpeg2k kerberos
-libressl lzma cpu_flags_x86_mmx nls openexr plasma +policykit qt3support
-spell test cpu_flags_x86_sse cpu_flags_x86_sse2 ssl +udev +udisks +upower zeroconf"
+libressl lzma cpu_flags_x86_mmx nls openexr plasma +policykit qt3support spell
+test cpu_flags_x86_sse cpu_flags_x86_sse2 ssl +udev +udisks +upower webkit zeroconf"
 
 REQUIRED_USE="
 	udisks? ( udev )
@@ -86,6 +86,7 @@ COMMONDEPEND="
 		!libressl? ( dev-libs/openssl:0= )
 	)
 	udev? ( virtual/udev )
+	webkit? ( >=dev-qt/qtwebkit-${QT_MINIMAL}:4 )
 	zeroconf? ( net-dns/avahi[mdnsresponder-compat] )
 "
 DEPEND="${COMMONDEPEND}
@@ -184,7 +185,7 @@ src_configure() {
 		-DWITH_OpenSSL=$(usex ssl)
 		-DWITH_UDev=$(usex udev)
 		-DWITH_SOLID_UDISKS2=$(usex udisks)
-		-DWITH_KDEWEBKIT=OFF
+		-DWITH_KDEWEBKIT=$(usex webkit)
 		-DWITH_Avahi=$(usex zeroconf)
 	)
 
