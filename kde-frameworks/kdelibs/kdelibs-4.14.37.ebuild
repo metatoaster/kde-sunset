@@ -14,10 +14,11 @@ KEYWORDS="amd64 ~arm ~arm64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 SLOT="4/4.14"
 IUSE="cpu_flags_x86_3dnow acl altivec +bzip2 debug doc fam +handbook jpeg2k kerberos
-libressl lzma cpu_flags_x86_mmx nls openexr plasma +policykit qt3support spell
+libressl lzma cpu_flags_x86_mmx nls openexr opengl +plasma +policykit qt3support spell
 test cpu_flags_x86_sse cpu_flags_x86_sse2 ssl +udev +udisks +upower webkit zeroconf"
 
 REQUIRED_USE="
+	opengl? ( plasma )
 	udisks? ( udev )
 	upower? ( udev )
 "
@@ -75,6 +76,7 @@ COMMONDEPEND="
 		media-libs/openexr:=
 		media-libs/ilmbase:=
 	)
+	opengl? ( >=dev-qt/qtopengl-${QT_MINIMAL}:4 )
 	plasma? (
 		app-crypt/qca:2[qt4]
 		>=dev-qt/qtsql-${QT_MINIMAL}:4[qt3support?]
@@ -146,9 +148,11 @@ src_prepare() {
 	sed -e 's|FILES[[:space:]]applications.menu|FILES applications.menu RENAME kde-4-applications.menu|g' \
 		-i kded/CMakeLists.txt || die "Sed on CMakeLists.txt for applications.menu failed."
 
-	sed -i -e "/if/ s/QT_QTOPENGL_FOUND/FALSE/" \
-		plasma/CMakeLists.txt plasma/tests/CMakeLists.txt includes/CMakeLists.txt \
-		|| die "failed to sed out QT_QTOPENGL_FOUND"
+	if ! use opengl; then
+		sed -i -e "/if/ s/QT_QTOPENGL_FOUND/FALSE/" \
+			plasma/CMakeLists.txt plasma/tests/CMakeLists.txt includes/CMakeLists.txt \
+			|| die "failed to sed out QT_QTOPENGL_FOUND"
+	fi
 }
 
 src_configure() {
