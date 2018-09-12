@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ fi
 
 LICENSE="GPL-2"
 SLOT="4"
-IUSE="debug +embedded ipod lastfm mp3tunes mtp ofa test +utils"
+IUSE="debug ipod lastfm mp3tunes mtp ofa test +utils"
 
 if [[ ${KDE_BUILD_TYPE} == live ]]; then
 	RESTRICT+=" test"
@@ -36,7 +36,7 @@ COMMONDEPEND="
 	>=media-libs/taglib-1.7[asf(+),mp4(+)]
 	>=media-libs/taglib-extras-1.0.1
 	sys-libs/zlib
-	>=virtual/mysql-5.1[embedded?]
+	>=virtual/mysql-5.1
 	>=x11-libs/qtscriptgenerator-0.1.0
 	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
 	lastfm? ( >=media-libs/liblastfm-1.0.3[qt4] )
@@ -54,7 +54,7 @@ COMMONDEPEND="
 DEPEND="${COMMONDEPEND}
 	dev-util/automoc
 	virtual/pkgconfig
-	test? ( dev-cpp/gmock )
+	test? ( >=dev-cpp/gtest-1.8.0 )
 "
 RDEPEND="${COMMONDEPEND}
 	!media-sound/amarok-utils
@@ -94,7 +94,7 @@ src_configure() {
 		-DWITH_PLAYER=ON
 		-DWITH_NepomukCore=OFF
 		-DWITH_Soprano=OFF
-		-DWITH_MYSQL_EMBEDDED=$(usex embedded)
+		-DWITH_MYSQL_EMBEDDED=OFF
 		-DWITH_IPOD=$(usex ipod)
 		-DWITH_LibLastFm=$(usex lastfm)
 		-DWITH_MP3Tunes=$(usex mp3tunes)
@@ -105,9 +105,6 @@ src_configure() {
 
 	use ipod && mycmakeargs+=( DWITH_GDKPixBuf=ON )
 	use mp3tunes && mycmakeargs+=( -DWITH_Libgcrypt=OFF )
-
-	# bug 581554: add libmysqld location for rpath patch
-	use embedded && mycmakeargs+=( -DMYSQLD_DIR="${EPREFIX}/usr/$(get_libdir)/mysql" )
 
 	kde4-base_src_configure
 }
@@ -122,16 +119,14 @@ src_install() {
 pkg_postinst() {
 	kde4-base_pkg_postinst
 
-	if ! use embedded; then
-		elog "You've disabled the amarok support for embedded mysql DBs."
-		elog "You'll have to configure amarok to use an external db server."
-		elog "Please read https://community.kde.org/Amarok/Community/MySQL for details on how"
-		elog "to configure the external db and migrate your data from the embedded database."
+	elog "You've disabled the amarok support for embedded mysql DBs."
+	elog "You'll have to configure amarok to use an external db server."
+	elog "Please read https://community.kde.org/Amarok/Community/MySQL for details on how"
+	elog "to configure the external db and migrate your data from the embedded database."
 
-		if has_version "virtual/mysql[minimal]"; then
-			elog
-			elog "You built mysql with the minimal use flag, so it doesn't include the server."
-			elog "You won't be able to use the local mysql installation to store your amarok collection."
-		fi
+	if has_version "virtual/mysql[minimal]"; then
+		elog
+		elog "You built mysql with the minimal use flag, so it doesn't include the server."
+		elog "You won't be able to use the local mysql installation to store your amarok collection."
 	fi
 }
