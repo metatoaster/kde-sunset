@@ -36,7 +36,7 @@ COMMONDEPEND="
 	>=media-libs/taglib-1.7[asf(+),mp4(+)]
 	>=media-libs/taglib-extras-1.0.1
 	sys-libs/zlib
-	>=virtual/mysql-5.1
+	>=virtual/mysql-5.1[-minimal(-)]
 	>=x11-libs/qtscriptgenerator-0.1.0
 	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
 	lastfm? ( >=media-libs/liblastfm-1.0.3[qt4] )
@@ -123,10 +123,4 @@ pkg_postinst() {
 	elog "You'll have to configure amarok to use an external db server."
 	elog "Please read https://community.kde.org/Amarok/Community/MySQL for details on how"
 	elog "to configure the external db and migrate your data from the embedded database."
-
-	if has_version "virtual/mysql[minimal]"; then
-		elog
-		elog "You built mysql with the minimal use flag, so it doesn't include the server."
-		elog "You won't be able to use the local mysql installation to store your amarok collection."
-	fi
 }
