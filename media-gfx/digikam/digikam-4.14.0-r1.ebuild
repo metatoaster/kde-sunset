@@ -29,7 +29,6 @@ CDEPEND="
 	kde-apps/kdebase-kioslaves:4
 	kde-apps/libkdcraw:4=
 	kde-apps/libkexiv2:4=
-	>=kde-apps/libkface-15.08.2-r1
 	kde-apps/libkgeomap:4=
 	kde-apps/libkipi:4
 	kde-apps/kcmshell:4
