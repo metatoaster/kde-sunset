@@ -23,6 +23,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DWITH_Nepomuk=OFF
 		-DWITH_Soprano=OFF
+		-DCMAKE_CXX_STANDARD=98
 		$(cmake-utils_use_with akonadi)
 		$(cmake-utils_use_with akonadi KdepimLibs)
 		$(cmake-utils_use_with attica LibAttica)
