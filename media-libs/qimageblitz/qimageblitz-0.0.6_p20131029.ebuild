@@ -27,7 +27,10 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${P}-gcc.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-gcc.patch"
+	"${FILESDIR}/${P}-cxx11.patch" # bug 690360
+)
 
 src_configure() {
 	local mycmakeargs=(
