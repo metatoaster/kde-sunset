@@ -10,7 +10,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 DEPEND="
-	>=media-libs/libraw-0.16_beta1-r1:=
+	<=media-libs/libraw-0.18.13:=
 "
 RDEPEND="${DEPEND}"
 
