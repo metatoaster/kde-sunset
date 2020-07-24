@@ -38,6 +38,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-4.8.7-openssl-1.1.patch" # bug 592536
 #	"${FILESDIR}/${PN}-4.8.7-libressl.patch" # bug 584796
 	"${FILESDIR}/${PN}-4.8.7-moc.patch" # bug 556104, 635394
+	"${FILESDIR}/qt4-openssl-1.1.patch"
 )
 
 QT4_TARGET_DIRECTORIES="
