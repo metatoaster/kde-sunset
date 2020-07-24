@@ -40,8 +40,8 @@ COMMONDEPEND="
 	pim? ( $(add_kdeapps_dep kdepimlibs) )
 	python? (
 		${PYTHON_DEPS}
-		>=dev-python/PyQt4-4.4.0[X,${PYTHON_USEDEP}]
-		$(add_kdeapps_dep pykde4 "${PYTHON_USEDEP}")
+		>=dev-python/PyQt4-4.4.0[X,${PYTHON_SINGLE_USEDEP}]
+		$(add_kdeapps_dep pykde4 "${PYTHON_SINGLE_USEDEP}")
 	)
 	qalculate? ( sci-libs/libqalculate )
 "
