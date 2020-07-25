@@ -59,6 +59,9 @@ src_prepare() {
 
 	# From Debian:
 	epatch "${FILESDIR}"/${P}-always_use_pm-utils_backend.patch
+
+	# glib g_type_class_add_private fix
+	epatch "${FILESDIR}"/${P}-glib.patch
 }
 
 src_configure() {
