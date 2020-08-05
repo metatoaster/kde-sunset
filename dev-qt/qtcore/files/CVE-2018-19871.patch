@@ -1,0 +1,38 @@
+From 7cfe47a8fe2f987fb2a066a696fb3d9d0afe4d65 Mon Sep 17 00:00:00 2001
+From: Eirik Aavitsland <eirik.aavitsland@qt.io>
+Date: Fri, 24 Aug 2018 12:03:00 +0200
+Subject: [PATCH] TGA handler: check for out of range image size
+
+Make the decoder fail early to avoid spending time and memory on
+attempting to decode a corrupt image file.
+
+Change-Id: Iac35e72de743f412a65d11c58fe7faa275dc4e41
+Reviewed-by: Lars Knoll <lars.knoll@qt.io>
+---
+ src/plugins/imageformats/tga/qtgafile.cpp | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+--- a/src/plugins/imageformats/tga/qtgafile.cpp
++++ b/src/plugins/imageformats/tga/qtgafile.cpp
+@@ -165,6 +165,12 @@
+     if (!validDepth)
+     {
+         mErrorMessage = QObject::tr("Image depth not valid");
++        return;
++    }
++    if (quint64(width()) * quint64(height()) > (8192 * 8192))
++    {
++        mErrorMessage = QObject::tr("Image size exceeds limit");
++        return;
+     }
+     int fileBytes = mDevice->size();
+     if (!mDevice->seek(fileBytes - FooterSize))
+@@ -237,6 +243,8 @@
+     unsigned char yCorner = desc & 0x20; // 0 = lower, 1 = upper
+ 
+     QImage im(imageWidth, imageHeight, QImage::Format_ARGB32);
++    if (im.isNull())
++        return QImage();
+     TgaReader *reader = 0;
+     if (bitsPerPixel == 16)
+         reader = new Tga16Reader();
