@@ -1,11 +1,11 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="Utility to change the active Qt Graphics System"
 HOMEPAGE="https://github.com/gentoo/eselect-qtgraphicssystem"
-SRC_URI="https://dev.gentoo.org/~wired/distfiles/${P}.tar.bz2"
+SRC_URI="https://github.com/gentoo/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
