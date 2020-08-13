@@ -53,9 +53,6 @@ DEPEND="
 	dev-lang/perl
 	virtual/pkgconfig[${MULTILIB_USEDEP}]
 "
-RDEPEND="
-	dev-qt/qtchooser
-"
 
 
 # src_{configure,compile,test,install} are inherited from multilib-minimal
