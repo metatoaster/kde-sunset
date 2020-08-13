@@ -7,7 +7,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="A Personal Organizer for KDE."
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND=">=kde-base/libkpimexchange-${PV}:${SLOT}
 >=kde-base/libkdepim-${PV}:${SLOT}

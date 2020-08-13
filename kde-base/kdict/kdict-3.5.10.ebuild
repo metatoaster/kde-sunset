@@ -7,5 +7,5 @@ KMNAME=kdenetwork
 inherit kde-meta eutils
 
 DESCRIPTION="KDE dict client (for dict.org-like servers)"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"

@@ -7,7 +7,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KDE mailbox checker"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/mimelib-${PV}:${SLOT}

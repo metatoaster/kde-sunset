@@ -6,7 +6,7 @@ KMNAME=kdeedu
 inherit kde-meta
 
 DESCRIPTION="KDE Interactive Geometry tool"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kig-scripting"
 DEPEND="kig-scripting? ( >=dev-libs/boost-1.32 )"
 

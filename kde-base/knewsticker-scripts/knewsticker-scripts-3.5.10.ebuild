@@ -6,7 +6,7 @@ KMNAME=kdeaddons
 inherit kde-meta
 
 DESCRIPTION="Kicker applet - RSS news ticker"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND="|| ( >=kde-base/knewsticker-${PV}:${SLOT} >=kde-base/kdenetwork-${PV}:${SLOT} )"

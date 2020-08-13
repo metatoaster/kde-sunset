@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdeutils-3.5-patchset-02.tar.bz2"
 
 DESCRIPTION="KLaptopdaemon - KDE battery monitoring and management for laptops."
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility xscreensaver"
 
 RDEPEND="x11-libs/libXtst

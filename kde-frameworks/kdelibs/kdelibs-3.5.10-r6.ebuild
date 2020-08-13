@@ -14,7 +14,7 @@ SRC_URI="mirror://kde/stable/${PV}/src/${P}.tar.bz2
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="3.5"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="acl alsa arts bindist branding cups doc jpeg2k kerberos legacyssl utempter openexr spell tiff
 	avahi kernel_linux fam lua kdehiddenvisibility"
 

@@ -6,7 +6,7 @@ KMNAME=kdeaddons
 inherit db-use kde-meta
 
 DESCRIPTION="Various plugins for Noatun."
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE="arts sdl berkdb"
 
 DEPEND="|| ( >=kde-base/noatun-${PV}:${SLOT} >=kde-base/kdemultimedia-${PV}:${SLOT} )

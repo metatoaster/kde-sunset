@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="KDE crash handler gives the user feedback if a program crashed"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 RDEPEND="sys-devel/gdb"

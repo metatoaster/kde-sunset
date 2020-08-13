@@ -11,6 +11,6 @@ EAPI="1"
 inherit kde-meta
 
 DESCRIPTION="EmotIcons (icons for things like smilies :-) for kde"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND=""

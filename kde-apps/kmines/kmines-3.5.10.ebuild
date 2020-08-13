@@ -6,7 +6,7 @@ KMNAME=kdegames
 inherit kde-meta
 
 DESCRIPTION="KMines is a classic mine sweeper game"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND=">=kde-base/appsdegames-${PV}:${SLOT}"

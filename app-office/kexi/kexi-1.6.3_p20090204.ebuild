@@ -12,7 +12,7 @@ HOMEPAGE="http://www.koffice.org/"
 LICENSE="GPL-2 LGPL-2"
 
 SLOT="3.5"
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE="mysql postgres"
 
 DEPEND="~app-office/koffice-libs-1.6.3_p20090204

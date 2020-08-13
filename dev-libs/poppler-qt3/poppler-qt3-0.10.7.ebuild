@@ -14,7 +14,7 @@ DESCRIPTION="Qt3 bindings for poppler"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND="

@@ -13,7 +13,7 @@ SRC_URI="mirror://kde/stable/${PN}-2.3/${MY_PV}/src/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="|| ( LGPL-2.1 GPL-3 )"
 SLOT="4"
-KEYWORDS="amd64 arm ia64 ~mips ppc ppc64 x86"
+KEYWORDS="amd64 arm ~ia64 ~mips ppc ppc64 x86"
 IUSE="debug +gstreamer"
 
 RDEPEND="

@@ -7,7 +7,7 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="kicker applet for KDE and X clipboard management"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND="x11-libs/libXfixes"

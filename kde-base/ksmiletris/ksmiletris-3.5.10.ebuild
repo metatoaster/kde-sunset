@@ -6,7 +6,7 @@ KMNAME=kdegames
 inherit kde-meta
 
 DESCRIPTION="KDE SmileTris"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND=">=kde-apps/libkdegames-${PV}:${SLOT}"

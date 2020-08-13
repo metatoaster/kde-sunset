@@ -7,7 +7,7 @@ KMNAME=kdemultimedia
 inherit kde-meta eutils
 
 DESCRIPTION="KDE CD ripper and audio encoder frontend"
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE="encode flac mp3 vorbis"
 DEPEND=">=kde-apps/libkcddb-${PV}:${SLOT}
 	media-sound/cdparanoia"

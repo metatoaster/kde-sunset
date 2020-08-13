@@ -7,7 +7,7 @@ KMNAME=kdemultimedia
 inherit kde-meta eutils flag-o-matic
 
 DESCRIPTION="A modular media player for KDE, featuring audio effects, graphic equalizer and network transparency."
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND=">=kde-base/kdemultimedia-arts-${PV}:${SLOT}"

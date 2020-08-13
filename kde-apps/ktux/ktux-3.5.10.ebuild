@@ -7,6 +7,6 @@ KMNAME=kdetoys
 inherit kde-meta
 
 DESCRIPTION="KDE: screensaver featuring the Space-Faring Tux"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 DEPEND=""

@@ -12,7 +12,7 @@ HOMEPAGE="http://www.kde.org/"
 LICENSE="GPL-2"
 
 SLOT="${KDEMAJORVER}.${KDEMINORVER}"
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=sys-devel/automake-1.10.1"
