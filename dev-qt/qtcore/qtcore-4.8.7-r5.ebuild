@@ -38,15 +38,6 @@ PATCHES=(
 	"${FILESDIR}/${PN}-4.8.5-qeventdispatcher-recursive.patch" # bug 514968
 	"${FILESDIR}/${PN}-4.8.7-libressl.patch" # bug 584796
 	"${FILESDIR}/${PN}-4.8.7-moc.patch" # bug 556104, 635394
-	"${FILESDIR}/qt4-openssl-1.1.patch"
-	"${FILESDIR}/CVE-2018-15518.patch"
-	"${FILESDIR}/CVE-2018-19869.patch"
-	"${FILESDIR}/CVE-2018-19870.patch"
-	"${FILESDIR}/CVE-2018-19871.patch"
-	"${FILESDIR}/CVE-2018-19872.patch"
-	"${FILESDIR}/CVE-2018-19873.patch"
-	"${FILESDIR}/fix-build-icu59.patch"
-	"${FILESDIR}/gcc9-qforeach.patch"
 )
 
 QT4_TARGET_DIRECTORIES="

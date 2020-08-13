@@ -21,6 +21,7 @@ inherit eutils flag-o-matic multilib multilib-minimal toolchain-funcs
 HOMEPAGE="https://www.qt.io/"
 LICENSE="|| ( LGPL-2.1 LGPL-3 GPL-3 ) FDL-1.3"
 SLOT="4"
+PATCH_VERSION="1"
 
 case ${PV} in
 	4.?.9999)
@@ -32,7 +33,10 @@ case ${PV} in
 		# official stable release
 		QT4_BUILD_TYPE="release"
 		MY_P=qt-everywhere-opensource-src-${PV/_/-}
-		SRC_URI="http://download.qt.io/archive/qt/${PV%.*}/${PV}/${MY_P}.tar.gz"
+		PATCHNAME="${MY_P}-patches-${PATCH_VERSION}"
+		SRC_URI="
+			http://download.qt.io/official_releases/qt/${PV%.*}/${PV}/${MY_P}.tar.gz
+			mirror://kde-sunset/${PATCHNAME}.tgz"
 		S=${WORKDIR}/${MY_P}
 		;;
 esac
@@ -273,6 +277,7 @@ qt4-build-multilib_src_prepare() {
 	fi
 
 	# apply patches
+	EPATCH_SOURCE="${WORKDIR}/patch" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
 	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
 	epatch_user
 }

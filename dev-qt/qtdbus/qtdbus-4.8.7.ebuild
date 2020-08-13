@@ -21,7 +21,6 @@ RDEPEND="${DEPEND}"
 PATCHES=(
 	"${FILESDIR}/${PN}-4.7-qdbusintegrator-no-const.patch"
 	"${FILESDIR}/${PN}-4.8.4-qdbusconnection-silence-warning.patch"
-	"${FILESDIR}/gcc9-qforeach.patch"
 )
 
 QT4_TARGET_DIRECTORIES="
