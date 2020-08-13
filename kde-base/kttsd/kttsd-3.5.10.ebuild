@@ -6,7 +6,7 @@ KMNAME=kdeaccessibility
 inherit kde-meta
 
 DESCRIPTION="KDE text-to-speech subsystem"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE="akode alsa"
 
 DEPEND="akode? ( media-libs/akode )

@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="KDE: Generic framework for viewer applications"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=""

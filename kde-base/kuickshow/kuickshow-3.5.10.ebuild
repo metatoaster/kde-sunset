@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="KDE: A fast and versatile image viewer"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="x11-libs/libXext

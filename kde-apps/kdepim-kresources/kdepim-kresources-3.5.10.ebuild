@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdepim-3.5-patchset-06.tar.bz2"
 
 DESCRIPTION="KDE PIM groupware plugin collection"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=">=kde-base/libkmime-${PV}:${SLOT}
 	>=kde-base/libkcal-${PV}:${SLOT}

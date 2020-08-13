@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="Kooka is a KDE application which provides access to scanner hardware"
-KEYWORDS="~alpha amd64 hppa ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/libkscan-${PV}:${SLOT}

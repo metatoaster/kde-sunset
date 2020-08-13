@@ -7,5 +7,5 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KMail Import Filters"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""

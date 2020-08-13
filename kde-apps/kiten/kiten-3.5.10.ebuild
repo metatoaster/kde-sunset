@@ -6,6 +6,6 @@ KMNAME=kdeedu
 inherit kde-meta
 
 DESCRIPTION="KDE Japanese dictionary and reference"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

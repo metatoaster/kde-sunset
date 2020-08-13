@@ -7,7 +7,7 @@ inherit kde-meta
 
 DESCRIPTION="KDE: A program that helps you to learn and practice touch typing"
 HOMEPAGE="http://ktouch.sourceforge.net/"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=kde-apps/libkdeedu-${PV}:${SLOT}"

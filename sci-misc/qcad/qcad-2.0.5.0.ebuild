@@ -27,7 +27,7 @@ HOMEPAGE="http://www.ribbonsoft.com/qcad.html"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="doc"
-KEYWORDS="amd64 hppa ppc ppc64 x86"
+KEYWORDS="amd64 ~hppa ppc ppc64 x86"
 
 DEPEND=">=sys-apps/sed-4"
 need-qt 3.3

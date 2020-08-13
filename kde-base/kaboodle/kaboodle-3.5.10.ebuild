@@ -7,7 +7,7 @@ KMNAME=kdemultimedia
 inherit kde-meta eutils
 
 DESCRIPTION="The Lean KDE Media Player"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 OLDRDEPEND="~kde-base/kdemultimedia-arts-$PV"

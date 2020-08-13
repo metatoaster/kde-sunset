@@ -8,6 +8,6 @@ KMMODULE=audiofile_artsplugin
 inherit kde-meta eutils
 
 DESCRIPTION="arts audiofile plugin"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="media-libs/audiofile"

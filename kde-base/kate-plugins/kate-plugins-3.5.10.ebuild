@@ -8,7 +8,7 @@ KMEXTRA="kate"
 inherit kde-meta
 
 DESCRIPTION="kate plugins and docs"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="|| ( >=kde-apps/kate-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"

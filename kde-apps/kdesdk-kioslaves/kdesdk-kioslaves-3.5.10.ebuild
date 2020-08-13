@@ -8,7 +8,7 @@ KMMODULE=kioslave
 inherit kde-meta eutils
 
 DESCRIPTION="kioslaves from kdesdk package: the subversion kioslave"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 DEPEND="dev-vcs/subversion"
 

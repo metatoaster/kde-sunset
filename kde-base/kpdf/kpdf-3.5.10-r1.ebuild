@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/${P}-JBIG2.tar.bz2"
 
 DESCRIPTION="kpdf, a kde pdf viewer based on xpdf"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 KMEXTRA="kfile-plugins/pdf"
 

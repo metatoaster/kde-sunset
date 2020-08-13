@@ -11,7 +11,7 @@ HOMEPAGE="http://www.scribus.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 hppa ppc ppc64 ~sparc x86"
+KEYWORDS="amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE="cairo"
 
 DEPEND="dev-qt/qt-meta:3
