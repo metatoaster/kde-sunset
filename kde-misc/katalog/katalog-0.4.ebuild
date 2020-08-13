@@ -10,7 +10,7 @@ HOMEPAGE="http://salvaste.altervista.org/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~ppc sparc x86"
+KEYWORDS="~ppc ~sparc x86"
 IUSE=""
 
 DEPEND=">=dev-util/scons-0.96.1"

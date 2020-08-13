@@ -13,7 +13,7 @@ SRC_URI="http://kcdlabel.sourceforge.net/download/${P}-KDE3.tar.gz
 
 SLOT="3.5"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 need-kde 3.5

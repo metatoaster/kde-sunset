@@ -12,7 +12,7 @@ SRC_URI="http://www2.aquamaniac.de/sites/download/download.php?package=04&releas
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="debug"
 
 DEPEND=">=net-libs/aqbanking-3.7.2[qt3]

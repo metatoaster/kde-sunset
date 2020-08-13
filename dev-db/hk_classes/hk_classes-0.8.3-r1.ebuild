@@ -22,7 +22,7 @@ SRC_URI="mirror://sourceforge/hk-classes/${MY_P}.tar.bz2
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="doc firebird mdb mysql odbc postgres sqlite xbase"
 
 RDEPEND=">=media-libs/fontconfig-2.5.0-r1

@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/aqbanking/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc sparc x86"
+KEYWORDS="~amd64 ppc ~sparc x86"
 IUSE="debug"
 
 DEPEND=">=net-libs/aqbanking-2.2.5

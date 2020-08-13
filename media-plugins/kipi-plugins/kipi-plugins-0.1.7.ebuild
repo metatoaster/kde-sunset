@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/kipi/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="calendar opengl gphoto2 ipod tiff"
 
 DEPEND="calendar? ( kde-base/libkcal:3.5 )

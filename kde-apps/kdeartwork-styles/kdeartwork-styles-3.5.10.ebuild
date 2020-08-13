@@ -8,6 +8,6 @@ KMNAME=kdeartwork
 inherit kde-meta
 
 DESCRIPTION="Extra styles for kde"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

@@ -6,6 +6,6 @@ KMNAME=kdeedu
 inherit kde-meta
 
 DESCRIPTION="KDE educational: A program to improve your skills in calculating with percentages"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

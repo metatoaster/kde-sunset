@@ -6,7 +6,7 @@ KMNAME=kdegames
 inherit kde-meta
 
 DESCRIPTION="The KDE Battleship clone"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 DEPEND=">=kde-apps/libkdegames-${PV}:${SLOT}"
 RDEPEND="${DEPEND}"

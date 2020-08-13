@@ -11,7 +11,7 @@ SRC_URI="http://www.methylblue.com/filelight/packages/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 hppa ppc sparc x86"
+KEYWORDS="amd64 hppa ppc ~sparc x86"
 IUSE="doc"
 
 DEPEND="~kde-misc/filelight-1.0"

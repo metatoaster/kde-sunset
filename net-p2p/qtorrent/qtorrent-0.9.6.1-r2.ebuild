@@ -10,7 +10,7 @@ SRC_URI="http://thegraveyard.org/files/${P}.tar.bz2
 	mirror://gentoo/${P}-sizetype.patch"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 DEPEND="dev-python/PyQt"
 

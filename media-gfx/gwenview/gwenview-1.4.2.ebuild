@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="3.5"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="kipi kdeenablefinal"
 
 DEPEND="kipi? ( >=media-plugins/kipi-plugins-0.1.0_beta2 )

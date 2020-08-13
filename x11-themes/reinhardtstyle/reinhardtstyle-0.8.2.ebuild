@@ -19,7 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86"
 
 DEPEND="=kde-base/kwin-3.5*"
 RDEPEND="${DEPEND}"

@@ -10,7 +10,7 @@ SRC_URI="http://unrealvoodoo.org/hiteck/projects/albumart/dist/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="dev-python/PyQt

@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdenetwork-3.5-patchset-01.tar.bz2"
 
 DESCRIPTION="KDE: A dialer and front-end to pppd."
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 RDEPEND="net-dialup/ppp"

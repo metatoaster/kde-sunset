@@ -14,7 +14,7 @@ SRC_URI="http://members.inode.at/499177/software/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="3.5"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="cddb"
 
 RDEPEND="!app-cdr/kover

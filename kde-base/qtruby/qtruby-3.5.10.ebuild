@@ -11,7 +11,7 @@ inherit kde-meta
 
 DESCRIPTION="Ruby bindings for QT"
 HOMEPAGE="http://techbase.kde.org/Development/Languages/Ruby"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="

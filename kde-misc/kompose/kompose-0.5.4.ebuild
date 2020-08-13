@@ -9,7 +9,7 @@ HOMEPAGE="http://kompose.berlios.de"
 SRC_URI="mirror://berlios/kompose/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 DEPEND="media-libs/imlib2"

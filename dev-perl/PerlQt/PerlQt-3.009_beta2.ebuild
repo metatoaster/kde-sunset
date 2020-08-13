@@ -16,7 +16,7 @@ HOMEPAGE="http://perlqt.sourceforge.net/"
 SRC_URI="mirror://sourceforge/perlqt/${P/_beta2/-b2}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ppc sparc x86"
+KEYWORDS="amd64 ~ia64 ppc ~sparc x86"
 IUSE=""
 S=${WORKDIR}/${P/_beta2/}
 

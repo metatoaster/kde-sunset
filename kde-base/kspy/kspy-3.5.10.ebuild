@@ -7,7 +7,7 @@ KMNAME=kdesdk
 inherit kde-meta eutils
 
 DESCRIPTION="kspy - an utility intended to help developers examine the internal state of a Qt/KDE application"
-KEYWORDS="~alpha amd64 hppa ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 RESTRICT="test"

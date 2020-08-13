@@ -11,7 +11,7 @@ inherit kde-meta
 
 DESCRIPTION="KDE ruby bindings"
 HOMEPAGE="http://techbase.kde.org/Development/Languages/Ruby"
-KEYWORDS="amd64 ~ppc ppc64 sparc x86"
+KEYWORDS="amd64 ~ppc ppc64 ~sparc x86"
 IUSE=""
 
 # NOTE: qtruby isn't slotted

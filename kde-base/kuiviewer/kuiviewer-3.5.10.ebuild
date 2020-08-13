@@ -7,5 +7,5 @@ KMNAME=kdesdk
 inherit kde-meta eutils
 
 DESCRIPTION="KUIViewer - Displays Designer's UI files"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"

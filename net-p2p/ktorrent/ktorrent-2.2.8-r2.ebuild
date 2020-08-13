@@ -21,7 +21,7 @@ SRC_URI="http://ktorrent.org/downloads/${MY_PV}/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="3.5"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE="avahi"
 
 DEPEND="!<net-p2p/ktorrent-2.2.8-r2

@@ -7,5 +7,5 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="KIO and konqueror plugins for MRML - an image indexing service"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ppc64 ~sparc x86"
 IUSE=""

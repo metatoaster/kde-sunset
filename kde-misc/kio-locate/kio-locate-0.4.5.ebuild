@@ -10,7 +10,7 @@ SRC_URI="http://arminstraub.com/downloads/kio-locate/${PN}_${PV}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 DEPEND=">=dev-util/scons-0.96.1"

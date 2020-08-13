@@ -7,7 +7,7 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="KDE user settings wizard."
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 KMEXTRACTONLY="libkonq"

@@ -8,7 +8,7 @@ KMMODULE=kioslave
 inherit kde-meta eutils
 
 DESCRIPTION="kioslaves from kdemultimedia package"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="encode flac mp3 vorbis"
 DEPEND=">=kde-apps/libkcddb-${PV}:${SLOT}
 	media-sound/cdparanoia

@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/kscope/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="3.5"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="kde-apps/kate:3.5

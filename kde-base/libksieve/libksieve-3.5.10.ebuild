@@ -7,7 +7,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="library enable support for sieve (imap server-side filtering standard) in kde apps, used by kmail"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 # The tests are broken. Fixes bug 188946.

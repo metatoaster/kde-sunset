@@ -7,7 +7,7 @@ KMNAME=kdenetwork
 inherit kde-meta eutils
 
 DESCRIPTION="An advanced download manager for KDE"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND="x11-libs/libXext"

@@ -12,7 +12,7 @@ SRC_URI="mirror://gnupg/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 s390 sh ~sparc x86"
 IUSE="gtk ncurses qt3 caps"
 
 DEPEND="gtk? ( x11-libs/gtk+:2 )

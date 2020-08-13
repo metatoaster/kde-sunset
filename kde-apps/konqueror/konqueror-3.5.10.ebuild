@@ -8,7 +8,7 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="KDE: Web browser, file manager, ..."
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="branding java kdehiddenvisibility"
 
 DEPEND=">=kde-apps/libkonq-${PV}:${SLOT}"

@@ -7,7 +7,7 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="KDE splashscreen framework (the splashscreen of KDE itself, not of individual apps)"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility xinerama"
 
 DEPEND="x11-libs/libXcursor

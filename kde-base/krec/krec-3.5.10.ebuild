@@ -7,7 +7,7 @@ KMNAME=kdemultimedia
 inherit kde-meta eutils
 
 DESCRIPTION="KDE sound recorder"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE="encode mp3 vorbis"
 
 DEPEND=">=kde-base/kdemultimedia-arts-${PV}:${SLOT}

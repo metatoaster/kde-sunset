@@ -19,7 +19,7 @@ SRC_URI="mirror://berlios/konversation/${MY_P}.tar.bz2"
 
 SLOT="3.5"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="!<net-irc/konversation-1.1-r1"

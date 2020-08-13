@@ -7,7 +7,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KPilot - HotSync software for KDE."
-KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=app-pda/pilot-link-0.12.0

@@ -7,7 +7,7 @@ inherit qt4-build-multilib
 DESCRIPTION="The network bearer plugins for the Qt toolkit"
 
 if [[ ${QT4_BUILD_TYPE} == release ]]; then
-	KEYWORDS="~alpha amd64 arm ~arm64 ~hppa ~ia64 ~mips ppc ppc64 sparc x86"
+	KEYWORDS="~alpha amd64 arm ~arm64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 fi
 
 IUSE="connman networkmanager"

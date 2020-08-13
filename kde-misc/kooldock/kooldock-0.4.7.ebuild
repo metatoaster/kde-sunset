@@ -9,7 +9,7 @@ HOMEPAGE="http://www.kde-apps.org/content/show.php?content=50910"
 SRC_URI="mirror://sourceforge/kooldock/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 SLOT="0"
 

@@ -12,7 +12,7 @@ SRC_URI="http://kdirstat.sourceforge.net/download/${P}.tar.bz2"
 #SRC_URI="mirror://sourceforge/kdirstat/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 
 IUSE=""
 SLOT="0"

@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/kodos/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86"
 IUSE=""
 
 DEPEND=">dev-python/PyQt-3.8.1"

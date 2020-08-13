@@ -9,7 +9,7 @@ inherit kde-meta eutils
 SRC_URI="${SRC_URI}"
 
 DESCRIPTION="KDE CD player"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="x11-libs/libXext

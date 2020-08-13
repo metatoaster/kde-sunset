@@ -12,7 +12,7 @@ HOMEPAGE="http://www.usermode.org/code.html"
 LICENSE="MIT"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 -ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 -ppc ~sparc x86"
 IUSE=""
 
 DEPEND="=kde-base/kwin-3.5*"

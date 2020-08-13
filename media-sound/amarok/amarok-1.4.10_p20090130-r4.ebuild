@@ -31,7 +31,7 @@ HOMEPAGE="http://amarok.kde.org/"
 LICENSE="GPL-2"
 
 SLOT="3.5"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE="mp4 mysql +amazon opengl postgres
 visualization ipod ifp real njb mtp musicbrainz daap
 python"

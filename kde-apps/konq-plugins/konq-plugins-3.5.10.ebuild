@@ -8,7 +8,7 @@ KMNODOCS=true
 inherit kde-meta
 
 DESCRIPTION="Various plugins for Konqueror."
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="|| ( >=kde-apps/konqueror-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
 	!kde-misc/metabar"

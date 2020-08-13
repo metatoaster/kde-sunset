@@ -18,7 +18,7 @@ SRC_URI="http://www.jalix.org/projects/showimg/download/${MY_PV}/${MY_P}.tar.bz2
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ppc sparc ~x86"
+KEYWORDS="~amd64 ppc ~sparc ~x86"
 IUSE="exif kipi mysql postgres"
 
 DEPEND="|| ( =kde-apps/libkonq-3.5* =kde-base/kdebase-3.5* )

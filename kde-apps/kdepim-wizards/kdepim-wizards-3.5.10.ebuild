@@ -8,7 +8,7 @@ KMMODULE=wizards
 inherit kde-meta eutils
 
 DESCRIPTION="KDEPIM wizards"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}
 >=kde-base/libkmime-${PV}:${SLOT}

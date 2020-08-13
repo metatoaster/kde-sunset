@@ -7,7 +7,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="Synchronize Data with KDE"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="<=app-pda/libopensync-0.30
 	>=kde-apps/kontact-${PV}:${SLOT}

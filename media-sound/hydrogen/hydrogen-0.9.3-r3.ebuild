@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/hydrogen/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE="alsa debug doc flac jack ladspa oss"
 
 RDEPEND="dev-libs/libxml2

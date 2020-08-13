@@ -7,5 +7,5 @@ KMNAME=kdeutils
 inherit kde-meta eutils
 
 DESCRIPTION="KDE free disk space utility"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"

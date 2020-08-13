@@ -14,7 +14,7 @@ SRC_URI="http://www.kde-apps.org/CONTENT/content-files/12956-${MY_P}.tar.bz2"
 
 SLOT="3.5"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="wifi"
 
 RDEPEND="kernel_linux? ( sys-apps/net-tools )

@@ -10,6 +10,6 @@ SRC_URI="http://www.paldandy.com/kalbum/data/${P}/${P}.tar.bz2
 	mirror://gentoo/kde-admindir-3.5.5.tar.bz2"
 HOMEPAGE="http://www.paldandy.com/kalbum/"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 
 need-kde 3

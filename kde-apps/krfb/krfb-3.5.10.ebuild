@@ -7,7 +7,7 @@ KMNAME=kdenetwork
 inherit kde-meta eutils
 
 DESCRIPTION="VNC-compatible server to share KDE desktops"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility slp"
 
 DEPEND="slp? ( net-libs/openslp )

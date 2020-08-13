@@ -10,7 +10,7 @@ SRC_URI="http://expansa.sns.it/knetfilter/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86"
 IUSE=""
 
 DEPEND=">=net-firewall/iptables-1.2.5"

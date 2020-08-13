@@ -10,7 +10,7 @@ SRC_URI="http://www.garandnet.net/kbudget/downloads/${P}.tar.bz2"
 HOMEPAGE="http://www.garandnet.net/kbudget/"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 
 SLOT="0"
 IUSE="kdeenablefinal"

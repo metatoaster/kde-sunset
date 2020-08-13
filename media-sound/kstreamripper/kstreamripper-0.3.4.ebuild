@@ -13,7 +13,7 @@ SRC_URI="http://mirror.krakonos.org/kde-sunset/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~ppc ppc64 sparc x86"
+KEYWORDS="amd64 ~ppc ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND=">=media-sound/streamripper-1.32-r2"

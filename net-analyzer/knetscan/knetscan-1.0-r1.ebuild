@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/knetscan/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="3.5"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=net-analyzer/nmap-2.54_beta36

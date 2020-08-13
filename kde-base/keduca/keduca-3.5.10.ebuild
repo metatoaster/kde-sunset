@@ -6,6 +6,6 @@ KMNAME=kdeedu
 inherit kde-meta
 
 DESCRIPTION="KDE Educational: Form-based tests and exams"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

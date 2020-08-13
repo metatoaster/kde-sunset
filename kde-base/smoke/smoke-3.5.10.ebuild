@@ -10,7 +10,7 @@ inherit kde-meta
 
 DESCRIPTION="Scripting Meta Object Kompiler Engine: a language-agnostic bindings generator for qt and kde"
 HOMEPAGE="http://techbase.kde.org/Development/Languages/smoke/"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="dev-lang/perl

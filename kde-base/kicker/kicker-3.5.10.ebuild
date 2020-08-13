@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="Kicker is the KDE application starter panel, also capable of some useful applets and extensions."
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ppc64 sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ppc64 ~sparc ~x86"
 IUSE="kdehiddenvisibility xcomposite"
 
 DEPEND=">=kde-apps/libkonq-${PV}:${SLOT}

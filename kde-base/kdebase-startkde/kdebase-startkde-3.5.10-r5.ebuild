@@ -9,7 +9,7 @@ KMEXTRACTONLY="kdm/kfrontend/sessions/kde.desktop.in startkde"
 inherit multilib kde-meta eutils
 
 DESCRIPTION="startkde script, which starts a complete KDE session, and associated scripts"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 # The kde apps called from the startkde script.

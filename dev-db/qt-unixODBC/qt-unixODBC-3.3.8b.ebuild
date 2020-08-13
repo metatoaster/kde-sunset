@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.gz"
 IUSE=""
 LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
 SLOT="3"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
 
 RDEPEND="~dev-qt/qt-meta-${PV}
 	dev-db/unixODBC"

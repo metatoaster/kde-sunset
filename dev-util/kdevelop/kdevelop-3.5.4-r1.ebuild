@@ -16,7 +16,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2
 LICENSE="GPL-2"
 
 SLOT="3.5"
-KEYWORDS="amd64 hppa ppc ppc64 sparc x86"
+KEYWORDS="amd64 hppa ppc ppc64 ~sparc x86"
 IUSE="ada clearcase cvs fortran haskell java pascal perforce perl php python ruby sql subversion"
 
 DEPEND="!<dev-util/kdevelop-3.5.4-r1
