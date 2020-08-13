@@ -27,7 +27,7 @@ RDEPEND=">=sys-apps/hal-0.5.4
 	x11-libs/libXtst
 	=kde-frameworks/kdelibs-3*"
 DEPEND="${RDEPEND}
-	x11-proto/scrnsaverproto"
+	x11-base/xorg-proto"
 
 need-kde 3.5
 

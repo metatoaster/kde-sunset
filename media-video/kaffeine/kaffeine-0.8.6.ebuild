@@ -24,8 +24,8 @@ RDEPEND=">=media-libs/xine-lib-1.1.9
 	x11-libs/libXtst"
 
 DEPEND="${RDEPEND}
-	dvb? ( media-tv/linuxtv-dvb-headers )
-	x11-proto/inputproto"
+	x11-base/xorg-proto
+	dvb? ( media-tv/linuxtv-dvb-headers )"
 
 need-kde 3.5.4
 

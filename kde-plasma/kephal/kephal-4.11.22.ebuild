@@ -16,7 +16,7 @@ RDEPEND="
 	x11-libs/libXrandr
 "
 DEPEND="${RDEPEND}
-	x11-proto/randrproto
+	x11-base/xorg-proto
 "
 
 KMEXTRACTONLY+="

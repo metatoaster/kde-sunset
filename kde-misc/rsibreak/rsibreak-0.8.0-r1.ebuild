@@ -25,10 +25,11 @@ IUSE=""
 
 S="${WORKDIR}/${PN}-${PV/_rc/-rc}"
 
-RDEPEND="x11-libs/libXext
-		x11-libs/libX11
-		x11-libs/libXScrnSaver"
+RDEPEND="
+	x11-libs/libXext
+	x11-libs/libX11
+	x11-libs/libXScrnSaver"
 DEPEND="${RDEPEND}
-		x11-proto/scrnsaverproto"
+	x11-base/xorg-proto"
 
 need-kde 3.3

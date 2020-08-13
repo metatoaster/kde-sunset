@@ -58,14 +58,12 @@ RDEPEND="
 "
 #	!kde-base/kdenetwork is handled by the eclass.
 
-DEPEND="
-	${BOTH_DEPEND}
-	x11-proto/videoproto
+DEPEND="${BOTH_DEPEND}
+	x11-base/xorg-proto
 	kernel_linux? (
 		virtual/os-headers
 		x11-libs/libXv
 	)
-	xscreensaver? ( x11-proto/scrnsaverproto )
 "
 
 pkg_setup() {

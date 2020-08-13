@@ -20,7 +20,7 @@ RDEPEND="
 	x11-libs/libXScrnSaver
 "
 DEPEND="${RDEPEND}
-	x11-proto/scrnsaverproto
+	x11-base/xorg-proto
 "
 
 KMEXTRACTONLY="

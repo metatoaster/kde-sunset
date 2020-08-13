@@ -22,22 +22,25 @@ IUSE="debug gpg +jabber kde msn +oscar sms spell ssl weather yahoo livejournal"
 # inside /etc/portage/env/net-im/sim to disable transparent plugin.
 
 # kdebase-data provides the icon "licq.png"
-RDEPEND="kde? ( kde-frameworks/kdelibs:3.5[spell=]
-				kde-apps/kdebase-data:3.5 )
-		!kde? ( spell? ( app-text/aspell ) )
-		dev-qt/qt-meta:3
-		ssl? ( dev-libs/openssl )
-		gpg? ( app-crypt/gnupg )
-		dev-libs/libxml2
-		dev-libs/libxslt
-		sys-libs/zlib
-		media-libs/fontconfig
-		x11-libs/libXScrnSaver"
+RDEPEND="
+	kde? (
+		kde-frameworks/kdelibs:3.5[spell=]
+		kde-apps/kdebase-data:3.5
+	)
+	!kde? ( spell? ( app-text/aspell ) )
+	dev-qt/qt-meta:3
+	ssl? ( dev-libs/openssl )
+	gpg? ( app-crypt/gnupg )
+	dev-libs/libxml2
+	dev-libs/libxslt
+	sys-libs/zlib
+	media-libs/fontconfig
+	x11-libs/libXScrnSaver"
 
 DEPEND="${RDEPEND}
-		sys-devel/flex
-		app-arch/zip
-		x11-proto/scrnsaverproto"
+	sys-devel/flex
+	app-arch/zip
+	x11-base/xorg-proto"
 
 pkg_setup() {
 	if ! use jabber && ! use livejournal && ! use msn && ! use oscar && ! use yahoo; then

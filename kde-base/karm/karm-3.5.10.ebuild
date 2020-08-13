@@ -15,7 +15,7 @@ RDEPEND=">=kde-base/libkcal-${PV}:${SLOT}
 	x11-libs/libXScrnSaver"
 
 DEPEND="${RDEPEND}
-	x11-proto/scrnsaverproto"
+	x11-base/xorg-proto"
 
 KMCOPYLIB="
 	libkcal libkcal

@@ -24,8 +24,7 @@ COMMONDEPEND="
 "
 DEPEND="${COMMONDEPEND}
 	x11-apps/bdftopcf
-	x11-proto/kbproto
-	x11-proto/renderproto
+	x11-base/xorg-proto
 "
 RDEPEND="${COMMONDEPEND}
 	!<kde-apps/konsole-4.14.3-r2

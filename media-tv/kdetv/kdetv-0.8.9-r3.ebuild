@@ -39,8 +39,7 @@ RDEPEND="
 	x11-libs/libXrender"
 
 DEPEND="${RDEPEND}
-	x11-proto/xf86dgaproto
-	x11-proto/videoproto
+	x11-base/xorg-proto
 	virtual/os-headers"
 
 need-kde 3.5

@@ -12,17 +12,16 @@ KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
 IUSE="cpu_flags_x86_3dnow altivec debug cpu_flags_x86_mmx cpu_flags_x86_sse
 cpu_flags_x86_sse2 xinerama"
 
-COMMONDEPEND="
+RDEPEND="
 	media-libs/libpng:0=
 	virtual/jpeg:0
 	x11-libs/libX11
 	x11-libs/libXext
 	xinerama? ( x11-libs/libXinerama )
 "
-DEPEND="${COMMONDEPEND}
-	xinerama? ( x11-proto/xineramaproto )
+DEPEND="${RDEPEND}
+	xinerama? ( x11-base/xorg-proto )
 "
-RDEPEND="${COMMONDEPEND}"
 
 src_configure() {
 	local mycmakeargs=(

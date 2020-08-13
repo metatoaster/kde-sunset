@@ -44,11 +44,7 @@ COMMONDEPEND="
 "
 DEPEND="${COMMONDEPEND}
 	x11-libs/xcb-util-renderutil
-	x11-proto/compositeproto
-	x11-proto/damageproto
-	x11-proto/fixesproto
-	x11-proto/randrproto
-	x11-proto/renderproto
+	x11-base/xorg-proto
 "
 RDEPEND="${COMMONDEPEND}
 	x11-apps/scripts

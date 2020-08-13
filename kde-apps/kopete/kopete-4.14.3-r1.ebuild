@@ -110,7 +110,7 @@ RDEPEND="${COMMONDEPEND}
 "
 #	telepathy? ( net-libs/decibel )"
 DEPEND="${COMMONDEPEND}
-	x11-proto/scrnsaverproto
+	x11-base/xorg-proto
 	jingle? ( dev-libs/jsoncpp )
 "
 

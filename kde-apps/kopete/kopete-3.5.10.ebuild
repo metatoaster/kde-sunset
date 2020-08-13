@@ -49,10 +49,9 @@ RDEPEND="${BOTH_DEPEND}
 #	netmeeting? ( net-im/gnomemeeting )"
 
 DEPEND="${BOTH_DEPEND}
+	x11-base/xorg-proto
 	kernel_linux? ( virtual/os-headers )
-	x11-proto/videoproto
-	kernel_linux? ( x11-libs/libXv )
-	xscreensaver? ( x11-proto/scrnsaverproto )"
+	kernel_linux? ( x11-libs/libXv )"
 
 pkg_setup() {
 	if use kernel_linux && ! built_with_use dev-qt/qt-meta:3 opengl; then

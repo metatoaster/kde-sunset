@@ -47,10 +47,7 @@ COMMONDEPEND="
 "
 DEPEND="${COMMONDEPEND}
 	dev-libs/boost
-	x11-proto/compositeproto
-	x11-proto/damageproto
-	x11-proto/fixesproto
-	x11-proto/renderproto
+	x11-base/xorg-proto
 "
 RDEPEND="${COMMONDEPEND}
 	$(add_kdeapps_dep plasma-runtime)

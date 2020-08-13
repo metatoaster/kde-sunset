@@ -11,7 +11,7 @@ KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility xinerama"
 
 DEPEND="x11-libs/libXcursor
-	xinerama? ( x11-proto/xineramaproto )"
+	xinerama? ( x11-base/xorg-proto )"
 RDEPEND="x11-libs/libXcursor
 	xinerama? ( x11-libs/libXinerama )"
 
