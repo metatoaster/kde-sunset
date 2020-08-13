@@ -45,7 +45,7 @@ EGIT_REPO_URI=(
 [[ ${QT4_BUILD_TYPE} == live ]] && inherit git-r3
 
 if [[ ${PN} != qttranslations ]]; then
-	IUSE="aqua debug pch"
+	IUSE="debug pch"
 	[[ ${PN} != qtxmlpatterns ]] && IUSE+=" +exceptions"
 fi
 
@@ -231,20 +231,6 @@ qt4-build-multilib_src_prepare() {
 		mkspecs/$(qt4_get_mkspec)/qmake.conf \
 		|| die "sed QMAKE_(LIB|INC)DIR failed"
 
-	if use_if_iuse aqua; then
-		sed -i \
-			-e '/^CONFIG/s:app_bundle::' \
-			-e '/^CONFIG/s:plugin_no_soname:plugin_with_soname absolute_library_soname:' \
-			mkspecs/$(qt4_get_mkspec)/qmake.conf \
-			|| die "sed failed (aqua)"
-
-		# we are crazy and build cocoa + qt3support
-		if { ! in_iuse qt3support || use qt3support; } && [[ ${CHOST##*-darwin} -ge 9 ]]; then
-			sed -i -e "/case \"\$PLATFORM,\$CFG_MAC_COCOA\" in/,/;;/ s|CFG_QT3SUPPORT=\"no\"|CFG_QT3SUPPORT=\"yes\"|" \
-				configure || die "sed failed (cocoa + qt3support)"
-		fi
-	fi
-
 	if [[ ${CHOST} == *-darwin* ]]; then
 		# Set FLAGS and remove -arch, since our gcc-apple is multilib crippled (by design)
 		sed -i \
@@ -400,19 +386,6 @@ qt4_multilib_src_configure() {
 		$([[ ${CHOST} != *-solaris* ]] && echo -reduce-relocations)
 	)
 
-	if use_if_iuse aqua; then
-		if [[ ${CHOST##*-darwin} -ge 9 ]]; then
-			conf+=(
-				# on (snow) leopard use the new (frameworked) cocoa code
-				-cocoa -framework
-				# add hint for the framework location
-				-F"${QT4_LIBDIR}"
-			)
-		else
-			conf+=(-no-framework)
-		fi
-	fi
-
 	conf+=(
 		# module-specific options
 		"${myconf[@]}"
@@ -483,23 +456,14 @@ qt4_multilib_src_install() {
 	fi
 
 	qt4_install_module_qconfigs
-	qt4_symlink_framework_headers
 }
 
 qt4_multilib_src_install_all() {
 	if [[ ${PN} == qtcore ]]; then
 		# include gentoo-qconfig.h at the beginning of Qt{,Core}/qconfig.h
-		if use aqua && [[ ${CHOST#*-darwin} -ge 9 ]]; then
-			sed -i -e '1i #include <QtCore/Gentoo/gentoo-qconfig.h>\n' \
-				"${D}${QT4_LIBDIR}"/QtCore.framework/Headers/qconfig.h \
-				|| die "sed failed (qconfig.h)"
-			dosym "${QT4_HEADERDIR#${EPREFIX}}"/Gentoo \
-				"${QT4_LIBDIR#${EPREFIX}}"/QtCore.framework/Headers/Gentoo
-		else
-			sed -i -e '1i #include <Gentoo/gentoo-qconfig.h>\n' \
-				"${D}${QT4_HEADERDIR}"/Qt{,Core}/qconfig.h \
-				|| die "sed failed (qconfig.h)"
-		fi
+		sed -i -e '1i #include <Gentoo/gentoo-qconfig.h>\n' \
+			"${D}${QT4_HEADERDIR}"/Qt{,Core}/qconfig.h \
+			|| die "sed failed (qconfig.h)"
 
 		dodir "${QT4_DATADIR#${EPREFIX}}"/mkspecs/gentoo
 		mv "${D}${QT4_DATADIR}"/mkspecs/{qconfig.pri,gentoo/} || die
@@ -736,49 +700,6 @@ qt4_regenerate_global_qconfigs() {
 	fi
 }
 
-# @FUNCTION: qt4_symlink_framework_headers
-# @DESCRIPTION:
-# On OS X we need to add some symlinks when frameworks are being
-# used, to avoid complications with some more or less stupid packages.
-qt4_symlink_framework_headers() {
-	if use_if_iuse aqua && [[ ${CHOST##*-darwin} -ge 9 ]]; then
-		local frw dest f h rdir
-		# Some packages tend to include <Qt/...>
-		dodir "${QT4_HEADERDIR#${EPREFIX}}"/Qt
-
-		# Fake normal headers when frameworks are installed... eases life later
-		# on, make sure we use relative links though, as some ebuilds assume
-		# these dirs exist in src_install to add additional files
-		f=${QT4_HEADERDIR}
-		h=${QT4_LIBDIR}
-		while [[ -n ${f} && ${f%%/*} == ${h%%/*} ]] ; do
-			f=${f#*/}
-			h=${h#*/}
-		done
-		rdir=${h}
-		f="../"
-		while [[ ${h} == */* ]] ; do
-			f="${f}../"
-			h=${h#*/}
-		done
-		rdir="${f}${rdir}"
-
-		for frw in "${D}${QT4_LIBDIR}"/*.framework; do
-			[[ -e "${frw}"/Headers ]] || continue
-			f=$(basename ${frw})
-			dest="${QT4_HEADERDIR#${EPREFIX}}"/${f%.framework}
-			dosym "${rdir}"/${f}/Headers "${dest}"
-
-			# Link normal headers as well.
-			for hdr in "${D}${QT4_LIBDIR}/${f}"/Headers/*; do
-				h=$(basename ${hdr})
-				dosym "../${rdir}"/${f}/Headers/${h} \
-					"${QT4_HEADERDIR#${EPREFIX}}"/Qt/${h}
-			done
-		done
-	fi
-}
-
 # @FUNCTION: qt4_get_mkspec
 # @INTERNAL
 # @DESCRIPTION:
@@ -790,9 +711,7 @@ qt4_get_mkspec() {
 		*-linux*)
 			spec=linux ;;
 		*-darwin*)
-			use_if_iuse aqua &&
-				spec=macx ||   # mac with carbon/cocoa
-				spec=darwin ;; # darwin/mac with X11
+			spec=darwin ;; # darwin/mac with X11
 		*-freebsd*|*-dragonfly*)
 			spec=freebsd ;;
 		*-netbsd*)
