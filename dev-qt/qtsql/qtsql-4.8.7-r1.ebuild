@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -19,7 +19,7 @@ REQUIRED_USE="
 DEPEND="
 	~dev-qt/qtcore-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
 	freetds? ( dev-db/freetds )
-	mysql? ( virtual/libmysqlclient:=[${MULTILIB_USEDEP}] )
+	mysql? ( dev-db/mysql-connector-c:=[${MULTILIB_USEDEP}] )
 	oci8? ( >=dev-db/oracle-instantclient-basic-11.2.0.4[${MULTILIB_USEDEP}] )
 	odbc? ( || (
 		>=dev-db/unixODBC-2.3.2-r2[${MULTILIB_USEDEP}]
