@@ -9,7 +9,7 @@ KMNODOCS="true"
 inherit kde-meta eutils
 
 DESCRIPTION="kdesdk-misc - Various files and utilities"
-KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 PATCHES=( "${FILESDIR}/${KMNAME}_poxml-r960293.patch" )

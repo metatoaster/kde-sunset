@@ -13,6 +13,6 @@ KMEXTRA="doc/kworldclock"
 inherit kde-meta
 
 DESCRIPTION="KDE program that displays the part of the Earth lit up by the Sun"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 DEPEND=""

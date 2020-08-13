@@ -10,7 +10,7 @@ SRC_URI="http://people.freenet.de/stealth/kbandwidth/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ppc ~sparc x86"
+KEYWORDS="~alpha amd64 ppc ~sparc x86"
 IUSE=""
 
 DEPEND=""

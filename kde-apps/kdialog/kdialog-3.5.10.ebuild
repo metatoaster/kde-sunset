@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="KDialog can be used to show nice dialog boxes from shell scripts"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 # Uses cdcontrol on FreeBSD

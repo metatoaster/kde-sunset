@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="A simple password checker, used by any software in need of user authentication."
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="pam kdehiddenvisibility"
 DEPEND="pam? ( kde-base/kdebase-pam )"
 RDEPEND="${DEPEND}"

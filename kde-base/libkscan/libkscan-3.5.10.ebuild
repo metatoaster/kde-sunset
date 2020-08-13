@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="KDE scanner library"
-KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ppc ppc64 sparc x86"
 LICENSE="LGPL-2"
 IUSE=""
 

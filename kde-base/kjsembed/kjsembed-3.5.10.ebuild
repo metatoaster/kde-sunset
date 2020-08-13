@@ -10,7 +10,7 @@ inherit kde-meta
 DESCRIPTION="KDE javascript parser and embedder"
 HOMEPAGE="http://xmelegance.org/kjsembed/"
 
-KEYWORDS="alpha amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND="|| ( >=kde-base/kwin-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"

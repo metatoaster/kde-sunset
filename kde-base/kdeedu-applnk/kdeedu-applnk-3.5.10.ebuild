@@ -7,6 +7,6 @@ KMMODULE=applnk
 inherit kde-meta
 
 DESCRIPTION="applnk files for kdeedu-derived apps"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND=""

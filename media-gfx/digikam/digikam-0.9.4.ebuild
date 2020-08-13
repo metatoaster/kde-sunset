@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
 	doc? ( mirror://sourceforge/${PN}/${P_DOC}.tar.bz2 )"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha ppc sparc"
+KEYWORDS="~alpha ppc sparc"
 IUSE="nfs doc kdehiddenvisibility kdeenablefinal"
 
 DEPEND=">=media-libs/libgphoto2-2.2

@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 RESTRICT="test"
 
 DESCRIPTION="KMail is the email component of Kontact, the integrated personal information manager of KDE."
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="crypt"
 
 DEPEND=">=kde-base/libkdenetwork-${PV}:${SLOT}

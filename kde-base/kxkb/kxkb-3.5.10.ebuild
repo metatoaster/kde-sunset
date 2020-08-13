@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="KControl module for the X11 keyboard extension to configure and switch between keyboard mappings."
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND="x11-libs/libXtst"

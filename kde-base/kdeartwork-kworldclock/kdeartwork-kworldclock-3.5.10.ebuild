@@ -8,7 +8,7 @@ KMNAME=kdeartwork
 inherit kde-meta
 
 DESCRIPTION="kworldclock from kdeartwork"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND="|| ( >=kde-base/kworldclock-${PV}:${SLOT} >=kde-base/kdetoys-${PV}:${SLOT} )"

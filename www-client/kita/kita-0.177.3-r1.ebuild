@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge.jp/kita/20336/${P}.tar.gz
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ppc ppc64 x86"
+KEYWORDS="~alpha ~amd64 ppc ppc64 x86"
 
 need-kde 3.1
 

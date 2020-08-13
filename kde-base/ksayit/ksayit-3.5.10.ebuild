@@ -6,7 +6,7 @@ KMNAME=kdeaccessibility
 inherit kde-meta
 
 DESCRIPTION="KDE text-to-speech frontend."
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/kttsd-${PV}:${SLOT}

@@ -6,6 +6,6 @@ KMNAME=kdeaddons
 inherit kde-meta
 
 DESCRIPTION="Atlantik gameboard designer"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND=">=kde-base/atlantik-${PV}:${SLOT}"

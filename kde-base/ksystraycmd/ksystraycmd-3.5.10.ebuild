@@ -10,5 +10,5 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdebase-3.5-patchset-13.tar.bz2"
 
 DESCRIPTION="ksystraycmd embeds applications given as argument into the system tray."
-KEYWORDS="alpha ~amd64 ~hppa ia64 ppc ppc64 sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ia64 ppc ppc64 sparc ~x86"
 IUSE="kdehiddenvisibility"

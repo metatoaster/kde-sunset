@@ -6,7 +6,7 @@ KMNAME=kdewebdev
 inherit kde-meta flag-o-matic
 
 DESCRIPTION="A KDE KPart Application for xsldbg, an XSLT debugger"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND="dev-libs/libxslt

@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils flag-o-matic
 
 DESCRIPTION="SVG viewer library and embeddable kpart"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=media-libs/freetype-2.3

@@ -8,7 +8,7 @@ KMEXTRA=kaddressbook-plugins/
 inherit kde-meta
 
 DESCRIPTION="Plugins for KAB"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND="|| ( >=kde-apps/kaddressbook-${PV}:${SLOT} >=kde-base/kdepim-${PV}:${SLOT} )"
 
