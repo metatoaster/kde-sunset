@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,7 +18,7 @@ DEPEND="
 	iconv? ( >=virtual/libiconv-0-r2[${MULTILIB_USEDEP}] )
 	icu? ( <dev-libs/icu-59:=[${MULTILIB_USEDEP}] )
 	ssl? (
-		!libressl? ( >=dev-libs/openssl-1.0.1h-r2:0[${MULTILIB_USEDEP}] )
+		!libressl? ( >=dev-libs/openssl-1.1:=[sslv3,${MULTILIB_USEDEP}] )
 		libressl? ( dev-libs/libressl:=[${MULTILIB_USEDEP}] )
 	)
 "
@@ -36,7 +36,8 @@ MULTILIB_WRAPPED_HEADERS=(
 PATCHES=(
 	"${FILESDIR}/${PN}-4.8.5-honor-ExcludeSocketNotifiers-in-glib-event-loop.patch" # bug 514968
 	"${FILESDIR}/${PN}-4.8.5-qeventdispatcher-recursive.patch" # bug 514968
-	"${FILESDIR}/${PN}-4.8.7-libressl.patch" # bug 584796
+	"${FILESDIR}/${PN}-4.8.7-openssl-1.1.patch" # bug 592536
+#	"${FILESDIR}/${PN}-4.8.7-libressl.patch" # bug 584796
 	"${FILESDIR}/${PN}-4.8.7-moc.patch" # bug 556104, 635394
 )
 
