@@ -11,7 +11,7 @@ SRC_URI="http://www.kdelook.org/content/files/5296-${MY_P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE=""
 
 RDEPEND="=kde-base/kwin-3.5*

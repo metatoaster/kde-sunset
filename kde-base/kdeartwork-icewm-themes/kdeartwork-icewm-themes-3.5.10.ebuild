@@ -10,7 +10,7 @@ KMNAME=kdeartwork
 inherit kde-meta
 
 DESCRIPTION="Themes for IceWM from the kdeartwork package."
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 DEPEND=""
 RDEPEND=">=kde-base/kdeartwork-kwin-styles-${PV}:${SLOT}"

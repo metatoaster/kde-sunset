@@ -12,7 +12,7 @@ SRC_URI="http://www.kolumbus.fi/juuso.alasuutari/${P/-old}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0.70"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="debug"
 
 RDEPEND=">=sys-apps/dbus-0.91"

@@ -11,7 +11,7 @@ SRC_URI="http://perso.wanadoo.fr/chamayou/${P}.tar.bz2
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="=kde-base/kwin-3.5*"

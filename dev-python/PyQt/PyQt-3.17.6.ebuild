@@ -14,7 +14,7 @@ SRC_URI="mirror://kde-sunset/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
 IUSE="debug doc examples"
 
 RDEPEND="dev-qt/qt-meta:3

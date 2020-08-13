@@ -15,7 +15,7 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ppc64 x86"
 IUSE=""
 
 DEPEND="=kde-apps/konsole-3.5*"

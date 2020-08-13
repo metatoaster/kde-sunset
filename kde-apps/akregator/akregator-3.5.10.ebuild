@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdepim-3.5-patchset-05.tar.bz2"
 
 DESCRIPTION="KDE news feed aggregator."
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}

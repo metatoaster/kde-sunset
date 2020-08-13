@@ -14,7 +14,7 @@ HOMEPAGE="http://gtk-qt.ecs.soton.ac.uk"
 SRC_URI="http://gtk-qt.ecs.soton.ac.uk/files/${PV}/${MY_PN}-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE="gnome"
 
 LANGS="bg de es fr it nn ru sv tr"

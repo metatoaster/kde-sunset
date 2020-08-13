@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta flag-o-matic
 
 DESCRIPTION="kpdf, a kde pdf viewer based on xpdf"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 KMEXTRA="kfile-plugins/pdf"
 

@@ -11,7 +11,7 @@ SRC_URI="http://www.kde-look.org/CONTENT/content-files/42804-${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86 ~x86-fbsd"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="=kde-base/kwin-3.5*"

@@ -7,7 +7,7 @@ KMNAME=kdesdk
 inherit kde-meta eutils
 
 DESCRIPTION="Cervisia - A KDE CVS frontend"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="kdehiddenvisibility"
 
 RDEPEND="${RDEPEND}

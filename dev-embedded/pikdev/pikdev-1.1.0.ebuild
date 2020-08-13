@@ -11,7 +11,7 @@ SRC_URI="http://pikdev.free.fr/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 S="${WORKDIR}/${MY_P}"
 

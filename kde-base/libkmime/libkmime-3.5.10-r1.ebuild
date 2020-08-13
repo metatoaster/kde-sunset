@@ -8,7 +8,7 @@ KMNAME=kdepim
 inherit kde-meta eutils
 
 DESCRIPTION="KDE kmime library for Message Handling"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 PATCHES=( "${FILESDIR}/${KMNAME}_${PN}-r882976.patch" )

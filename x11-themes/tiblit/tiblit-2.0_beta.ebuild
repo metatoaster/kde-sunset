@@ -12,5 +12,5 @@ SRC_URI="mirror://sourceforge/${PN}/${P/_/-}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 S="${WORKDIR}/${P/_beta/}"

@@ -12,7 +12,7 @@ SRC_URI="http://www.kde-look.org/content/files/10429-${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="=kde-base/kwin-3.5*"

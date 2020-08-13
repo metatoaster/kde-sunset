@@ -7,7 +7,7 @@ KMNAME=kdesdk
 inherit db-use kde-meta eutils
 
 DESCRIPTION="KBabel - An advanced PO file editor"
-KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
 IUSE="berkdb kdehiddenvisibility"
 
 PATCHES=( "${FILESDIR}/${P}-eof.patch" )

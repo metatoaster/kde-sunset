@@ -19,7 +19,7 @@ HOMEPAGE="http://www.rsibreak.org/"
 LICENSE="GPL-2"
 SLOT="3.5"
 
-KEYWORDS="amd64 ppc x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc x86"
 
 IUSE=""
 

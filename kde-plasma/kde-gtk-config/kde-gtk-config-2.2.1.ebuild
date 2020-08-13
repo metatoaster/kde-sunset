@@ -12,7 +12,7 @@ HOMEPAGE="https://projects.kde.org/kde-gtk-config"
 SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~arm ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~x86"
 SLOT="4"
 IUSE="debug"
 

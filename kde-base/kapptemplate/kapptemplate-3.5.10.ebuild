@@ -9,7 +9,7 @@ KMNAME=kdesdk
 inherit kde-meta eutils
 
 DESCRIPTION="A shell script that will create the necessary framework to develop various KDE applications."
-KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
 IUSE=""
 
 src_install() {

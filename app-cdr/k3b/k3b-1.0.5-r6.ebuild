@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/k3b/${P/_}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="3.5"
-KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ppc64 x86"
 IUSE="alsa css dvd dvdr encode emovix ffmpeg flac hal mp3 musicbrainz
 	sndfile vcd vorbis"
 

@@ -7,5 +7,5 @@ KMNAME=kdenetwork
 inherit kde-meta eutils
 
 DESCRIPTION="Kicker file server (http) applet"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="kdehiddenvisibility"
