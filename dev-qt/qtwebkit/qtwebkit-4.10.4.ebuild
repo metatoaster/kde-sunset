@@ -50,7 +50,7 @@ DEPEND="${RDEPEND}
 	virtual/perl-Digest-MD5
 	virtual/perl-File-Spec
 	virtual/perl-Getopt-Long
-	virtual/pkgconfig[${MULTILIB_USEDEP}]
+	virtual/pkgconfig
 "
 
 S=${WORKDIR}

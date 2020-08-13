@@ -43,7 +43,7 @@ RDEPEND="
 	)
 "
 DEPEND="${RDEPEND}
-	virtual/pkgconfig[${MULTILIB_USEDEP}]
+	virtual/pkgconfig
 	qt5? ( kde-frameworks/extra-cmake-modules:5 )
 "
 PDEPEND="

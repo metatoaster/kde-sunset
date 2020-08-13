@@ -59,7 +59,7 @@ COMMON_DEPEND="
 DEPEND="
 	${COMMON_DEPEND}
 	dev-util/intltool
-	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
+	>=virtual/pkgconfig-0-r1
 	doc? (
 		app-doc/doxygen
 	)
