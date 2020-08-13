@@ -277,7 +277,19 @@ qt4-build-multilib_src_prepare() {
 	fi
 
 	# apply patches
-	EPATCH_SOURCE="${WORKDIR}/patch" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
+	# EPATCH_SOURCE="${WORKDIR}/patch" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
+
+	# patching individually
+	epatch "${WORKDIR}/patch/fix-build-icu59.patch"
+	epatch "${WORKDIR}/patch/qt4-openssl-1.1.patch"
+	# epatch "${WORKDIR}/patch/gcc9-qforeach.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-19873.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-19872.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-19871.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-19870.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-19869.patch"
+	epatch "${WORKDIR}/patch/CVE-2018-15518.patch"
+
 	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
 	epatch_user
 }
