@@ -6,7 +6,7 @@ KMNAME=kdegames
 inherit kde-meta
 
 DESCRIPTION="KDE: KGoldrunner is a game of action and puzzle solving"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND=">=kde-apps/libkdegames-${PV}:${SLOT}"

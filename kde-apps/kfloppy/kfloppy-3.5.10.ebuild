@@ -7,5 +7,5 @@ KMNAME=kdeutils
 inherit kde-meta eutils
 
 DESCRIPTION="KFloppy - formats disks and puts a DOS or ext2fs filesystem on them."
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"

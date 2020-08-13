@@ -8,7 +8,7 @@ KM_MAKEFILESREV=1
 inherit kde-meta
 
 DESCRIPTION="KDE: Python bindings for DCOP"
-KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="virtual/python"
 RDEPEND="${DEPEND}"

@@ -6,7 +6,7 @@ KMNAME=kdeadmin
 inherit kde-meta
 
 DESCRIPTION="tar-based DAT archiver for KDE"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="kdehiddenvisibility"
 DEPEND=""
 

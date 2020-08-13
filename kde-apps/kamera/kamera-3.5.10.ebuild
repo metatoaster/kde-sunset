@@ -7,7 +7,7 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="KDE digital camera manager"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="media-libs/libgphoto2"
 

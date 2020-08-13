@@ -6,7 +6,7 @@ KMNAME=kdeedu
 inherit flag-o-matic kde-meta eutils
 
 DESCRIPTION="KDE: periodic table of the elements"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="solver"
 HOMEPAGE="http://edu.kde.org/kalzium/"
 

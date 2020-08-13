@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdepim-3.5-patchset-04.tar.bz2"
 
 DESCRIPTION="kioslaves from kdepim package"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="sasl"
 DEPEND="sasl? ( >=dev-libs/cyrus-sasl-2 )
 	>=kde-base/libkmime-${PV}:${SLOT}"

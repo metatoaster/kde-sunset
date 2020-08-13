@@ -8,7 +8,7 @@ KMNOMODULE=true
 inherit kde-meta eutils
 
 DESCRIPTION="Special Dates plugin for Kontact: displays a summary of important holidays and calendar events"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}

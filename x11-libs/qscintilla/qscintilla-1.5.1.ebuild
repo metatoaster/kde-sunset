@@ -17,7 +17,7 @@ SRC_URI="mirror://gentoo/${MY_P}.tar.gz mirror://kde-sunset/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ppc ppc64 ~sparc x86"
 IUSE="doc"
 
 RDEPEND="=dev-qt/qt-meta-3*"

@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/kipi/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~ia64 ppc ~sparc"
+KEYWORDS="~alpha ppc ~sparc"
 IUSE=""
 
 RDEPEND=">=media-gfx/exiv2-0.18

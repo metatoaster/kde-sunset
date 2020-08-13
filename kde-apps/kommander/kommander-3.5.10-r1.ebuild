@@ -7,7 +7,7 @@ KMNAME=kdewebdev
 inherit kde-meta
 
 DESCRIPTION="KDE dialog system for scripting"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="kdehiddenvisibility"
 
 PATCHES=( "${FILESDIR}/kommander-3.5.9-visibility.patch"

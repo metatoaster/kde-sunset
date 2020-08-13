@@ -6,6 +6,6 @@ KMNAME=kdeaccessibility
 inherit kde-meta
 
 DESCRIPTION="KDE: A type-and-say front end for speech synthesizers"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

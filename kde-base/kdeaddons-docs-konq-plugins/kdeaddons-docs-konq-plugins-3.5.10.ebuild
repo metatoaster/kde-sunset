@@ -8,6 +8,6 @@ KMEXTRA="doc/konq-plugins"
 inherit kde-meta
 
 DESCRIPTION="Documentation for the konqueror plugins from kdeaddons"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND=""

@@ -9,7 +9,7 @@ inherit kde-meta eutils
 DESCRIPTION="KDE multi-protocol IM client"
 HOMEPAGE="http://kopete.kde.org/"
 
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ~ppc64 ~sparc x86"
 
 IUSE="emoticons-manager jingle ssl xscreensaver slp kernel_linux kdehiddenvisibility"
 PLUGINS="addbookmarks alias autoreplace connectionstatus contactnotes crypt highlight history latex netmeeting nowlistening

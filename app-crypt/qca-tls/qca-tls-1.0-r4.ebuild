@@ -11,7 +11,7 @@ SRC_URI="http://delta.affinix.com/download/${PN%-*}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 #alpha amd64 and ppc64 need testing
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="=app-crypt/qca-1*

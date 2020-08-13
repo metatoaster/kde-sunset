@@ -6,7 +6,7 @@ KMNAME=kdeaccessibility
 inherit kde-meta
 
 DESCRIPTION="KDE panel applet that displays the keyboard status"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="|| ( >=kde-apps/kcontrol-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
 

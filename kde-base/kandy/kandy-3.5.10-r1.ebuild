@@ -10,7 +10,7 @@ SRC_URI="${SRC_URI}
 	 mirror://gentoo/kandy-icons.tar.bz2"
 
 DESCRIPTION="KDE: Communicating with your mobile phone"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=kde-base/libkdepim-${PV}:${SLOT}"

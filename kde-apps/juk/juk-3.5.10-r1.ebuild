@@ -7,7 +7,7 @@ KMNAME=kdemultimedia
 inherit kde-meta eutils
 
 DESCRIPTION="Jukebox and music manager for KDE."
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="akode gstreamer"
 
 RDEPEND="media-libs/taglib

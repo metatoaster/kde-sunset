@@ -7,7 +7,7 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="KSysguard, a network enabled task manager/system monitor, with additional functionality of top."
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility lm_sensors"
 
 DEPEND="lm_sensors? ( sys-apps/lm_sensors )"

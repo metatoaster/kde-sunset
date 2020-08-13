@@ -7,6 +7,6 @@ KMNAME=kdegraphics
 inherit kde-meta eutils
 
 DESCRIPTION="Paint Program for KDE"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 LICENSE="BSD"

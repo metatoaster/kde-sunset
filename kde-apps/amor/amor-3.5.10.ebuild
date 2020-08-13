@@ -7,7 +7,7 @@ KMNAME=kdetoys
 inherit kde-meta
 
 DESCRIPTION="KDE: Amusing Misuse Of Resources - desktop-dwelling creature"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 
 DEPEND="x11-libs/libXext"

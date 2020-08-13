@@ -9,7 +9,7 @@ PATCH_P="${PN}-${PATCH_VERSION}-patches"
 
 inherit eutils multilib autotools gnuconfig libtool
 
-KEYWORDS="~alpha amd64 arm ~hppa ~ia64 ~mips ppc ppc64 s390 sh ~sparc x86"
+KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 s390 sh ~sparc x86"
 
 DESCRIPTION="ODBC Interface for Linux."
 HOMEPAGE="http://www.unixodbc.org/"

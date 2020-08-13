@@ -6,6 +6,6 @@ KMNAME=kdeadmin
 inherit kde-meta
 
 DESCRIPTION="KDE: Editor for Sys-V like init configurations"
-KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 x86"
+KEYWORDS="~alpha amd64 ppc ppc64 x86"
 IUSE="kdehiddenvisibility"
 DEPEND=""

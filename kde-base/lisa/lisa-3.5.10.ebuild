@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 	mirror://gentoo/kdenetwork-3.5-patchset-01.tar.bz2"
 
 DESCRIPTION="KDE Lan Information Server - allows KDE desktops to share information over a network."
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 KMEXTRA="doc/kcontrol/lanbrowser"
 

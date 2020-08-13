@@ -8,7 +8,7 @@ KMMODULE=arts
 inherit kde-meta eutils
 
 DESCRIPTION="aRts pipeline builder and other tools"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE="alsa"
 KMEXTRACTONLY="mpeglib_artsplug/configure.in.in" # needed because the artsc-config call is here
 KMEXTRA="doc/artsbuilder"

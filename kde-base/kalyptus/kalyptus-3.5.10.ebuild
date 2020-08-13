@@ -8,7 +8,7 @@ KM_MAKEFILESREV=1
 inherit kde-meta
 
 DESCRIPTION="KDE bindings generator for multiple languages."
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 DEPEND="dev-lang/perl"
 

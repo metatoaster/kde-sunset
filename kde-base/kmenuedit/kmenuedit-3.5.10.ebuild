@@ -7,5 +7,5 @@ KMNAME=kdebase
 inherit kde-meta eutils
 
 DESCRIPTION="KDE menu editor"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"

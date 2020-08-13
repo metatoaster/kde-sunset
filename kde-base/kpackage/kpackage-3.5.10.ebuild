@@ -6,6 +6,6 @@ KMNAME=kdeadmin
 inherit kde-meta
 
 DESCRIPTION="KDE package manager (deb, rpm etc support; rudimentary ebuild support)"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ppc64 x86"
+KEYWORDS="~alpha amd64 ~ppc ppc64 x86"
 IUSE="kdehiddenvisibility"
 DEPEND=""
