@@ -51,7 +51,7 @@ fi
 
 DEPEND="
 	dev-lang/perl
-	virtual/pkgconfig[${MULTILIB_USEDEP}]
+	virtual/pkgconfig
 "
 
 
