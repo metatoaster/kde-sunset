@@ -19,7 +19,7 @@ DEPEND="
 	~dev-qt/qtscript-${PV}[debug=,${MULTILIB_USEDEP}]
 	declarative? ( ~dev-qt/qtdeclarative-${PV}[debug=,${MULTILIB_USEDEP}] )
 	qt3support? ( ~dev-qt/qt3support-${PV}[debug=,${MULTILIB_USEDEP}] )
-	webkit? ( >=dev-qt/qtwebkit-${PV}[debug=,${MULTILIB_USEDEP}] )
+	webkit? ( >=dev-qt/qtwebkit-${PV}:4[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 PDEPEND="phonon? ( media-libs/phonon[designer,qt4] )"

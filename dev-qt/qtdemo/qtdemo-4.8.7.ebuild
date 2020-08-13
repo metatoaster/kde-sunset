@@ -26,7 +26,7 @@ DEPEND="
 	multimedia? ( ~dev-qt/qtmultimedia-${PV}[debug=,${MULTILIB_USEDEP}] )
 	opengl? ( ~dev-qt/qtopengl-${PV}[debug=,${MULTILIB_USEDEP}] )
 	phonon? ( >=media-libs/phonon-4.8.3-r1[qt4,${MULTILIB_USEDEP}] )
-	webkit? ( >=dev-qt/qtwebkit-${PV}[debug=,${MULTILIB_USEDEP}] )
+	webkit? ( >=dev-qt/qtwebkit-${PV}:4[debug=,${MULTILIB_USEDEP}] )
 	xmlpatterns? ( ~dev-qt/qtxmlpatterns-${PV}[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"

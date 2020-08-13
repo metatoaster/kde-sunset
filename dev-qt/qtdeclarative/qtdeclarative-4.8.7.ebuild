@@ -21,7 +21,7 @@ DEPEND="
 	~dev-qt/qtsvg-${PV}[accessibility=,debug=,${MULTILIB_USEDEP}]
 	~dev-qt/qtxmlpatterns-${PV}[debug=,${MULTILIB_USEDEP}]
 	qt3support? ( ~dev-qt/qt3support-${PV}[accessibility=,debug=,${MULTILIB_USEDEP}] )
-	webkit? ( >=dev-qt/qtwebkit-${PV}[debug=,${MULTILIB_USEDEP}] )
+	webkit? ( >=dev-qt/qtwebkit-${PV}:4[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 
