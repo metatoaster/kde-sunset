@@ -1,6 +1,5 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.8b-r1.ebuild,v 1.9 2009/12/03 18:25:47 yngwin Exp $
 
 # *** Please remember to update qt3.eclass when revbumping this ***
 
