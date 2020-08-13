@@ -17,7 +17,7 @@ REQUIRED_USE="
 "
 
 DEPEND="
-	~dev-qt/qtcore-${PV}[aqua=,debug=,qt3support=,${MULTILIB_USEDEP}]
+	~dev-qt/qtcore-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
 	freetds? ( dev-db/freetds )
 	mysql? ( virtual/libmysqlclient:=[${MULTILIB_USEDEP}] )
 	oci8? ( >=dev-db/oracle-instantclient-basic-11.2.0.4[${MULTILIB_USEDEP}] )

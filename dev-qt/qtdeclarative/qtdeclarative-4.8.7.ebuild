@@ -13,15 +13,15 @@ fi
 IUSE="+accessibility qt3support webkit"
 
 DEPEND="
-	~dev-qt/qtcore-${PV}[aqua=,debug=,qt3support=,${MULTILIB_USEDEP}]
-	~dev-qt/qtgui-${PV}[accessibility=,aqua=,debug=,qt3support=,${MULTILIB_USEDEP}]
-	~dev-qt/qtopengl-${PV}[aqua=,debug=,qt3support=,${MULTILIB_USEDEP}]
-	~dev-qt/qtscript-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtsql-${PV}[aqua=,debug=,qt3support=,${MULTILIB_USEDEP}]
-	~dev-qt/qtsvg-${PV}[accessibility=,aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtxmlpatterns-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	qt3support? ( ~dev-qt/qt3support-${PV}[accessibility=,aqua=,debug=,${MULTILIB_USEDEP}] )
-	webkit? ( >=dev-qt/qtwebkit-${PV}[aqua=,debug=,${MULTILIB_USEDEP}] )
+	~dev-qt/qtcore-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
+	~dev-qt/qtgui-${PV}[accessibility=,debug=,qt3support=,${MULTILIB_USEDEP}]
+	~dev-qt/qtopengl-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
+	~dev-qt/qtscript-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtsql-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
+	~dev-qt/qtsvg-${PV}[accessibility=,debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtxmlpatterns-${PV}[debug=,${MULTILIB_USEDEP}]
+	qt3support? ( ~dev-qt/qt3support-${PV}[accessibility=,debug=,${MULTILIB_USEDEP}] )
+	webkit? ( >=dev-qt/qtwebkit-${PV}[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 

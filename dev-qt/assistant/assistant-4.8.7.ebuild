@@ -13,11 +13,11 @@ fi
 IUSE="webkit"
 
 DEPEND="
-	~dev-qt/qtcore-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtgui-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qthelp-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	>=dev-qt/qtsql-${PV}[aqua=,debug=,sqlite,${MULTILIB_USEDEP}]
-	webkit? ( ~dev-qt/qtwebkit-${PV}[aqua=,debug=,${MULTILIB_USEDEP}] )
+	~dev-qt/qtcore-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtgui-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qthelp-${PV}[debug=,${MULTILIB_USEDEP}]
+	>=dev-qt/qtsql-${PV}[debug=,sqlite,${MULTILIB_USEDEP}]
+	webkit? ( ~dev-qt/qtwebkit-${PV}[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 

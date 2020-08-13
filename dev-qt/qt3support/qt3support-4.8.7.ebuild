@@ -13,9 +13,9 @@ fi
 IUSE="+accessibility"
 
 DEPEND="
-	~dev-qt/qtcore-${PV}[aqua=,debug=,qt3support,${MULTILIB_USEDEP}]
-	~dev-qt/qtgui-${PV}[accessibility=,aqua=,debug=,qt3support,${MULTILIB_USEDEP}]
-	~dev-qt/qtsql-${PV}[aqua=,debug=,qt3support,${MULTILIB_USEDEP}]
+	~dev-qt/qtcore-${PV}[debug=,qt3support,${MULTILIB_USEDEP}]
+	~dev-qt/qtgui-${PV}[accessibility=,debug=,qt3support,${MULTILIB_USEDEP}]
+	~dev-qt/qtsql-${PV}[debug=,qt3support,${MULTILIB_USEDEP}]
 "
 RDEPEND="${DEPEND}"
 

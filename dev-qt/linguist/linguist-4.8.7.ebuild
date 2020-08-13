@@ -13,9 +13,9 @@ fi
 IUSE=""
 
 DEPEND="
-	~dev-qt/designer-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtcore-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtgui-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
+	~dev-qt/designer-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtcore-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtgui-${PV}[debug=,${MULTILIB_USEDEP}]
 "
 RDEPEND="${DEPEND}"
 
