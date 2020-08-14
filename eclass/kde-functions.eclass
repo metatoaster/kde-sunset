@@ -18,7 +18,7 @@ inherit qt3 eutils
 # the relationships between them
 KDE_DERIVATION_MAP='
 kde-apps/kdeaccessibility kde-base/kbstateapplet
-kde-apps/kdeaccessibility kde-apps/kdeaccessibility-iconthemes
+kde-apps/kdeaccessibility kde-base/kdeaccessibility-iconthemes
 kde-apps/kdeaccessibility kde-apps/kmag
 kde-apps/kdeaccessibility kde-apps/kmousetool
 kde-apps/kdeaccessibility kde-apps/kmouth
@@ -121,7 +121,7 @@ kde-base/kdeedu kde-apps/khangman
 kde-base/kdeedu kde-apps/kig
 kde-base/kdeedu kde-apps/kiten
 kde-base/kdeedu kde-base/klatin
-kde-base/kdeedu kde-pass/klettres
+kde-base/kdeedu kde-apps/klettres
 kde-base/kdeedu kde-base/kmathtool
 kde-base/kdeedu kde-base/kmessedwords
 kde-base/kdeedu kde-apps/kmplot
