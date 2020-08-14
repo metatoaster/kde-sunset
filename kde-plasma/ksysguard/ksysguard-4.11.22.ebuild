@@ -13,13 +13,13 @@ inherit kde4-meta
 DESCRIPTION="Network-enabled task manager and system monitor"
 HOMEPAGE+=" https://userbase.kde.org/KSysGuard"
 KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
-IUSE="debug lm_sensors test"
+IUSE="debug lm-sensors test"
 
 DEPEND="
 	sys-libs/zlib
 	x11-libs/libX11
 	x11-libs/libXres
-	lm_sensors? ( sys-apps/lm_sensors )
+	lm-sensors? ( sys-apps/lm-sensors )
 "
 RDEPEND="${DEPEND}"
 
@@ -32,7 +32,7 @@ KMEXTRA="
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_with lm_sensors Sensors)
+		$(cmake-utils_use_with lm-sensors Sensors)
 	)
 
 	kde4-meta_src_configure

@@ -4,7 +4,7 @@
 
 inherit kde
 
-DESCRIPTION="KSensors - a nice lm_sensors frontend for KDE"
+DESCRIPTION="KSensors - a nice lm-sensors frontend for KDE"
 SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz"
 HOMEPAGE="http://ksensors.sourceforge.net/"
 LICENSE="GPL-2"
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-DEPEND=">=sys-apps/lm_sensors-2.6.3"
+DEPEND=">=sys-apps/lm-sensors-2.6.3"
 
 RDEPEND="${DEPEND}"
 

@@ -7,7 +7,7 @@ WANT_AUTOMAKE="1.6"
 
 inherit kde
 
-DESCRIPTION="KSensors - a nice lm_sensors frontend for KDE."
+DESCRIPTION="KSensors - a nice lm-sensors frontend for KDE."
 SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz
 		mirror://debian/pool/main/k/ksensors/${PN}_${PV}-16.diff.gz"
 HOMEPAGE="http://ksensors.sourceforge.net/"
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="hddtemp ibmacpi"
 
-DEPEND=">=sys-apps/lm_sensors-2.6.3"
+DEPEND=">=sys-apps/lm-sensors-2.6.3"
 
 RDEPEND="${DEPEND}
 	hddtemp? ( >=app-admin/hddtemp-0.3_beta15-r1 )"

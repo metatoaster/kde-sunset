@@ -8,13 +8,13 @@ inherit kde-meta eutils
 
 DESCRIPTION="KSysguard, a network enabled task manager/system monitor, with additional functionality of top."
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
-IUSE="kdehiddenvisibility lm_sensors"
+IUSE="kdehiddenvisibility lm-sensors"
 
-DEPEND="lm_sensors? ( sys-apps/lm_sensors )"
+DEPEND="lm-sensors? ( sys-apps/lm-sensors )"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	local myconf="--enable-dnssd $(use_with lm_sensors sensors)"
+	local myconf="--enable-dnssd $(use_with lm-sensors sensors)"
 
 	kde-meta_src_compile
 }
