@@ -14,7 +14,7 @@ IUSE="subversion elibc_glibc"
 
 RDEPEND="
 	>=kde-base/cervisia-${PV}:${SLOT}
-	>=kde-base/kapptemplate-${PV}:${SLOT}
+	>=kde-apps/kapptemplate-${PV}:${SLOT}
 	>=kde-base/kbabel-${PV}:${SLOT}
 	>=kde-base/kbugbuster-${PV}:${SLOT}
 	>=kde-apps/kcachegrind-${PV}:${SLOT}
