@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -59,7 +59,7 @@ RDEPEND="
 	kde-plasma/kwin:4
 	kde-plasma/plasma-workspace:4
 	kde-plasma/systemsettings:4
-	x11-apps/mkfontdir
+	>=x11-apps/mkfontscale-1.2.0
 	x11-apps/xmessage
 	x11-apps/xprop
 	x11-apps/xrandr
