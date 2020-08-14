@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -13,7 +13,7 @@ SRC_URI="mirror://kde/stable/applications/17.08.2/src/${P}.tar.xz"
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 SLOT="4/4.14"
-IUSE="cpu_flags_x86_3dnow acl altivec +bzip2 debug doc fam +handbook jpeg2k kerberos
+IUSE="cpu_flags_x86_3dnow acl altivec +bzip2 debug doc fam +handbook kerberos
 libressl lzma cpu_flags_x86_mmx nls openexr opengl +plasma +policykit qt3support spell
 test cpu_flags_x86_sse cpu_flags_x86_sse2 ssl +udev +udisks +upower webkit zeroconf"
 
@@ -70,7 +70,6 @@ COMMONDEPEND="
 	acl? ( virtual/acl )
 	bzip2? ( app-arch/bzip2 )
 	fam? ( virtual/fam )
-	jpeg2k? ( media-libs/jasper:= )
 	kerberos? ( virtual/krb5 )
 	openexr? (
 		media-libs/openexr:=
@@ -176,7 +175,7 @@ src_configure() {
 		-DWITH_ACL=$(usex acl)
 		-DWITH_BZip2=$(usex bzip2)
 		-DWITH_FAM=$(usex fam)
-		-DWITH_Jasper=$(usex jpeg2k)
+		-DWITH_Jasper=OFF
 		-DWITH_GSSAPI=$(usex kerberos)
 		-DWITH_LibLZMA=$(usex lzma)
 		-DWITH_Libintl=$(usex nls)
