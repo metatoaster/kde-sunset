@@ -1,13 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-KDE_BLOCK_SLOT4="false"
-inherit kde5-meta-pkg
-
 DESCRIPTION="kdepim - merge this to pull in all kdepim-derived packages"
 HOMEPAGE+=" https://community.kde.org/KDE_PIM"
+
+LICENSE="metapackage"
 KEYWORDS="amd64 x86"
 IUSE="nls"
 SLOT="4"
@@ -34,7 +33,7 @@ RDEPEND="
 	>=kde-apps/ktnef-4.14.11_pre20160611:4
 	kde-frameworks/oxygen-icons:5
 	nls? (
-		>=kde-apps/kde4-l10n-4.14.3-r1:4
+		>=kde-apps/kde4-l10n-4.11.2:4
 		>=kde-apps/kdepim-l10n-4.14.3-r1:4
 	)
 "
