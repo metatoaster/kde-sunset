@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -78,7 +78,7 @@ COMMONDEPEND="
 		dev-libs/openssl:0
 		>=media-libs/mediastreamer-2.3.0
 		media-libs/speex
-		net-libs/libsrtp
+		net-libs/libsrtp:0=
 		net-libs/ortp:=
 	)
 	meanwhile? ( net-libs/meanwhile )
