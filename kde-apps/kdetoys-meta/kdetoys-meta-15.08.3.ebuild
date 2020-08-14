@@ -1,16 +1,17 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit kde5-meta-pkg
-
 DESCRIPTION="KDE toys - merge this to pull in all kdetoys-derived packages"
 HOMEPAGE+=" https://techbase.kde.org/Projects/Kdetoys"
+
+LICENSE="metapackage"
+SLOT="4"
 KEYWORDS=" ~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
-	$(add_kdeapps_dep amor)
-	$(add_kdeapps_dep ktux)
+	>=kde-apps/amor-15.08.3:4
+	>=kde-apps/ktux-15.08.3:4
 "
