@@ -1,11 +1,10 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 inherit eutils qt4-build-multilib
 
 DESCRIPTION="The GUI module for the Qt toolkit"
-SRC_URI+=" https://dev.gentoo.org/~pesa/patches/${PN}-systemtrayicon-plugin-system.patch"
 
 if [[ ${QT4_BUILD_TYPE} == release ]]; then
 	KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 ~sparc x86"
@@ -59,7 +58,7 @@ PDEPEND="
 "
 
 PATCHES=(
-	"${DISTDIR}/${PN}-systemtrayicon-plugin-system.patch" # bug 503880
+	"${FILESDIR}/${PN}-4.8.6-systemtrayicon-plugin-system.patch" # bug 503880
 	"${FILESDIR}/${PN}-4.7.3-cups.patch" # bug 323257
 	"${FILESDIR}/${PN}-4.8.5-disable-gtk-theme-check.patch" # bug 491226
 	"${FILESDIR}/${PN}-4.8.5-qclipboard-delay.patch" # bug 514968
