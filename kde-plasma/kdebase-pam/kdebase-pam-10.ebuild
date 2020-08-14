@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-DEPEND="virtual/pam"
+DEPEND="sys-libs/pam"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}

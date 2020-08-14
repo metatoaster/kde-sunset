@@ -27,7 +27,7 @@ DEPEND="
 	kerberos? ( virtual/krb5 )
 	pam? (
 		kde-plasma/kcheckpass:4
-		virtual/pam
+		sys-libs/pam
 	)
 	systemd? ( sys-apps/systemd )
 "

@@ -11,7 +11,7 @@ KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug pam"
 
 DEPEND="
-	pam? ( virtual/pam )
+	pam? ( sys-libs/pam )
 "
 RDEPEND="${DEPEND}
 	pam? ( || (
