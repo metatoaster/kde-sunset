@@ -2,4 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <!-- maintainer-needed -->
+<use>
+		<flag name="bittorrent">Enable bittorrent transfer plugin through <pkg>net-libs/libktorrent</pkg></flag>
+		<flag name="gpg">Enable signature verification by GpgME++ via <pkg>app-crypt/gpgme</pkg></flag>
+</use>
 </pkgmetadata>
