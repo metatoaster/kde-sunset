@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-startkde/kdebase-startkde-3.5.10-r5.ebuild,v 1.7 2009/07/12 13:40:00 armin76 Exp $
 
@@ -19,7 +19,7 @@ RDEPEND="x11-apps/xmessage
 	x11-apps/xsetroot
 	x11-apps/xset
 	x11-apps/xrandr
-	x11-apps/mkfontdir
+	>=x11-apps/mkfontscale-1.2.0
 	x11-apps/xprop
 	>=kde-base/kdesktop-${PV}:${SLOT}
 	>=kde-base/kcminit-${PV}:${SLOT}
