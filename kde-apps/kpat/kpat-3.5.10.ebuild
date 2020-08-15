@@ -12,7 +12,7 @@ IUSE="kdehiddenvisibility"
 DEPEND=">=kde-apps/libkdegames-${PV}:${SLOT}"
 
 RDEPEND="${DEPEND}
-	|| ( >=kde-apps/kdebase-data-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
+	|| ( >=kde-apps/kdebase-data-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"
 
 KMEXTRACTONLY=libkdegames
 KMCOPYLIB="libkdegames libkdegames"

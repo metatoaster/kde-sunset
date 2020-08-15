@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-meta/kdebase-meta-3.5.10.ebuild,v 1.8 2009/08/09 21:03:44 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-frameworks/kdelibs-meta/kdebase-meta-3.5.10.ebuild,v 1.8 2009/08/09 21:03:44 zmedico Exp $
 
 EAPI="1"
 inherit kde-functions
@@ -12,7 +12,7 @@ SLOT="3.5"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
-RDEPEND=">=kde-base/kdebase-startkde-${PV}:${SLOT}
+RDEPEND=">=kde-frameworks/kdelibs-startkde-${PV}:${SLOT}
 >=kde-apps/drkonqi-${PV}:${SLOT}
 >=kde-base/kappfinder-${PV}:${SLOT}
 >=kde-apps/kate-${PV}:${SLOT}

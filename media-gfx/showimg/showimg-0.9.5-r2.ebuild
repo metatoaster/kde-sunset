@@ -21,7 +21,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ppc ~sparc ~x86"
 IUSE="exif kipi mysql postgres"
 
-DEPEND="|| ( =kde-apps/libkonq-3.5* =kde-base/kdebase-3.5* )
+DEPEND="|| ( =kde-apps/libkonq-3.5* =kde-frameworks/kdelibs-3.5* )
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base >=dev-libs/libpqxx-2.6.9 )
 	exif? ( media-libs/libkexif )

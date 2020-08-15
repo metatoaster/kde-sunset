@@ -18,7 +18,7 @@ DEPEND=">=media-libs/freetype-2.3
 	media-libs/t1lib
 	>=virtual/poppler-qt3-0.6.1"
 RDEPEND="${DEPEND}
-	|| ( >=kde-base/kdeprint-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
+	|| ( >=kde-base/kdeprint-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"
 
 PATCHES=( "${FILESDIR}/kde-CVE-2009-1188.patch"
 	"${WORKDIR}/${P}-JBIG2.patch"

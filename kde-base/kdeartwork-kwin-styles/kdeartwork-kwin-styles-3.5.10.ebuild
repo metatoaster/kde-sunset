@@ -11,4 +11,4 @@ DESCRIPTION="Window styles for kde"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
-DEPEND="|| ( >=kde-base/kwin-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
+DEPEND="|| ( >=kde-base/kwin-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"

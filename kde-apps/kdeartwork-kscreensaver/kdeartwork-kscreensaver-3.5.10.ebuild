@@ -10,7 +10,7 @@ inherit kde-meta
 DESCRIPTION="Extra screensavers for kde"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="opengl xscreensaver"
-DEPEND="|| ( >=kde-base/kscreensaver-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
+DEPEND="|| ( >=kde-base/kscreensaver-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )
 	media-libs/libart_lgpl
 	opengl? ( virtual/opengl )
 	xscreensaver? ( x11-misc/xscreensaver )"

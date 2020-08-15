@@ -27,7 +27,7 @@ RDEPEND="
 	!kde-base/kdeaddons
 	!kde-base/kdeadmin
 	!kde-base/kdeartwork
-	!kde-base/kdebase
+	!kde-frameworks/kdelibs
 	!kde-base/kdeedu
 	!kde-base/kdegames
 	!kde-base/kdegraphics
@@ -85,7 +85,7 @@ DEPEND="${RDEPEND}
 	<dev-libs/openssl-1.0.0
 "
 RDEPEND="${RDEPEND}
-	!<=kde-base/kdebase-startkde-3.5.10-r3
+	!<=kde-frameworks/kdelibs-startkde-3.5.10-r3
 	x11-apps/rgb
 	x11-apps/iceauth
 	>=x11-misc/xdg-utils-1.0.2-r3

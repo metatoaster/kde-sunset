@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 DESCRIPTION="A simple password checker, used by any software in need of user authentication."
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE="pam kdehiddenvisibility"
-DEPEND="pam? ( kde-base/kdebase-pam )"
+DEPEND="pam? ( kde-frameworks/kdelibs-pam )"
 RDEPEND="${DEPEND}"
 
 src_compile() {
