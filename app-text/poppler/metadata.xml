@@ -7,6 +7,5 @@
 	<flag name="introspection">Enable GObject introspection.</flag>
 	<flag name="nss">Enable signatures handling with <pkg>dev-libs/nss</pkg></flag>
 	<flag name="utils">Install command-line PDF converters and various utilities.</flag>
-	<flag name="xpdf-headers"></flag>
 </use>
 </pkgmetadata>

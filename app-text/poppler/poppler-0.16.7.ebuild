@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-text/poppler/poppler-0.16.7.ebuild,v 1.5 2011/08/25 20:48:50 maekke Exp $
 
-EAPI="2"
+EAPI=6
 
 inherit cmake-utils qt3
 
@@ -11,10 +11,10 @@ HOMEPAGE="http://poppler.freedesktop.org/"
 SRC_URI="http://poppler.freedesktop.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~sparc-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 ~s390 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
 IUSE="cairo cjk curl cxx debug doc exceptions +introspection jpeg
-jpeg2k +lcms png qt3 qt4 +utils +xpdf-headers"
+jpeg2k +lcms png qt3 qt4 +utils"
 
 # No test data provided
 RESTRICT="test"
@@ -52,30 +52,30 @@ RDEPEND="${COMMON_DEPEND}
 	cjk? ( >=app-text/poppler-data-0.2.1 )
 "
 
-DOCS=(AUTHORS ChangeLog NEWS README README-XPDF TODO)
+DOCS=( AUTHORS ChangeLog NEWS README README-XPDF TODO )
 
 src_configure() {
 	mycmakeargs=(
 		-DBUILD_GTK_TESTS=OFF
 		-DBUILD_QT4_TESTS=OFF
 		-DBUILD_CPP_TESTS=OFF
-		$(cmake-utils_use_with qt3)
+		-DWITH_Qt3="$(usex qt3)"
 		-DENABLE_ABIWORD=OFF
 		-DENABLE_SPLASH=ON
 		-DENABLE_ZLIB=ON
-		$(cmake-utils_use_enable curl LIBCURL)
-		$(cmake-utils_use_enable cxx CPP)
-		$(cmake-utils_use_enable jpeg2k LIBOPENJPEG)
-		$(cmake-utils_use_enable lcms)
-		$(cmake-utils_use_enable utils)
-		$(cmake-utils_use_enable xpdf-headers XPDF_HEADERS)
-		$(cmake-utils_use_with cairo)
-		$(cmake-utils_use_with cairo GTK)
-		$(cmake-utils_use_with introspection GObjectIntrospection)
-		$(cmake-utils_use_with jpeg)
-		$(cmake-utils_use_with png)
-		$(cmake-utils_use_with qt4)
-		$(cmake-utils_use exceptions USE_EXCEPTIONS)
+		-DENABLE_LIBCURL="$(usex curl)"
+		-DENABLE_CPP="$(usex cxx)"
+		-DENABLE_LIBOPENJPEG="$(usex jpeg2k)"
+		-DENABLE_LCMS="$(usex lcms)"
+		-DENABLE_UTILS="$(usex utils)"
+		-DENABLE_XPDF_HEADERS=ON
+		-DWITH_Cairo="$(usex cairo)"
+		-DWITH_GTK="$(usex cairo)"
+		-DWITH_GObjectIntrospection="$(usex introspection)"
+		-DWITH_JPEG="$(usex jpeg)"
+		-DWITH_PNG="$(usex png)"
+		-DWITH_Qt4="$(usex qt4)"
+		-DUSE_EXCEPTIONS="$(usex exceptions)"
 	)
 
 	cmake-utils_src_configure
