@@ -19,3 +19,5 @@ RESTRICT="test"
 KMEXTRA="
 	addons/ktexteditor
 "
+
+PATCHES=( "${FILESDIR}/${PN}-4.14.3-gcc7.patch" )
