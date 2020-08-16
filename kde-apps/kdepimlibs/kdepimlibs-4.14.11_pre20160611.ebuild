@@ -32,6 +32,8 @@ DEPEND="
 # bug #418071
 RDEPEND="${DEPEND}"
 
+PATCHES=( "${FILESDIR}/fix-build-with-ical-3.0.diff" )
+
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_TOOLS=OFF
