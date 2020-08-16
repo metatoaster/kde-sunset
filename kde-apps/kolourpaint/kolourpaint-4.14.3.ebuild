@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -12,7 +12,7 @@ KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 LICENSE="BSD LGPL-2"
 IUSE="debug"
 
-DEPEND="media-libs/qimageblitz"
+DEPEND="media-libs/qimageblitz[-qt5(+)]"
 RDEPEND="${DEPEND}"
 
 pkg_postinst() {
