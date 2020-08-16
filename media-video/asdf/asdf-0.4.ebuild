@@ -1,6 +1,7 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/asdf/asdf-0.4.ebuild,v 1.1 2008/01/17 08:28:51 drac Exp $
+
+EAPI=5
 
 inherit perl-app
 
@@ -13,8 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="=dev-perl/PerlQt-3*
+RDEPEND="
+	=dev-perl/PerlQt-3*
 	>=media-video/lsdvd-0.15
 	media-video/mplayer"
 
 mydoc="BUGS+HACKING CREDITS TODO"
+
+src_configure() {
+	perl-app_src_configure
+}
