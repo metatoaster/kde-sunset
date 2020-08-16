@@ -1,0 +1,21 @@
+--- libkexiv2/kexiv2_p.h.orig	2018-12-24 08:09:07.000000000 -0800
++++ libkexiv2/kexiv2_p.h	2018-12-24 08:10:00.000000000 -0800
+@@ -85,6 +85,7 @@
+ #include <exiv2/types.hpp>
+ #include <exiv2/exif.hpp>
+ #include <exiv2/xmpsidecar.hpp>
++#include <exiv2/version.hpp>
+ 
+ // Check if Exiv2 support XMP
+ 
+--- libkexiv2/kexiv2exif.cpp.orig	2014-10-06 23:07:22.000000000 -0700
++++ libkexiv2/kexiv2exif.cpp	2018-12-24 08:06:26.000000000 -0800
+@@ -986,7 +986,7 @@
+ 
+         if (pos == d->exifMetadata().end() || pos->count() != 1 || pos->toLong() != 0)
+         {
+-            throw Exiv2::Error(1, "Exif.Image.NewSubfileType missing or not set as main image");
++            throw Exiv2::Error(Exiv2::kerErrorMessage, "Exif.Image.NewSubfileType missing or not set as main image");
+         }
+ 
+         // Remove sub-IFD tags
