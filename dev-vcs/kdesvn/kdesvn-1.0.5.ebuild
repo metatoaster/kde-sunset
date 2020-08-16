@@ -1,8 +1,7 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kdesvn/kdesvn-1.0.5.ebuild,v 1.4 2009/08/12 16:45:46 wired Exp $
 
-EAPI="2"
+EAPI=5
 
 inherit cmake-utils qt3 kde-functions versionator
 
