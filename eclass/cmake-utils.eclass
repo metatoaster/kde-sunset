@@ -112,7 +112,7 @@ case ${EAPI} in
 	*) die "EAPI=${EAPI:-0} is not supported" ;;
 esac
 
-inherit toolchain-funcs ninja-utils flag-o-matic multiprocessing xdg-utils
+inherit toolchain-funcs flag-o-matic multiprocessing xdg-utils
 
 case ${EAPI} in
 	[3456])
@@ -121,6 +121,7 @@ case ${EAPI} in
 		;;
 	*)
 		: ${CMAKE_MAKEFILE_GENERATOR:=ninja}
+		inherit ninja-utils
 		;;
 esac
 
