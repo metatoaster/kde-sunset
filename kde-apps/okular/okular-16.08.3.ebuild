@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ IUSE="chm crypt debug djvu dpi ebook +jpeg mobi +postscript +pdf +tiff"
 DEPEND="
 	media-libs/freetype
 	media-libs/phonon[qt4]
-	media-libs/qimageblitz
+	media-libs/qimageblitz[-qt5(+)]
 	sys-libs/zlib
 	chm? ( dev-libs/chmlib )
 	crypt? ( app-crypt/qca:2[qt4] )
