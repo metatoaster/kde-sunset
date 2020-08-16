@@ -31,6 +31,7 @@ DEPEND="
 
 PATCHES=(
 	"${FILESDIR}/${PN}-exiv2-0.27.patch"
+	"${FILESDIR}/${PN}-exiv2-0.27.1.patch"
 )
 
 src_configure() {

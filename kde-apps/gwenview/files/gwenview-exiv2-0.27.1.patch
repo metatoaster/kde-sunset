@@ -1,0 +1,29 @@
+diff --git a/lib/imagemetainfomodel.cpp b/lib/imagemetainfomodel.cpp
+index caf6855..bd30eb0 100644
+--- a/lib/imagemetainfomodel.cpp
++++ b/lib/imagemetainfomodel.cpp
+@@ -30,9 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ #include <KLocale>
+ 
+ // Exiv2
+-#include <exiv2/exif.hpp>
+-#include <exiv2/image.hpp>
+-#include <exiv2/iptc.hpp>
++#include <exiv2/exiv2.hpp>
+ 
+ // Local
+ 
+diff --git a/lib/timeutils.cpp b/lib/timeutils.cpp
+index 607ff47..463f512 100644
+--- a/lib/timeutils.cpp
++++ b/lib/timeutils.cpp
+@@ -30,8 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
+ #include <KFileItem>
+ 
+ // Exiv2
+-#include <exiv2/exif.hpp>
+-#include <exiv2/image.hpp>
++#include <exiv2/exiv2.hpp>
+ 
+ // Local
+ #include <lib/exiv2imageloader.h>
