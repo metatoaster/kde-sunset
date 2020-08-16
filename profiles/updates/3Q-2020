@@ -1,1 +1,2 @@
 move kde-base/kapptemplate kde-apps/kapptemplate
+move kde-base/kbruch kde-apps/kbruch
