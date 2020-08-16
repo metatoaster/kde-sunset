@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -14,7 +14,7 @@ IUSE="debug"
 DEPEND="
 	kde-plasma/kcminit:4
 	kde-plasma/libkworkspace:4
-	media-libs/qimageblitz
+	media-libs/qimageblitz[-qt5(+)]
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
