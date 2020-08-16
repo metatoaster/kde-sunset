@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -22,7 +22,10 @@ QT4_TARGET_DIRECTORIES="src/script"
 QCONFIG_ADD="script"
 QCONFIG_DEFINE="QT_SCRIPT"
 
-PATCHES=( "${FILESDIR}/4.8.6-javascriptcore-x32.patch" )
+PATCHES=(
+	"${FILESDIR}/4.8.6-javascriptcore-x32.patch"
+	"${FILESDIR}/${PN}-5.11.3-gcc-8.3.patch"
+)
 
 multilib_src_configure() {
 	local myconf=(
