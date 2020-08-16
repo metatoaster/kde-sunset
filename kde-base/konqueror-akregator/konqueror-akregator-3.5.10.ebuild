@@ -11,7 +11,7 @@ DESCRIPTION="konqueror's akregator plugin"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
-DEPEND="|| ( >=kde-apps/konqueror-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"
+DEPEND="|| ( >=kde-apps/konqueror-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
 RDEPEND="${DEPEND}
 >=kde-base/kdeaddons-docs-konq-plugins-${PV}:${SLOT}
 || ( >=kde-base/akregator-${PV}:${SLOT} >=kde-base/kdepim-${PV}:${SLOT} )"

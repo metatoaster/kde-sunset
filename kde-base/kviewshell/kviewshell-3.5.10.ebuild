@@ -11,4 +11,4 @@ KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="|| ( >=kde-apps/kdebase-kioslaves-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"
+RDEPEND="|| ( >=kde-apps/kdebase-kioslaves-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"

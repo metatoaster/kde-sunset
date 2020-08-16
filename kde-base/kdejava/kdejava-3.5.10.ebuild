@@ -12,7 +12,7 @@ inherit java-pkg-2 kde-meta
 DESCRIPTION="KDE java bindings"
 KEYWORDS="amd64 ppc ppc64 x86"
 IUSE=""
-COMMONDEPEND="|| ( ( >=kde-base/kwin-${PV}:${SLOT} >=kde-apps/kcontrol-${PV}:${SLOT} ) >=kde-frameworks/kdelibs-${PV}:${SLOT} )
+COMMONDEPEND="|| ( ( >=kde-base/kwin-${PV}:${SLOT} >=kde-apps/kcontrol-${PV}:${SLOT} ) >=kde-base/kdebase-${PV}:${SLOT} )
 	>=kde-base/qtjava-${PV}:${SLOT}"
 DEPEND=">=virtual/jdk-1.4 $COMMONDEPEND"
 RDEPEND=">=virtual/jre-1.4 $COMMONDEPEND"

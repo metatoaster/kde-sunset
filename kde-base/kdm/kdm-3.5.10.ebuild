@@ -17,7 +17,7 @@ KMEXTRA="kdmlib/"
 KMEXTRACTONLY="libkonq/konq_defaults.h"
 KMCOMPILEONLY="kcontrol/background"
 
-DEPEND="pam? ( kde-frameworks/kdelibs-pam )
+DEPEND="pam? ( kde-base/kdebase-pam )
 	x11-libs/libXau
 	x11-libs/libXtst
 	>=kde-apps/kcontrol-${PV}:${SLOT}"

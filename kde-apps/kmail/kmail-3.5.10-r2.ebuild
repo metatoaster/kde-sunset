@@ -29,8 +29,8 @@ RDEPEND="${DEPEND}
 	crypt? ( app-crypt/pinentry )
 	>=kde-base/kdepim-kioslaves-${PV}:${SLOT}
 	>=kde-base/kmailcvt-${PV}:${SLOT}
-	|| ( >=kde-apps/kdebase-kioslaves-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )
-	|| ( >=kde-apps/kcontrol-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )" # for the "looknfeel" icon, and probably others.
+	|| ( >=kde-apps/kdebase-kioslaves-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )
+	|| ( >=kde-apps/kcontrol-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )" # for the "looknfeel" icon, and probably others.
 
 KMCOPYLIB="
 	libkdepim libkdepim/

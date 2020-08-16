@@ -13,7 +13,7 @@ HOMEPAGE="http://xmelegance.org/kjsembed/"
 KEYWORDS="~alpha amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
-DEPEND="|| ( >=kde-base/kwin-${PV}:${SLOT} >=kde-frameworks/kdelibs-${PV}:${SLOT} )"
+DEPEND="|| ( >=kde-base/kwin-${PV}:${SLOT} >=kde-base/kdebase-${PV}:${SLOT} )"
 RDEPEND="${DEPEND}"
 
 PATCHES=( "$FILESDIR/no-gtk-glib-check.diff" )
