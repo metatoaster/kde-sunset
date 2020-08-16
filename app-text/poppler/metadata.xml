@@ -2,15 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <!-- maintainer-needed -->
-<maintainer type="person">
-	<email>reavertm@gentoo.org</email>
-	<name>Maciej Mrozowski</name>
-</maintainer>
 <use>
-	<flag name='exceptions'>Enable exceptions throwing.</flag>
-	<flag name='introspection'>Enable GObject introspection.</flag>
+	<flag name="exceptions">Enable exceptions throwing.</flag>
+	<flag name="introspection">Enable GObject introspection.</flag>
 	<flag name="nss">Enable signatures handling with <pkg>dev-libs/nss</pkg></flag>
-	<flag name='utils'>Install command-line PDF converters and various utilities.</flag>
-	<flag name='xpdf-headers'></flag>
+	<flag name="utils">Install command-line PDF converters and various utilities.</flag>
+	<flag name="xpdf-headers"></flag>
 </use>
 </pkgmetadata>
