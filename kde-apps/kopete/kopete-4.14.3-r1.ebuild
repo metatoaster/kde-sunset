@@ -68,7 +68,7 @@ COMMONDEPEND="
 	dev-libs/libpcre
 	>=dev-qt/qtgui-4.4.0:4[mng]
 	media-libs/phonon[qt4]
-	media-libs/qimageblitz
+	media-libs/qimageblitz[-qt5(+)]
 	x11-libs/libX11
 	x11-libs/libXScrnSaver
 	gadu? ( >=net-libs/libgadu-1.8.0[threads] )
