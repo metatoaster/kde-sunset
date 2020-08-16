@@ -1,0 +1,11 @@
+--- a/kwin/glxbackend.cpp
++++ b/kwin/glxbackend.cpp
+@@ -45,7 +45,7 @@
+     , window(None)
+     , fbconfig(NULL)
+     , glxWindow(None)
+-    , ctx(None)
++    , ctx(NULL)
+     , m_bufferAge(0)
+     , haveSwapInterval(false)
+ {

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -55,6 +55,10 @@ KMEXTRACTONLY="
 	libs/kephal/
 	libs/oxygen/
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-gcc6.patch"
+)
 
 # you need one of these
 REQUIRED_USE="!opengl? ( gles ) !gles? ( opengl ) wayland? ( gles )"
