@@ -1,0 +1,11 @@
+--- a/libs/kephal/service/xrandr12/randroutput.cpp
++++ b/libs/kephal/service/xrandr12/randroutput.cpp
+@@ -230,7 +230,7 @@
+ RandRMode RandROutput::mode() const
+ {
+     if (!isConnected())
+-        return None;
++        return RandRMode();
+ 
+     if (!m_crtc)
+         return RandRMode();
