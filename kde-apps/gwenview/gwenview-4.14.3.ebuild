@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://userbase.kde.org/Gwenview
 "
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
-IUSE="debug kipi semantic-desktop"
+IUSE="debug kipi"
 
 # tests fail, last checked 4.11.0
 RESTRICT="test"
@@ -21,16 +21,17 @@ RESTRICT="test"
 DEPEND="
 	$(add_kdeapps_dep libkdcraw)
 	$(add_kdeapps_dep libkonq)
-	$(add_kdeframeworks_dep kactivities '' 4.13)
-	media-gfx/exiv2:=
+	>=media-gfx/exiv2-0.27
 	media-libs/lcms:2
 	media-libs/libpng:0=
 	virtual/jpeg:0
 	x11-libs/libX11
 	kipi? ( $(add_kdeapps_dep libkipi) )
-	semantic-desktop? ( $(add_kdeframeworks_dep baloo) )
 "
-RDEPEND="${DEPEND}"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-exiv2-0.27.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
@@ -41,11 +42,9 @@ src_configure() {
 		mycmakeargs+=( -DJCONFIG_H="${EPREFIX}/usr/include/${CHOST}/jconfig.h" )
 	fi
 
-	if use semantic-desktop; then
-		mycmakeargs+=(-DGWENVIEW_SEMANTICINFO_BACKEND=Baloo)
-	else
-		mycmakeargs+=(-DGWENVIEW_SEMANTICINFO_BACKEND=None)
-	fi
+	mycmakeargs+=(-DGWENVIEW_SEMANTICINFO_BACKEND=None)
+
+	append-cppflags -fexceptions
 
 	kde4-base_src_configure
 }

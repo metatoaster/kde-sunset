@@ -1,0 +1,36 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cbbb5c8..b69e3d5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -66,6 +66,7 @@ add_definitions(
+     ${QT_DEFINITIONS}
+     ${QT_QTDBUS_DEFINITIONS}
+     ${KDE4_DEFINITIONS}
++    ${KDE4_ENABLE_EXCEPTIONS}
+     )
+ 
+ include_directories(
+diff --git a/lib/exiv2imageloader.cpp b/lib/exiv2imageloader.cpp
+index 37ac9fa..5f1608b 100644
+--- a/lib/exiv2imageloader.cpp
++++ b/lib/exiv2imageloader.cpp
+@@ -30,6 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ // Exiv2
+ #include <exiv2/error.hpp>
+ #include <exiv2/types.hpp>
++#include <exiv2/version.hpp>
+ 
+ // Local
+ 
+diff --git a/lib/jpegcontent.cpp b/lib/jpegcontent.cpp
+index f575c2d..b8288e7 100644
+--- a/lib/jpegcontent.cpp
++++ b/lib/jpegcontent.cpp
+@@ -44,6 +44,7 @@ extern "C" {
+ // Exiv2
+ #include <exiv2/exif.hpp>
+ #include <exiv2/image.hpp>
++#include <exiv2/version.hpp>
+ 
+ // Local
+ #include "jpegerrormanager.h"
