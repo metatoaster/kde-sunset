@@ -73,3 +73,6 @@ linguas_vi
 linguas_wa
 linguas_zh_CN
 linguas_zh_TW
+
+# dropped 2018-11-28
+qt4 - Add support for the Qt GUI/Application Toolkit version 4.x
