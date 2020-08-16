@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -28,7 +28,7 @@ DEPEND="
 	dev-qt/qtsvg:4
 	dev-qt/qttest:4
 	phonon? ( media-libs/phonon[qt4] )
-	qimageblitz? ( >=media-libs/qimageblitz-0.0.4 )
+	qimageblitz? ( >=media-libs/qimageblitz-0.0.4[-qt5(+)] )
 	qscintilla? ( x11-libs/qscintilla:= )
 	qwt? ( x11-libs/qwt:5[svg] )
 	webkit? ( dev-qt/qtwebkit:4 )
