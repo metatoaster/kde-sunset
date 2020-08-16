@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-pda/libopensync-plugin-kdepim/libopensync-plugin-kdepim-0.22.ebuild,v 1.1 2007/03/28 20:20:29 peper Exp $
 
-EAPI=3
+EAPI=6
 
 inherit qt3
 
@@ -28,10 +28,10 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog NEWS README
+	emake DESTDIR="${D}" install
+	einstalldocs
 }
