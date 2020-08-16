@@ -1,20 +1,22 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DCOP-Amarok/DCOP-Amarok-0.036.ebuild,v 1.1 2009/08/25 17:26:51 robbat2 Exp $
+
+EAPI=5
 
 inherit perl-module
 
 DESCRIPTION="Perl Interface to Amarok via system's dcop"
-SRC_URI="mirror://cpan/authors/id/J/JC/JCMULLER/${P}.tar.gz"
 HOMEPAGE="http://search.cpan.org/~jcmuller/"
+SRC_URI="mirror://cpan/authors/id/J/JC/JCMULLER/${P}.tar.gz"
 
-RDEPEND="dev-perl/DCOP
-	media-sound/amarok"
-
+LICENSE="Artistic"
+SLOT="0"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
-SLOT="0"
-LICENSE="Artistic"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-
 SRC_TEST="do"
+
+RDEPEND="
+	dev-perl/DCOP
+	media-sound/amarok:3.5
+"
