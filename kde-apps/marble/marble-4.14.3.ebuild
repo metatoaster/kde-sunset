@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -6,15 +6,12 @@ EAPI=5
 KDE_HANDBOOK="optional"
 KDE_REQUIRED="optional"
 CPPUNIT_REQUIRED="optional"
-PYTHON_COMPAT=( python2_7 )
-inherit kde4-base python-single-r1
+inherit kde4-base
 
 DESCRIPTION="Generic geographical map widget"
 HOMEPAGE="https://marble.kde.org/"
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
-IUSE="debug designer-plugin gps +kde phonon plasma python shapefile test zip"
-
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+IUSE="debug designer-plugin +kde phonon plasma shapefile test zip"
 
 # tests fail / segfault. Last checked for 4.9.0
 RESTRICT="test"
@@ -29,14 +26,8 @@ RDEPEND="
 	dev-qt/qtsvg:4
 	dev-qt/qtwebkit:4
 	designer-plugin? ( dev-qt/designer:4 )
-	gps? ( >=sci-geosciences/gpsd-2.95[qt4] )
 	kde? ( media-libs/phonon[qt4] )
 	phonon? ( media-libs/phonon[qt4] )
-	python? (
-		${PYTHON_DEPS}
-		>=dev-python/PyQt4-4.4.4-r1[${PYTHON_USEDEP}]
-		kde? ( $(add_kdeapps_dep pykde4 "${PYTHON_USEDEP}" ) )
-	)
 	shapefile? ( sci-libs/shapelib )
 	zip? ( dev-libs/quazip )
 "
@@ -47,24 +38,11 @@ DEPEND="
 # the qt dependencies are needed because with USE=-kde nothing is pulled in
 # by default... bugs 414165 & 429346
 
-REQUIRED_USE="
-	plasma? ( kde )
-	python? ( kde )
-"
-
-pkg_setup() {
-	kde4-base_pkg_setup
-	use python && python-single-r1_pkg_setup
-}
+REQUIRED_USE="plasma? ( kde )"
 
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_with designer-plugin DESIGNER_PLUGIN)
-		$(cmake-utils_use python EXPERIMENTAL_PYTHON_BINDINGS)
-		$(cmake-utils_use_with python PythonLibrary)
-		$(cmake-utils_use_with python PyQt4)
-		$(cmake-utils_use_with python SIP)
-		$(cmake-utils_use_with gps libgps)
 		$(cmake-utils_use !kde QTONLY)
 		$(cmake-utils_use_with phonon)
 		$(cmake-utils_use_with plasma)
@@ -72,7 +50,12 @@ src_configure() {
 		$(cmake-utils_use_with zip quazip)
 		-DBUILD_MARBLE_TESTS=OFF
 		-DWITH_liblocation=0
+		-DEXPERIMENTAL_PYTHON_BINDINGS=OFF
+		-DWITH_PythonLibrary=OFF
+		-DWITH_PyQt4=OFF
+		-DWITH_SIP=OFF
 		-DWITH_QextSerialPort=OFF
+		-DWITH_libgps=OFF
 	)
 
 	kde4-base_src_configure
