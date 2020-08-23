@@ -1,12 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kodos/kodos-2.4.9.ebuild,v 1.2 2009/10/12 17:22:28 ssuominen Exp $
 
 EAPI=3
 
 inherit distutils eutils
 
-DESCRIPTION="Kodos is a Python GUI utility for creating, testing and debugging regular expressions."
+DESCRIPTION="Python GUI utility for creating, testing and debugging regular expressions"
 HOMEPAGE="http://kodos.sourceforge.net/"
 SRC_URI="mirror://sourceforge/kodos/${P}.tar.gz"
 
