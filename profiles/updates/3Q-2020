@@ -1,3 +1,4 @@
 move kde-base/kapptemplate kde-apps/kapptemplate
 move kde-base/kbruch kde-apps/kbruch
 move app-cdr/k3b kde-apps/k3b
+move kde-misc/yakuake kde-apps/yakuake

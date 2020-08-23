@@ -3,18 +3,15 @@
 
 EAPI=5
 
-KDE_LINGUAS="ca ca@valencia cs da de el en_GB es et fi fr ga gl hr hu it km ko
-nb nds nl nn pa pl pt pt_BR ro ru sk sr sr@ijekavian sr@ijekavianlatin sr@latin
-sv th tr uk wa zh_CN zh_TW"
 inherit kde4-base
 
-DESCRIPTION="A quake-style terminal emulator based on KDE konsole technology"
-HOMEPAGE="https://yakuake.kde.org/"
+DESCRIPTION="Quake-style terminal emulator based on konsole"
+HOMEPAGE="https://kde.org/applications/en/system/org.kde.yakuake"
 SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 
 LICENSE="GPL-2 LGPL-2"
-KEYWORDS="~amd64 ~arm ~x86"
 SLOT="4"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="debug"
 
 RDEPEND="
