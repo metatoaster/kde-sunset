@@ -18,6 +18,9 @@ hal - Enable Hardware Abstraction Layer (HAL) support (WARNING: Try to avoid thi
 # dropped 2011-11-01 in 1.468
 v4l2 - Enable support for video4linux (DEPRECATED: Use USE v4l for your package to enable v4l2 or libv4l support)
 
+# dropped 2012-01-12 in 1.473
+kdeenablefinal - EXPERIMENTAL: KDE ebuilds will use the enable-final flag, yielding compilation speedups at the cost of heavy mem usage and potentially causing problems. We strongly discourage setting this.
+
 # dropped 2017-12-27 in 2dbbacd
 linguas_ar
 linguas_bg
