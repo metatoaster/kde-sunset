@@ -11,7 +11,7 @@ inherit kde
 MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
 
-DESCRIPTION="CalcChecksum is a tool for calculating MD5 and CRC32, TIGER, HAVAL, SHA and some other checksums."
+DESCRIPTION="Tool for calculating MD5 and CRC32, TIGER, HAVAL, SHA and some other checksums"
 HOMEPAGE="http://calcchecksum.sourceforge.net/"
 SRC_URI="mirror://sourceforge/calcchecksum/${MY_P}.tar.bz2"
 
