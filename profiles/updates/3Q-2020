@@ -4,3 +4,4 @@ move app-cdr/k3b kde-apps/k3b
 move kde-misc/yakuake kde-apps/yakuake
 move dev-util/qgit dev-vcs/qgit
 move kde-misc/filelight kde-apps/filelight
+move media-plugins/kipi-plugins kde-apps/kipi-plugins

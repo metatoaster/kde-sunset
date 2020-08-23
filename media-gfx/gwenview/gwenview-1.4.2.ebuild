@@ -16,7 +16,7 @@ SLOT="3.5"
 KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="kipi kdeenablefinal"
 
-DEPEND="kipi? ( >=media-plugins/kipi-plugins-0.1.0_beta2 )
+DEPEND="kipi? ( >=kde-apps/kipi-plugins-0.1.0_beta2 )
 		media-gfx/exiv2"
 RDEPEND="${DEPEND}"
 

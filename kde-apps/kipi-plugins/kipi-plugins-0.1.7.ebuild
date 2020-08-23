@@ -1,40 +1,40 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/kipi-plugins-0.1.7.ebuild,v 1.8 2009/09/06 17:48:10 ssuominen Exp $
 
 EAPI=2
 
 ARTS_REQUIRED="never"
-
+KDEBASE=false
 inherit kde eutils
 
 MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
 
-DESCRIPTION="Plugins for the KDE Image Plugin Interface (libkipi)."
+DESCRIPTION="Plugins for the KDE Image Plugin Interface (libkipi)"
 HOMEPAGE="http://www.kipi-plugins.org/"
 SRC_URI="mirror://sourceforge/kipi/${MY_P}.tar.bz2"
 
-SLOT="0"
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="calendar opengl gphoto2 ipod tiff"
 
-DEPEND="calendar? ( kde-base/libkcal:3.5 )
-		>=media-libs/libkipi-0.1.5
-		>=media-libs/libkexiv2-0.1.5
-		>=media-libs/libkdcraw-0.1.4
-		gphoto2? ( >=media-libs/libgphoto2-2.3.1 )
-		>=media-libs/imlib2-1.1.0[X]
-		opengl? ( dev-qt/qt-meta:3[opengl] )
-		tiff? ( >=media-libs/tiff-3.6 )
-		>=dev-libs/libxslt-1.1
-		ipod? ( >=media-libs/libgpod-0.7.0[gtk] )"
+DEPEND="
+	>=dev-libs/libxslt-1.1
+	>=media-libs/libkipi-0.1.5
+	>=media-libs/libkexiv2-0.1.5
+	>=media-libs/libkdcraw-0.1.4
+	>=media-libs/imlib2-1.1.0[X]
+	calendar? ( kde-base/libkcal:3.5 )
+	gphoto2? ( >=media-libs/libgphoto2-2.3.1 )
+	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )"
+	opengl? ( dev-qt/qt-meta:3[opengl] )
+	tiff? ( >=media-libs/tiff-3.6 )
 RDEPEND="${DEPEND}
-		>=media-gfx/imagemagick-6.2.4
-		>=media-video/mjpegtools-1.6.0
-		media-sound/vorbis-tools
-		media-sound/mpg123"
+	>=media-gfx/imagemagick-6.2.4
+	media-sound/vorbis-tools
+	media-sound/mpg123"
+	>=media-video/mjpegtools-1.6.0
 
 need-kde 3.5
 
@@ -65,10 +65,10 @@ src_prepare() {
 
 src_compile() {
 	myconf="$(use_enable calendar)
-			$(use_enable gphoto2 kameraklient)
-			$(use_enable ipod ipodexport)
-			$(use_enable tiff acquireimages)
-			$(use_enable tiff rawconverter)
-			$(use_enable opengl imageviewer)"
+		$(use_enable gphoto2 kameraklient)
+		$(use_enable ipod ipodexport)
+		$(use_enable tiff acquireimages)
+		$(use_enable tiff rawconverter)
+		$(use_enable opengl imageviewer)"
 	kde_src_compile all
 }

@@ -57,7 +57,7 @@ pkg_postinst() {
 		elog "For SVG support, install kde-apps/svgpart:${SLOT}"
 	fi
 
-	if use kipi && ! has_version media-plugins/kipi-plugins ; then
-		elog "The plugins for the KIPI inteface can be found in media-plugins/kipi-plugins"
+	if use kipi && ! has_version kde-apps/kipi-plugins ; then
+		elog "The plugins for the KIPI inteface can be found in kde-apps/kipi-plugins"
 	fi
 }
