@@ -6,13 +6,13 @@ EAPI=5
 KDE_HANDBOOK="optional"
 inherit kde4-base kde4-functions-extra
 
-DESCRIPTION="An advanced download manager for KDE"
+DESCRIPTION="Advanced download manager by KDE"
 HOMEPAGE="https://www.kde.org/applications/internet/kget/"
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug bittorrent gpg mms sqlite"
 
 RDEPEND="
-	app-crypt/qca:2[qt4]
+	app-crypt/qca:2-qt4
 	$(add_kdeapps_dep libkonq)
 	$(add_kdeplasma_dep libkworkspace '' 4.11)
 	bittorrent? ( >=net-libs/libktorrent-1.0.3:4 )
