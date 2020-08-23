@@ -1,25 +1,25 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/pinentry-0.8.0.ebuild,v 1.6 2010/06/27 09:35:23 fauli Exp $
 
 EAPI=3
 
 inherit qt3 multilib eutils flag-o-matic
 
-DESCRIPTION="Collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol"
+DESCRIPTION="Simple passphrase entry dialogs which utilizes the Assuan protocol"
 HOMEPAGE="http://gnupg.org/aegypten2/index.html"
 SRC_URI="mirror://gnupg/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~x64-freebsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="gtk ncurses qt3 qt4 caps static"
 
-DEPEND="static? ( sys-libs/ncurses )
+DEPEND="
+	static? ( sys-libs/ncurses )
 	!static? (
 		gtk? ( x11-libs/gtk+:2 )
 		ncurses? ( sys-libs/ncurses )
-		qt3? ( dev-qt/qt-meta:3 )
+		qt3? ( !arm? ( dev-qt/qt-meta:3 ) )
 		qt4? ( >=dev-qt/qtgui-4.4.1 )
 		!gtk? ( !qt4? ( !qt3? ( !ncurses? ( sys-libs/ncurses ) ) ) )
 	)
@@ -48,30 +48,31 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf=""
+	local myeconfargs=(
+		--disable-dependency-tracking
+		--enable-maintainer-mode
+		--disable-pinentry-gtk
+		$(use_enable gtk pinentry-gtk2)
+		$(use_enable ncurses pinentry-curses)
+		$(use_enable ncurses fallback-curses)
+		$(use_enable qt4 pinentry-qt4)
+		$(use_with caps libcap)
+	)
+
+	use arm || myeconfargs+=( $(use_enable qt3 pinentry-qt) )
 
 	if ! { use qt4 || use gtk || use ncurses; }
 	then
-		myconf="--enable-pinentry-curses --enable-fallback-curses"
+		myeconfargs+=( --enable-pinentry-curses --enable-fallback-curses )
 	elif use static
 	then
-		myconf="--enable-pinentry-curses --enable-fallback-curses --disable-pinentry-gtk2 --disable-pinentry-qt --disable-pinentry-qt4"
+		myeconfargs+=( --enable-pinentry-curses --enable-fallback-curses --disable-pinentry-gtk2 --disable-pinentry-qt --disable-pinentry-qt4 )
 	fi
 
 	# Issues finding qt on multilib systems
 	export QTLIB="${QTDIR}/$(get_libdir)"
 
-	econf \
-		--disable-dependency-tracking \
-		--enable-maintainer-mode \
-		--disable-pinentry-gtk \
-		$(use_enable gtk pinentry-gtk2) \
-		$(use_enable qt3 pinentry-qt) \
-		$(use_enable ncurses pinentry-curses) \
-		$(use_enable ncurses fallback-curses) \
-		$(use_enable qt4 pinentry-qt4) \
-		$(use_with caps libcap) \
-		${myconf} || die
+	econf "${myeconfargs[@]}" || die
 }
 
 src_install() {
