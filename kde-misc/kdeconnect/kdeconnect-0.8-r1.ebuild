@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,7 @@ else
 	KEYWORDS=""
 fi
 
-DESCRIPTION="Adds communication between KDE and your smartphone"
+DESCRIPTION="Adds communication between KDE Plasma and your smartphone"
 HOMEPAGE="https://www.kde.org/"
 
 LICENSE="GPL-2+"
@@ -25,7 +25,7 @@ SLOT="4"
 IUSE="debug"
 
 COMMON_DEPEND="
-	app-crypt/qca:2[qt4(+)]
+	app-crypt/qca:2-qt4
 	dev-libs/qjson
 	x11-libs/libfakekey
 	x11-libs/libX11
@@ -33,7 +33,7 @@ COMMON_DEPEND="
 "
 RDEPEND="${COMMON_DEPEND}
 	$(add_kdeplasma_dep plasma-workspace)
-	app-crypt/qca:2[ssl]
+	app-crypt/qca:2-qt4[ssl]
 "
 DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
