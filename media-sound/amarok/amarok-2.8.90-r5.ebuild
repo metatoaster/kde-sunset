@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,7 +28,7 @@ fi
 # ipod requires gdk enabled and also gtk compiled in libgpod
 COMMONDEPEND="
 	$(add_kdeapps_dep kdebase-kioslaves)
-	app-crypt/qca:2[qt4]
+	app-crypt/qca:2-qt4
 	>=dev-qt/qtcore-4.8:4
 	>=dev-qt/qtdbus-4.8:4
 	>=dev-qt/qtscript-4.8:4
