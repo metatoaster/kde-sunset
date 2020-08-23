@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -13,11 +13,7 @@ if [[ ${PV} != 9999* ]]; then
 	KDE_HANDBOOK="optional"
 	KDE_DOC_DIRS="doc"
 
-	KDE_LINGUAS="ar ast be bg bs ca ca@valencia cs da de el en_GB eo es et eu
-		fi fr ga gl hi hne hr hu is it ja km ku lt lv ms nb nds nl nn oc pl
-		pt pt_BR ro ru se si sk sl sr sr@ijekavian sr@ijekavianlatin
-		sr@latin sv tr ug uk zh_CN zh_TW"
-	SRC_URI="http://ktorrent.org/downloads/${KTORRENT_VERSION}/${MY_P}.tar.bz2"
+	SRC_URI="http://deb.debian.org/debian/pool/main/libk/${PN}/${P/-/_}.orig.tar.bz2 -> ${MY_P}.tar.bz2"
 	S="${WORKDIR}"/"${MY_P}"
 
 	KEYWORDS="~amd64 ~arm ~x86"
@@ -26,14 +22,15 @@ VIRTUALX_REQUIRED="test"
 inherit kde4-base
 
 DESCRIPTION="A BitTorrent library based on KDE Platform"
-HOMEPAGE="http://ktorrent.pwsp.net/"
+HOMEPAGE="https://kde.org/applications/internet/org.kde.ktorrent
+https://userbase.kde.org/KTorrent"
 
 LICENSE="GPL-2"
 SLOT="4"
 IUSE="debug"
 
 RDEPEND="
-	app-crypt/qca:2[qt4(+)]
+	app-crypt/qca:2-qt4
 	dev-libs/gmp:0=
 	dev-libs/libgcrypt:0=
 "
