@@ -387,7 +387,7 @@ need-kde() {
 	else
 		x_DEPEND="${DEPEND}"
 	fi
-	if [[ -n "${KDEBASE}" ]]; then
+	if [[ "${KDEBASE}" == "true" ]]; then
 		# If we're a kde-base package, we need at least our own version of kdelibs.
 		# Note: we only set RDEPEND if it is already set, otherwise
 		# we break packages relying on portage copying RDEPEND from DEPEND.
@@ -404,7 +404,7 @@ need-kde() {
 	qtver-from-kdever ${KDEVER}
 	need-qt ${selected_version}
 
-	if [[ -n "${KDEBASE}" ]]; then
+	if [[ "${KDEBASE}" == "true" ]]; then
 		SLOT="$KDEMAJORVER.$KDEMINORVER"
 	else
 		: ${SLOT="0"}
@@ -457,7 +457,7 @@ set-kdedir() {
 	if [[ -n "$KDEPREFIX" ]]; then
 		export PREFIX="$KDEPREFIX"
 	else
-		if  [[ -z "$KDEBASE" ]]; then
+		if  [[ -z ${KDEBASE} || ${KDEBASE} != "true" ]]; then
 			PREFIX="/usr/kde/3.5"
 		else
 			case $KDEMAJORVER.$KDEMINORVER in
@@ -472,7 +472,7 @@ set-kdedir() {
 	if [[ -n "$KDELIBSDIR" ]]; then
 		export KDEDIR="$KDELIBSDIR"
 	else
-		if [[ -z "$KDEBASE" ]]; then
+		if  [[ -z ${KDEBASE} || ${KDEBASE} != "true" ]]; then
 			# find the latest kdelibs installed
 			for x in /usr/kde/{svn,3.5} "${PREFIX}" \
 				"${KDE3LIBSDIR}" "${KDELIBSDIR}" "${KDE3DIR}" "${KDEDIR}" /usr/kde/*; do
@@ -662,9 +662,12 @@ postprocess_desktop_entries() {
 	validate_desktop_entries "${PREFIX}"/share/applications
 }
 
-# is this a kde-base ebuid? CYKER - KLUDGE KLUDGE KLUDGE FUCK YOU kde-apps
+# is this ebuild part of the KDE SC? kde-base/ or kde-apps/ are only hints
 if [[ "${CATEGORY}" == "kde-base" || "${CATEGORY}" == "kde-apps" ]]; then
 	debug-print "${ECLASS}: KDEBASE ebuild recognized"
-	export KDEBASE="true"
-	export KDEREVISION
+	KDEBASE=${KDEBASE:=true}
+	if [[ ${KDEBASE} == "true" ]]; then
+		export KDEBASE
+		export KDEREVISION
+	fi
 fi

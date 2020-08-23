@@ -173,7 +173,7 @@ kde_src_prepare() {
 			for f in "${PATCHDIR}"/${p}-${PV}-*{diff,patch}; do
 				[[ -e ${f} ]] && PATCHES+=("${f}")
 			done
-			if [[ -n "${KDEBASE}" ]]; then
+			if [[ "${KDEBASE}" == "true" ]]; then
 				for f in "${PATCHDIR}"/${p}-${SLOT}-*{diff,patch}; do
 					[[ -e ${f} ]] && PATCHES+=("${f}")
 				done
@@ -563,7 +563,7 @@ kde_src_install() {
 	shift
 	done
 
-	if [[ -n ${KDEBASE} && "${PN}" != "arts" && -d "${D}"/usr/share/doc/${PF} ]]; then
+	if [[ ${KDEBASE} == "true" && "${PN}" != "arts" && -d "${D}"/usr/share/doc/${PF} ]]; then
 		# work around bug #97196
 		dodir /usr/share/doc/kde && \
 			mv "${D}"/usr/share/doc/${PF} "${D}"/usr/share/doc/kde/ || \
