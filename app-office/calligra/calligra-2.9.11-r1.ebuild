@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # note: files that need to be checked for dependencies etc:
@@ -36,12 +36,12 @@ LICENSE="GPL-2"
 SLOT="4"
 
 if [[ ${KDE_BUILD_TYPE} == release ]] ; then
-	KEYWORDS="amd64 ~arm x86"
+	KEYWORDS="amd64 x86"
 fi
 
 IUSE="color-management +crypt +eigen +exif fftw +fontconfig freetds +glew +glib
 +gsf gsl import-filter +jpeg jpeg2k +lcms mysql openexr +pdf +pim
-postgres spacenav sybase test tiff +threads +truetype vc xbase +xml"
+postgres spacenav sybase test tiff +threads +truetype +xml"
 
 # Don't use Active, it's broken on desktops.
 CAL_FTS="author braindump flow gemini karbon kexi krita plan sheets stage words"
@@ -58,19 +58,18 @@ REQUIRED_USE="
 	calligra_features_plan? ( pim )
 	calligra_features_sheets? ( eigen )
 	calligra_features_stage? ( webkit )
-	vc? ( calligra_features_krita )
 	test? ( calligra_features_karbon )
 "
 
 RDEPEND="
 	dev-lang/perl
-	dev-libs/boost
+	dev-libs/boost:=
 	dev-qt/qtcore:4[exceptions]
 	media-libs/libpng:0=
 	sys-libs/zlib
 	virtual/libiconv
 	color-management? ( media-libs/opencolorio )
-	crypt? ( app-crypt/qca:2[qt4] )
+	crypt? ( app-crypt/qca:2-qt4 )
 	eigen? ( dev-cpp/eigen:3 )
 	exif? ( media-gfx/exiv2:= )
 	fftw? ( sci-libs/fftw:3.0 )
@@ -113,8 +112,6 @@ RDEPEND="
 	sybase? ( dev-db/freetds )
 	tiff? ( media-libs/tiff:0 )
 	truetype? ( media-libs/freetype:2 )
-	vc? ( <dev-libs/vc-1.0.0 )
-	xbase? ( dev-db/xbase )
 	calligra_features_kexi? (
 		dev-db/sqlite:3[extensions(+)]
 		dev-libs/icu:=
@@ -177,6 +174,8 @@ src_configure() {
 		-DWITH_KActivities=OFF
 		-DWITH_CalligraMarble=OFF
 		-DWITH_Iconv=ON
+		-DWITH_Vc=OFF
+		-DWITH_XBase=OFF
 		-DWITH_OCIO=$(usex color-management)
 		-DWITH_QCA2=$(usex crypt)
 		-DWITH_Eigen3=$(usex eigen)
@@ -210,8 +209,6 @@ src_configure() {
 		-DWITH_Threads=$(usex threads)
 		-DWITH_TIFF=$(usex tiff)
 		-DWITH_Freetype=$(usex truetype)
-		-DWITH_Vc=$(usex vc)
-		-DWITH_XBase=$(usex xbase)
 	)
 
 	use test && mycmakeargs+=( -DENABLE_CSTESTER_TESTING=$(usex test) )
