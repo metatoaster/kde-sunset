@@ -1,15 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/hal-info/hal-info-20091130.ebuild,v 1.3 2011/03/19 12:57:09 ssuominen Exp $
 
 DESCRIPTION="The fdi scripts that HAL uses"
-HOMEPAGE="http://hal.freedesktop.org/"
-SRC_URI="http://hal.freedesktop.org/releases/${P}.tar.gz
+HOMEPAGE="https://www.freedesktop.org/wiki/Software/hal/"
+SRC_URI="https://hal.freedesktop.org/releases/${P}.tar.gz
 	mirror://kde-sunset/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 sh ~sparc x86"
+KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND=">=sys-apps/hal-0.5.10"
