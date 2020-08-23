@@ -1,14 +1,14 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kompose/kompose-0.5.4.ebuild,v 1.8 2008/12/07 12:53:20 jmbsvicetto Exp $
 
 inherit kde
 
-DESCRIPTION="A KDE fullscreen task manager."
+DESCRIPTION="KDE Plasma fullscreen task manager"
 HOMEPAGE="http://kompose.berlios.de"
-SRC_URI="mirror://berlios/kompose/${P}.tar.bz2"
-SLOT="0"
+SRC_URI="mirror://sourceforge/${PN}.berlios/${P}.tar.bz2"
+
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
