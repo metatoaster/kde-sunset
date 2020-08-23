@@ -1,22 +1,23 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/kita/kita-1.90.4.ebuild,v 1.1 2008/12/31 17:05:36 matsuu Exp $
 
-inherit eutils
-
-SLOT="2"
 MY_PN="${PN}${SLOT}"
 MY_P="${MY_PN}-${PV}"
+inherit eutils
+
 DESCRIPTION="Kita - 2ch client for KDE"
 HOMEPAGE="http://kita.sourceforge.jp/"
 SRC_URI="mirror://sourceforge.jp/kita/33012/${MY_P}.tar.gz"
 
 LICENSE="MIT"
+SLOT="2"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
-RDEPEND="kde-base/korundum
-	kde-base/qtruby"
+RDEPEND="
+	kde-base/korundum
+	kde-base/qtruby
+"
 
 S="${WORKDIR}/${MY_P}"
 
