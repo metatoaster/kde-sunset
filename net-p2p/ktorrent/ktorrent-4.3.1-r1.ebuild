@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,11 +16,7 @@ if [[ ${PV} != 9999* ]]; then
 	KDE_HANDBOOK="optional"
 	KDE_DOC_DIRS="doc"
 
-	KDE_LINGUAS="ar ast be bg bs ca ca@valencia cs da de el en_GB eo es et eu
-		fi fr ga gl hi hne hr hu is it ja km ku lt lv mai ms nb nds nl nn oc
-		pl pt pt_BR ro ru se si sk sl sq sr sr@ijekavian sr@ijekavianlatin
-		sr@latin sv tr ug uk zh_CN zh_TW"
-	SRC_URI="http://ktorrent.org/downloads/${MY_PV}/${MY_P}.tar.bz2"
+	SRC_URI="http://deb.debian.org/debian/pool/main/k/${PN}/${P/-/_}.orig.tar.bz2 -> ${MY_P}.tar.bz2"
 	S="${WORKDIR}"/"${MY_P}"
 
 	KEYWORDS="~amd64 ~x86"
