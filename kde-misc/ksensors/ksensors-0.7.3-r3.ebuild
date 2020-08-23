@@ -1,24 +1,21 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/ksensors/ksensors-0.7.3-r3.ebuild,v 1.3 2009/02/10 14:46:22 carlo Exp $
 
 ARTS_REQUIRED="never"
 WANT_AUTOMAKE="1.6"
-
 inherit kde
 
-DESCRIPTION="KSensors - a nice lm-sensors frontend for KDE."
-SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz
-		mirror://debian/pool/main/k/ksensors/${PN}_${PV}-16.diff.gz"
+DESCRIPTION="Nice lm-sensors frontend for KDE Plasma"
 HOMEPAGE="http://ksensors.sourceforge.net/"
-LICENSE="GPL-2"
+SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz
+	mirror://debian/pool/main/k/ksensors/${PN}_${PV}-16.diff.gz"
 
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="hddtemp ibmacpi"
 
 DEPEND=">=sys-apps/lm-sensors-2.6.3"
-
 RDEPEND="${DEPEND}
 	hddtemp? ( >=app-admin/hddtemp-0.3_beta15-r1 )"
 
