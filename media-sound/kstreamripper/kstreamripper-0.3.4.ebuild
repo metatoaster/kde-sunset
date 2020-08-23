@@ -5,10 +5,8 @@
 ARTS_REQUIRED=never
 inherit eutils kde
 
-DESCRIPTION="KStreamripper - a nice KDE3 frontend to media-sound/streamripper"
-HOMEPAGE="http://kstreamripper.tuxipuxi.org/"
-# Portage isn't capable to get along with this url.
-# SRC_URI="http://www.tuxipuxi.org/?download=${P}.tar.bz2"
+DESCRIPTION="Program for ripping internet radios"
+HOMEPAGE="https://www.linux-apps.com/p/1126631"
 SRC_URI="mirror://kde-sunset/${P}.tar.bz2"
 
 SLOT="0"

@@ -6,7 +6,7 @@ EAPI=5
 inherit kde4-base
 
 DESCRIPTION="Program for ripping internet radios"
-HOMEPAGE="http://kstreamripper.sourceforge.net/"
+HOMEPAGE="https://www.linux-apps.com/p/1126631"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2 GPL-3"
