@@ -1,20 +1,19 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2020 Gentoo
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/knetworkmanager/knetworkmanager-0.2.2_p20080528.ebuild,v 1.1 2008/06/24 17:55:41 rbu Exp $
 
+KMNAME="knetworkmanager"
 inherit kde eutils
 
-DESCRIPTION="A KDE frontend for NetworkManager"
+DESCRIPTION="KDE frontend for NetworkManager"
 HOMEPAGE="http://en.opensuse.org/Projects/KNetworkManager"
-LICENSE="GPL-2"
-SRC_URI="mirror://kde-sunset/${P}.tar.bz2"
-KEYWORDS="~x86"
+SRC_URI="mirror://kde-sunset/${KMNAME}-${PV}.tar.bz2"
 
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~x86"
 IUSE="cisco openvpn pptp dialup"
 
 need-kde 3.5
-
-SLOT="0"
 
 DEPEND="net-misc/networkmanager
 	=kde-frameworks/kdelibs-3.5*
@@ -32,7 +31,7 @@ DEPEND="${DEPEND}
 	>=sys-kernel/linux-headers-2.6.19
 	sys-apps/util-linux"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${KMNAME}"
 
 pkg_setup() {
 	kde_pkg_setup
@@ -41,10 +40,10 @@ pkg_setup() {
 src_unpack() {
 	kde_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-0.7-dbus_access.patch
-	epatch "${FILESDIR}"/${PN}-0.7-no_blank_psk.patch
-	epatch "${FILESDIR}"/${PN}-0.7-configure-check-for-nm.patch
-	epatch "${FILESDIR}"/${PN}-0.7-uuid_fix.patch
+	epatch "${FILESDIR}"/${KMNAME}-0.7-dbus_access.patch
+	epatch "${FILESDIR}"/${KMNAME}-0.7-no_blank_psk.patch
+	epatch "${FILESDIR}"/${KMNAME}-0.7-configure-check-for-nm.patch
+	epatch "${FILESDIR}"/${KMNAME}-0.7-uuid_fix.patch
 }
 
 src_compile() {
@@ -65,5 +64,5 @@ src_install() {
 	set-kdedir
 	rm -rf "${D}/${KDEDIR}/etc"
 	insinto /etc/dbus-1/system.d/
-	doins ${PN}-0.7/knetworkmanager.conf
+	doins ${KMNAME}-0.7/knetworkmanager.conf
 }
