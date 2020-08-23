@@ -13,12 +13,12 @@ inherit kde
 MY_P="${P/_/}"
 S="${WORKDIR}/${MY_P}"
 
-DESCRIPTION="A user friendly IRC Client for KDE3.x"
-HOMEPAGE="http://konversation.kde.org/"
-SRC_URI="mirror://berlios/konversation/${MY_P}.tar.bz2"
+DESCRIPTION="User friendly IRC Client for KDE 3.x"
+HOMEPAGE="https://konversation.kde.org/"
+SRC_URI="mirror://sourceforge/${PN}.berlios/${MY_P}.tar.bz2"
 
-SLOT="3.5"
 LICENSE="GPL-2"
+SLOT="3.5"
 KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE=""
 
@@ -34,9 +34,7 @@ pkg_postinst() {
 	kde_pkg_postinst
 
 	if ! has_version kde-apps/konsole; then
-		echo
 		elog "If you want to be able to use Konsole from inside ${PN}, please emerge"
 		elog "kde-apps/konsole:3.5"
-		echo
 	fi
 }
