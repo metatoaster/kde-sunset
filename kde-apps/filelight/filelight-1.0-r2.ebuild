@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/kde-misc/filelight/filelight-1.0-r2.ebuild,v 1.1 2009/09/28 13:55:19 ssuominen Exp $
 
 ARTS_REQUIRED="never"
-
+KDEBASE=false
 inherit kde
 
 P_I18N="${P}-i18n-20070422"
