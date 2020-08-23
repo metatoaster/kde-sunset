@@ -47,6 +47,7 @@ COMMONDEPEND="
 	media-libs/giflib:=
 	media-libs/libpng:0=
 	media-libs/phonon[qt4]
+	sys-libs/libutempter
 	sys-libs/zlib
 	virtual/jpeg:0
 	x11-libs/libICE
@@ -63,10 +64,6 @@ COMMONDEPEND="
 	x11-libs/libXScrnSaver
 	x11-libs/libXtst
 	x11-misc/shared-mime-info
-	!kernel_SunOS? ( || (
-		sys-libs/libutempter
-		>=sys-freebsd/freebsd-lib-9.0
-	) )
 	acl? ( virtual/acl )
 	bzip2? ( app-arch/bzip2 )
 	fam? ( virtual/fam )
@@ -77,7 +74,7 @@ COMMONDEPEND="
 	)
 	opengl? ( >=dev-qt/qtopengl-${QT_MINIMAL}:4 )
 	plasma? (
-		app-crypt/qca:2[qt4]
+		app-crypt/qca:2-qt4
 		>=dev-qt/qtsql-${QT_MINIMAL}:4[qt3support?]
 	)
 	policykit? ( sys-auth/polkit-qt[qt4] )
@@ -118,7 +115,10 @@ PDEPEND="
 	>=x11-libs/libXtst-1.1.0
 	x11-misc/xdg-utils
 	handbook? ( kde-apps/khelpcenter:* )
-	policykit? ( kde-plasma/polkit-kde-agent )
+	policykit? ( || (
+		>=sys-auth/polkit-kde-agent-0.99
+		kde-plasma/polkit-kde-agent
+	) )
 "
 
 DOCS=( AUTHORS README{,-WIN32.TXT} TODO )
