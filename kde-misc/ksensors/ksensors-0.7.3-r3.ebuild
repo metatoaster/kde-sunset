@@ -7,8 +7,7 @@ inherit kde
 
 DESCRIPTION="Nice lm-sensors frontend for KDE Plasma"
 HOMEPAGE="http://ksensors.sourceforge.net/"
-SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz
-	mirror://debian/pool/main/k/ksensors/${PN}_${PV}-16.diff.gz"
+SRC_URI="mirror://sourceforge/ksensors/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -26,13 +25,11 @@ src_unpack() {
 
 	rm -f "${S}"/configure
 
-	cd "${WORKDIR}"
-
 	# Debian patchset, fixes bugs 120350, 171208, 173821, 232782
-	epatch ${PN}_${PV}-16.diff
+	epatch "${FILESDIR}/${PN}_${PV}-16.diff"
 
-	epatch "${FILESDIR}/ksensors-0.7.3-desktop-file.diff"
-	epatch "${FILESDIR}/ksensors-0.7.3-sound-dir.diff"
+	epatch "${FILESDIR}/${P}-desktop-file.diff"
+	epatch "${FILESDIR}/${P}-sound-dir.diff"
 
 	# On Gentoo hddtemp resides in /usr/sbin which is not in the user's
 	# path. Thus, call hddtemp with full path.
