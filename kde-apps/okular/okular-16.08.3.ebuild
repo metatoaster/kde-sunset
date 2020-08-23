@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ DEPEND="
 	media-libs/qimageblitz[-qt5(+)]
 	sys-libs/zlib
 	chm? ( dev-libs/chmlib )
-	crypt? ( app-crypt/qca:2[qt4] )
+	crypt? ( app-crypt/qca:2-qt4 )
 	djvu? ( app-text/djvu )
 	dpi? ( kde-plasma/libkscreen:4 )
 	ebook? ( app-text/ebook-tools )
