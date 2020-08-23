@@ -5,22 +5,24 @@ EAPI=4
 
 inherit qt4-r2
 
-DESCRIPTION="A Qt-based library for OAuth support"
+DESCRIPTION="Qt-based library for OAuth support"
 HOMEPAGE="https://github.com/ayoy/qoauth/wiki"
 SRC_URI="http://files.ayoy.net/qoauth/release/${PV}/src/${P}-src.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ppc ~ppc64 x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="debug doc static-libs test"
 
-COMMON_DEPEND="app-crypt/qca:2[debug?,qt4(+)]"
+COMMON_DEPEND="
+	app-crypt/qca:2-qt4[debug?]
+"
 DEPEND="${COMMON_DEPEND}
 	doc? ( app-doc/doxygen )
 	test? ( dev-qt/qttest:4 )
 "
 RDEPEND="${COMMON_DEPEND}
-	app-crypt/qca:2[ssl]
+	app-crypt/qca:2-qt4[ssl]
 "
 
 S=${WORKDIR}/${P}-src
