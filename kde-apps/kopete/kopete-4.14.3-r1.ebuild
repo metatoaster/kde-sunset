@@ -8,14 +8,13 @@ inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="KDE multi-protocol IM client"
 HOMEPAGE="https://kopete.kde.org https://www.kde.org/applications/internet/kopete"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE="debug ssl v4l"
 
 # tests hang, last checked for 4.2.96
 RESTRICT=test
 
 # Available plugins
-#
 #	addbookmarks: NO DEPS
 #	alias: NO DEPS (disabled upstream)
 #	autoreplace: NO DEPS
@@ -38,27 +37,26 @@ PLUGINS="+addbookmarks +autoreplace +contactnotes +highlight +history latex
 +urlpicpreview webpresence"
 
 # Available protocols
-#
 #	gadu: net-libs/libgadu @since 4.3
-#	groupwise: app-crypt/qca:2
+#	groupwise: app-crypt/qca:2-qt4
 #	irc: NO DEPS, probably will fail so inform user about it
-#	xmpp: net-dns/libidn app-crypt/qca:2 ENABLED BY DEFAULT NETWORK
+#	xmpp: net-dns/libidn app-crypt/qca:2-qt4 ENABLED BY DEFAULT NETWORK
 #	jingle: media-libs/speex net-libs/ortp DISABLED BY UPSTREAM
 #	meanwhile: net-libs/meanwhile
 #	oscar: NO DEPS
-#   telepathy: net-libs/decibel
-#   testbed: NO DEPS
+#	testbed: NO DEPS
 #	winpopup: NO DEPS (we're adding samba as RDEPEND so it works)
-#	yahoo: media-libs/jasper
 #	zeroconf (bonjour): NO DEPS
-PROTOCOLS="gadu groupwise jingle meanwhile oscar skype
-sms testbed winpopup +xmpp yahoo zeroconf"
+PROTOCOLS="gadu groupwise meanwhile oscar testbed winpopup +xmpp zeroconf"
 
 # disabled protocols
-#   telepathy: net-libs/decibel
 #   irc: NO DEPS
+#   jingle: media-libs/speex net-libs/ortp DISABLED BY UPSTREAM
 #   msn: net-libs/libmsn
-#	qq: NO DEPS
+#   qq: NO DEPS
+#   telepathy: net-libs/decibel
+#   yahoo: media-libs/jasper (service shutdown)
+#   skype, sms (until fixed)
 
 IUSE="${IUSE} ${PLUGINS} ${PROTOCOLS}"
 
@@ -72,15 +70,7 @@ COMMONDEPEND="
 	x11-libs/libX11
 	x11-libs/libXScrnSaver
 	gadu? ( >=net-libs/libgadu-1.8.0[threads] )
-	groupwise? ( app-crypt/qca:2[qt4(+)] )
-	jingle? (
-		dev-libs/expat
-		dev-libs/openssl:0
-		>=media-libs/mediastreamer-2.3.0
-		media-libs/speex
-		net-libs/libsrtp:0=
-		net-libs/ortp:=
-	)
+	groupwise? ( app-crypt/qca:2-qt4 )
 	meanwhile? ( net-libs/meanwhile )
 	otr? ( >=net-libs/libotr-4.0.0 )
 	statistics? ( dev-db/sqlite:3 )
@@ -90,11 +80,10 @@ COMMONDEPEND="
 		dev-libs/libxslt
 	)
 	xmpp? (
-		app-crypt/qca:2[qt4(+)]
+		app-crypt/qca:2-qt4
 		net-dns/libidn
 		sys-libs/zlib
 	)
-	yahoo? ( media-libs/jasper )
 "
 RDEPEND="${COMMONDEPEND}
 	latex? (
@@ -104,37 +93,34 @@ RDEPEND="${COMMONDEPEND}
 		)
 		virtual/latex-base
 	)
-	sms? ( app-mobilephone/smssend )
-	ssl? ( app-crypt/qca:2[openssl] )
+	ssl? ( app-crypt/qca:2-qt4[ssl] )
 	winpopup? ( net-fs/samba )
 "
-#	telepathy? ( net-libs/decibel )"
 DEPEND="${COMMONDEPEND}
 	x11-base/xorg-proto
-	jingle? ( dev-libs/jsoncpp )
 "
 
 src_configure() {
 	local x x2
 	# Handle common stuff
 	local mycmakeargs=(
-		$(cmake-utils_use_with jingle GOOGLETALK)
-		$(cmake-utils_use_with jingle LiboRTP)
-		$(cmake-utils_use_with jingle Mediastreamer)
-		$(cmake-utils_use_with jingle Speex)
+		-DWITH_GOOGLETALK=OFF
+		-DWITH_LiboRTP=OFF
+		-DWITH_Mediastreamer=OFF
+		-DWITH_Speex=OFF
 		$(cmake-utils_use_disable v4l VIDEOSUPPORT)
 	)
 	# enable protocols
 	for x in ${PROTOCOLS}; do
 		case ${x/+/} in
-			zeroconf) x2=bonjour ;;
 			xmpp) x2=jabber ;;
+			zeroconf) x2=bonjour ;;
 			*) x2='' ;;
 		esac
 		mycmakeargs+=($(cmake-utils_use_with ${x/+/} ${x2}))
 	done
 
-	mycmakeargs+=( -DWITH_Libmsn=OFF -DWITH_qq=OFF )
+	mycmakeargs+=( -DWITH_libjingle=OFF -DWITH_Libmsn=OFF -DWITH_qq=OFF )
 
 	# enable plugins
 	for x in ${PLUGINS}; do
@@ -155,9 +141,9 @@ pkg_postinst() {
 
 	if ! use ssl; then
 		if use xmpp ; then # || use irc; then
-			if ! has_version "app-crypt/qca:2[openssl]" ; then
+			if ! has_version "app-crypt/qca:2-qt4[ssl]" ; then
 				elog "In order to use ssl in xmpp you'll need to"
-				elog "install app-crypt/qca package with USE=openssl."
+				elog "install app-crypt/qca package with USE=ssl."
 			fi
 		fi
 	fi
