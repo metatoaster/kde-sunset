@@ -1,8 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/k3b/k3b-1.0.5-r6.ebuild,v 1.5 2009/10/13 17:39:55 ssuominen Exp $
 
 EAPI=2
+
+KDEBASE=false
 inherit kde eutils multilib
 
 DESCRIPTION="K3b, KDE CD Writing Software"
@@ -12,8 +13,7 @@ SRC_URI="mirror://sourceforge/k3b/${P/_}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="3.5"
 KEYWORDS="amd64 ppc ppc64 x86"
-IUSE="alsa css dvd dvdr encode emovix ffmpeg flac hal mp3 musicbrainz
-	sndfile vcd vorbis"
+IUSE="alsa css dvd dvdr encode ffmpeg flac hal mp3 sndfile vcd vorbis"
 
 COMMON_DEPEND="!<app-cdr/k3b-1.0.5-r5
 	media-libs/libsamplerate
@@ -26,7 +26,6 @@ COMMON_DEPEND="!<app-cdr/k3b-1.0.5-r5
 	flac? ( media-libs/flac[cxx] )
 	hal? ( sys-apps/hal )
 	mp3? ( media-libs/libmad )
-	musicbrainz? ( media-libs/musicbrainz:1 )
 	sndfile? ( media-libs/libsndfile )
 	vorbis? ( media-libs/libvorbis )"
 RDEPEND="${COMMON_DEPEND}
@@ -37,7 +36,6 @@ RDEPEND="${COMMON_DEPEND}
 	css? ( media-libs/libdvdcss )
 	encode? ( media-sound/sox
 		media-video/transcode[dvd] )
-	emovix? ( media-video/emovix )
 	vcd? ( media-video/vcdimager )"
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig"
@@ -97,7 +95,7 @@ src_configure() {
 		$(use_with sndfile)
 		$(use_with mp3 libmad)
 		--without-musepack
-		$(use_with musicbrainz)
+		--without-musicbrainz
 		$(use_with dvd libdvdread)
 		$(use_with alsa)"
 

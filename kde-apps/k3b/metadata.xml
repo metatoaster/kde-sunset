@@ -2,7 +2,4 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <!-- maintainer-needed -->
-<use>
-	<flag name="emovix">Enable burning support for eMoviX images</flag>
-</use>
 </pkgmetadata>
