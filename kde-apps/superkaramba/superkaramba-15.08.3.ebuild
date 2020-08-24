@@ -1,41 +1,25 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 )
-inherit python-single-r1 kde4-base
+inherit kde4-base
 
 DESCRIPTION="A tool to create interactive applets for the KDE desktop"
 HOMEPAGE="https://www.kde.org/applications/utilities/superkaramba
 https://utils.kde.org/projects/superkaramba"
-KEYWORDS="~amd64 ~x86"
-IUSE="debug python"
 
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+KEYWORDS="~amd64 ~x86"
+IUSE="debug"
 
 DEPEND="
 	media-libs/qimageblitz[-qt5(+)]
 	x11-libs/libX11
 	x11-libs/libXrender
-	python? (
-		${PYTHON_DEPS}
-		$(add_kdeapps_dep pykde4 "${PYTHON_USEDEP}")
-	)
 "
-RDEPEND="${DEPEND}
-	python? ( $(add_kdeapps_dep kross-interpreters "${PYTHON_USEDEP}") )
-"
-
-pkg_setup() {
-	use python && python-single-r1_pkg_setup
-	kde4-base_pkg_setup
-}
+RDEPEND="${DEPEND}"
 
 src_configure() {
-	local mycmakeargs=(
-		$(cmake-utils_use_with python PythonLibs)
-	)
-
+	local mycmakeargs=( -DWITH_PythonLibs=OFF )
 	kde4-base_src_configure
 }
