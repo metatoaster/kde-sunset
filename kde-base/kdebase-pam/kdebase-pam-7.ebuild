@@ -9,7 +9,7 @@ HOMEPAGE="http://www.kde.org"
 LICENSE="as-is"
 
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="sys-libs/pam"

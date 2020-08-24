@@ -17,7 +17,7 @@ SRC_URI="http://avahi.org/download/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ppc ppc64 s390 ~sparc x86 ~x86-linux"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ~ppc ~ppc64 s390 ~sparc x86 ~x86-linux"
 IUSE="autoipd bookmarks dbus doc gdbm gtk gtk3 howl-compat +introspection ipv6 kernel_linux mdnsresponder-compat mono python qt3 qt4 test utils"
 
 REQUIRED_USE="

@@ -17,7 +17,7 @@ SRC_URI="http://download.qt-project.org/archive/qt/3/qt-x11-${SRCTYPE}-${PV}.tar
 LICENSE="|| ( QPL-1.0 GPL-2 GPL-3 )"
 
 SLOT="3"
-KEYWORDS="~alpha amd64 ~hppa ~mips ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE="cups debug doc examples firebird ipv6 mysql nas nis odbc opengl postgres sqlite xinerama immqt immqt-bc"
 
 RDEPEND="

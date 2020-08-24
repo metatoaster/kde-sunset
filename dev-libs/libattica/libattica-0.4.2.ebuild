@@ -8,11 +8,10 @@ MY_PN="${PN#lib}"
 
 if [[ $PV = *9999* ]]; then
 	EGIT_REPO_URI="git://anongit.kde.org/attica"
-	KEYWORDS=""
 	scm_eclass=git-2
 else
 	SRC_URI="mirror://kde/stable/${MY_PN}/${MY_P}.tar.bz2"
-	KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
+	KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 fi
 
 inherit cmake-utils ${scm_eclass}

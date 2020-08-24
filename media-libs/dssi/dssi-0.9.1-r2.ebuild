@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/dssi/${P}.tar.gz"
 
 LICENSE="LGPL-2.1 BSD"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 
 RDEPEND=">=media-libs/alsa-lib-1.0
 	>=media-libs/liblo-0.12

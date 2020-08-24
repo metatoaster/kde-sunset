@@ -11,7 +11,7 @@ SRC_URI="http://www.xs4all.nl/~mfnboer/twinkle/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~ppc64 x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="speex ilbc zrtp"
 
 RDEPEND=">=net-libs/ccrtp-1.6.0

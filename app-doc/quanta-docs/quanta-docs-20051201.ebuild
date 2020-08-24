@@ -15,7 +15,7 @@ SRC_URI="mirror://gentoo/quanta-css-${PV}.tar.bz2
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa mips ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa mips ~ppc ~ppc64 ~sparc x86"
 IUSE="mysql"
 
 S=${WORKDIR}
