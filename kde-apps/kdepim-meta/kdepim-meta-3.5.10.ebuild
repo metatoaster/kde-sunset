@@ -1,16 +1,17 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdepim-meta/kdepim-meta-3.5.10.ebuild,v 1.7 2009/07/12 13:47:34 armin76 Exp $
 
 EAPI="1"
+
 inherit kde-functions
+
 DESCRIPTION="kdepim - merge this to pull in all kdepim-derived packages"
 HOMEPAGE="http://www.kde.org/"
 
 LICENSE="GPL-2"
 SLOT="3.5"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
-IUSE="pda kitchensync"
+IUSE="pda"
 
 RDEPEND="
 	>=kde-apps/akregator-${PV}:${SLOT}
@@ -22,7 +23,6 @@ RDEPEND="
 	>=kde-base/kdepim-kioslaves-${PV}:${SLOT}
 	>=kde-apps/kdepim-kresources-${PV}:${SLOT}
 	>=kde-apps/kdepim-wizards-${PV}:${SLOT}
-	kitchensync? ( >=kde-base/kitchensync-${PV}:${SLOT} )
 	>=kde-apps/kmail-${PV}:${SLOT}
 	>=kde-base/kmailcvt-${PV}:${SLOT}
 	>=kde-apps/knode-${PV}:${SLOT}
