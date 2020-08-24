@@ -15,7 +15,7 @@ DEPEND="
 	exif? ( media-gfx/exiv2:= )
 	ffmpeg? ( virtual/ffmpeg )
 	mobi? ( $(add_kdeapps_dep kdegraphics-mobipocket) )
-	pdf? ( app-text/poppler[qt4] )
+	pdf? ( app-text/poppler[qt4(-)] )
 	taglib? ( media-libs/taglib )
 "
 RDEPEND="${DEPEND}"

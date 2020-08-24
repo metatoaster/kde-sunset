@@ -24,7 +24,7 @@ RDEPEND="
 	media-libs/qimageblitz
 	addressbook? ( $(add_kdeapps_dep kdepimlibs) )
 	cddb? ( $(add_kdeapps_dep libkcddb) )
-	pdf? ( app-text/poppler[qt4] )
+	pdf? ( app-text/poppler[qt4(-)] )
 	scanner? ( $(add_kdeapps_dep libksane) )
 	taglib? ( >=media-libs/taglib-1.5 )
 	v4l? ( >=media-libs/libv4l-0.8.3 )
