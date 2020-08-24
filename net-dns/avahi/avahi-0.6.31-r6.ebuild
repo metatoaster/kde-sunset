@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/avahi-0.6.31-r6.ebuild,v 1.11 2015/04/08 18:16:54 mgorny Exp $
 
 EAPI="5"
 
@@ -19,10 +18,10 @@ SRC_URI="http://avahi.org/download/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~hppa m68k ~mips ~ppc ~ppc64 s390 ~sparc x86 ~x86-linux"
-IUSE="autoipd bookmarks dbus doc gdbm gtk gtk3 howl-compat +introspection ipv6 kernel_linux mdnsresponder-compat mono nls python qt3 qt4 selinux test utils"
+IUSE="autoipd bookmarks dbus doc gdbm gtk howl-compat +introspection ipv6 kernel_linux mdnsresponder-compat mono nls python qt3 qt4 selinux test utils"
 
 REQUIRED_USE="
-	utils? ( || ( gtk gtk3 ) )
+	utils? ( gtk )
 	python? ( dbus gdbm )
 	mono? ( dbus )
 	howl-compat? ( dbus )
@@ -36,33 +35,23 @@ COMMON_DEPEND="
 	gdbm? ( >=sys-libs/gdbm-1.10-r1[${MULTILIB_USEDEP}] )
 	qt3? ( dev-qt/qt-meta:3 )
 	qt4? ( dev-qt/qtcore:4 )
-	gtk? ( x11-libs/gtk+:2 )
-	gtk3? ( x11-libs/gtk+:3 )
+	gtk? ( x11-libs/gtk+:3 )
 	dbus? ( >=sys-apps/dbus-1.6.18-r1[${MULTILIB_USEDEP}] )
 	kernel_linux? ( sys-libs/libcap )
 	introspection? ( dev-libs/gobject-introspection )
-	mono? (
-		dev-lang/mono
-		gtk? ( dev-dotnet/gtk-sharp )
-	)
+	mono? ( dev-lang/mono )
 	python? (
 		${PYTHON_DEPS}
-		gtk? ( dev-python/pygtk )
 		dbus? ( dev-python/dbus-python )
 	)
-	bookmarks? (
-		dev-python/twisted-core
-		dev-python/twisted-web
-	)
+	bookmarks? ( dev-python/twisted )
 "
 
 DEPEND="
 	${COMMON_DEPEND}
 	dev-util/intltool
 	>=virtual/pkgconfig-0-r1
-	doc? (
-		app-doc/doxygen
-	)
+	doc? ( app-doc/doxygen )
 "
 
 RDEPEND="
@@ -159,7 +148,7 @@ multilib_src_configure() {
 	if use python; then
 		myconf+=(
 			$(multilib_native_use_enable dbus python-dbus)
-			$(multilib_native_use_enable gtk pygtk)
+			--disable-pygtk
 		)
 	fi
 
@@ -192,8 +181,8 @@ multilib_src_configure() {
 		$(multilib_native_use_enable mono) \
 		$(use_enable dbus) \
 		$(multilib_native_use_enable python) \
-		$(multilib_native_use_enable gtk) \
-		$(multilib_native_use_enable gtk3) \
+		--disable-gtk \
+		$(multilib_native_use_enable gtk gtk3) \
 		$(use_enable nls) \
 		$(multilib_native_use_enable introspection) \
 		$(multilib_native_use_enable utils gtk-utils) \
@@ -212,7 +201,7 @@ multilib_src_compile() {
 
 multilib_src_install() {
 	emake install DESTDIR="${D}"
-	use bookmarks && use python && use dbus && use gtk || \
+	use bookmarks && use python && use dbus || \
 		rm -f "${ED}"/usr/bin/avahi-bookmarks
 
 	use howl-compat && dosym avahi-compat-howl.pc /usr/$(get_libdir)/pkgconfig/howl.pc
