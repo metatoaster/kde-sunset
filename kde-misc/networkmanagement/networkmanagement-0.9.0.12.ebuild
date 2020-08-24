@@ -23,8 +23,8 @@ DEPEND="
 	net-misc/mobile-broadband-provider-info
 	>=net-misc/networkmanager-0.9.6
 	openconnect? (
-		net-misc/networkmanager-openconnect
-		net-misc/openconnect:=
+		net-vpn/networkmanager-openconnect
+		net-vpn/openconnect:=
 	)
 "
 RDEPEND="${DEPEND}
