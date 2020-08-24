@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit kde4-meta-pkg
 
 DESCRIPTION="kdegames - merge this to pull in all kdegames-derived packages"
 HOMEPAGE="https://games.kde.org/"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="opengl python"
+IUSE="opengl"
 
 RDEPEND="
 	$(add_kdeapps_dep bomber)
@@ -50,5 +51,4 @@ RDEPEND="
 	$(add_kdeapps_dep palapeli)
 	$(add_kdeapps_dep picmi)
 	opengl? ( $(add_kdeapps_dep ksudoku) )
-	python? ( $(add_kdeapps_dep kajongg) )
 "
