@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -21,7 +21,7 @@ RDEPEND="
 	$(add_kdeapps_dep kdeutils-meta)
 	accessibility? ( $(add_kdeapps_dep kdeaccessibility-meta) )
 	kdepim? ( $(add_kdeapps_dep kdepim-meta '' 4.4.11.1) )
-	nls? ( $(add_kdeapps_dep kde4-l10n '' 4.14.3-r1) )
+	nls? ( $(add_kdeapps_dep kde4-l10n '' 4.11) )
 	sdk? (
 		$(add_kdeapps_dep kdebindings-meta)
 		$(add_kdeapps_dep kdesdk-meta)
