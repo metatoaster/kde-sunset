@@ -9,4 +9,4 @@ inherit kde4-meta
 
 DESCRIPTION="Oxygen KDE4 desktop theme"
 IUSE=""
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"

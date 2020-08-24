@@ -5,7 +5,7 @@ EAPI=5
 inherit kde4-meta-pkg kde4-functions-extra
 
 DESCRIPTION="Merge this to pull in all kdebase-derived packages"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="+display-manager minimal +wallpapers"
 
 RDEPEND="

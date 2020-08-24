@@ -8,5 +8,5 @@ KMMODULE="kde-menu"
 inherit kde4-meta
 
 DESCRIPTION="KDE Menu query tool"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="amd64 x86"
 IUSE="debug"

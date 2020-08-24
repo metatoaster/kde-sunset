@@ -9,7 +9,7 @@ KDE_SCM="svn"
 inherit kde4-meta kde4-functions-extra
 
 DESCRIPTION="Extra KWin styles and window decorations"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="

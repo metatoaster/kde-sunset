@@ -10,7 +10,7 @@ KDE_SCM="svn"
 inherit kde4-meta kde4-functions-extra
 
 DESCRIPTION="Extra screensavers for kde"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug +eigen +kexiv2 xscreensaver"
 
 # libkworkspace - only as a stub to provide KDE4Workspace config

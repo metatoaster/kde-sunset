@@ -7,5 +7,5 @@ KMNAME="kde-runtime"
 inherit kde4-meta
 
 DESCRIPTION="Command-line tool for network-transparent operations"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug"

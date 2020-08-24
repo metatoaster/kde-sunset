@@ -8,4 +8,4 @@ inherit kde4-base
 
 DESCRIPTION="KDE base artwork"
 IUSE=""
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"

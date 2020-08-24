@@ -8,7 +8,7 @@ CPPUNIT_REQUIRED="optional"
 inherit kde4-base
 
 DESCRIPTION="Common library for KDE PIM apps"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="amd64 x86"
 LICENSE="LGPL-2.1"
 IUSE="debug ldap prison"
 
