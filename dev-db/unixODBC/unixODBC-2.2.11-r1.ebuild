@@ -7,7 +7,7 @@ WANT_AUTOMAKE="latest"
 
 inherit eutils multilib autotools
 
-KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 s390 sh ~sparc x86"
+KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 s390 ~sparc x86"
 
 DESCRIPTION="ODBC Interface for Linux."
 HOMEPAGE="http://www.unixodbc.org/"
