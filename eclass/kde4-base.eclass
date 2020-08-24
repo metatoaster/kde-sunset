@@ -339,6 +339,7 @@ case ${CPPUNIT_REQUIRED} in
 	optional)
 		IUSE+=" test"
 		DEPEND+=" test? ( ${cppuintdepend} )"
+		RESTRICT+=" !test? ( test )"
 		;;
 	*) ;;
 esac
