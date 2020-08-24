@@ -495,9 +495,12 @@ _calculate_src_uri() {
 				4.11.22)
 					# Part of 15.08.0 actually, sigh. Not stable for next release!
 					SRC_URI="mirror://kde/Attic/applications/15.08.0/src/${_kmname_pv}.tar.xz" ;;
+				4.13.3)
+					# kde-plasma/kactivitymanagerd
+					SRC_URI="mirror://kde/Attic/${PV}/src/${_kmname_pv}.tar.xz" ;;
 				4.14.3)
 					# Last SC release
-					SRC_URI="mirror://kde/stable/${PV}/src/${_kmname_pv}.tar.xz" ;;
+					SRC_URI="mirror://kde/Attic/${PV}/src/${_kmname_pv}.tar.xz" ;;
 				4.14.10)
 					# Part of 15.04.3 actually, sigh. Used by last version of KDE PIM 4.
 					SRC_URI="mirror://kde/Attic/applications/15.04.3/src/${_kmname_pv}.tar.xz" ;;
