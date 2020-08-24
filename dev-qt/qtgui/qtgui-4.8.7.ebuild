@@ -7,7 +7,7 @@ inherit eutils qt4-build-multilib
 DESCRIPTION="The GUI module for the Qt toolkit"
 
 if [[ ${QT4_BUILD_TYPE} == release ]]; then
-	KEYWORDS="~alpha amd64 arm ~hppa ~mips ppc ppc64 ~sparc x86"
+	KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ppc ppc64 ~sparc x86"
 fi
 
 IUSE="+accessibility cups egl +glib gtkstyle mng nas nis qt3support tiff trace xinerama +xv"
