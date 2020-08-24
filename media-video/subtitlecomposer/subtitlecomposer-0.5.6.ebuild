@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -15,11 +14,10 @@ SRC_URI="https://github.com/maxrd2/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="amd64 x86"
 SLOT="4"
-IUSE="debug gstreamer unicode xine"
+IUSE="debug unicode xine"
 
 RDEPEND="
 	media-libs/phonon[qt4]
-	gstreamer? ( media-libs/gstreamer:0.10 )
 	unicode? ( dev-libs/icu:= )
 	xine? ( media-libs/xine-lib )
 "
@@ -29,7 +27,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	mycmakeargs=(
-		$(cmake-utils_use_with gstreamer GStreamer)
+		-DWITH_GStreamer=OFF
 		$(cmake-utils_use_with unicode ICU)
 		$(cmake-utils_use_with xine)
 	)
