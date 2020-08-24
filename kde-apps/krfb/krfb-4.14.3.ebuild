@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -20,7 +20,7 @@ DEPEND="
 	x11-libs/libXdamage
 	x11-libs/libXext
 	x11-libs/libXtst
-	telepathy? ( >=net-libs/telepathy-qt-0.9 )
+	telepathy? ( >=net-libs/telepathy-qt-0.9[qt4(-)] )
 "
 RDEPEND="${DEPEND}"
 
