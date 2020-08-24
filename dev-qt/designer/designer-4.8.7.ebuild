@@ -22,7 +22,7 @@ DEPEND="
 	webkit? ( >=dev-qt/qtwebkit-${PV}:4[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
-PDEPEND="phonon? ( media-libs/phonon[designer,qt4] )"
+PDEPEND="phonon? ( media-libs/phonon[designer,qt4(-)] )"
 
 QT4_TARGET_DIRECTORIES="tools/designer"
 

@@ -17,7 +17,7 @@ SLOT="4"
 IUSE="debug"
 
 DEPEND="
-	media-libs/phonon[qt4]
+	media-libs/phonon[qt4(-)]
 "
 RDEPEND="
 	${DEPEND}

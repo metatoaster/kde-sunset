@@ -34,5 +34,5 @@ RDEPEND="
 	>=dev-qt/qttest-${PV}:4
 	webkit? ( >=dev-qt/qtwebkit-${PV}:4 )
 	>=dev-qt/qtxmlpatterns-${PV}:4
-	media-libs/phonon[qt4]
+	media-libs/phonon[qt4(-)]
 "

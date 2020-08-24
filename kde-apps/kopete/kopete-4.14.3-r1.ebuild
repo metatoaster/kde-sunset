@@ -65,7 +65,7 @@ COMMONDEPEND="
 	$(add_kdeapps_dep kdepimlibs)
 	dev-libs/libpcre
 	>=dev-qt/qtgui-4.4.0:4[mng]
-	media-libs/phonon[qt4]
+	media-libs/phonon[qt4(-)]
 	media-libs/qimageblitz[-qt5(+)]
 	x11-libs/libX11
 	x11-libs/libXScrnSaver
