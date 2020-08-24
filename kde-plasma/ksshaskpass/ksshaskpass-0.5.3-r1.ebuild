@@ -1,20 +1,23 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
+COMMIT=f8192f1a521235b765cb85a4459706256ec331ff
 inherit kde4-base
 
 DESCRIPTION="KDE implementation of ssh-askpass with Kwallet integration"
 HOMEPAGE="http://www.kde-apps.org/content/show.php?content=50971&forumpage=0"
-SRC_URI="http://www.kde-apps.org/CONTENT/content-files/50971-${P}.tar.gz"
+SRC_URI="https://github.com/KDE/ksshaskpass/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 x86"
 SLOT="4"
+KEYWORDS="amd64 x86"
 IUSE="debug"
 
 RDEPEND="net-misc/openssh"
+
+S="${WORKDIR}/${PN}-${COMMIT}"
 
 CFG="ksshaskpass.sh"
 
