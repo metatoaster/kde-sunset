@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,15 +22,14 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="4"
-IUSE="alsa debug encode ffmpeg libav lirc +mp3 +vorbis v4l"
+IUSE="alsa debug encode ffmpeg lirc +mp3 +vorbis v4l"
 
 DEPEND="
 	media-libs/libsndfile
 	alsa? ( media-libs/alsa-lib )
 	ffmpeg? (
 		>=media-libs/libmms-0.4
-		libav? ( media-video/libav:= )
-		!libav? ( media-video/ffmpeg:0= )
+		media-video/ffmpeg:0=
 	)
 	lirc? ( app-misc/lirc )
 	mp3? ( media-sound/lame )
