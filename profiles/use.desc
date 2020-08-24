@@ -87,3 +87,6 @@ qt4 - Add support for the Qt GUI/Application Toolkit version 4.x
 
 # dropped 2019-07-15
 avahi - Add avahi/Zeroconf support
+
+# dropped 2019-09-15
+apm - Add APM (Advanced Power Management) support
