@@ -1,7 +1,0 @@
-# Copyright 1999-2016 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Id$
-
-# Lars Wendler <polynomial-c@gentoo.org> (25 Dec 2016)
-# Broken with newer cups releases
-=kde-frameworks/kdelibs-3* cups
