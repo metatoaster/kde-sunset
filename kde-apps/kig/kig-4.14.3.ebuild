@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,7 +16,11 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
 	${PYTHON_DEPS}
-	scripting? ( >=dev-libs/boost-1.48:=[python,${PYTHON_USEDEP}] )
+	scripting? (
+		$(python_gen_cond_dep '
+			>=dev-libs/boost-1.48:=[python,${PYTHON_MULTI_USEDEP}]
+		')
+	)
 "
 RDEPEND="${DEPEND}"
 
