@@ -9,8 +9,5 @@ network using a SIP proxy to route your calls.
 </longdescription>
 <use>
 	<flag name='ilbc'>Enables use of ilbc (RFC3951) audio encoding</flag>
-	<flag name='zrtp'>Enables use of secure rtp using the zrtp extension of GNU
-		RTP stack developed by Phil Zimmermann
-	</flag>
 </use>
 </pkgmetadata>
