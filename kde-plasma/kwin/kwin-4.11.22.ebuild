@@ -15,7 +15,7 @@ inherit flag-o-matic kde4-meta
 
 DESCRIPTION="KDE window manager"
 HOMEPAGE+=" https://userbase.kde.org/KWin"
-KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug gles opengl wayland"
 
 COMMONDEPEND="

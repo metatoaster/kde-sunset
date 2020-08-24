@@ -9,7 +9,7 @@ inherit kde4-meta
 
 DESCRIPTION="Applet for KDE Plasma and X clipboard management"
 HOMEPAGE+=" https://userbase.kde.org/Klipper"
-KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug prison"
 
 DEPEND="
