@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -12,9 +12,9 @@ IUSE="ppp"
 RDEPEND="
 	$(add_kdeapps_dep kdenetwork-filesharing)
 	$(add_kdeapps_dep kget)
-	$(add_kdeapps_dep kopete)
+	!ppc? ( !ppc64? ( $(add_kdeapps_dep kopete) ) )
 	$(add_kdeapps_dep krdc)
 	$(add_kdeapps_dep krfb)
 	$(add_kdeapps_dep zeroconf-ioslave)
-	ppp? ( $(add_kdeapps_dep kppp) )
+	!arm? ( ppp? ( $(add_kdeapps_dep kppp) ) )
 "
