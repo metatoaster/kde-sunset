@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -12,15 +12,10 @@ DESCRIPTION="KDE: periodic table of the elements"
 HOMEPAGE="https://www.kde.org/applications/education/kalzium
 https://edu.kde.org/kalzium"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="editor debug +plasma solver"
+IUSE="debug +plasma solver"
 
 DEPEND="
 	$(add_kdeapps_dep libkdeedu)
-	editor? (
-		>=dev-cpp/eigen-2.0.3:2
-		sci-chemistry/avogadro
-		>=sci-chemistry/openbabel-2.2
-	)
 	solver? ( dev-ml/facile[ocamlopt] )
 "
 RDEPEND=${DEPEND}
@@ -35,10 +30,10 @@ src_configure(){
 	[[ ${CHOST} == *-solaris* ]] && append-cppflags -DHAVE_IEEEFP_H
 
 	local mycmakeargs=(
-		$(cmake-utils_use_with editor Eigen2)
-		$(cmake-utils_use_with editor Avogadro)
-		$(cmake-utils_use_with editor OpenBabel2)
-		$(cmake-utils_use_with editor OpenGL)
+		-DWITH_Eigen2=OFF
+		-DWITH_Avogadro=OFF
+		-DWITH_OpenBabel2=OFF
+		-DWITH_OpenGL=OFF
 		$(cmake-utils_use_with solver OCaml)
 		$(cmake-utils_use_with solver Libfacile)
 	)
