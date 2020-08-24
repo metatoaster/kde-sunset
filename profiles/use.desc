@@ -79,6 +79,9 @@ linguas_wa
 linguas_zh_CN
 linguas_zh_TW
 
+# dropped 2017-12-30
+kontact - Enable support for the KDE personal information manager (kde-apps/kdepim*)
+
 # dropped 2018-11-28
 qt4 - Add support for the Qt GUI/Application Toolkit version 4.x
 
