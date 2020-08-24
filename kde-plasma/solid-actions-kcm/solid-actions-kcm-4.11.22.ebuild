@@ -9,7 +9,7 @@ inherit kde4-meta
 
 DESCRIPTION="KDE Plasma control module for Solid actions"
 HOMEPAGE="https://solid.kde.org"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 RDEPEND="

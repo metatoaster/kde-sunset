@@ -10,7 +10,7 @@ HOMEPAGE="http://www.kde-apps.org/content/show.php?content=50971&forumpage=0"
 SRC_URI="http://www.kde-apps.org/CONTENT/content-files/50971-${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 SLOT="4"
 IUSE="debug"
 

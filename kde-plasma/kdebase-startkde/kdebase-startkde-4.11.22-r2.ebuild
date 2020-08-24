@@ -8,7 +8,7 @@ KMNOMODULE="true"
 inherit kde4-meta prefix
 
 DESCRIPTION="Script which starts a complete Plasma session, and associated scripts"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE="crash-reporter +handbook minimal +wallpapers"
 
 # The KDE apps called from the startkde script.

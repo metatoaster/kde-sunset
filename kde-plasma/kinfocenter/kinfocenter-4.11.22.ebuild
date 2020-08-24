@@ -10,7 +10,7 @@ inherit kde4-meta
 
 DESCRIPTION="A utility that provides information about a computer system"
 HOMEPAGE="https://www.kde.org/applications/system/kinfocenter/"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE="debug ieee1394"
 
 DEPEND="

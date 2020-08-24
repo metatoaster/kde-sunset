@@ -10,10 +10,8 @@ DECLARATIVE_REQUIRED="always"
 inherit kde4-base
 
 if [[ ${KDE_BUILD_TYPE} != live ]]; then
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="amd64 x86"
 	SRC_URI="mirror://kde/stable/${PN}/${P}.tar.xz"
-else
-	KEYWORDS=""
 fi
 
 DESCRIPTION="KDE Plasma applet for NetworkManager"
