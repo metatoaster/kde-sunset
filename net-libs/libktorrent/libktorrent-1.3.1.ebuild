@@ -16,7 +16,7 @@ if [[ ${PV} != 9999* ]]; then
 	SRC_URI="http://deb.debian.org/debian/pool/main/libk/${PN}/${P/-/_}.orig.tar.bz2 -> ${MY_P}.tar.bz2"
 	S="${WORKDIR}"/"${MY_P}"
 
-	KEYWORDS="~amd64 ~arm ~x86"
+	KEYWORDS="amd64 ~arm x86"
 fi
 VIRTUALX_REQUIRED="test"
 inherit kde4-base
