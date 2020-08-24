@@ -7,7 +7,7 @@ KDE_REQUIRED="never"
 inherit kde4-base
 
 if [[ ${KDE_BUILD_TYPE} != live ]]; then
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="amd64 x86"
 	SRC_URI="mirror://kde/unstable/networkmanager-qt/${PV}/src/networkmanager-qt-${PV}.tar.xz -> ${P}.tar.xz"
 fi
 
