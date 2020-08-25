@@ -1,6 +1,5 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kdocker/kdocker-1.3.ebuild,v 1.3 2008/07/27 20:52:18 carlo Exp $
 
 EAPI=4
 
@@ -12,8 +11,8 @@ for x in ${LANGS}; do
 	IUSE="${IUSE} linguas_${x}"
 done;
 
-DESCRIPTION="KDocker will help you dock any application in the system tray"
-HOMEPAGE="http://www.kde-apps.org/content/show.php?content=13356"
+DESCRIPTION="Helper to dock any application into the system tray"
+HOMEPAGE="https://github.com/user-none/KDocker"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
