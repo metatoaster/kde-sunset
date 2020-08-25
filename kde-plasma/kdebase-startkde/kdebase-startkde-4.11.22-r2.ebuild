@@ -66,7 +66,7 @@ RDEPEND="
 	x11-apps/xrdb
 	x11-apps/xsetroot
 	x11-apps/xset
-	crash-reporter? ( $(add_kdeapps_dep drkonqi ) )
+	crash-reporter? ( >=kde-plasma/drkonqi-${PV}:${SLOT} )
 	handbook? ( kde-apps/khelpcenter:* )
 	!minimal? (
 		$(add_kdeapps_dep kdepasswd)

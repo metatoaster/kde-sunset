@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -40,7 +40,7 @@ RDEPEND="
 	$(add_kdeapps_dep plasma-runtime)
 	$(add_kdeapps_dep renamedlg-plugins)
 	$(add_kdeapps_dep solid-runtime)
-	crash-reporter? ( $(add_kdeapps_dep drkonqi ) )
+	crash-reporter? ( >=kde-plasma/drkonqi-${PV}:${SLOT} )
 	handbook? ( kde-apps/khelpcenter:* )
 	minimal? ( $(add_kdeapps_dep solid-runtime '-bluetooth') )
 	!minimal? (

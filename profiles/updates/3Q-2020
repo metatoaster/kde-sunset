@@ -10,3 +10,4 @@ move kde-misc/kbiff mail-client/kbiff
 move kde-misc/kdocker x11-misc/kdocker
 move kde-apps/okteta app-editors/okteta
 move kde-apps/kstars sci-astronomy/kstars
+move kde-apps/drkonqi kde-plasma/drkonqi

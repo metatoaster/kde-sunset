@@ -56,7 +56,7 @@ kde-base/kdeartwork kde-base/kdeartwork-kworldwatch
 kde-base/kdeartwork kde-base/kdeartwork-sounds
 kde-base/kdeartwork kde-apps/kdeartwork-styles
 kde-base/kdeartwork kde-apps/kdeartwork-wallpapers
-kde-base/kdebase kde-apps/drkonqi
+kde-base/kdebase kde-plasma/drkonqi
 kde-base/kdebase kde-base/kappfinder
 kde-base/kdebase kde-apps/kate
 kde-base/kdebase kde-base/kcheckpass
