@@ -24,7 +24,7 @@ DEPEND="
 		kde-plasma/ksysguard:4
 		kde-plasma/libkworkspace:4
 	)
-	okteta? ( $(add_kdeapps_dep okteta) )
+	okteta? ( >=app-editors/okteta-4.14.3:4 )
 	qthelp? ( dev-qt/qthelp:4 )
 "
 RDEPEND="${DEPEND}

@@ -21,7 +21,7 @@ RDEPEND="
 	$(add_kdeapps_dep kompare)
 	$(add_kdeapps_dep libkomparediff2)
 	$(add_kdeapps_dep lokalize)
-	$(add_kdeapps_dep okteta)
+	>=app-editors/okteta-${PV}:4
 	$(add_kdeapps_dep poxml)
 	$(add_kdeapps_dep umbrello)
 "
