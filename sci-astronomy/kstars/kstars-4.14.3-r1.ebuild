@@ -3,11 +3,16 @@
 
 EAPI=5
 
+KDE_MINIMAL="${PV}"
 KDE_HANDBOOK="optional"
 inherit flag-o-matic kde4-base
 
 DESCRIPTION="KDE Desktop Planetarium"
-HOMEPAGE="https://www.kde.org/applications/education/kstars https://edu.kde.org/kstars"
+HOMEPAGE="https://kde.org/applications/en/education/org.kde.kstars https://edu.kde.org/kstars"
+SRC_URI="mirror://kde/Attic/${PV}/src/${P}.tar.xz"
+
+LICENSE="GPL-2"
+SLOT=4/$(get_version_component_range 1-2)
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug fits indi"
 

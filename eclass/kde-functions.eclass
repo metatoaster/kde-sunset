@@ -126,7 +126,7 @@ kde-base/kdeedu kde-base/kmathtool
 kde-base/kdeedu kde-base/kmessedwords
 kde-base/kdeedu kde-apps/kmplot
 kde-base/kdeedu kde-base/kpercentage
-kde-base/kdeedu kde-apps/kstars
+kde-base/kdeedu sci-astronomy/kstars
 kde-base/kdeedu kde-apps/ktouch
 kde-base/kdeedu kde-apps/kturtle
 kde-base/kdeedu kde-base/kverbos
