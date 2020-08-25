@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -9,8 +9,8 @@ WEBKIT_REQUIRED="always"
 inherit kde4-base
 
 DESCRIPTION="Plasmoid to show date and time in adjustable format using rich text"
-HOMEPAGE="http://kde-look.org/content/show.php/Adjustable+Clock?content=92825"
-SRC_URI="http://kde-look.org/CONTENT/content-files/92825-${P}.tar.bz2"
+HOMEPAGE="https://store.kde.org/p/999193"
+SRC_URI="https://github.com/Emdek/plasmoid-adjustable-clock/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="4"
@@ -30,7 +30,7 @@ src_prepare() {
 	local lang
 	for lang in ${KDE_LINGUAS} ; do
 		if ! use "l10n_$(kde4_lingua_to_l10n "${lang}")" ; then
-			rm ${KDE_LINGUAS_DIR}/${lang}.mo
+			rm ${KDE_LINGUAS_DIR}/${lang}.mo || die
 		fi
 	done
 }
