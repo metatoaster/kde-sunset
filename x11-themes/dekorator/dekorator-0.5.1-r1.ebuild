@@ -1,13 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
 inherit kde4-base
 
-DESCRIPTION="A window decoration engine for KDE"
-HOMEPAGE="http://www.kde-look.org/content/show.php/Nitrogen?content=87921"
-SRC_URI="http://www.kde-look.org/CONTENT/content-files/87921-${P}.tar.bz2"
+DESCRIPTION="Window decoration engine for KDE"
+HOMEPAGE="https://store.kde.org/p/1167273"
+SRC_URI="https://github.com/KDE/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="4"
