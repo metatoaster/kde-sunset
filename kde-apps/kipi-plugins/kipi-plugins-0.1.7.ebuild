@@ -27,14 +27,14 @@ DEPEND="
 	>=media-libs/imlib2-1.1.0[X]
 	calendar? ( kde-base/libkcal:3.5 )
 	gphoto2? ( >=media-libs/libgphoto2-2.3.1 )
-	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )"
+	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
 	opengl? ( dev-qt/qt-meta:3[opengl] )
-	tiff? ( >=media-libs/tiff-3.6 )
+	tiff? ( >=media-libs/tiff-3.6 )"
 RDEPEND="${DEPEND}
 	>=media-gfx/imagemagick-6.2.4
 	media-sound/vorbis-tools
-	media-sound/mpg123"
-	>=media-video/mjpegtools-1.6.0
+	media-sound/mpg123
+	>=media-video/mjpegtools-1.6.0"
 
 need-kde 3.5
 
