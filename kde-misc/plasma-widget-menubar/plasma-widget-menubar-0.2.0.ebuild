@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="
-	>=dev-libs/libdbusmenu-qt-0.6.0[qt4(+)]
+	>=dev-libs/libdbusmenu-qt-0.6.0[qt4]
 	>=dev-libs/qjson-0.7.1
 "
 RDEPEND="${DEPEND}

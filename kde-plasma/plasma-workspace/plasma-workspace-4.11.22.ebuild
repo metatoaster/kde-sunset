@@ -19,7 +19,7 @@ IUSE="debug gps json +pim python qalculate"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 COMMONDEPEND="
-	dev-libs/libdbusmenu-qt
+	dev-libs/libdbusmenu-qt[qt4]
 	>=dev-qt/qtcore-4.8.4-r3:4
 	kde-frameworks/kactivities:4
 	kde-plasma/kephal:4

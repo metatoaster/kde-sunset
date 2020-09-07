@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 RDEPEND="
-	>=dev-libs/libdbusmenu-qt-0.3.0[qt4(+)]
+	>=dev-libs/libdbusmenu-qt-0.3.0[qt4]
 	>=dev-libs/libindicate-qt-0.2.5
 "
 DEPEND="
