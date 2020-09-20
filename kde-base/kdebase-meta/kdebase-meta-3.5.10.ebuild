@@ -40,7 +40,7 @@ RDEPEND=">=kde-base/kdebase-startkde-${PV}:${SLOT}
 >=kde-base/kpager-${PV}:${SLOT}
 >=kde-base/kpersonalizer-${PV}:${SLOT}
 >=kde-apps/kreadconfig-${PV}:${SLOT}
->=kde-base/kscreensaver-${PV}:${SLOT}
+>=kde-plasma/kscreensaver-${PV}:${SLOT}
 >=kde-base/ksmserver-${PV}:${SLOT}
 >=kde-base/ksplashml-${PV}:${SLOT}
 >=kde-apps/kstart-${PV}:${SLOT}

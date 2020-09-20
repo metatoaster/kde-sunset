@@ -1,14 +1,20 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kscreensaver/kscreensaver-3.5.10.ebuild,v 1.8 2009/07/12 09:44:59 armin76 Exp $
 
 EAPI="1"
+
+KDE_MINIMAL="${PV}"
+KDEBASE=true
 KMNAME=kdebase
 inherit kde-meta eutils
 
-DESCRIPTION="KDE screensaver framework"
+DESCRIPTION="KDE Plasma screensaver framework"
+SRC_URI="mirror://kde/Attic/stable/${PV}/src/${KMNAME}-${PV}.tar.bz2"
+
+LICENSE="GPL-2"
+SLOT="3.5"
 KEYWORDS="~alpha amd64 ~hppa ~mips ppc ppc64 ~sparc x86"
-IUSE="kdehiddenvisibility opengl"
+IUSE="debug kdehiddenvisibility opengl"
 
 DEPEND="x11-libs/libXt
 	opengl? ( virtual/opengl )"

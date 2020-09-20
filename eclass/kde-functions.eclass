@@ -1,6 +1,5 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde-functions.eclass,v 1.175 2009/11/01 20:26:34 abcd Exp $
 
 # @ECLASS: kde-functions.eclass
 # @MAINTAINER:
@@ -85,7 +84,7 @@ kde-base/kdebase kde-apps/konsole
 kde-base/kdebase kde-base/kpager
 kde-base/kdebase kde-base/kpersonalizer
 kde-base/kdebase kde-apps/kreadconfig
-kde-base/kdebase kde-base/kscreensaver
+kde-base/kdebase kde-plasma/kscreensaver
 kde-base/kdebase kde-base/ksmserver
 kde-base/kdebase kde-base/ksplashml
 kde-base/kdebase kde-apps/kstart
