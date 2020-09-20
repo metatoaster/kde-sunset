@@ -1,6 +1,5 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/koffice-meta/koffice-meta-1.6.3_p20090204.ebuild,v 1.8 2009/09/27 12:37:55 ranger Exp $
 
 MAXKOFFICEVER=${PV}
 inherit kde-functions
@@ -23,7 +22,7 @@ RDEPEND="~app-office/karbon-1.6.3_p20090204
 	~app-office/koshell-1.6.3_p20090204
 	~app-office/kplato-1.6.3_p20090204
 	~app-office/kpresenter-1.6.3_p20090204
-	~app-office/krita-1.6.3_p20090204
+	~media-gfx/krita-1.6.3_p20090204
 	~app-office/kspread-1.6.3_p20090204
 	~app-office/kugar-1.6.3_p20090204
 	~app-office/kword-1.6.3_p20090204"

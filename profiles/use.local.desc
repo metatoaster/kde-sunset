@@ -3,8 +3,8 @@ app-cdr/k3b:emovix - Enable burning support for eMoviX images
 app-laptop/kthinkbat:smapi - Use extended ThinkPad battery info exported via SMAPI BIOS by app-laptop/tp_smapi
 app-office/kword:wpd - Build wordperfect document support.
 app-office/kword:wv2 - Build MS-Word .doc support.
-app-office/krita:kdcraw - Enable KDE image manipulating interface.
-app-office/krita:gmm - Enable library for sparse, dense and skyline matrices.
+media-gfx/krita:kdcraw - Enable KDE image manipulating interface.
+media-gfx/krita:gmm - Enable library for sparse, dense and skyline matrices.
 app-office/kmymoney2:hbci - Add HBCI online banking support
 app-office/kmymoney2:qtdesigner - Installs KMyMoney specific widget library for Qt-designer
 app-office/kspread:solver - Use solver extension for solving lingebra and others.

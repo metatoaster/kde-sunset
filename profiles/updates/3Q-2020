@@ -13,3 +13,4 @@ move kde-apps/kstars sci-astronomy/kstars
 move kde-apps/drkonqi kde-plasma/drkonqi
 move kde-apps/kjots app-text/kjots
 move kde-base/kscreensaver kde-plasma/kscreensaver
+move app-office/krita media-gfx/krita

@@ -315,7 +315,7 @@ app-office/koffice app-office/koffice-meta
 app-office/koffice app-office/koshell
 app-office/koffice app-office/kplato
 app-office/koffice app-office/kpresenter
-app-office/koffice app-office/krita
+app-office/koffice media-gfx/krita
 app-office/koffice app-office/kspread
 app-office/koffice app-office/kugar
 app-office/koffice app-office/kword
