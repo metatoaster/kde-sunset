@@ -3,7 +3,9 @@
 # $Header: /var/cvsroot/gentoo-x86/kde-base/kdeutils-meta/kdeutils-meta-3.5.10.ebuild,v 1.7 2009/07/12 11:48:21 armin76 Exp $
 
 EAPI="1"
+
 inherit kde-functions
+
 DESCRIPTION="kdeutils - merge this to pull in all kdeutils-derived packages"
 HOMEPAGE="http://www.kde.org/"
 
@@ -22,7 +24,7 @@ RDEPEND="
 	>=kde-apps/kfloppy-${PV}:${SLOT}
 	crypt? ( >=kde-apps/kgpg-${PV}:${SLOT} )
 	>=kde-base/khexedit-${PV}:${SLOT}
-	>=kde-apps/kjots-${PV}:${SLOT}
+	>=app-text/kjots-${PV}:${SLOT}
 	>=kde-base/klaptopdaemon-${PV}:${SLOT}
 	>=kde-base/kmilo-${PV}:${SLOT}
 	>=kde-base/kregexpeditor-${PV}:${SLOT}

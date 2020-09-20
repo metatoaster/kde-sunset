@@ -291,7 +291,7 @@ kde-base/kdeutils kde-base/kedit
 kde-base/kdeutils kde-apps/kfloppy
 kde-base/kdeutils kde-apps/kgpg
 kde-base/kdeutils kde-base/khexedit
-kde-base/kdeutils kde-apps/kjots
+kde-base/kdeutils app-text/kjots
 kde-base/kdeutils kde-base/klaptopdaemon
 kde-base/kdeutils kde-base/kmilo
 kde-base/kdeutils kde-base/kregexpeditor
