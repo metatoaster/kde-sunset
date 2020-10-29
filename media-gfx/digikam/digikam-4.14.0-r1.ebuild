@@ -67,7 +67,10 @@ S="${WORKDIR}/${MY_P}/core"
 RESTRICT=test
 # bug 366505
 
-PATCHES=( "${FILESDIR}/${PN}-4.14.0-lensfun.patch" ) # bug 566624
+PATCHES=(
+	"${FILESDIR}/${PN}-4.14.0-lensfun.patch" # bug 566624
+	"${FILESDIR}/${PN}-libpgf-7.patch"
+)
 
 src_prepare() {
 	# just to make absolutely sure

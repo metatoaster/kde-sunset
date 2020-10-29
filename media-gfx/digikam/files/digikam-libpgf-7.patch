@@ -1,0 +1,38 @@
+diff --git a/core/libs/dimg/loaders/pgfloader.cpp b/core/libs/dimg/loaders/pgfloader.cpp
+index 48f8fb0..5746c80 100644
+--- a/core/libs/dimg/loaders/pgfloader.cpp
++++ b/core/libs/dimg/loaders/pgfloader.cpp
+@@ -442,14 +442,6 @@ bool PGFLoader::save(const QString& filePath, DImgLoaderObserver* const observer
+             }
+         }
+ 
+-#ifdef PGFCodecVersionID
+-#   if PGFCodecVersionID < 0x061142
+-        header.background.rgbtBlue  = 0;
+-        header.background.rgbtGreen = 0;
+-        header.background.rgbtRed   = 0;
+-#   endif
+-#endif
+-
+         pgf.SetHeader(header);
+ 
+         // NOTE: see bug #273765 : Loading PGF thumbs with OpenMP support through a separated thread do not work properlly with libppgf 6.11.24
+diff --git a/core/libs/threadimageio/pgfutils.cpp b/core/libs/threadimageio/pgfutils.cpp
+index c51d8e5..123e527 100644
+--- a/core/libs/threadimageio/pgfutils.cpp
++++ b/core/libs/threadimageio/pgfutils.cpp
+@@ -261,14 +261,6 @@ bool writePGFImageDataToStream(const QImage& image, CPGFStream& stream, int qual
+         header.channels             = 4;
+         header.mode                 = ImageModeRGBA;
+         header.usedBitsPerChannel   = 0;             // Auto
+-
+-#ifdef PGFCodecVersionID
+-#   if PGFCodecVersionID < 0x061142
+-        header.background.rgbtBlue  = 0;
+-        header.background.rgbtGreen = 0;
+-        header.background.rgbtRed   = 0;
+-#   endif
+-#endif
+         pgfImg.SetHeader(header);
+ 
+         // NOTE: see bug #273765 : Loading PGF thumbs with OpenMP support through a separated thread do not work properlly with libppgf 6.11.24
