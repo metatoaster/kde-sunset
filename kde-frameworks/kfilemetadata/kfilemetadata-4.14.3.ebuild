@@ -6,14 +6,14 @@ EAPI=5
 inherit kde4-base
 
 DESCRIPTION="Library for extracting file metadata"
-KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug epub exif ffmpeg mobi pdf taglib"
 SLOT="4"
 
 DEPEND="
 	epub? ( app-text/ebook-tools )
 	exif? ( media-gfx/exiv2:= )
-	ffmpeg? ( virtual/ffmpeg )
+	ffmpeg? ( media-video/ffmpeg:0= )
 	mobi? ( $(add_kdeapps_dep kdegraphics-mobipocket) )
 	pdf? ( app-text/poppler[qt4(-)] )
 	taglib? ( media-libs/taglib )
