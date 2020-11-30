@@ -8,8 +8,7 @@ PYTHON_REQ_USE="gdbm"
 
 WANT_AUTOMAKE=1.11
 
-inherit autotools eutils flag-o-matic multilib multilib-minimal mono-env \
-	python-r1 systemd user
+inherit autotools eutils flag-o-matic multilib multilib-minimal mono-env python-r1 systemd user
 
 DESCRIPTION="System which facilitates service discovery on a local network"
 HOMEPAGE="http://avahi.org/"
@@ -18,7 +17,7 @@ SRC_URI="http://avahi.org/download/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~hppa m68k ~mips ~ppc ~ppc64 s390 ~sparc x86 ~x86-linux"
-IUSE="autoipd bookmarks dbus doc gdbm gtk howl-compat +introspection ipv6 kernel_linux mdnsresponder-compat mono nls python qt3 qt4 selinux test utils"
+IUSE="autoipd bookmarks dbus doc gdbm gtk howl-compat +introspection ipv6 kernel_linux mdnsresponder-compat mono nls python qt4 selinux test utils"
 
 REQUIRED_USE="
 	utils? ( gtk )
@@ -33,7 +32,6 @@ COMMON_DEPEND="
 	dev-libs/expat
 	>=dev-libs/glib-2.34.3:2[${MULTILIB_USEDEP}]
 	gdbm? ( >=sys-libs/gdbm-1.10-r1[${MULTILIB_USEDEP}] )
-	qt3? ( dev-qt/qt-meta:3 )
 	qt4? ( dev-qt/qtcore:4 )
 	gtk? ( x11-libs/gtk+:3 )
 	dbus? ( >=sys-apps/dbus-1.6.18-r1[${MULTILIB_USEDEP}] )
@@ -186,7 +184,7 @@ multilib_src_configure() {
 		$(use_enable nls) \
 		$(multilib_native_use_enable introspection) \
 		$(multilib_native_use_enable utils gtk-utils) \
-		$(multilib_native_use_enable qt3) \
+		--disable-qt3 \
 		$(multilib_native_use_enable qt4) \
 		$(use_enable gdbm) \
 		$(systemd_with_unitdir) \
