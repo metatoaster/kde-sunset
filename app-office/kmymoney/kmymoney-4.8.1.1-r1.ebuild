@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="4"
 KEYWORDS="amd64 x86"
-IUSE="calendar debug doc +handbook hbci ofx quotes test weboob"
+IUSE="calendar debug doc +handbook hbci ofx quotes test"
 
 COMMON_DEPEND="
 	>=app-crypt/gpgme-1.7.0[cxx]
@@ -29,10 +29,9 @@ COMMON_DEPEND="
 	calendar? ( dev-libs/libical:= )
 	hbci? (
 		>=net-libs/aqbanking-5.5.1
-		>=sys-libs/gwenhywfar-4.15.3[qt4]
+		>=sys-libs/gwenhywfar-4.15.3[qt4(-)]
 	)
 	ofx? ( >=dev-libs/libofx-0.9.4 )
-	weboob? ( www-client/weboob )
 "
 RDEPEND="${COMMON_DEPEND}
 	kde-frameworks/oxygen-icons:*
@@ -95,13 +94,13 @@ src_configure() {
 
 	local mycmakeargs=(
 		-DUSE_QT_DESIGNER=OFF
+		-DENABLE_WEBOOB=OFF
+		-DCMAKE_DISABLE_FIND_PACKAGE_KdepimLibs=ON
 		-DENABLE_LIBICAL=$(usex calendar)
 		-DUSE_DEVELOPER_DOC=$(usex doc)
 		-DENABLE_KBANKING=$(usex hbci)
 		-DENABLE_LIBOFX=$(usex ofx)
-		-DCMAKE_DISABLE_FIND_PACKAGE_KdepimLibs=ON
 		-DKDE4_BUILD_TESTS=$(usex test)
-		-DENABLE_WEBOOB=$(usex weboob)
 	)
 	cmake-utils_src_configure
 }
