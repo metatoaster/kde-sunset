@@ -16,7 +16,7 @@ IUSE="debug +handbook taglib"
 
 DEPEND="taglib? ( media-libs/taglib )"
 RDEPEND="${DEPEND}
-	virtual/ffmpeg
+	media-video/ffmpeg
 "
 
 DOCS=( ChangeLog README TODO )
