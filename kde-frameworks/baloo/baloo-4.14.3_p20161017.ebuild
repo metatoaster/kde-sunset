@@ -11,13 +11,13 @@ SRC_URI="
 	mirror://kde/stable/${MY_PV}/src/${PN}-${MY_PV}.tar.xz
 	https://dev.gentoo.org/~asturm/${P}.tar.xz
 "
-KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 DEPEND="
 	$(add_kdeapps_dep kdepimlibs)
 	dev-libs/qjson
-	dev-libs/xapian:=[chert]
+	dev-libs/xapian:=[chert(+)]
 "
 RDEPEND="${DEPEND}
 	!<kde-apps/nepomuk-4.12.50
