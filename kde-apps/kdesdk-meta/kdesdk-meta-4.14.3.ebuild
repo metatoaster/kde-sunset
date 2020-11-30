@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit kde4-meta-pkg
 
 DESCRIPTION="KDE SDK - merge this to pull in all kdesdk-derived packages"
@@ -20,8 +21,8 @@ RDEPEND="
 	$(add_kdeapps_dep kdesdk-kioslaves)
 	$(add_kdeapps_dep kompare)
 	$(add_kdeapps_dep libkomparediff2)
-	$(add_kdeapps_dep lokalize)
 	>=app-editors/okteta-${PV}:4
 	$(add_kdeapps_dep poxml)
 	$(add_kdeapps_dep umbrello)
 "
+#	$(add_kdeapps_dep lokalize)
