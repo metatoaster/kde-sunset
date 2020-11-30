@@ -1,25 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # use flags used in the kde-sunset overlay
-
-# dropped 2010-01-15 in 1.430
-arts - Adds support for aRts: the KDE sound daemon
-
-# dropped 2010-01-13 in 1.429
-kdehiddenvisibility - Makes KDE symbols hidden by default, requires GCC 4.1 (experimental)
-
-# dropped 2010-03-22 in 1.436
-qt3 - Adds support for the Qt GUI/Application Toolkit version 3.x
-
-# dropped 2011-02-23 in 1.451
-hal - Enable Hardware Abstraction Layer (HAL) support (WARNING: Try to avoid this. Deprecated method of accessing hardware.)
-
-# dropped 2011-11-01 in 1.468
-v4l2 - Enable support for video4linux (DEPRECATED: Use USE v4l for your package to enable v4l2 or libv4l support)
-
-# dropped 2012-01-12 in 1.473
-kdeenablefinal - EXPERIMENTAL: KDE ebuilds will use the enable-final flag, yielding compilation speedups at the cost of heavy mem usage and potentially causing problems. We strongly discourage setting this.
 
 # dropped 2017-12-27 in 2dbbacd
 linguas_ar
@@ -84,9 +66,3 @@ kontact - Enable support for the KDE personal information manager (kde-apps/kdep
 
 # dropped 2018-11-28
 qt4 - Add support for the Qt GUI/Application Toolkit version 4.x
-
-# dropped 2019-07-15
-avahi - Add avahi/Zeroconf support
-
-# dropped 2019-09-15
-apm - Add APM (Advanced Power Management) support
