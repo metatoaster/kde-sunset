@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,8 +11,8 @@ SRC_URI="https://www.aquamaniac.de/sites/download/download.php?package=01&releas
 
 LICENSE="LGPL-2.1"
 SLOT="0/60" # correspond with libgwenhywfar.so version
-KEYWORDS="amd64 ~hppa ~ppc ~ppc64 ~sparc x86"
-IUSE="debug designer doc fox gtk libressl qml qt4 qt5 sensors serialport test webkit"
+KEYWORDS="amd64 ~hppa ~ppc ~ppc64 x86"
+IUSE="debug designer doc gtk libressl qml qt4 qt5 sensors serialport test webkit"
 
 REQUIRED_USE="designer? ( qt5 ) qml? ( qt5 ) sensors? ( qt5 ) serialport? ( qt5 ) webkit? ( qt5 )"
 
@@ -28,7 +28,6 @@ RDEPEND="
 	virtual/libintl
 	virtual/opengl
 	designer? ( dev-qt/designer:5 )
-	fox? ( x11-libs/fox:1.6 )
 	gtk? ( x11-libs/gtk+:2 )
 	qml? ( dev-qt/qtdeclarative:5 )
 	qt4? (
@@ -83,7 +82,6 @@ src_configure() {
 	use webkit || disableQtModule webkit webkitwidgets
 
 	local guis=()
-	use fox && guis+=( fox16 )
 	use gtk && guis+=( gtk2 )
 	use qt4 && guis+=( qt4 )
 	use qt5 && guis+=( qt5 )
@@ -95,7 +93,7 @@ src_configure() {
 		$(use_enable doc full-doc)
 		--with-docpath="${EPREFIX}/usr/share/doc/${PF}/apidoc"
 	)
-	
+
 	use qt4 && myeconfargs+=(
 		--with-qt4-moc="$(qt4_get_bindir)/moc"
 		--with-qt5-qmake="$(qt4_get_bindir)/qmake"
