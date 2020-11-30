@@ -1,52 +1,53 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/SoQt/SoQt-1.4.1.ebuild,v 1.6 2009/10/29 11:02:54 fauli Exp $
 
-EAPI="2"
+EAPI=7
 
-inherit flag-o-matic eutils
+inherit flag-o-matic
 
-DESCRIPTION="The glue between Coin3D and Qt"
-SRC_URI="ftp://ftp.coin3d.org/pub/coin/src/all/${P}.tar.gz"
+DESCRIPTION="Glue between Coin3D and Qt"
 HOMEPAGE="http://www.coin3d.org/"
+SRC_URI="https://github.com/coin3d/soqt/archive/${P}.tar.gz"
+S="${WORKDIR}/soqt-${P}"
 
-SLOT="0"
 LICENSE="|| ( GPL-2 PEL )"
+SLOT="0"
 KEYWORDS="~amd64 x86"
-IUSE="doc qt4"
+IUSE="doc"
 
-RDEPEND=">=media-libs/coin-2.4.4
-	qt4? (
-		dev-qt/qtgui:4[qt3support]
-		dev-qt/qtopengl:4[qt3support]
-		dev-qt/qt3support:4
-	)
-	!qt4? ( dev-qt/qt-meta:3[opengl] )"
-DEPEND="${RDEPEND}
+RDEPEND="
+	dev-qt/qtgui:4[qt3support]
+	dev-qt/qtopengl:4[qt3support]
+	dev-qt/qt3support:4
+	>=media-libs/coin-2.4.4
+"
+DEPEND="${RDEPEND}"
+BDEPEND="
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen )"
+	doc? ( app-doc/doxygen )
+"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-gcc44.patch"
-}
+PATCHES=( "${FILESDIR}/${P}-gcc44.patch" )
 
 src_configure() {
-	if use qt4; then
-		export PATH="/usr/bin/:${PATH}"
-		export QTDIR="/usr"
-		export CONFIG_QTLIBS="$(pkg-config --libs QtGui)"
-	fi
+	export PATH="/usr/bin/:${PATH}"
+	export QTDIR="/usr"
+	export CONFIG_QTLIBS="$(pkg-config --libs QtGui)"
 
 	append-ldflags $(no-as-needed)
 
-	econf --with-coin --disable-html-help $(use_enable doc html) htmldir=/usr/share/doc/${PF}/html
+	econf \
+		--with-coin \
+		--disable-html-help\
+		$(use_enable doc html) \
+		htmldir=/usr/share/doc/${PF}/html
 }
 
 src_compile() {
-	emake -j1 || die "emake failed"
+	emake -j1
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS ChangeLog NEWS README*
 }
