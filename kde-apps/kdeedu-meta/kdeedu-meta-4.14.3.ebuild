@@ -1,7 +1,8 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit kde4-meta-pkg
 
 DESCRIPTION="KDE educational apps - merge this to pull in all kdeedu-derived packages"
@@ -20,7 +21,6 @@ RDEPEND="
 	$(add_kdeapps_dep kbruch)
 	$(add_kdeapps_dep kgeography)
 	$(add_kdeapps_dep khangman)
-	$(add_kdeapps_dep kig)
 	$(add_kdeapps_dep kiten)
 	$(add_kdeapps_dep klettres)
 	$(add_kdeapps_dep kmplot)
@@ -35,3 +35,4 @@ RDEPEND="
 	$(add_kdeapps_dep rocs)
 	$(add_kdeapps_dep step)
 "
+#	$(add_kdeapps_dep kig)
