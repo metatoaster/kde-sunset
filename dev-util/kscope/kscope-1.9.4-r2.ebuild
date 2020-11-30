@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -14,9 +14,10 @@ SLOT="4"
 KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 
-RDEPEND="dev-qt/qtcore:4
+RDEPEND="
+	dev-qt/qtcore:4
 	dev-qt/qtgui:4
-	x11-libs/qscintilla:=[qt4(-)]"
+	=x11-libs/qscintilla-2.4*:="
 DEPEND="${RDEPEND}"
 
 DOCS="ChangeLog"
