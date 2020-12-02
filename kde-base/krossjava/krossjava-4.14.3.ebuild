@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -8,7 +8,7 @@ KMMODULE="java"
 inherit java-pkg-2 java-ant-2 kde4-meta multilib
 
 DESCRIPTION="Java plugin for the kdelibs/kross scripting framework"
-KEYWORDS="amd64 ~arm ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 DEPEND="
