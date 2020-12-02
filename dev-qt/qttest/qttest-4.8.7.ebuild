@@ -7,7 +7,7 @@ inherit qt4-build-multilib
 DESCRIPTION="The QtTest module for unit testing Qt applications and libraries"
 
 if [[ ${QT4_BUILD_TYPE} == release ]]; then
-	KEYWORDS="~alpha amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
+	KEYWORDS="amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc x86"
 fi
 
 IUSE=""
