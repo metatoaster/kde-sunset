@@ -1,41 +1,43 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 KDE_REQUIRED="optional"
-KDE_LINGUAS="cs fr hu it nl pt_BR ru sv tr uk zh_CN zh_TW"
 KDE_LINGUAS_DIR="po"
-inherit base eutils fdo-mime qt4-r2 kde4-base
+inherit desktop kde4-base xdg-utils
 
 DESCRIPTION="A feature rich chm file viewer, based on Qt"
-HOMEPAGE="http://www.kchmviewer.net/"
+HOMEPAGE="https://www.ulduzsoft.com/linux/kchmviewer/"
 SRC_URI="mirror://sourceforge/kchmviewer/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 x86"
 IUSE="debug kde"
 
-RDEPEND="
+DEPEND="
 	dev-libs/chmlib
 	dev-qt/qtcore:4
 	dev-qt/qtdbus:4
 	dev-qt/qtgui:4
 	dev-qt/qtwebkit:4
-	kde? (
-		kde-frameworks/kdelibs:4
-		!kde-apps/okular[chm]
-	)
+	kde? ( kde-frameworks/kdelibs:4 )
 "
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}
+	kde? ( !kde-apps/okular[chm] )
+"
 
 pkg_setup() {
 	use kde && kde4-base_pkg_setup
 }
 
 src_prepare() {
-	base_src_prepare
+        if use kde; then
+		kde4-base_src_prepare
+	else
+		default
+	fi
 	sed -e "s:KDE4_ICON_INSTALL_DIR:ICON_INSTALL_DIR:" \
 		-e "s:KDE4_XDG_APPS_INSTALL_DIR:XDG_APPS_INSTALL_DIR:" \
 			-i packages/CMakeLists.txt || die
@@ -45,13 +47,6 @@ src_prepare() {
 
 	sed -e "/Encoding=UTF-8/d" \
 		-i packages/kchmviewer.desktop || die "fixing .desktop file failed"
-
-	local lang
-	for lang in ${KDE_LINGUAS} ; do
-		if ! use linguas_${lang} ; then
-			rm ${KDE_LINGUAS_DIR}/${PN}_${lang}.po
-		fi
-	done
 }
 
 src_configure() {
@@ -84,10 +79,10 @@ src_install() {
 
 pkg_postinst() {
 	use kde && kde4-base_pkg_postinst
-	fdo-mime_desktop_database_update
+	xdg_desktop_database_update
 }
 
 pkg_postrm() {
 	use kde && kde4-base_pkg_postrm
-	fdo-mime_desktop_database_update
+	xdg_desktop_database_update
 }
