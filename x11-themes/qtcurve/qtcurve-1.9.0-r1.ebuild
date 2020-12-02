@@ -16,7 +16,7 @@ IUSE="gtk nls plasma qt4 +qt5 test +X"
 
 if [[ ${KDE_BUILD_TYPE} = release ]] ; then
 	SRC_URI="https://github.com/KDE/qtcurve/archive/${PV/_/-}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="amd64 ~hppa ~ppc ~ppc64 ~sparc x86"
+	KEYWORDS="amd64 ~hppa x86"
 	S="${WORKDIR}/${P/_/-}"
 fi
 
