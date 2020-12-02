@@ -16,19 +16,18 @@ HOMEPAGE="http://kde-apps.org/content/show.php?content=137789"
 SRC_URI="http://craigd.wikispaces.com/file/view/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~x86"
 SLOT="4"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-DEPEND="
-	${PYTHON_DEPS}
+DEPEND="${PYTHON_DEPS}
 	>=net-firewall/ufw-0.31
-	sys-auth/polkit-kde-agent
 "
 RDEPEND="${DEPEND}
 	$(add_kdeapps_dep kcmshell)
+	kde-plasma/polkit-kde-agent:*
 "
 
 S=${WORKDIR}/${MY_P}

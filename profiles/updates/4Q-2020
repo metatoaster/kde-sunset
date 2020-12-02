@@ -1,0 +1,1 @@
+move sys-auth/polkit-kde-agent kde-plasma/polkit-kde-agent

@@ -115,10 +115,7 @@ PDEPEND="
 	>=x11-libs/libXtst-1.1.0
 	x11-misc/xdg-utils
 	handbook? ( kde-apps/khelpcenter:* )
-	policykit? ( || (
-		>=sys-auth/polkit-kde-agent-0.99
-		kde-plasma/polkit-kde-agent
-	) )
+	policykit? ( kde-plasma/polkit-kde-agent:* )
 "
 
 DOCS=( AUTHORS README{,-WIN32.TXT} TODO )

@@ -10,24 +10,23 @@ inherit kde4-base
 
 DESCRIPTION="PolKit agent module for KDE"
 HOMEPAGE="https://www.kde.org"
-if [[ ${KDE_BUILD_TYPE} != live ]] ; then
-	SRC_URI="https://launchpad.net/ubuntu/+archive/primary/+files/${MY_PN/-agent/}_${PV}.orig.tar.xz"
-	S=${WORKDIR}/${MY_P}
-fi
+SRC_URI="https://launchpad.net/ubuntu/+archive/primary/+files/${MY_PN/-agent/}_${PV}.orig.tar.xz"
+S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~arm x86"
 SLOT="4"
+KEYWORDS="amd64 ~arm x86"
 IUSE="debug minimal"
 
-RDEPEND="
+COMMON_DEPEND="
 	>=sys-auth/polkit-qt-0.103.0[qt4(-)]
-	!sys-auth/polkit-kde
 "
-DEPEND="${RDEPEND}
+DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
 "
-
+RDEPEND="${COMMON_DEPEND}
+	!sys-auth/polkit-kde
+"
 src_prepare() {
 	kde4-base_src_prepare
 
