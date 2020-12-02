@@ -3,15 +3,9 @@
 <pkgmetadata>
 	<!-- maintainer-needed -->
 	<use>
-		<flag name="ada">Support for the Ada programming language.</flag>
-		<flag name="clearcase">Support for the ClearCase version control system.</flag>
 		<flag name="cmake">Support for the CMake Build System.</flag>
 		<flag name="gdbui">Enable GUI for attaching GDB to a running process</flag>
-		<flag name="haskell">Support for the Haskell programming language.</flag>
 		<flag name="okteta">Enable hex editor plugin</flag>
-		<flag name="pascal">Support for the Pascal programming language.</flag>
-		<flag name="perforce">Support for the Perforce version control system.</flag>
 		<flag name="qthelp">Enable support for QtHelp documentation browsing</flag>
-		<flag name="sql">Support for the Structured Query Language (SQL).</flag>
 	</use>
 </pkgmetadata>
