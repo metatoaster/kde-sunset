@@ -1,26 +1,19 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 MY_PN="phonon-backend-gstreamer"
 MY_P=${MY_PN}-${PV}
-
-if [[ ${PV} != *9999* ]]; then
-	SRC_URI="mirror://kde/stable/phonon/${MY_PN}/${PV}/${MY_P}.tar.xz"
-	KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~x64-macos"
-else
-	EGIT_REPO_URI=( "git://anongit.kde.org/${PN}" )
-	inherit git-r3
-fi
-
 inherit cmake-utils multibuild
 
 DESCRIPTION="Phonon GStreamer backend"
-HOMEPAGE="https://phonon.kde.org/"
+HOMEPAGE="https://community.kde.org/Phonon"
+SRC_URI="mirror://kde/stable/phonon/${MY_PN}/${PV}/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2.1+ || ( LGPL-2.1 LGPL-3 )"
 SLOT="0"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~x64-macos"
 IUSE="alsa debug +network qt4 +qt5"
 
 REQUIRED_USE="|| ( qt4 qt5 )"
@@ -30,7 +23,7 @@ RDEPEND="
 	dev-libs/libxml2:2
 	media-libs/gstreamer:1.0
 	media-libs/gst-plugins-base:1.0
-	>=media-libs/phonon-4.9.0[qt4(-)?,qt5?]
+	>=media-libs/phonon-4.9.0[qt4(-)?,qt5(+)?]
 	media-plugins/gst-plugins-meta:1.0[alsa?,ogg,vorbis]
 	virtual/opengl
 	network? ( media-plugins/gst-plugins-soup:1.0 )
@@ -53,10 +46,6 @@ DEPEND="${RDEPEND}
 "
 
 pkg_setup() {
-	if use qt4 && [[ $(gcc-major-version) -lt 5 ]] ; then
-		ewarn "A GCC version older than 5 was detected. There may be trouble. See also Gentoo bug #595618"
-	fi
-
 	MULTIBUILD_VARIANTS=( $(usev qt4) $(usev qt5) )
 }
 
