@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,8 +8,8 @@ KDE_LINGUAS="de"
 inherit kde4-base
 
 DESCRIPTION="KDE port of Ding, a dictionary lookup program"
-HOMEPAGE="http://www.rexi.org/software/kding/"
-SRC_URI="http://www.rexi.org/downloads/${PN}/${P}.tar.bz2"
+HOMEPAGE="https://sourceforge.net/projects/kding/ https://phabricator.kde.org/T10719"
+SRC_URI="https://phabricator.kde.org/file/download/jnmscnve2mrtdqqhsmw2/PHID-FILE-vr5jgyqczprj7fnl3o77/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="4"
