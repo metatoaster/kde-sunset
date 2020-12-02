@@ -16,7 +16,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug gps json +pim qalculate"
 
 COMMONDEPEND="
-	dev-libs/libdbusmenu-qt[qt4]
+	dev-libs/libdbusmenu-qt[qt4(-)]
 	>=dev-qt/qtcore-4.8.4-r3:4
 	kde-frameworks/kactivities:4
 	kde-plasma/kephal:4
