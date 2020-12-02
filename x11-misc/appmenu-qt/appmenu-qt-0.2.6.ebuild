@@ -15,10 +15,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
+	>=dev-libs/libdbusmenu-qt-0.9.0[qt4(-)]
 	dev-qt/qtcore:4
 	dev-qt/qtdbus:4
 	dev-qt/qtgui:4
-	>=dev-libs/libdbusmenu-qt-0.9.0[qt4]"
+"
 RDEPEND="${DEPEND}"
 
 DOCS=( NEWS README )
