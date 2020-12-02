@@ -1,12 +1,12 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit fdo-mime gnome2-utils cmake-utils
+inherit cmake-utils xdg
 
 DESCRIPTION="Qt4/C++ wrapper for ALSA sequencer"
-HOMEPAGE="http://drumstick.sourceforge.net/"
+HOMEPAGE="https://drumstick.sourceforge.io/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -35,9 +35,7 @@ PATCHES=(
 )
 
 src_prepare() {
-	sed -i \
-		-e '/CMAKE_EXE_LINKER_FLAGS/d' \
-		CMakeLists.txt || die
+	sed -e '/CMAKE_EXE_LINKER_FLAGS/d' -i CMakeLists.txt || die
 	cmake-utils_src_prepare
 }
 
@@ -47,20 +45,4 @@ src_configure() {
 		-DWITH_DOC=$(usex doc)
 	)
 	cmake-utils_src_configure
-}
-
-pkg_preinst() {
-	gnome2_icon_savelist
-}
-
-pkg_postinst() {
-	fdo-mime_desktop_database_update
-	fdo-mime_mime_database_update
-	gnome2_icon_cache_update
-}
-
-pkg_postrm() {
-	fdo-mime_desktop_database_update
-	fdo-mime_mime_database_update
-	gnome2_icon_cache_update
 }
