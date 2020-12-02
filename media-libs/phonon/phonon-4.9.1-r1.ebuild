@@ -1,23 +1,17 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-if [[ ${PV} != *9999* ]]; then
-	SRC_URI="mirror://kde/stable/phonon/${PV}/${P}.tar.xz"
-	KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
-else
-	EGIT_REPO_URI=( "git://anongit.kde.org/${PN}" )
-	inherit git-r3
-fi
-
-inherit cmake-multilib multibuild qmake-utils
+inherit cmake-multilib qmake-utils
 
 DESCRIPTION="KDE multimedia API"
-HOMEPAGE="https://phonon.kde.org/"
+HOMEPAGE="https://community.kde.org/Phonon"
+SRC_URI="mirror://kde/stable/phonon/${PV}/${P}.tar.xz"
 
 LICENSE="|| ( LGPL-2.1 LGPL-3 )"
 SLOT="0"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="debug designer gstreamer pulseaudio qt4 +qt5 +vlc"
 
 REQUIRED_USE="|| ( qt4 qt5 )"
@@ -47,8 +41,8 @@ DEPEND="${RDEPEND}
 	qt5? ( kde-frameworks/extra-cmake-modules:5 )
 "
 PDEPEND="
-	gstreamer? ( >=media-libs/phonon-gstreamer-4.9.0[qt4(-)?,qt5?] )
-	vlc? ( >=media-libs/phonon-vlc-0.9.0[qt4(-)?,qt5?] )
+	gstreamer? ( >=media-libs/phonon-gstreamer-4.9.0[qt4(-)?,qt5(+)?] )
+	vlc? ( >=media-libs/phonon-vlc-0.9.0[qt4(-)?,qt5(+)?] )
 "
 
 PATCHES=( "${FILESDIR}/${PN}-4.7.0-plugin-install.patch" )
