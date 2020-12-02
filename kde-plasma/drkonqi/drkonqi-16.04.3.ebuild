@@ -18,7 +18,7 @@ KEYWORDS="amd64 x86"
 IUSE="debug"
 
 DEPEND="
-	$(add_kdeapps_dep kdepimlibs)
+	>=kde-apps/kdepimlibs-4.14.3:4
 "
 RDEPEND="${DEPEND}"
 
