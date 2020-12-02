@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -10,8 +10,8 @@ inherit kde4-base
 
 DESCRIPTION="KDE PIM runtime plugin collection"
 COMMIT_ID="bb194cc299839cb00b808c9c5740169815ba9e39"
-SRC_URI="https://quickgit.kde.org/?p=kdepim-runtime.git&a=snapshot&h=${COMMIT_ID}&fmt=tgz -> ${KMNAME}-${PV}.tar.gz"
-S=${WORKDIR}/${PN}
+SRC_URI="https://invent.kde.org/pim/${KMNAME}/-/archive/${COMMIT_ID}/kdepim-runtime-${COMMIT_ID}.tar.gz -> ${KMNAME}-${PV}.tar.gz"
+S=${WORKDIR}/${PN}-${COMMIT_ID}
 
 KEYWORDS="amd64 x86"
 IUSE="debug google"
@@ -32,14 +32,6 @@ RDEPEND="${DEPEND}
 	kde-frameworks/oxygen-icons:5
 	!kde-misc/akonadi-google
 "
-
-pkg_setup() {
-	if [[ $(gcc-major-version) -lt 5 ]] ; then
-		ewarn "A GCC version older than 5 was detected. There may be trouble. See also Gentoo bug #595618"
-	fi
-
-	kde4-base_pkg_setup
-}
 
 src_configure() {
 	local mycmakeargs=(
