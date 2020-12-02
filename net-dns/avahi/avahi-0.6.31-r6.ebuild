@@ -5,9 +5,7 @@ EAPI="5"
 
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="gdbm"
-
 WANT_AUTOMAKE=1.11
-
 inherit autotools eutils flag-o-matic multilib multilib-minimal mono-env python-r1 systemd user
 
 DESCRIPTION="System which facilitates service discovery on a local network"
@@ -21,11 +19,13 @@ IUSE="autoipd bookmarks dbus doc gdbm gtk howl-compat +introspection ipv6 kernel
 
 REQUIRED_USE="
 	utils? ( gtk )
-	python? ( dbus gdbm )
+	python? ( ${PYTHON_REQUIRED_USE} dbus gdbm )
 	mono? ( dbus )
 	howl-compat? ( dbus )
 	mdnsresponder-compat? ( dbus )
 "
+
+RESTRICT="!test? ( test )"
 
 COMMON_DEPEND="
 	dev-libs/libdaemon
@@ -45,15 +45,13 @@ COMMON_DEPEND="
 	bookmarks? ( dev-python/twisted )
 "
 
-DEPEND="
-	${COMMON_DEPEND}
+DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
 	>=virtual/pkgconfig-0-r1
 	doc? ( app-doc/doxygen )
 "
 
-RDEPEND="
-	${COMMON_DEPEND}
+RDEPEND="${COMMON_DEPEND}
 	howl-compat? ( !net-misc/howl )
 	mdnsresponder-compat? ( !net-misc/mDNSResponder )
 	selinux? ( sec-policy/selinux-avahi )
