@@ -4,13 +4,13 @@
 EAPI=6
 
 QT_MINIMAL="4.8.7"
-inherit cmake-utils toolchain-funcs flag-o-matic gnome2-utils toolchain-funcs xdg-utils
+inherit cmake-utils flag-o-matic toolchain-funcs xdg-utils
 
 DESCRIPTION="Libraries needed for programs by KDE"
 HOMEPAGE="https://www.kde.org/"
 SRC_URI="mirror://kde/stable/applications/17.08.2/src/${P}.tar.xz"
 
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 SLOT="4/4.14"
 IUSE="cpu_flags_x86_3dnow acl altivec +bzip2 debug doc fam +handbook kerberos
@@ -31,7 +31,7 @@ COMMONDEPEND="
 	app-text/docbook-xsl-stylesheets
 	dev-lang/perl
 	>=dev-libs/libattica-0.4.2
-	dev-libs/libdbusmenu-qt[qt4]
+	dev-libs/libdbusmenu-qt[qt4(-)]
 	dev-libs/libpcre[unicode]
 	dev-libs/libxml2
 	dev-libs/libxslt
@@ -77,7 +77,7 @@ COMMONDEPEND="
 		app-crypt/qca:2-qt4
 		>=dev-qt/qtsql-${QT_MINIMAL}:4[qt3support?]
 	)
-	policykit? ( sys-auth/polkit-qt[qt4] )
+	policykit? ( sys-auth/polkit-qt[qt4(-)] )
 	spell? ( app-text/enchant:= )
 	ssl? (
 		libressl? ( dev-libs/libressl:0= )
@@ -251,10 +251,6 @@ src_install() {
 	echo "COLON_SEPARATED=QT_PLUGIN_PATH" > "${T}/77kde"
 	echo "QT_PLUGIN_PATH=${EPREFIX}/usr/$(get_libdir)/kde4/plugins" >> "${T}/77kde"
 	doenvd "${T}/77kde"
-}
-
-pkg_preinst() {
-	gnome2_icon_savelist
 }
 
 pkg_postinst() {
