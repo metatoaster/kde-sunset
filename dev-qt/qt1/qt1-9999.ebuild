@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -6,8 +6,8 @@ EAPI=6
 inherit git-r3 toolchain-funcs
 
 DESCRIPTION="Historical copy of Qt 1, adapted to compile on modern systems (circa. 2016)"
-HOMEPAGE="https://quickgit.kde.org/?p=qt1.git"
-EGIT_REPO_URI="git://anongit.kde.org/${PN}.git"
+HOMEPAGE="https://invent.kde.org/historical/qt1"
+EGIT_REPO_URI="https://invent.kde.org/historical/qt1.git"
 
 LICENSE="Qt-Free-Edition"
 SLOT="0"
