@@ -6,13 +6,15 @@ EAPI=6
 inherit cmake-multilib
 
 DESCRIPTION="Library for mapping JSON data to QVariant objects"
-HOMEPAGE="http://qjson.sourceforge.net"
+HOMEPAGE="http://qjson.sourceforge.net/"
 SRC_URI="https://github.com/flavio/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~hppa ~ppc ~ppc64 x86"
 IUSE="debug doc test"
+
+RESTRICT+=" !test? ( test )"
 
 RDEPEND="
 	dev-qt/qtcore:4[${MULTILIB_USEDEP}]
