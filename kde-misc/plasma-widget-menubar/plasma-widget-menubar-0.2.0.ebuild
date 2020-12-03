@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="
-	>=dev-libs/libdbusmenu-qt-0.6.0[qt4]
+	>=dev-libs/libdbusmenu-qt-0.6.0[qt4(-)]
 	>=dev-libs/qjson-0.7.1
 "
 RDEPEND="${DEPEND}
