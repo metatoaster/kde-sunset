@@ -6,7 +6,7 @@ EAPI=6
 inherit cmake-utils git-r3
 
 DESCRIPTION="KDE 1 base applications, adapted to compile on modern systems (circa. 2016)"
-HOMEPAGE="https://quickgit.kde.org/?p=kde1-kdebase.git"
+HOMEPAGE="https://invent.kde.org/historical/kde1-kdebase"
 EGIT_REPO_URI="https://invent.kde.org/historical/kde1-kdebase.git"
 
 LICENSE="GPL-2+"
