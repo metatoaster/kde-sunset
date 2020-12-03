@@ -9,12 +9,12 @@ MY_P=${P/_beta/b}
 inherit kde4-base
 
 DESCRIPTION="A Latex Editor and TeX shell by KDE"
-HOMEPAGE="http://kile.sourceforge.net/"
-[[ ${PV} != *9999* ]] && SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+HOMEPAGE="https://kile.sourceforge.io/"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="FDL-1.2 GPL-2"
-KEYWORDS="amd64 x86"
 SLOT="4"
+KEYWORDS="amd64 x86"
 IUSE="debug +pdf +png"
 
 DEPEND="
@@ -27,16 +27,12 @@ RDEPEND="${DEPEND}
 	|| (
 		kde-apps/okular[pdf?,postscript]
 		app-text/evince
-		app-text/acroread
 	)
 	virtual/imagemagick-tools[png?]
 	virtual/latex-base
 	virtual/tex-base
 	pdf? (
-		|| (
-			app-text/dvipdfmx
-			>=app-text/texlive-core-2014
-		)
+		>=app-text/texlive-core-2014
 		app-text/ghostscript-gpl
 	)
 	png? ( app-text/dvipng )
@@ -53,5 +49,5 @@ src_prepare() {
 	sed -e '/INSTALL( FILES AUTHORS/s/^/#DISABLED /' \
 		-i CMakeLists.txt || die
 
-	[[ ${PV} != *9999* ]] && { use handbook || rm -fr doc ; }
+	use handbook || rm -fr doc
 }
