@@ -12,18 +12,12 @@ inherit flag-o-matic kde4-base pax-utils
 
 DESCRIPTION="Advanced audio player based on KDE framework"
 HOMEPAGE="https://amarok.kde.org/"
-if [[ ${PV} != *9999* ]]; then
-	SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
-	KEYWORDS="amd64 x86"
-fi
+SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="4"
+KEYWORDS="amd64 x86"
 IUSE="debug ipod lastfm mp3tunes mtp ofa test +utils"
-
-if [[ ${KDE_BUILD_TYPE} == live ]]; then
-	RESTRICT+=" test"
-fi
 
 # ipod requires gdk enabled and also gtk compiled in libgpod
 COMMONDEPEND="
@@ -39,7 +33,7 @@ COMMONDEPEND="
 	>=virtual/mysql-5.1[-minimal(-)]
 	>=x11-libs/qtscriptgenerator-0.1.0
 	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
-	lastfm? ( >=media-libs/liblastfm-1.0.3[qt4] )
+	lastfm? ( >=media-libs/liblastfm-1.0.3[qt4(-)] )
 	mp3tunes? (
 		dev-libs/glib:2
 		dev-libs/libxml2
