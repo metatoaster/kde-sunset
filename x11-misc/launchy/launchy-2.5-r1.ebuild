@@ -3,10 +3,10 @@
 
 EAPI=6
 
-inherit fdo-mime gnome2-utils qmake-utils
+inherit qmake-utils xdg
 
-DESCRIPTION="utility that merges application menus, your desktop and even your file manager"
-HOMEPAGE="http://www.launchy.net/"
+DESCRIPTION="Utility that merges application menus, your desktop and even your file manager"
+HOMEPAGE="https://www.launchy.net/"
 SRC_URI="http://www.launchy.net/downloads/src/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -35,18 +35,4 @@ src_configure() {
 src_install() {
 	emake INSTALL_ROOT="${D}" install
 	einstalldocs
-}
-
-pkg_preinst() {
-	gnome2_icon_savelist
-}
-
-pkg_postinst() {
-	fdo-mime_desktop_database_update
-	gnome2_icon_cache_update
-}
-
-pkg_postrm() {
-	fdo-mime_desktop_database_update
-	gnome2_icon_cache_update
 }
