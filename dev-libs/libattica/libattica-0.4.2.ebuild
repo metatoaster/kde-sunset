@@ -1,27 +1,22 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
 MY_P="${P#lib}"
 MY_PN="${PN#lib}"
-
-if [[ $PV = *9999* ]]; then
-	EGIT_REPO_URI="git://anongit.kde.org/attica"
-	scm_eclass=git-2
-else
-	SRC_URI="mirror://kde/stable/${MY_PN}/${MY_P}.tar.bz2"
-	KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
-fi
-
-inherit cmake-utils ${scm_eclass}
+inherit cmake-utils
 
 DESCRIPTION="A library providing access to Open Collaboration Services"
 HOMEPAGE="https://www.kde.org/"
+SRC_URI="mirror://kde/stable/${MY_PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug test"
+
+RESTRICT+=" !test? ( test )"
 
 RDEPEND="
 	dev-qt/qtcore:4
