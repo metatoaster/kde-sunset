@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="debug doc static-libs test"
 
+RESTRICT+=" !test? ( test )"
+
 COMMON_DEPEND="
 	app-crypt/qca:2-qt4[debug?]
 "
