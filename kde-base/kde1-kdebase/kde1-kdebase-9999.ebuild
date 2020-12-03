@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,7 +7,7 @@ inherit cmake-utils git-r3
 
 DESCRIPTION="KDE 1 base applications, adapted to compile on modern systems (circa. 2016)"
 HOMEPAGE="https://quickgit.kde.org/?p=kde1-kdebase.git"
-EGIT_REPO_URI="git://anongit.kde.org/${PN}.git"
+EGIT_REPO_URI="https://invent.kde.org/historical/kde1-kdebase.git"
 
 LICENSE="GPL-2+"
 SLOT="0"
