@@ -1,0 +1,12 @@
+diff -up kdelibs-4.14.38/kdecore/io/kfilesystemtype_p.cpp.me kdelibs-4.14.38/kdecore/io/kfilesystemtype_p.cpp
+--- kdelibs-4.14.38/kdecore/io/kfilesystemtype_p.cpp.me	2020-01-30 15:58:55.430416493 +0100
++++ kdelibs-4.14.38/kdecore/io/kfilesystemtype_p.cpp	2020-01-30 16:27:55.098089353 +0100
+@@ -94,7 +94,7 @@ KFileSystemType::Type determineFileSyste
+         //kDebug() << path << errno << strerror(errno);
+         return KFileSystemType::Unknown;
+     }
+-    switch (buf.f_type) {
++    switch (static_cast<uintmax_t>(buf.f_type)) {
+     case NFS_SUPER_MAGIC:
+     case AUTOFS_SUPER_MAGIC:
+     case AUTOFSNG_SUPER_MAGIC:

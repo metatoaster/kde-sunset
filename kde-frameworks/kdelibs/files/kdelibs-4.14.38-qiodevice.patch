@@ -1,0 +1,19 @@
+diff -up kdelibs-4.14.38/kimgio/jp2.cpp.me kdelibs-4.14.38/kimgio/jp2.cpp
+--- kdelibs-4.14.38/kimgio/jp2.cpp.me	2020-08-27 17:41:44.809195175 +0200
++++ kdelibs-4.14.38/kimgio/jp2.cpp	2020-08-27 17:55:29.534742787 +0200
+@@ -103,13 +103,13 @@ static void jas_stream_initbuf(jas_strea
+         stream->bufmode_ |= bufmode & JAS_STREAM_BUFMODEMASK;
+ }
+ 
+-static int qiodevice_read(jas_stream_obj_t *obj, char *buf, int cnt)
++static int qiodevice_read(jas_stream_obj_t *obj, char *buf, unsigned int cnt)
+ {
+         QIODevice *io = (QIODevice*) obj;
+         return io->read(buf, cnt);
+ }
+ 
+-static int qiodevice_write(jas_stream_obj_t *obj, char *buf, int cnt)
++static int qiodevice_write(jas_stream_obj_t *obj, char *buf, unsigned int cnt)
+ {
+         QIODevice *io = (QIODevice*) obj;
+         return io->write(buf, cnt);

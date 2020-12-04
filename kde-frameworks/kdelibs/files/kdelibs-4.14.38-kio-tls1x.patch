@@ -1,0 +1,12 @@
+diff -ur kdelibs-4.14.38/kio/kio/tcpslavebase.cpp kdelibs-4.14.38-kio-tls1x/kio/kio/tcpslavebase.cpp
+--- kdelibs-4.14.38/kio/kio/tcpslavebase.cpp	2017-11-05 02:51:22.000000000 +0100
++++ kdelibs-4.14.38-kio-tls1x/kio/kio/tcpslavebase.cpp	2020-01-18 18:57:45.933170939 +0100
+@@ -499,7 +499,7 @@
+ {
+     if (d->usingSSL)
+         return false;
+-    return d->startTLSInternal(KTcpSocket::TlsV1) & ResultOk;
++    return d->startTLSInternal(KTcpSocket::SecureProtocols) & ResultOk;
+ }
+ 
+ TCPSlaveBase::SslResult TCPSlaveBase::TcpSlaveBasePrivate::startTLSInternal (KTcpSocket::SslVersion version,
