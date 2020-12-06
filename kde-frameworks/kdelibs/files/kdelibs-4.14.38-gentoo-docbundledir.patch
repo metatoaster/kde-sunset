@@ -1,0 +1,72 @@
+From c7159b51b4b78d4fd81f886be7b476d143f78869 Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Sun, 6 Dec 2020 21:16:00 +0100
+Subject: [PATCH] Switch HTML_INSTALL_DIR over to /usr/share/help
+
+Signed-off-by: Andreas Sturmlechner <asturm@gentoo.org>
+---
+ cmake/modules/FindKDE4Internal.cmake | 6 +++---
+ cmake/modules/FindPyKDE4.cmake       | 2 +-
+ kdecore/kernel/kstandarddirs_win.cpp | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/cmake/modules/FindKDE4Internal.cmake b/cmake/modules/FindKDE4Internal.cmake
+index c345eca36f..d436ec7756 100644
+--- a/cmake/modules/FindKDE4Internal.cmake
++++ b/cmake/modules/FindKDE4Internal.cmake
+@@ -164,7 +164,7 @@
+ #
+ #
+ # The following variable is provided, but seem to be unused:
+-#  LIBS_HTML_INSTALL_DIR    /share/doc/HTML            CACHE STRING "Is this still used ?")
++#  LIBS_HTML_INSTALL_DIR    /share/help                CACHE STRING "Is this still used ?")
+ #
+ # The following user adjustable options are provided:
+ #
+@@ -773,7 +773,7 @@ if (WIN32)
+    set(IMPORTS_INSTALL_DIR       "${PLUGIN_INSTALL_DIR}/imports"   ) # "The subdirectory relative to the install prefix where imports will be installed
+    set(CONFIG_INSTALL_DIR       "share/config"            ) # The config file install dir
+    set(DATA_INSTALL_DIR         "share/apps"              ) # The parent directory where applications can install their data
+-   set(HTML_INSTALL_DIR         "share/doc/HTML"          ) # The HTML install dir for documentation
++   set(HTML_INSTALL_DIR         "share/help"              ) # The HTML install dir for documentation
+    set(ICON_INSTALL_DIR         "share/icons"             ) # The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)
+    set(KCFG_INSTALL_DIR         "share/config.kcfg"       ) # The install dir for kconfig files
+    set(LOCALE_INSTALL_DIR       "share/locale"            ) # The install dir for translations
+@@ -846,7 +846,7 @@ else (WIN32)
+    _set_fancy(IMPORTS_INSTALL_DIR       "${PLUGIN_INSTALL_DIR}/imports"                "The subdirectory relative to the install prefix where imports will be installed")
+    _set_fancy(CONFIG_INSTALL_DIR       "${SHARE_INSTALL_PREFIX}/config"         "The config file install dir")
+    _set_fancy(DATA_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/apps"           "The parent directory where applications can install their data")
+-   _set_fancy(HTML_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/doc/HTML"       "The HTML install dir for documentation")
++   _set_fancy(HTML_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/help"           "The HTML install dir for documentation")
+    _set_fancy(ICON_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/icons"          "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
+    _set_fancy(KCFG_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/config.kcfg"    "The install dir for kconfig files")
+    _set_fancy(LOCALE_INSTALL_DIR       "${SHARE_INSTALL_PREFIX}/locale"         "The install dir for translations")
+diff --git a/cmake/modules/FindPyKDE4.cmake b/cmake/modules/FindPyKDE4.cmake
+index 9b1379486d..9569864aa5 100644
+--- a/cmake/modules/FindPyKDE4.cmake
++++ b/cmake/modules/FindPyKDE4.cmake
+@@ -70,7 +70,7 @@ IF(PYTHONINTERP_FOUND)
+     _set_fancy(PLUGIN_INSTALL_DIR       "${LIB_INSTALL_DIR}/kde4"                "The subdirectory relative to the install prefix where plugins will be installed (default is ${LIB_INSTALL_DIR}/kde4)")
+     _set_fancy(CONFIG_INSTALL_DIR       "${SHARE_INSTALL_PREFIX}/config"         "The config file install dir")
+     _set_fancy(DATA_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/apps"           "The parent directory where applications can install their data")
+-    _set_fancy(HTML_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/doc/HTML"       "The HTML install dir for documentation")
++    _set_fancy(HTML_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/help"           "The HTML install dir for documentation")
+     _set_fancy(ICON_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/icons"          "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
+     _set_fancy(KCFG_INSTALL_DIR         "${SHARE_INSTALL_PREFIX}/config.kcfg"    "The install dir for kconfig files")
+     _set_fancy(LOCALE_INSTALL_DIR       "${SHARE_INSTALL_PREFIX}/locale"         "The install dir for translations")
+diff --git a/kdecore/kernel/kstandarddirs_win.cpp b/kdecore/kernel/kstandarddirs_win.cpp
+index b47aa152ef..aebb57138c 100644
+--- a/kdecore/kernel/kstandarddirs_win.cpp
++++ b/kdecore/kernel/kstandarddirs_win.cpp
+@@ -58,7 +58,7 @@ QString KStandardDirs::installPath(const char *type)
+             break;
+         case 'h':
+             if (strcmp("html", type) == 0)
+-                return share() + QLatin1String("doc/HTML/");
++                return share() + QLatin1String("help/");
+             break;
+         case 'i':
+             if (strcmp("icon", type) == 0)
+-- 
+2.29.2
+

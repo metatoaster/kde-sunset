@@ -1,0 +1,56 @@
+From 12a8bb503351b98869f722ba932f822e3c495883 Mon Sep 17 00:00:00 2001
+From: Ben Cooksley <bcooksley@kde.org>
+Date: Mon, 5 Aug 2019 15:41:05 +1200
+Subject: [PATCH] Correct links to Library Documentation Policy.
+
+Fixes T11309
+
+CCMAIL: kossebau@kde.org
+---
+ doc/common/README.Doxygen  | 2 +-
+ doc/common/footer.html     | 2 +-
+ doc/common/mainfooter.html | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/doc/common/README.Doxygen b/doc/common/README.Doxygen
+index 3c46a51bd0..24df4fe2ef 100644
+--- a/doc/common/README.Doxygen
++++ b/doc/common/README.Doxygen
+@@ -29,7 +29,7 @@ The tool for generating dox lives in admin/ :
+ 
+ 
+ Writing dox is beyond the scope of this README -- see the notes at
+-http://techbase.kde.org/Policies/Library_Documentation_Policy .
++https://community.kde.org/Policies/Library_Documentation_Policy .
+ You can generate dox by hand -- without even having a configured
+ build directory -- as explained below. There is also documentation
+ for the special tags you can enter in Makefile.am anywhere
+diff --git a/doc/common/footer.html b/doc/common/footer.html
+index 3b609f00e6..91cdb9711e 100644
+--- a/doc/common/footer.html
++++ b/doc/common/footer.html
+@@ -5,7 +5,7 @@ Generated on $datetime by
+ <a href="http://www.doxygen.org/index.html">doxygen</a> $doxygenversion written
+ by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>, &copy;&nbsp;1997-2006
+ <p>
+-KDE's <a href="http://techbase.kde.org/Policies/Library_Documentation_Policy">Doxygen guidelines</a> are available online.
++KDE's <a href="https://community.kde.org/Policies/Library_Documentation_Policy">Doxygen guidelines</a> are available online.
+ </p>
+ </div>
+             </div>
+diff --git a/doc/common/mainfooter.html b/doc/common/mainfooter.html
+index b129193292..a644603fa8 100644
+--- a/doc/common/mainfooter.html
++++ b/doc/common/mainfooter.html
+@@ -5,7 +5,7 @@ Generated on $datetime by
+ <a href="http://www.doxygen.org/index.html">doxygen</a> $doxygenversion written
+ by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>, &copy;&nbsp;1997-2006
+ <p>
+-KDE's <a href="http://techbase.kde.org/Policies/Library_Documentation_Policy">Doxygen guidelines</a> are available online.
++KDE's <a href="https://community.kde.org/Policies/Library_Documentation_Policy">Doxygen guidelines</a> are available online.
+ </p>
+ </div>
+             </div>
+-- 
+2.29.2
+

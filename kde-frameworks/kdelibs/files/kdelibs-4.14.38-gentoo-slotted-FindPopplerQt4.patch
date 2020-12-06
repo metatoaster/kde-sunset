@@ -1,0 +1,26 @@
+From c1ee468c3588b517f8373e650b8b81fe54b583f7 Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Sun, 6 Dec 2020 20:22:56 +0100
+Subject: [PATCH] FindPopplerQt4.cmake: Find Gentoo "0-qt4"-slotted poppler
+
+Signed-off-by: Andreas Sturmlechner <asturm@gentoo.org>
+---
+ cmake/modules/FindPopplerQt4.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/modules/FindPopplerQt4.cmake b/cmake/modules/FindPopplerQt4.cmake
+index 95b75295cb..e1a85eee96 100644
+--- a/cmake/modules/FindPopplerQt4.cmake
++++ b/cmake/modules/FindPopplerQt4.cmake
+@@ -24,7 +24,7 @@ set(POPPLER_QT4_DEFINITIONS ${PC_POPPLERQT4_CFLAGS_OTHER})
+ find_path(POPPLER_QT4_INCLUDE_DIR
+   NAMES poppler-qt4.h
+   HINTS ${PC_POPPLERQT4_INCLUDEDIR}
+-  PATH_SUFFIXES poppler/qt4 poppler
++  PATH_SUFFIXES poppler0-qt4/qt4 poppler/qt4 poppler
+ )
+ 
+ find_library(POPPLER_QT4_LIBRARY
+-- 
+2.29.2
+
