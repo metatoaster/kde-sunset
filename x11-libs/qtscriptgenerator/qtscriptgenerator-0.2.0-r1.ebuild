@@ -25,7 +25,7 @@ DEPEND="
 	dev-qt/qtsql:4
 	dev-qt/qtsvg:4[accessibility]
 	dev-qt/qtxmlpatterns:4
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 "
 RDEPEND="${DEPEND}"
 

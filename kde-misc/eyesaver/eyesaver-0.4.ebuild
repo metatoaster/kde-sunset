@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE="debug"
 
-DEPEND="media-libs/phonon[qt4(-)]"
+DEPEND="media-libs/phonon:0-qt4"
 RDEPEND="
 	${DEPEND}
 	kde-plasma/plasma-workspace:4

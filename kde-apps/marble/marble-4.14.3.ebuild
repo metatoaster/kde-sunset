@@ -26,8 +26,8 @@ RDEPEND="
 	dev-qt/qtsvg:4
 	dev-qt/qtwebkit:4
 	designer-plugin? ( dev-qt/designer:4 )
-	kde? ( media-libs/phonon[qt4(-)] )
-	phonon? ( media-libs/phonon[qt4(-)] )
+	kde? ( media-libs/phonon:0-qt4 )
+	phonon? ( media-libs/phonon:0-qt4 )
 	shapefile? ( sci-libs/shapelib )
 	zip? ( dev-libs/quazip )
 "

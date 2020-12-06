@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit qt4-build-multilib
 
 DESCRIPTION="Demonstration module and examples for the Qt toolkit"
@@ -25,15 +26,13 @@ DEPEND="
 	declarative? ( ~dev-qt/qtdeclarative-${PV}[debug=,webkit?,${MULTILIB_USEDEP}] )
 	multimedia? ( ~dev-qt/qtmultimedia-${PV}[debug=,${MULTILIB_USEDEP}] )
 	opengl? ( ~dev-qt/qtopengl-${PV}[debug=,${MULTILIB_USEDEP}] )
-	phonon? ( >=media-libs/phonon-4.8.3-r1[qt4(-),${MULTILIB_USEDEP}] )
+	phonon? ( media-libs/phonon:0-qt4[${MULTILIB_USEDEP}] )
 	webkit? ( >=dev-qt/qtwebkit-${PV}:4[debug=,${MULTILIB_USEDEP}] )
 	xmlpatterns? ( ~dev-qt/qtxmlpatterns-${PV}[debug=,${MULTILIB_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-4.6-plugandpaint.patch"
-)
+PATCHES=( "${FILESDIR}/${PN}-4.6-plugandpaint.patch" )
 
 QT4_TARGET_DIRECTORIES="
 	demos

@@ -18,7 +18,7 @@ IUSE="+crypt debug"
 
 DEPEND="
 	$(add_kdeapps_dep kdepimlibs)
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 	crypt? ( app-crypt/qca:2-qt4 )
 "
 RDEPEND="${DEPEND}

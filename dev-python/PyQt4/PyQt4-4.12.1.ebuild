@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
+PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 inherit multibuild python-r1 qmake-utils toolchain-funcs
 
 DESCRIPTION="Python bindings for the Qt framework"
@@ -45,7 +45,7 @@ RDEPEND="
 	help? ( >=dev-qt/qthelp-${QT_PV} )
 	multimedia? ( >=dev-qt/qtmultimedia-${QT_PV} )
 	opengl? ( >=dev-qt/qtopengl-${QT_PV} )
-	phonon? ( >=media-libs/phonon-4.7[qt4(-)] )
+	phonon? ( media-libs/phonon:0-qt4 )
 	script? ( >=dev-qt/qtscript-${QT_PV} )
 	scripttools? ( >=dev-qt/qtgui-${QT_PV} )
 	sql? ( >=dev-qt/qtsql-${QT_PV} )

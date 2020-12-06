@@ -12,7 +12,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug xine"
 
 RDEPEND="
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 "
 DEPEND="${RDEPEND}
 	sys-devel/gettext

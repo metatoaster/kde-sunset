@@ -13,7 +13,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="alsa debug pulseaudio"
 
 DEPEND="
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 	alsa? ( media-libs/alsa-lib )
 	pulseaudio? (
 		dev-libs/glib:2

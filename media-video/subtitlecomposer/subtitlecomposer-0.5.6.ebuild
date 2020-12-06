@@ -17,7 +17,7 @@ SLOT="4"
 IUSE="debug unicode xine"
 
 RDEPEND="
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 	unicode? ( dev-libs/icu:= )
 	xine? ( media-libs/xine-lib )
 "

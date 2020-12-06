@@ -17,7 +17,7 @@ RDEPEND="
 	$(add_kdeapps_dep kdepim-common-libs)
 	$(add_kdeapps_dep kdepimlibs)
 	$(add_kdeapps_dep ktimezoned)
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 	x11-libs/libX11
 "
 DEPEND="${RDEPEND}"

@@ -23,7 +23,7 @@ DEPEND="
 	dev-libs/libical:=
 	dev-libs/qjson
 	kde-apps/akonadi:4
-	media-libs/phonon[qt4(-)]
+	media-libs/phonon:0-qt4
 	x11-misc/shared-mime-info
 	ldap? ( net-nds/openldap )
 	prison? ( kde-frameworks/prison:4 )
