@@ -1,0 +1,92 @@
+From 80b8805f3f4128a5684c4d47ccff40bfc3007292 Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Sun, 6 Dec 2020 17:02:45 +0100
+Subject: [PATCH] Implement "poppler0-qt4" slotting, but also fix poppler
+ include paths in general
+
+Signed-off-by: Andreas Sturmlechner <asturm@gentoo.org>
+---
+ cmake/modules/FindPoppler.cmake     | 8 ++++----
+ filters/karbon/pdf/PdfImport.cpp    | 4 ++--
+ filters/karbon/pdf/SvgOutputDev.cpp | 8 ++++----
+ filters/karbon/pdf/SvgOutputDev.h   | 4 ++--
+ 4 files changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/cmake/modules/FindPoppler.cmake b/cmake/modules/FindPoppler.cmake
+index 294fad43121..ee200e6ea12 100644
+--- a/cmake/modules/FindPoppler.cmake
++++ b/cmake/modules/FindPoppler.cmake
+@@ -38,17 +38,17 @@ if(POPPLER_FOUND)
+   find_library(POPPLER_LIBRARY poppler-qt4
+                HINTS ${_pc_poppler_LIBRARY_DIRS}
+   )
+-  find_library(POPPLER_CORE_LIBRARY poppler
++  find_library(POPPLER_CORE_LIBRARY poppler0-qt4
+                HINTS ${_pc_poppler_LIBRARY_DIRS}
+   )
+ 
+-  find_path(POPPLER_INCLUDE_DIR poppler/qt4/poppler-qt4.h
++  find_path(POPPLER_INCLUDE_DIR poppler0-qt4/qt4/poppler-qt4.h
+             HINTS ${_pc_poppler_INCLUDE_DIRS}
+-            PATH_SUFFIXES poppler/qt4
++            PATH_SUFFIXES poppler0-qt4/qt4
+   )
+   find_path(POPPLER_INCLUDE_DIR_core qt4/poppler-qt4.h
+             HINTS ${_pc_poppler_INCLUDE_DIRS}
+-            PATH_SUFFIXES poppler
++            PATH_SUFFIXES poppler0-qt4
+   )
+ 
+   if(POPPLER_LIBRARY AND POPPLER_INCLUDE_DIR AND POPPLER_INCLUDE_DIR_core)
+diff --git a/filters/karbon/pdf/PdfImport.cpp b/filters/karbon/pdf/PdfImport.cpp
+index e55c06920c9..9c8a79fc042 100644
+--- a/filters/karbon/pdf/PdfImport.cpp
++++ b/filters/karbon/pdf/PdfImport.cpp
+@@ -34,8 +34,8 @@
+ #pragma GCC diagnostic ignored "-Wunused-parameter"
+ #endif
+ 
+-#include <poppler/PDFDoc.h>
+-#include <poppler/GlobalParams.h>
++#include <PDFDoc.h>
++#include <GlobalParams.h>
+ 
+ K_PLUGIN_FACTORY(PdfImportFactory, registerPlugin<PdfImport>();)
+ K_EXPORT_PLUGIN(PdfImportFactory("calligrafilters"))
+diff --git a/filters/karbon/pdf/SvgOutputDev.cpp b/filters/karbon/pdf/SvgOutputDev.cpp
+index a9e081a73dd..3a48fbdf9e3 100644
+--- a/filters/karbon/pdf/SvgOutputDev.cpp
++++ b/filters/karbon/pdf/SvgOutputDev.cpp
+@@ -18,10 +18,10 @@
+  */
+ 
+ #include "SvgOutputDev.h"
+-#include <poppler/Object.h>
+-#include <poppler/GfxState.h>
+-#include <poppler/Stream.h>
+-#include <poppler/GfxFont.h>
++#include <Object.h>
++#include <GfxState.h>
++#include <Stream.h>
++#include <GfxFont.h>
+ 
+ #include <kdebug.h>
+ #include <QFile>
+diff --git a/filters/karbon/pdf/SvgOutputDev.h b/filters/karbon/pdf/SvgOutputDev.h
+index 85fe55dfff6..1ca04a741de 100644
+--- a/filters/karbon/pdf/SvgOutputDev.h
++++ b/filters/karbon/pdf/SvgOutputDev.h
+@@ -25,8 +25,8 @@
+ #pragma GCC diagnostic ignored "-Wunused-parameter"
+ #endif
+ 
+-#include <poppler/Object.h>
+-#include <poppler/OutputDev.h>
++#include <Object.h>
++#include <OutputDev.h>
+ 
+ #include <QString>
+ 
+-- 
+2.29.2
+

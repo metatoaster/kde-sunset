@@ -15,30 +15,12 @@ WEBKIT_REQUIRED="optional"
 inherit check-reqs kde4-base versionator
 
 DESCRIPTION="KDE Office Suite"
-HOMEPAGE="https://www.calligra.org/"
-
-case ${PV} in
-	2.[456789].[789]?)
-		# beta or rc releases
-		SRC_URI="mirror://kde/unstable/${P}/${P}.tar.xz" ;;
-	2.[456789].?|2.[456789].??)
-		# stable releases
-		SRC_URI="mirror://kde/stable/${P}/${P}.tar.xz" ;;
-	2.[456789].9999)
-		# stable branch live ebuild
-		SRC_URI="" ;;
-	9999)
-		# master branch live ebuild
-		SRC_URI="" ;;
-esac
+HOMEPAGE="https://calligra.org/"
+SRC_URI="mirror://kde/stable/${P}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="4"
-
-if [[ ${KDE_BUILD_TYPE} == release ]] ; then
-	KEYWORDS="amd64 x86"
-fi
-
+KEYWORDS="amd64 x86"
 IUSE="color-management +crypt +eigen +exif fftw +fontconfig freetds +glew +glib
 +gsf gsl import-filter +jpeg jpeg2k +lcms mysql openexr +pdf +pim
 postgres spacenav sybase test tiff +threads +truetype +xml"
@@ -100,7 +82,7 @@ RDEPEND="
 		virtual/glu
 	)
 	pdf? (
-		app-text/poppler:=
+		app-text/poppler:0-qt4=
 		media-gfx/pstoedit
 	)
 	pim? ( $(add_kdeapps_dep kdepimlibs) )
@@ -127,9 +109,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	x11-misc/shared-mime-info
 "
-
-[[ ${PV} == 9999 ]] && LANGVERSION="2.9" || LANGVERSION="$(get_version_component_range 1-2)"
-PDEPEND=">=app-office/calligra-l10n-${LANGVERSION}"
+PDEPEND=">=app-office/calligra-l10n-$(get_version_component_range 1-2)"
 
 # bug 394273
 RESTRICT=test
@@ -138,6 +118,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.9.1-no-arch-detection.patch
 	"${FILESDIR}"/${P}-postgresql-9.6.patch
 	"${FILESDIR}"/${P}-libwps-0.4.patch
+	"${FILESDIR}"/${P}-slotted-popplerqt4.patch
 )
 
 pkg_pretend() {
