@@ -1,22 +1,22 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 KMNAME="kde-workspace"
 DECLARATIVE_REQUIRED="always"
 OPENGL_REQUIRED="always"
-
 #VIRTUALX_REQUIRED=test
-RESTRICT=test
-# test 8: kwin-TestVirtualDesktops hangs even with virtualx
-
 inherit flag-o-matic kde4-meta
 
 DESCRIPTION="KDE window manager"
 HOMEPAGE+=" https://userbase.kde.org/KWin"
+
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="debug gles opengl wayland"
+IUSE="debug gles2-only"
+
+RESTRICT+=" test"
+# test 8: kwin-TestVirtualDesktops hangs even with virtualx
 
 COMMONDEPEND="
 	kde-frameworks/kactivities:4
@@ -38,9 +38,8 @@ COMMONDEPEND="
 	>=x11-libs/libXrandr-1.2.1
 	x11-libs/libXrender
 	x11-libs/libXxf86vm
-	opengl? ( >=media-libs/mesa-7.10 )
-	gles? ( >=media-libs/mesa-7.12[egl(+),gles2] )
-	wayland? ( >=media-libs/mesa-9.0[egl(+),wayland] )
+	!gles2-only? ( >=media-libs/mesa-7.10 )
+	gles2-only? ( >=media-libs/mesa-7.12[egl(+),gles2] )
 "
 DEPEND="${COMMONDEPEND}
 	x11-libs/xcb-util-renderutil
@@ -56,23 +55,16 @@ KMEXTRACTONLY="
 	libs/oxygen/
 "
 
-PATCHES=(
-	"${FILESDIR}/${P}-gcc6.patch"
-)
-
-# you need one of these
-REQUIRED_USE="!opengl? ( gles ) !gles? ( opengl ) wayland? ( gles )"
+PATCHES=( "${FILESDIR}/${P}-gcc6.patch" )
 
 src_configure() {
 	# FIXME Remove when activity API moved away from libkworkspace
 	append-cppflags "-I${EPREFIX}/usr/include/kworkspace"
 
 	local mycmakeargs=(
-		$(cmake-utils_use_with gles OpenGLES)
-		$(cmake-utils_use gles KWIN_BUILD_WITH_OPENGLES)
-		$(cmake-utils_use_with opengl OpenGL)
-		$(cmake-utils_use_with wayland Wayland)
-		-DWITH_X11_Xcomposite=ON
+		-DWITH_Wayland=OFF
+		-DWITH_OpenGLES=$(usex gles2-only)
+		-DWITH_OpenGL=$(usex !gles2-only)
 	)
 
 	kde4-meta_src_configure
