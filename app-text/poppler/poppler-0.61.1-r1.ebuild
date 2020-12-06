@@ -10,7 +10,7 @@ HOMEPAGE="https://poppler.freedesktop.org/"
 SRC_URI="https://poppler.freedesktop.org/${P}.tar.xz"
 
 LICENSE="GPL-2"
-SLOT="0/72" # CHECK THIS WHEN BUMPING!!! SUBSLOT IS libpoppler.so SOVERSION
+SLOT="0-qt4/72" # CHECK THIS WHEN BUMPING!!! SUBSLOT IS libpoppler.so SOVERSION
 KEYWORDS="amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="cjk curl debug doc +jpeg +jpeg2k +lcms nss png tiff"
 
@@ -45,10 +45,12 @@ PATCHES=(
 	"${FILESDIR}/${PN}-0.33.0-openjpeg2.patch"
 	"${FILESDIR}/${PN}-0.40-FindQt4.patch"
 	"${FILESDIR}/${PN}-0.57.0-disable-internal-jpx.patch"
+	"${FILESDIR}/${P}-slotting.patch" # compatibility with Gentoo ebuild repo
 )
 
 src_prepare() {
 	cmake_src_prepare
+	cmake_comment_add_subdirectory test # we don't do tests, don't build them.
 
 	# Clang doesn't grok this flag, the configure nicely tests that, but
 	# cmake just uses it, so remove it if we use clang

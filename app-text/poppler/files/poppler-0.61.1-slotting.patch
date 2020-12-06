@@ -1,0 +1,313 @@
+From 2bf40380f3b9e6c35e5729f7b0d9190f2908e7fa Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Sun, 6 Dec 2020 12:26:50 +0100
+Subject: [PATCH] Implement "0-qt4" slotting
+
+Signed-off-by: Andreas Sturmlechner <asturm@gentoo.org>
+---
+ CMakeLists.txt                                | 74 +++++++++----------
+ poppler-qt4.pc.cmake                          |  2 +-
+ ...h.pc.cmake => poppler0-qt4-splash.pc.cmake |  0
+ poppler.pc.cmake => poppler0-qt4.pc.cmake     |  4 +-
+ qt4/src/CMakeLists.txt                        |  6 +-
+ qt4/tests/CMakeLists.txt                      |  4 +-
+ test/CMakeLists.txt                           |  8 +-
+ 7 files changed, 49 insertions(+), 49 deletions(-)
+ rename poppler-splash.pc.cmake => poppler0-qt4-splash.pc.cmake (100%)
+ rename poppler.pc.cmake => poppler0-qt4.pc.cmake (72%)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f181fdec..be4932bd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,17 +39,17 @@ set (CMAKE_CXX_EXTENSIONS OFF)
+ 
+ # command line switches
+ option(ENABLE_XPDF_HEADERS "Install unsupported xpdf headers." OFF)
+-option(BUILD_GTK_TESTS "Whether compile the GTK+ test programs." ON)
++option(BUILD_GTK_TESTS "Whether compile the GTK+ test programs." OFF)
+ option(BUILD_QT4_TESTS "Whether compile the Qt4 test programs." ON)
+-option(BUILD_QT5_TESTS "Whether compile the Qt5 test programs." ON)
+-option(BUILD_CPP_TESTS "Whether compile the CPP test programs." ON)
++option(BUILD_QT5_TESTS "Whether compile the Qt5 test programs." OFF)
++option(BUILD_CPP_TESTS "Whether compile the CPP test programs." OFF)
+ option(ENABLE_SPLASH "Build the Splash graphics backend." ON)
+-option(ENABLE_UTILS "Compile poppler command line utils." ON)
+-option(ENABLE_CPP "Compile poppler cpp wrapper." ON)
+-option(ENABLE_GLIB "Compile poppler glib wrapper." ON)
++option(ENABLE_UTILS "Compile poppler command line utils." OFF)
++option(ENABLE_CPP "Compile poppler cpp wrapper." OFF)
++option(ENABLE_GLIB "Compile poppler glib wrapper." OFF)
+ option(ENABLE_GTK_DOC "Whether to generate glib API documentation." OFF)
+ option(ENABLE_QT4 "Compile poppler qt4 wrapper." ON)
+-option(ENABLE_QT5 "Compile poppler qt5 wrapper." ON)
++option(ENABLE_QT5 "Compile poppler qt5 wrapper." OFF)
+ set(ENABLE_LIBOPENJPEG "auto" CACHE STRING "Use libopenjpeg for JPX streams. Possible values: auto, openjpeg1, openjpeg2, unmaintained, none. 'auto' prefers openjpeg2 over openjpeg1 if both are available. 'unmaintained' gives you the internal unmaintained decoder. Use at your own risk. 'none' compiles no JPX decoder at all. Default: auto")
+ set(ENABLE_CMS "auto" CACHE STRING "Use color management system. Possible values: auto, lcms1, lcms2. 'auto' prefers lcms2 over lcms1 if both are available. Unset to disable color management system.")
+ set(ENABLE_DCTDECODER "libjpeg" CACHE STRING "Use libjpeg for DCT streams. Possible values: libjpeg, unmaintained, none. will use libjpeg if available or fail if not. 'unmaintained' gives you the internal unmaintained decoder. Use at your own risk. 'none' compiles no DCT decoder at all. Default: libjpeg")
+@@ -540,20 +540,20 @@ endif()
+ if(MSVC)
+ add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+ set(CMAKE_CXX_FLAGS "/Zc:wchar_t- ${CMAKE_CXX_FLAGS}")
+-add_library(poppler STATIC ${poppler_SRCS})
++add_library(poppler0-qt4 STATIC ${poppler_SRCS})
+ else()
+-add_library(poppler ${poppler_SRCS})
++add_library(poppler0-qt4 ${poppler_SRCS})
+ endif()
+-set_target_properties(poppler PROPERTIES VERSION 72.0.0 SOVERSION 72)
++set_target_properties(poppler0-qt4 PROPERTIES VERSION 72.0.0 SOVERSION 72)
+ if(MINGW)
+-    get_target_property(POPPLER_SOVERSION poppler SOVERSION)
+-    set_target_properties(poppler PROPERTIES SUFFIX "-${POPPLER_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
++    get_target_property(POPPLER_SOVERSION poppler0-qt4 SOVERSION)
++    set_target_properties(poppler0-qt4 PROPERTIES SUFFIX "-${POPPLER_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
+ endif()
+-target_link_libraries(poppler LINK_PRIVATE ${poppler_LIBS})
++target_link_libraries(poppler0-qt4 LINK_PRIVATE ${poppler_LIBS})
+ if(CMAKE_USE_PTHREADS_INIT)
+-   target_link_libraries(poppler LINK_PRIVATE Threads::Threads)
++   target_link_libraries(poppler0-qt4 LINK_PRIVATE Threads::Threads)
+ endif()
+-install(TARGETS poppler RUNTIME DESTINATION bin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
++install(TARGETS poppler0-qt4 RUNTIME DESTINATION bin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+ if(ENABLE_XPDF_HEADERS)
+   install(FILES
+@@ -631,7 +631,7 @@ if(ENABLE_XPDF_HEADERS)
+     poppler/XpdfPluginAPI.h
+     poppler/Sound.h
+     ${CMAKE_CURRENT_BINARY_DIR}/poppler/poppler-config.h
+-    DESTINATION include/poppler)
++    DESTINATION include/poppler0-qt4)
+   install(FILES
+     goo/GooHash.h
+     goo/GooList.h
+@@ -646,21 +646,21 @@ if(ENABLE_XPDF_HEADERS)
+     goo/GooLikely.h
+     goo/gstrtod.h
+     goo/grandom.h
+-    DESTINATION include/poppler/goo)
++    DESTINATION include/poppler0-qt4/goo)
+   if(PNG_FOUND)
+     install(FILES
+       goo/PNGWriter.h
+-      DESTINATION include/poppler/goo)
++      DESTINATION include/poppler0-qt4/goo)
+   endif()
+   if(TIFF_FOUND)
+     install(FILES
+       goo/TiffWriter.h
+-      DESTINATION include/poppler/goo)
++      DESTINATION include/poppler0-qt4/goo)
+   endif()
+   if(JPEG_FOUND)
+     install(FILES
+       goo/JpegWriter.h
+-      DESTINATION include/poppler/goo)
++      DESTINATION include/poppler0-qt4/goo)
+   endif()
+   install(FILES
+     fofi/FoFiBase.h
+@@ -669,30 +669,30 @@ if(ENABLE_XPDF_HEADERS)
+     fofi/FoFiType1.h
+     fofi/FoFiType1C.h
+     fofi/FoFiIdentifier.h
+-    DESTINATION include/poppler/fofi)
++    DESTINATION include/poppler0-qt4/fofi)
+   if(ENABLE_LIBCURL)
+     install(FILES
+       poppler/CurlCachedFile.h
+       poppler/CurlPDFDocBuilder.h
+-      DESTINATION include/poppler)
++      DESTINATION include/poppler0-qt4)
+   endif()
+   if(LIBOPENJPEG_FOUND)
+     install(FILES
+       poppler/JPEG2000Stream.h
+-      DESTINATION include/poppler)
++      DESTINATION include/poppler0-qt4)
+   elseif(LIBOPENJPEG2_FOUND)
+     install(FILES
+       poppler/JPEG2000Stream.h
+-      DESTINATION include/poppler)
++      DESTINATION include/poppler0-qt4)
+   else()
+     install(FILES
+       poppler/JPXStream.h
+-      DESTINATION include/poppler)
++      DESTINATION include/poppler0-qt4)
+   endif()
+   if(ENABLE_SPLASH)
+     install(FILES
+       poppler/SplashOutputDev.h
+-      DESTINATION include/poppler)
++      DESTINATION include/poppler0-qt4)
+     install(FILES
+       splash/Splash.h
+       splash/SplashBitmap.h
+@@ -714,7 +714,7 @@ if(ENABLE_XPDF_HEADERS)
+       splash/SplashTypes.h
+       splash/SplashXPath.h
+       splash/SplashXPathScanner.h
+-      DESTINATION include/poppler/splash)
++      DESTINATION include/poppler0-qt4/splash)
+   endif()
+ endif()
+ 
+@@ -743,15 +743,15 @@ if(PKG_CONFIG_EXECUTABLE)
+ endif()
+ if(PKG_CONFIG_VERSION_0_18)
+   set(PC_REQUIRES "")
+-  set(PC_REQUIRES_PRIVATE "Requires.private: poppler = ${POPPLER_VERSION}")
++  set(PC_REQUIRES_PRIVATE "Requires.private: poppler0-qt4 = ${POPPLER_VERSION}")
+ else()
+-  set(PC_REQUIRES "poppler = ${POPPLER_VERSION}")
++  set(PC_REQUIRES "poppler0-qt4 = ${POPPLER_VERSION}")
+   set(PC_REQUIRES_PRIVATE "")
+ endif()
+ 
+-poppler_create_install_pkgconfig(poppler.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++poppler_create_install_pkgconfig(poppler0-qt4.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ if(ENABLE_SPLASH)
+-  poppler_create_install_pkgconfig(poppler-splash.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++  poppler_create_install_pkgconfig(poppler0-qt4-splash.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ endif()
+ if(ENABLE_QT4)
+   poppler_create_install_pkgconfig(poppler-qt4.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+@@ -776,13 +776,13 @@ show_end_message_yesno("splash output" ENABLE_SPLASH)
+ if(SPLASH_CMYK)
+   message("      with CMYK support")
+ endif()
+-show_end_message_yesno("cairo output" CAIRO_FOUND)
++#show_end_message_yesno("cairo output" CAIRO_FOUND)
+ show_end_message_yesno("qt4 wrapper" ENABLE_QT4)
+-show_end_message_yesno("qt5 wrapper" ENABLE_QT5)
+-show_end_message_yesno("glib wrapper" ENABLE_GLIB)
+-show_end_message_yesno("  introspection" INTROSPECTION_FOUND)
+-show_end_message_yesno("  gtk-doc" ENABLE_GTK_DOC)
+-show_end_message_yesno("cpp wrapper" ENABLE_CPP)
++#show_end_message_yesno("qt5 wrapper" ENABLE_QT5)
++#show_end_message_yesno("glib wrapper" ENABLE_GLIB)
++#show_end_message_yesno("  introspection" INTROSPECTION_FOUND)
++#show_end_message_yesno("  gtk-doc" ENABLE_GTK_DOC)
++#show_end_message_yesno("cpp wrapper" ENABLE_CPP)
+ show_end_message_yesno("use libjpeg" ENABLE_LIBJPEG)
+ show_end_message_yesno("use libpng" ENABLE_LIBPNG)
+ show_end_message_yesno("use libtiff" ENABLE_LIBTIFF)
+diff --git a/poppler-qt4.pc.cmake b/poppler-qt4.pc.cmake
+index 46a37f6d..8d11914d 100644
+--- a/poppler-qt4.pc.cmake
++++ b/poppler-qt4.pc.cmake
+@@ -9,4 +9,4 @@ Requires: @PC_REQUIRES@
+ @PC_REQUIRES_PRIVATE@
+ 
+ Libs: -L${libdir} -lpoppler-qt4
+-Cflags: -I${includedir}/poppler/qt4
++Cflags: -I${includedir}/poppler0-qt4/qt4
+diff --git a/poppler-splash.pc.cmake b/poppler0-qt4-splash.pc.cmake
+similarity index 100%
+rename from poppler-splash.pc.cmake
+rename to poppler0-qt4-splash.pc.cmake
+diff --git a/poppler.pc.cmake b/poppler0-qt4.pc.cmake
+similarity index 72%
+rename from poppler.pc.cmake
+rename to poppler0-qt4.pc.cmake
+index 00b73488..8147306e 100644
+--- a/poppler.pc.cmake
++++ b/poppler0-qt4.pc.cmake
+@@ -6,5 +6,5 @@ Name: poppler
+ Description: PDF rendering library
+ Version: @POPPLER_VERSION@
+ 
+-Libs: -L${libdir} -lpoppler
+-Cflags: -I${includedir}/poppler
++Libs: -L${libdir} -lpoppler0-qt4
++Cflags: -I${includedir}/poppler0-qt4
+diff --git a/qt4/src/CMakeLists.txt b/qt4/src/CMakeLists.txt
+index f6547726..a8dac2c9 100644
+--- a/qt4/src/CMakeLists.txt
++++ b/qt4/src/CMakeLists.txt
+@@ -35,9 +35,9 @@ if(MINGW)
+     get_target_property(POPPLER_QT4_SOVERSION poppler-qt4 SOVERSION)
+     set_target_properties(poppler-qt4 PROPERTIES SUFFIX "-${POPPLER_QT4_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
+ endif()
+-target_link_libraries(poppler-qt4 poppler ${QT4_QTCORE_LIBRARY} ${QT4_QTGUI_LIBRARY} ${QT4_QTXML_LIBRARY})
++target_link_libraries(poppler-qt4 poppler0-qt4 ${QT4_QTCORE_LIBRARY} ${QT4_QTGUI_LIBRARY} ${QT4_QTXML_LIBRARY})
+ if(MSVC)
+-target_link_libraries(poppler-qt4 poppler ${poppler_LIBS})
++target_link_libraries(poppler-qt4 poppler0-qt4 ${poppler_LIBS})
+ endif()
+ install(TARGETS poppler-qt4 RUNTIME DESTINATION bin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+@@ -50,5 +50,5 @@ install(FILES
+   poppler-export.h
+   poppler-page-transition.h
+   poppler-media.h
+-  DESTINATION include/poppler/qt4)
++  DESTINATION include/poppler0-qt4/qt4)
+ 
+diff --git a/qt4/tests/CMakeLists.txt b/qt4/tests/CMakeLists.txt
+index a01a638a..eda34846 100644
+--- a/qt4/tests/CMakeLists.txt
++++ b/qt4/tests/CMakeLists.txt
+@@ -16,7 +16,7 @@ macro(QT4_ADD_SIMPLETEST exe source)
+   poppler_add_test(${exe} BUILD_QT4_TESTS ${${test_name}_SOURCES})
+   target_link_libraries(${exe} poppler-qt4)
+   if(MSVC)
+-    target_link_libraries(${exe} poppler ${poppler_LIBS})
++    target_link_libraries(${exe} poppler0-qt4 ${poppler_LIBS})
+   endif()
+ endmacro(QT4_ADD_SIMPLETEST)
+ 
+@@ -30,7 +30,7 @@ macro(QT4_ADD_QTEST exe source)
+     qt4_automoc(${${test_name}_SOURCES})
+     target_link_libraries(${exe} poppler-qt4 ${QT4_QTTEST_LIBRARY})
+     if(MSVC)
+-      target_link_libraries(${exe} poppler ${poppler_LIBS})
++      target_link_libraries(${exe} poppler0-qt4 ${poppler_LIBS})
+     endif()
+   endif ()
+ endmacro(QT4_ADD_QTEST)
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 5bae1c7b..9fc2bdf2 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -7,7 +7,7 @@ if (ENABLE_SPLASH)
+       perf-test-preview-dummy.cc
+     )
+     add_executable(perf-test ${perf_test_SRCS})
+-    target_link_libraries(perf-test poppler)
++    target_link_libraries(perf-test poppler0-qt4)
+     if (LIB_RT_HAS_NANOSLEEP)
+       target_link_libraries(perf-test rt)
+     endif ()
+@@ -28,7 +28,7 @@ if (GTK_FOUND)
+     gtk-test.cc
+   )
+   poppler_add_test(gtk-test BUILD_GTK_TESTS ${gtk_splash_test_SRCS})
+-  target_link_libraries(gtk-test ${CAIRO_LIBRARIES} poppler-glib ${GTK3_LIBRARIES})
++  target_link_libraries(gtk-test ${CAIRO_LIBRARIES} poppler0-qt4-glib ${GTK3_LIBRARIES})
+ 
+   if (HAVE_CAIRO)
+ 
+@@ -36,7 +36,7 @@ if (GTK_FOUND)
+       pdf-inspector.cc
+     )
+     poppler_add_test(pdf-inspector BUILD_GTK_TESTS ${pdf_inspector_SRCS})
+-    target_link_libraries(pdf-inspector ${CAIRO_LIBRARIES} poppler-glib ${GTK3_LIBRARIES})
++    target_link_libraries(pdf-inspector ${CAIRO_LIBRARIES} poppler0-qt4-glib ${GTK3_LIBRARIES})
+ 
+   endif ()
+ 
+@@ -47,6 +47,6 @@ set (pdf_fullrewrite_SRCS
+   ../utils/parseargs.cc
+ )
+ add_executable(pdf-fullrewrite ${pdf_fullrewrite_SRCS})
+-target_link_libraries(pdf-fullrewrite poppler)
++target_link_libraries(pdf-fullrewrite poppler0-qt4)
+ 
+ 
+-- 
+2.29.2
+
