@@ -1,21 +1,23 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
+CMAKE_REMOVE_MODULES_LIST=( FindPopplerQt4 )
 inherit kde4-base
 
 DESCRIPTION="Library for extracting file metadata"
+
+SLOT="4"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug epub exif ffmpeg mobi pdf taglib"
-SLOT="4"
 
 DEPEND="
 	epub? ( app-text/ebook-tools )
 	exif? ( media-gfx/exiv2:= )
 	ffmpeg? ( media-video/ffmpeg:0= )
 	mobi? ( $(add_kdeapps_dep kdegraphics-mobipocket) )
-	pdf? ( app-text/poppler[qt4(-)] )
+	pdf? ( app-text/poppler:0-qt4 )
 	taglib? ( media-libs/taglib )
 "
 RDEPEND="${DEPEND}"
