@@ -17,7 +17,7 @@ KEYWORDS="amd64 ~arm x86"
 IUSE="debug minimal"
 
 COMMON_DEPEND="
-	>=sys-auth/polkit-qt-0.103.0[qt4(-)]
+	sys-auth/polkit-qt:0-qt4
 "
 DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
