@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -8,13 +8,13 @@ MULTIMEDIA_REQUIRED="optional"
 QTHELP_REQUIRED="optional"
 OPENGL_REQUIRED="optional"
 KDE_REQUIRED="never"
-
 inherit kde4-base
 
 DESCRIPTION="Scripting Meta Object Kompiler Engine - Qt bindings"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
-IUSE="debug +phonon qimageblitz qscintilla qwt webkit xmlpatterns"
 HOMEPAGE="https://techbase.kde.org/Development/Languages/Smoke"
+
+KEYWORDS="amd64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
+IUSE="debug +phonon qimageblitz qscintilla qwt webkit xmlpatterns"
 
 # Maybe make more of Qt optional?
 DEPEND="
@@ -29,7 +29,7 @@ DEPEND="
 	dev-qt/qttest:4
 	phonon? ( media-libs/phonon:0-qt4 )
 	qimageblitz? ( >=media-libs/qimageblitz-0.0.4[-qt5(+)] )
-	qscintilla? ( x11-libs/qscintilla:= )
+	qscintilla? ( x11-libs/qscintilla:0-qt4= )
 	qwt? ( x11-libs/qwt:5[svg] )
 	webkit? ( dev-qt/qtwebkit:4 )
 	xmlpatterns? ( dev-qt/qtxmlpatterns:4 )
