@@ -1,12 +1,14 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit qt4-r2
+EAPI=7
+
+inherit qmake-utils xdg
 
 DESCRIPTION="A simple battery monitor in the system tray"
-HOMEPAGE="https://wiki.gentoo.org/wiki/No_homepage"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+HOMEPAGE="https://sourceforge.net/projects/batterysystem/"
+SRC_URI="http://ponce.cc/slackware/sources/repo/${P/_/.}.tar.bz2"
+S="${WORKDIR}/${P/_/.}"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,13 +22,16 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-DOCS="AUTHORS ChangeLog README"
-
-src_unpack() {
+src_prepare() {
 	default
-	mv ${PN}-${PN} "${S}" || die
+	sed -e "/^Categories/s/Application;//" -i ptbatterysystemtray.desktop || die
 }
 
 src_configure() {
 	eqmake4 ${PN}.pro INSTALL_PREFIX=/usr
+}
+
+src_install() {
+	emake INSTALL_ROOT="${D}" install
+	einstalldocs
 }
