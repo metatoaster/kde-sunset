@@ -33,7 +33,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-        if use kde; then
+	if use kde; then
 		kde4-base_src_prepare
 	else
 		default
