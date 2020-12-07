@@ -1,30 +1,34 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit eutils multibuild qt4-r2
+inherit qmake-utils
 
 DESCRIPTION="2D plotting library for Qt4"
 HOMEPAGE="http://qwt.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="qwt"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~sparc x86 ~x86-macos"
 SLOT="5"
-IUSE="doc examples static-libs svg"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~sparc x86 ~x86-macos"
+IUSE="doc examples svg"
 
 DEPEND="
 	dev-qt/designer:4
+	dev-qt/qtcore:4
 	dev-qt/qtgui:4
-	doc? ( !<media-libs/coin-3.1.3[doc] )
 	svg? ( dev-qt/qtsvg:4 )"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	doc? ( !<media-libs/coin-3.1.3[doc] )
+"
 
-DOCS="CHANGES README"
+DOCS=( CHANGES README )
+
+PATCHES=( "${FILESDIR}"/${P}-install_qt.patch )
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-install_qt.patch
+	default
 	sed -e "/QwtVersion/s:5.2.2.:${PV}:g" -i ${PN}.prf || die
 
 	cat > qwtconfig.pri <<-EOF
@@ -41,47 +45,20 @@ src_prepare() {
 	sed -i -e 's/headers doc/headers/' src/src.pro || die
 	use svg && echo >> qwtconfig.pri "CONFIG += QwtSVGItem"
 
-	MULTIBUILD_VARIANTS=( )
-	use static-libs && MULTIBUILD_VARIANTS+=( static )
-	MULTIBUILD_VARIANTS+=( shared )
-
-	qt4-r2_src_prepare
-
-	preparation() {
-		cp -rf "${S}" "${BUILD_DIR}" || die
-		[[ ${MULTIBUILD_VARIANT} == shared ]] && \
-			echo "CONFIG += QwtDll" >> "${BUILD_DIR}"/qwtconfig.pri
-	}
-
-	multibuild_foreach_variant preparation
+	echo "CONFIG += QwtDll" >> qwtconfig.pri
 }
 
 src_configure() {
-	multibuild_parallel_foreach_variant run_in_build_dir eqmake4 ${PN}.pro
+	eqmake4
 }
 
-src_compile() {
-	multibuild_foreach_variant run_in_build_dir qt4-r2_src_compile
-}
-
-src_test() {
-	testing() {
-		cd examples || die
-		eqmake4 examples.pro
-		emake
-	}
-	multibuild_foreach_variant run_in_build_dir testing
-}
-
-src_install () {
-	multibuild_foreach_variant run_in_build_dir qt4-r2_src_install
+src_install() {
+	emake INSTALL_ROOT="${D}" install
+	einstalldocs
 
 	if use doc; then
-		insinto /usr/share/doc/${PF}
-		rm doc/man/*/*license* || die
-		rm -f doc/man/*/{_,deprecated}* || die
-		doman doc/man/*/*
-		doins -r doc/html
+		docinto html
+		dodoc -r doc/html/.
 	fi
 	if use examples; then
 		# don't build examples - fix the qt files to build once installed
@@ -95,7 +72,7 @@ src_install () {
 		EOF
 		sed -i -e 's:../qwtconfig:qwtconfig:' examples/examples.pro || die
 		cp *.pri examples/ || die
-		insinto /usr/share/${PN}5
-		doins -r examples
+		docinto examples
+		dodoc -r examples/.
 	fi
 }

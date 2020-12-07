@@ -1,6 +1,6 @@
-diff -up qwt-5.2.2/designer/designer.pro.install_qt qwt-5.2.2/designer/designer.pro
---- qwt-5.2.2/designer/designer.pro.install_qt	2011-08-01 04:28:22.000000000 -0500
-+++ qwt-5.2.2/designer/designer.pro	2012-08-14 11:11:22.569229749 -0500
+diff -up a/designer/designer.pro b/designer/designer.pro
+--- a/designer/designer.pro	2011-08-01 04:28:22.000000000 -0500
++++ b/designer/designer.pro	2012-08-14 11:11:22.569229749 -0500
 @@ -36,6 +37,7 @@ contains(CONFIG, QwtDesigner) {
          else {
              SUFFIX_STR = $${RELEASE_SUFFIX}
