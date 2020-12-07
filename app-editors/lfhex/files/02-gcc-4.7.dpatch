@@ -6,9 +6,9 @@
 ## DP: Bug-Debian: http://bugs.debian.org/667238
 
 @DPATCH@
-diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' lfhex-0.42~/src/expr.h lfhex-0.42/src/expr.h
---- lfhex-0.42~/src/expr.h	2008-09-19 02:36:49.000000000 +0200
-+++ lfhex-0.42/src/expr.h	2012-05-07 17:03:22.788794002 +0200
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' a/expr.h b/expr.h
+--- a/expr.h	2008-09-19 02:36:49.000000000 +0200
++++ b/expr.h	2012-05-07 17:03:22.788794002 +0200
 @@ -19,6 +19,7 @@
   */
  
