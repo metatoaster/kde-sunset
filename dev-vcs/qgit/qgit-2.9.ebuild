@@ -1,30 +1,40 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=4
+EAPI=7
 
-inherit eutils qt4-r2
+inherit cmake xdg
 
-DESCRIPTION="Qt4 GUI for git repositories"
+DESCRIPTION="Qt GUI for git repositories"
 HOMEPAGE="https://github.com/tibirna/qgit"
-SRC_URI="https://github.com/tibirna/${PN}/archive/${P}.tar.gz"
+SRC_URI="https://github.com/tibirna/qgit/archive/${P}.tar.gz
+https://raw.githubusercontent.com/tibirna/${PN}/fb47a8006bb9342e46dadb2883ba8eda86642ee1/src/resources/tab_remove.png -> ${PN}-tab_remove.png"
 
 LICENSE="GPL-2"
-SLOT="2"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~x86-macos"
+SLOT="0"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86"
 IUSE=""
 
-DEPEND="dev-qt/qtgui:4"
+DEPEND="
+	dev-qt/qtcore:4
+	dev-qt/qtgui:4
+"
 RDEPEND="${DEPEND}
-	>=dev-vcs/git-1.6
+	dev-vcs/git
 "
 
-S="${WORKDIR}"/${PN}-${P}
+S="${WORKDIR}/${PN}-${P}"
 
-src_install() {
-	newbin bin/qgit qgit4
-	newicon src/resources/qgit.png qgit4.png
-	make_desktop_entry qgit4 QGit qgit4
-	dodoc README
+DOCS=( README.adoc )
+
+PATCHES=( "${FILESDIR}"/${P}-fix-qt4-build-{1,2}.patch )
+
+src_prepare() {
+	cmake_src_prepare
+	mv "${DISTDIR}"/${PN}-tab_remove.png src/resources/tab_remove.png || die
+}
+
+src_configure() {
+	local mycmakeargs=( -DUseQt5=OFF )
+	cmake_src_configure
 }

@@ -1,0 +1,164 @@
+From f1c1c28e31146d272375a75f4f4684ae30b8f17b Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Mon, 7 Dec 2020 14:23:41 +0100
+Subject: [PATCH] Revert "MainImpl: Move tab close button onto tabs"
+
+This reverts commit 3f25d12ae9a023d3bff12f9b24f1b3fcf9ef0368.
+---
+ qgit.vcproj                  |   4 ++++
+ src/icons.qrc                |   1 +
+ src/mainimpl.cpp             |  29 +++++++++++++++--------------
+ src/mainimpl.h               |   4 ++--
+ src/mainview.ui              |   3 ---
+ 5 files changed, 22 insertions(+), 19 deletions(-)
+
+diff --git a/qgit.vcproj b/qgit.vcproj
+index de3bd65..e8a2985 100644
+--- a/qgit.vcproj
++++ b/qgit.vcproj
+@@ -236,6 +236,10 @@
+ 					RelativePath=".\src\resources\source_py.png"
+ 					>
+ 				</File>
++				<File
++					RelativePath=".\src\resources\tab_remove.png"
++					>
++				</File>
+ 				<File
+ 					RelativePath=".\src\resources\tar.png"
+ 					>
+diff --git a/src/icons.qrc b/src/icons.qrc
+index 09eb321..95f31f9 100644
+--- a/src/icons.qrc
++++ b/src/icons.qrc
+@@ -38,6 +38,7 @@
+         <file>resources/source_java.png</file>
+         <file>resources/source_pl.png</file>
+         <file>resources/source_py.png</file>
++        <file>resources/tab_remove.png</file>
+         <file>resources/tar.png</file>
+         <file>resources/txt.png</file>
+         <file>resources/vcs_commit.png</file>
+diff --git a/src/mainimpl.cpp b/src/mainimpl.cpp
+index 3831df9..5109055 100644
+--- a/src/mainimpl.cpp
++++ b/src/mainimpl.cpp
+@@ -115,11 +115,14 @@ MainImpl::MainImpl(SCRef cd, QWidget* p) : QMainWindow(p) {
+ 	rv = new RevsView(this, git, true); // set has main domain
+ 	tabWdg->addTab(rv->tabPage(), "&Rev list");
+ 
+-	// hide close button for rev list tab
+-	QTabBar* const tabBar = tabWdg->tabBar();
+-	tabBar->setTabButton(0, QTabBar::RightSide, NULL);
+-	tabBar->setTabButton(0, QTabBar::LeftSide, NULL);
+-	connect(tabWdg, SIGNAL(tabCloseRequested(int)), SLOT(tabBar_tabCloseRequested(int)));
++	// set-up tab corner widget ('close tab' button)
++	QToolButton* ct = new QToolButton(tabWdg);
++	ct->setIcon(QIcon(QString::fromUtf8(":/icons/resources/tab_remove.png")));
++	ct->setToolTip("Close tab");
++	ct->setEnabled(false);
++	tabWdg->setCornerWidget(ct);
++	connect(ct, SIGNAL(clicked()), this, SLOT(pushButtonCloseTab_clicked()));
++	connect(this, SIGNAL(closeTabButtonEnabled(bool)), ct, SLOT(setEnabled(bool)));
+ 
+ 	// set-up file names loading progress bar
+ 	pbFileNamesLoading = new QProgressBar(statusBar());
+@@ -614,10 +617,10 @@ void MainImpl::treeView_doubleClicked(QTreeWidgetItem* item, int) {
+ 	}
+ }
+ 
+-void MainImpl::tabBar_tabCloseRequested(int index) {
++void MainImpl::pushButtonCloseTab_clicked() {
+ 
+ 	Domain* t;
+-	switch (tabType(&t, index)) {
++	switch (currentTabType(&t)) {
+ 	case TAB_REV:
+ 		break;
+ 	case TAB_PATCH:
+@@ -629,7 +632,7 @@ void MainImpl::tabBar_tabCloseRequested(int index) {
+ 		ActViewFileNewTab->setEnabled(ActViewFile->isEnabled() && firstTab<FileView>());
+ 		break;
+ 	default:
+-		dbs("ASSERT in tabBar_tabCloseRequested: unknown current page");
++		dbs("ASSERT in pushButtonCloseTab_clicked: unknown current page");
+ 		break;
+ 	}
+ }
+@@ -1023,13 +1026,8 @@ bool MainImpl::event(QEvent* e) {
+ 
+ int MainImpl::currentTabType(Domain** t) {
+ 
+-	return tabType(t, tabWdg->currentIndex());
+-}
+-
+-int MainImpl::tabType(Domain** t, int index) {
+-
+ 	*t = NULL;
+-	QWidget* curPage = tabWdg->widget(index);
++	QWidget* curPage = tabWdg->currentWidget();
+ 	if (curPage == rv->tabPage()) {
+ 		*t = rv;
+ 		return TAB_REV;
+@@ -1100,12 +1098,15 @@ void MainImpl::tabWdg_currentChanged(int w) {
+ 	switch (currentTabType(&t)) {
+ 	case TAB_REV:
+ 		static_cast<RevsView*>(t)->tab()->listViewLog->setFocus();
++		emit closeTabButtonEnabled(false);
+ 		break;
+ 	case TAB_PATCH:
+ 		static_cast<PatchView*>(t)->tab()->textEditDiff->setFocus();
++		emit closeTabButtonEnabled(true);
+ 		break;
+ 	case TAB_FILE:
+ 		static_cast<FileView*>(t)->tab()->histListView->setFocus();
++		emit closeTabButtonEnabled(true);
+ 		break;
+ 	default:
+ 		dbs("ASSERT in tabWdg_currentChanged: unknown current page");
+diff --git a/src/mainimpl.h b/src/mainimpl.h
+index 3089a95..b5916b6 100644
+--- a/src/mainimpl.h
++++ b/src/mainimpl.h
+@@ -60,6 +60,7 @@ signals:
+ 	void closeAllWindows();
+ 	void closeAllTabs();
+ 	void changeFont(const QFont&);
++	void closeTabButtonEnabled(bool);
+ 	void typeWriterFontChanged();
+ 	void flagChanged(uint);
+ 
+@@ -92,7 +93,7 @@ protected slots:
+ 	void changesCommitted(bool);
+ 	void lineEditSHA_returnPressed();
+ 	void lineEditFilter_returnPressed();
+-	void tabBar_tabCloseRequested(int index);
++	void pushButtonCloseTab_clicked();
+ 	void ActBack_activated();
+ 	void ActForward_activated();
+ 	void ActFind_activated();
+@@ -144,7 +145,6 @@ private:
+ 	void updateRevVariables(SCRef sha);
+ 	void setupShortcuts();
+ 	int currentTabType(Domain** t);
+-	int tabType(Domain** t, int index);
+ 	void filterList(bool isOn, bool onlyHighlight);
+ 	bool isMatch(SCRef sha, SCRef f, int cn, const QMap<QString,bool>& sm);
+ 	void highlightAbbrevSha(SCRef abbrevSha);
+diff --git a/src/mainview.ui b/src/mainview.ui
+index 43736a1..4d320b2 100644
+--- a/src/mainview.ui
++++ b/src/mainview.ui
+@@ -62,9 +62,6 @@
+        </column>
+       </widget>
+       <widget class="QTabWidget" name="tabWdg">
+-       <property name="tabsClosable">
+-        <bool>true</bool>
+-       </property>
+        <widget class="QWidget" name="TabWdg">
+         <attribute name="title">
+          <string>Tab&amp;Wdg</string>
+-- 
+2.29.2
+

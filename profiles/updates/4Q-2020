@@ -1,1 +1,2 @@
 move sys-auth/polkit-kde-agent kde-plasma/polkit-kde-agent
+slotmove =dev-vcs/qgit-2.9 2 0
