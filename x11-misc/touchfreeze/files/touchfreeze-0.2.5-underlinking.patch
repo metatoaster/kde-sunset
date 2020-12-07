@@ -1,5 +1,5 @@
---- TouchFreeze.pro
-+++ TouchFreeze.pro
+--- a/TouchFreeze.pro
++++ b/TouchFreeze.pro
 @@ -3,3 +3,4 @@
  RESOURCES+=stuff.qrc
  SOURCES+=main.cpp TouchFreezeApp.cpp TouchFreezeUI.cpp SynDaemon.cpp
