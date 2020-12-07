@@ -1,0 +1,500 @@
+From 182c33afef3b294726f68646379dc6107847d55a Mon Sep 17 00:00:00 2001
+From: Tom Callaway <spot@fedoraproject.org>
+Date: Aug 08 2017 18:24:51 +0000
+Subject: rename strings headers to avoid conflict with glibc
+
+
+diff -up a/app/app.pro b/app/app.pro
+--- a/app/app.pro	2017-07-16 09:39:43.000000000 -0400
++++ b/app/app.pro	2017-08-08 14:10:25.880965399 -0400
+@@ -25,7 +25,7 @@ HEADERS += openprojectdialog.h \
+     settings.h \
+     session.h \
+     queryview.h \
+-    strings.h \
++    appstrings.h \
+     locationhistory.h \
+     projectmanager.h \
+     projectfilesdialog.h \
+diff -up a/app/appstrings.h b/app/appstrings.h
+--- a/app/appstrings.h	2017-08-08 14:10:25.876965399 -0400
++++ b/app/appstrings.h	2017-08-08 14:10:25.876965399 -0400
+@@ -0,0 +1,120 @@
++/***************************************************************************
++ *   Copyright (C) 2007-2009 by Elad Lahav
++ *   elad_lahav@users.sourceforge.net
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; either version 2 of the License, or
++ *   (at your option) any later version.
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details.
++ *
++ *   You should have received a copy of the GNU General Public License
++ *   along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++ ***************************************************************************/
++
++#ifndef __APP_APPSRINGS_H__
++#define __APP_APPSTRINGS_H__
++
++#include <QString>
++
++namespace KScope
++{
++
++namespace App
++{
++
++/**
++ * Provides various conversions of types to strings.
++ * @author Elad Lahav
++ */
++struct Strings
++{
++public:
++	/**
++	 * Converts a query type to a string.
++	 * @param  type  The type to convert
++	 * @return A string describing the query type
++	 */
++	static QString toString(Core::Query::Type type) {
++		switch (type) {
++		case Core::Query::Invalid:
++			return QObject::tr("<INVALID>");
++
++		case Core::Query::Text:
++			return QObject::tr("Text Search");
++
++		case Core::Query::Definition:
++			return QObject::tr("Definition");
++
++		case Core::Query::References:
++			return QObject::tr("References");
++
++		case Core::Query::CalledFunctions:
++			return QObject::tr("Called Functions");
++
++		case Core::Query::CallingFunctions:
++			return QObject::tr("Calling Functions");
++
++		case Core::Query::FindFile:
++			return QObject::tr("Search for File");
++
++		case Core::Query::IncludingFiles:
++			return QObject::tr("Files #including");
++
++		case Core::Query::LocalTags:
++			return QObject::tr("Symbols in This File");
++		}
++
++		return QString();
++	}
++
++	/**
++	 * Converts a query structure to a string.
++	 * @param  query  The query to convert
++	 * @return A string describing the query
++	 */
++	static QString toString(const Core::Query& query) {
++		switch (query.type_) {
++		case Core::Query::Invalid:
++			return "<INVALID>";
++
++		case Core::Query::Text:
++			return QObject::tr("Text search '%1'").arg(query.pattern_);
++
++		case Core::Query::Definition:
++			return QObject::tr("Definition of '%1'").arg(query.pattern_);
++
++		case Core::Query::References:
++			return QObject::tr("References to '%1'").arg(query.pattern_);
++
++		case Core::Query::CalledFunctions:
++			return QObject::tr("Functions called by '%1'").arg(query.pattern_);
++
++		case Core::Query::CallingFunctions:
++			return QObject::tr("Functions calling '%1'").arg(query.pattern_);
++
++		case Core::Query::FindFile:
++			return QObject::tr("Find file '%1'").arg(query.pattern_);
++
++		case Core::Query::IncludingFiles:
++			return QObject::tr("Files #including '%1'").arg(query.pattern_);
++
++		case Core::Query::LocalTags:
++			return QObject::tr("Symbols in '%1'").arg(query.pattern_);
++		}
++
++		return QString();
++	}
++};
++
++} // namespace App
++
++} // namespace KScope
++
++#endif // __APP_APPSTRINGS_H__
+diff -up a/app/querydialog.cpp b/app/querydialog.cpp
+--- a/app/querydialog.cpp	2017-07-16 09:39:43.000000000 -0400
++++ b/app/querydialog.cpp	2017-08-08 14:10:25.876965399 -0400
+@@ -23,7 +23,7 @@
+ #include <QMessageBox>
+ #include <QDebug>
+ #include "querydialog.h"
+-#include "strings.h"
++#include "appstrings.h"
+ 
+ namespace KScope
+ {
+diff -up a/app/queryresultdock.cpp b/app/queryresultdock.cpp
+--- a/app/queryresultdock.cpp	2017-07-16 09:39:43.000000000 -0400
++++ b/app/queryresultdock.cpp	2017-08-08 14:10:25.876965399 -0400
+@@ -20,7 +20,7 @@
+ 
+ #include "queryresultdock.h"
+ #include "projectmanager.h"
+-#include "strings.h"
++#include "appstrings.h"
+ 
+ namespace KScope
+ {
+diff -up a/app/strings.h b/app/strings.h
+--- a/app/strings.h	2017-07-16 09:39:43.000000000 -0400
++++ b/app/strings.h	2017-08-08 14:10:25.876965399 -0400
+@@ -1,120 +0,0 @@
+-/***************************************************************************
+- *   Copyright (C) 2007-2009 by Elad Lahav
+- *   elad_lahav@users.sourceforge.net
+- *
+- *   This program is free software; you can redistribute it and/or modify
+- *   it under the terms of the GNU General Public License as published by
+- *   the Free Software Foundation; either version 2 of the License, or
+- *   (at your option) any later version.
+- *
+- *   This program is distributed in the hope that it will be useful,
+- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *   GNU General Public License for more details.
+- *
+- *   You should have received a copy of the GNU General Public License
+- *   along with this program; if not, write to the
+- *   Free Software Foundation, Inc.,
+- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+- ***************************************************************************/
+-
+-#ifndef __APP_STRINGS_H__
+-#define __APP_STRINGS_H__
+-
+-#include <QString>
+-
+-namespace KScope
+-{
+-
+-namespace App
+-{
+-
+-/**
+- * Provides various conversions of types to strings.
+- * @author Elad Lahav
+- */
+-struct Strings
+-{
+-public:
+-	/**
+-	 * Converts a query type to a string.
+-	 * @param  type  The type to convert
+-	 * @return A string describing the query type
+-	 */
+-	static QString toString(Core::Query::Type type) {
+-		switch (type) {
+-		case Core::Query::Invalid:
+-			return QObject::tr("<INVALID>");
+-
+-		case Core::Query::Text:
+-			return QObject::tr("Text Search");
+-
+-		case Core::Query::Definition:
+-			return QObject::tr("Definition");
+-
+-		case Core::Query::References:
+-			return QObject::tr("References");
+-
+-		case Core::Query::CalledFunctions:
+-			return QObject::tr("Called Functions");
+-
+-		case Core::Query::CallingFunctions:
+-			return QObject::tr("Calling Functions");
+-
+-		case Core::Query::FindFile:
+-			return QObject::tr("Search for File");
+-
+-		case Core::Query::IncludingFiles:
+-			return QObject::tr("Files #including");
+-
+-		case Core::Query::LocalTags:
+-			return QObject::tr("Symbols in This File");
+-		}
+-
+-		return QString();
+-	}
+-
+-	/**
+-	 * Converts a query structure to a string.
+-	 * @param  query  The query to convert
+-	 * @return A string describing the query
+-	 */
+-	static QString toString(const Core::Query& query) {
+-		switch (query.type_) {
+-		case Core::Query::Invalid:
+-			return "<INVALID>";
+-
+-		case Core::Query::Text:
+-			return QObject::tr("Text search '%1'").arg(query.pattern_);
+-
+-		case Core::Query::Definition:
+-			return QObject::tr("Definition of '%1'").arg(query.pattern_);
+-
+-		case Core::Query::References:
+-			return QObject::tr("References to '%1'").arg(query.pattern_);
+-
+-		case Core::Query::CalledFunctions:
+-			return QObject::tr("Functions called by '%1'").arg(query.pattern_);
+-
+-		case Core::Query::CallingFunctions:
+-			return QObject::tr("Functions calling '%1'").arg(query.pattern_);
+-
+-		case Core::Query::FindFile:
+-			return QObject::tr("Find file '%1'").arg(query.pattern_);
+-
+-		case Core::Query::IncludingFiles:
+-			return QObject::tr("Files #including '%1'").arg(query.pattern_);
+-
+-		case Core::Query::LocalTags:
+-			return QObject::tr("Symbols in '%1'").arg(query.pattern_);
+-		}
+-
+-		return QString();
+-	}
+-};
+-
+-} // namespace App
+-
+-} // namespace KScope
+-
+-#endif // __APP_STRINGS_H__
+diff -up a/core/corestrings.h b/core/corestrings.h
+--- a/core/corestrings.h	2017-08-08 14:11:27.567965399 -0400
++++ b/core/corestrings.h	2017-08-08 14:12:03.648965399 -0400
+@@ -0,0 +1,95 @@
++/***************************************************************************
++ *   Copyright (C) 2007-2009 by Elad Lahav
++ *   elad_lahav@users.sourceforge.net
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; either version 2 of the License, or
++ *   (at your option) any later version.
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details.
++ *
++ *   You should have received a copy of the GNU General Public License
++ *   along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++ ***************************************************************************/
++
++#ifndef __CORE_CORESTRINGS_H__
++#define __CORE_CORESTRINGS_H__
++
++#include "globals.h"
++
++namespace KScope
++{
++
++namespace Core
++{
++
++/**
++ * Translates various values into strings.
++ * This class inherits from QObject in order to have access to the tr() method.
++ * @author Elad Lahav
++ */
++struct Strings : public QObject
++{
++	/**
++	 * Generates an icon for a given tag type.
++	 * TODO This should probably be moved somewhere else (like a Strings class)
++	 * @param  type  The type for which a name is requested
++	 * @return The matching name
++	 */
++	static QString tagName(Tag::Type type) {
++		switch (type) {
++		case Tag::UnknownTag:
++			return QString();
++
++		case Tag::Variable:
++			return tr("Variable");
++
++		case Tag::Function:
++			return tr("Function");
++
++		case Tag::Struct:
++			return tr("Struct");
++
++		case Tag::Union:
++			return tr("Union");
++
++		case Tag::Member:
++			return tr("Struct/Union Member");
++
++		case Tag::Enum:
++			return tr("Enumeration");
++
++		case Tag::Enumerator:
++			return tr("Enumeration Value");
++
++		case Tag::Typedef:
++			return tr("Type Definition");
++
++		case Tag::Define:
++			return tr("Preprorcessor Definition");
++
++		case Tag::Include:
++			return tr("#include Directive");
++
++		case Tag::Label:
++			return tr("Go-to Label");
++
++		default:
++			Q_ASSERT(false);
++		}
++
++		return QString();
++	}
++};
++
++}
++
++} // namespace KScope
++
++#endif // __CORE_CORESTRINGS_H__
+diff -up a/core/locationmodel.cpp b/core/locationmodel.cpp
+--- a/core/locationmodel.cpp	2017-07-16 09:39:43.000000000 -0400
++++ b/core/locationmodel.cpp	2017-08-08 14:10:25.877965399 -0400
+@@ -19,7 +19,7 @@
+  ***************************************************************************/
+ 
+ #include "locationmodel.h"
+-#include "strings.h"
++#include "corestrings.h"
+ #include "images.h"
+ #include <QDir>
+ 
+diff -up a/core/strings.h b/core/strings.h
+--- a/core/strings.h	2017-07-16 09:39:43.000000000 -0400
++++ b/core/strings.h	2017-08-08 14:11:20.902965399 -0400
+@@ -1,95 +0,0 @@
+-/***************************************************************************
+- *   Copyright (C) 2007-2009 by Elad Lahav
+- *   elad_lahav@users.sourceforge.net
+- *
+- *   This program is free software; you can redistribute it and/or modify
+- *   it under the terms of the GNU General Public License as published by
+- *   the Free Software Foundation; either version 2 of the License, or
+- *   (at your option) any later version.
+- *
+- *   This program is distributed in the hope that it will be useful,
+- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *   GNU General Public License for more details.
+- *
+- *   You should have received a copy of the GNU General Public License
+- *   along with this program; if not, write to the
+- *   Free Software Foundation, Inc.,
+- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+- ***************************************************************************/
+-
+-#ifndef __CORE_STRINGS_H__
+-#define __CORE_STRINGS_H__
+-
+-#include "globals.h"
+-
+-namespace KScope
+-{
+-
+-namespace Core
+-{
+-
+-/**
+- * Translates various values into strings.
+- * This class inherits from QObject in order to have access to the tr() method.
+- * @author Elad Lahav
+- */
+-struct Strings : public QObject
+-{
+-	/**
+-	 * Generates an icon for a given tag type.
+-	 * TODO This should probably be moved somewhere else (like a Strings class)
+-	 * @param  type  The type for which a name is requested
+-	 * @return The matching name
+-	 */
+-	static QString tagName(Tag::Type type) {
+-		switch (type) {
+-		case Tag::UnknownTag:
+-			return QString();
+-
+-		case Tag::Variable:
+-			return tr("Variable");
+-
+-		case Tag::Function:
+-			return tr("Function");
+-
+-		case Tag::Struct:
+-			return tr("Struct");
+-
+-		case Tag::Union:
+-			return tr("Union");
+-
+-		case Tag::Member:
+-			return tr("Struct/Union Member");
+-
+-		case Tag::Enum:
+-			return tr("Enumeration");
+-
+-		case Tag::Enumerator:
+-			return tr("Enumeration Value");
+-
+-		case Tag::Typedef:
+-			return tr("Type Definition");
+-
+-		case Tag::Define:
+-			return tr("Preprorcessor Definition");
+-
+-		case Tag::Include:
+-			return tr("#include Directive");
+-
+-		case Tag::Label:
+-			return tr("Go-to Label");
+-
+-		default:
+-			Q_ASSERT(false);
+-		}
+-
+-		return QString();
+-	}
+-};
+-
+-}
+-
+-} // namespace KScope
+-
+-#endif // __CORE_STRINGS_H__
