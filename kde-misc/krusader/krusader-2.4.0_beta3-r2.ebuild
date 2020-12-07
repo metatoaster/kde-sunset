@@ -1,13 +1,11 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
+MY_P="${P/_/-}"
 KDE_HANDBOOK="optional"
 inherit kde4-base
-
-MY_P="${P/_/-}"
 
 DESCRIPTION="Advanced twin-panel (commander-style) file-manager with many extras"
 HOMEPAGE="https://krusader.org/"
