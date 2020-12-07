@@ -1,13 +1,14 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 KDE_HANDBOOK="optional"
 inherit kde4-base
 
 DESCRIPTION="VNC-compatible server to share KDE desktops"
-HOMEPAGE="https://www.kde.org/applications/system/krfb/"
+HOMEPAGE="https://apps.kde.org/en/krfb"
+
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug telepathy ktp"
 REQUIRED_USE="ktp? ( telepathy )"
@@ -20,21 +21,21 @@ DEPEND="
 	x11-libs/libXdamage
 	x11-libs/libXext
 	x11-libs/libXtst
-	telepathy? ( >=net-libs/telepathy-qt-0.9[qt4(-)] )
+	telepathy? ( net-libs/telepathy-qt:0-qt4 )
 "
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	# bug 518824, patch before eclass magic
-	epatch "${FILESDIR}/${PN}-4.14.0-CVE-2014-4607-unbundle-libvncserver.patch"
+	eapply "${FILESDIR}/${PN}-4.14.0-CVE-2014-4607-unbundle-libvncserver.patch"
 
 	kde4-base_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_with telepathy TelepathyQt4)
-		$(cmake-utils_use_with ktp KTp)
+		-DWITH_TelepathyQt4=$(usex telepathy)
+		-DWITH_KTp=$(use ktp)
 	)
 
 	kde4-base_src_configure
