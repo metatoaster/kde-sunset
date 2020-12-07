@@ -1,0 +1,48 @@
+From 352c47251b4a35691706679d000e21a73c2c879e Mon Sep 17 00:00:00 2001
+From: Ariya Hidayat <ariya.hidayat@gmail.com>
+Date: Sat, 15 May 2010 12:22:20 -0700
+Subject: [PATCH] Add removeSlide() method to remove an existing slide.
+
+Patch by Alfredo Marroccelli (alfredo.marroccelli@gmail.com)
+---
+ pictureflow-qt/pictureflow.cpp | 10 ++++++++++
+ pictureflow-qt/pictureflow.h   |  5 +++++
+ 2 files changed, 15 insertions(+)
+
+diff --git a/pictureflow-qt/pictureflow.cpp b/pictureflow-qt/pictureflow.cpp
+index d7a0ca8..0607191 100644
+--- a/pictureflow-qt/pictureflow.cpp
++++ b/pictureflow-qt/pictureflow.cpp
+@@ -922,6 +922,16 @@ void PictureFlow::addSlide(const QPixmap& pixmap)
+   addSlide(pixmap.toImage());
+ }
+ 
++void PictureFlow::removeSlide(int index)
++{
++  int c = d->state->slideImages.count();
++  if (index >= 0 && index < c)
++  {
++    d->state->slideImages.remove(index);
++    triggerRender();
++  }
++}
++
+ void PictureFlow::setSlide(int index, const QImage& image)
+ {
+   if((index >= 0) && (index < slideCount()))
+diff --git a/pictureflow-qt/pictureflow.h b/pictureflow-qt/pictureflow.h
+index ae3b640..54deaa6 100644
+--- a/pictureflow-qt/pictureflow.h
++++ b/pictureflow-qt/pictureflow.h
+@@ -128,6 +128,11 @@ public slots:
+   */  
+   void addSlide(const QPixmap& pixmap);
+ 
++  /*!
++    Removes an existing slide.
++  */
++  void removeSlide(int index);
++
+   /*!
+     Sets an image for specified slide. If the slide already exists,
+     it will be replaced.
