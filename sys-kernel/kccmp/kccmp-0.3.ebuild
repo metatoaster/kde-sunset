@@ -1,8 +1,9 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="4"
-inherit qt4-r2
+EAPI=7
+
+inherit qmake-utils
 
 DESCRIPTION="A simple tool for comparing two linux kernel .config files"
 HOMEPAGE="http://stoopidsimple.com/kccmp/"
@@ -13,13 +14,18 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-DEPEND="dev-qt/qtcore:4
+DEPEND="
+	dev-qt/qtcore:4
 	dev-qt/qtgui:4"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	qt4-r2_src_prepare
+	default
 	echo "DEFINES += KCCMP_QT_4" >> ${PN}.pro
+}
+
+src_configure() {
+	eqmake4
 }
 
 src_install() {
