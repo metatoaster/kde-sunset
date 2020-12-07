@@ -33,7 +33,7 @@ COMMONDEPEND="
 	>=virtual/mysql-5.1[-minimal(-)]
 	>=x11-libs/qtscriptgenerator-0.1.0
 	ipod? ( >=media-libs/libgpod-0.7.0[gtk] )
-	lastfm? ( >=media-libs/liblastfm-1.0.3[qt4(-)] )
+	lastfm? ( media-libs/liblastfm:0-qt4 )
 	mp3tunes? (
 		dev-libs/glib:2
 		dev-libs/libxml2
