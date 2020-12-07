@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <!-- maintainer-needed -->
-  <use>
-    <flag name="npp">Compile the npp backend that plays xembed style browser plugins.</flag>
-  </use>
+<!-- maintainer-needed -->
 </pkgmetadata>
