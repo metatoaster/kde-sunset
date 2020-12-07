@@ -1,18 +1,19 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 KDE_HANDBOOK="optional"
 inherit kde4-base
 
 DESCRIPTION="Paint Program for KDE"
-HOMEPAGE="https://www.kde.org/applications/graphics/kolourpaint/"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+HOMEPAGE="https://apps.kde.org/en/kolourpaint"
+
 LICENSE="BSD LGPL-2"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
-DEPEND="media-libs/qimageblitz[-qt5(+)]"
+DEPEND="media-libs/qimageblitz"
 RDEPEND="${DEPEND}"
 
 pkg_postinst() {

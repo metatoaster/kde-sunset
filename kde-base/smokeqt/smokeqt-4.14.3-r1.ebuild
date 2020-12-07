@@ -28,7 +28,7 @@ DEPEND="
 	dev-qt/qtsvg:4
 	dev-qt/qttest:4
 	phonon? ( media-libs/phonon:0-qt4 )
-	qimageblitz? ( >=media-libs/qimageblitz-0.0.4[-qt5(+)] )
+	qimageblitz? ( media-libs/qimageblitz )
 	qscintilla? ( x11-libs/qscintilla:0-qt4= )
 	qwt? ( x11-libs/qwt:5[svg] )
 	webkit? ( dev-qt/qtwebkit:4 )

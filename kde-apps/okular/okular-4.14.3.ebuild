@@ -18,7 +18,7 @@ IUSE="chm crypt debug djvu dpi ebook +jpeg mobi +postscript +pdf +tiff"
 
 DEPEND="
 	media-libs/freetype
-	media-libs/qimageblitz[-qt5(+)]
+	media-libs/qimageblitz
 	sys-libs/zlib
 	chm? ( dev-libs/chmlib )
 	crypt? ( app-crypt/qca:2-qt4 )

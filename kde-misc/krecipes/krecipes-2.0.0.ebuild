@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ WEBKIT_REQUIRED="always"
 inherit kde4-base
 
 DESCRIPTION="A recipe application by KDE"
-HOMEPAGE="http://krecipes.sourceforge.net/"
+HOMEPAGE="https://apps.kde.org/en/krecipes"
 SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1"
@@ -23,7 +23,7 @@ DEPEND="
 	dev-db/sqlite:3
 	dev-libs/libxml2
 	dev-libs/libxslt
-	media-libs/qimageblitz[-qt5(-)]
+	media-libs/qimageblitz
 "
 RDEPEND="${DEPEND}"
 

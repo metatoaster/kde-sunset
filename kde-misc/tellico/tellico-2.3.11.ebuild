@@ -8,8 +8,8 @@ KDE_HANDBOOK="optional"
 inherit kde4-base
 
 DESCRIPTION="A collection manager for the KDE environment"
-HOMEPAGE="http://tellico-project.org/"
-SRC_URI="http://tellico-project.org/files/${P}.tar.bz2"
+HOMEPAGE="https://tellico-project.org/"
+SRC_URI="https://tellico-project.org/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="4"

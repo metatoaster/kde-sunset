@@ -1,7 +1,7 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit kde4-base
 
@@ -16,7 +16,7 @@ IUSE="debug"
 
 DEPEND="
 	kde-plasma/kwin:4
-	media-libs/qimageblitz[-qt5(+)]
+	media-libs/qimageblitz
 "
 RDEPEND="${DEPEND}"
 

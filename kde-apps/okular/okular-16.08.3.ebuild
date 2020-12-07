@@ -19,7 +19,7 @@ RESTRICT+=" test"
 DEPEND="
 	media-libs/freetype
 	media-libs/phonon:0-qt4
-	media-libs/qimageblitz[-qt5(+)]
+	media-libs/qimageblitz
 	sys-libs/zlib
 	chm? ( dev-libs/chmlib )
 	crypt? ( app-crypt/qca:2-qt4 )

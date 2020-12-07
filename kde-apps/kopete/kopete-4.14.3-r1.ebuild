@@ -7,7 +7,8 @@ KDE_HANDBOOK="optional"
 inherit kde4-base kde4-functions-extra
 
 DESCRIPTION="KDE multi-protocol IM client"
-HOMEPAGE="https://kopete.kde.org https://www.kde.org/applications/internet/kopete"
+HOMEPAGE="https://kopete.kde.org https://apps.kde.org/en/kopete"
+
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug ssl v4l"
 
@@ -66,7 +67,7 @@ COMMONDEPEND="
 	dev-libs/libpcre
 	>=dev-qt/qtgui-4.4.0:4[mng]
 	media-libs/phonon:0-qt4
-	media-libs/qimageblitz[-qt5(+)]
+	media-libs/qimageblitz
 	x11-libs/libX11
 	x11-libs/libXScrnSaver
 	gadu? ( >=net-libs/libgadu-1.8.0[threads] )

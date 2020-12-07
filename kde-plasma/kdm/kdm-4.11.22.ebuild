@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -8,14 +8,14 @@ KMNAME="kde-workspace"
 inherit systemd kde4-meta flag-o-matic user
 
 DESCRIPTION="Login manager by KDE, similar to xdm and gdm"
+
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug +consolekit kerberos pam systemd"
-
 REQUIRED_USE="consolekit? ( !systemd ) systemd? ( !consolekit )"
 
 DEPEND="
 	kde-plasma/libkworkspace:4
-	media-libs/qimageblitz[-qt5(+)]
+	media-libs/qimageblitz
 	x11-libs/libX11
 	x11-libs/libXau
 	x11-libs/libXdmcp
