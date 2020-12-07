@@ -1,6 +1,5 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -20,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 DEPEND="
-	x11-libs/libXScrnSaver
 	dev-qt/qtsql:4[sqlite]
 	>=media-video/vlc-1.2[X]
 	x11-libs/libXScrnSaver
