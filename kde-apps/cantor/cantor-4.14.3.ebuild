@@ -1,30 +1,26 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
 KDE_HANDBOOK="optional"
-PYTHON_COMPAT=( python2_7 )
-inherit kde4-base python-single-r1
+inherit kde4-base
 
 DESCRIPTION="KDE4 interface for doing mathematics and scientific computing"
-HOMEPAGE="https://www.kde.org/applications/education/cantor https://edu.kde.org/cantor"
+HOMEPAGE="https://apps.kde.org/en/cantor https://edu.kde.org/cantor"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="analitza debug postscript python qalculate +R"
-
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+IUSE="analitza debug postscript qalculate +R"
 
 # TODO Add Sage Mathematics Software backend (http://www.sagemath.org)
 RDEPEND="
+	dev-qt/qtxmlpatterns:4
 	analitza? ( $(add_kdeapps_dep analitza) )
 	qalculate? (
 		sci-libs/cln
 		sci-libs/libqalculate
 	)
 	postscript? ( app-text/libspectre )
-	python? ( ${PYTHON_DEPS} )
 	R? ( dev-lang/R )
-	dev-qt/qtxmlpatterns:4
 "
 DEPEND="${RDEPEND}
 	>=dev-cpp/eigen-2.0.3:2
@@ -32,16 +28,11 @@ DEPEND="${RDEPEND}
 
 RESTRICT="test"
 
-pkg_setup() {
-	use python && python-single-r1_pkg_setup
-	kde4-base_pkg_setup
-}
-
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_with analitza)
 		$(cmake-utils_use_with postscript LibSpectre)
-		$(cmake-utils_use_with python PythonLibs)
+		-DWITH_PythonLibs=OFF
 		$(cmake-utils_use_with qalculate)
 		$(cmake-utils_use_with R)
 	)
@@ -51,11 +42,11 @@ src_configure() {
 pkg_postinst() {
 	kde4-base_pkg_postinst
 
-	if ! use analitza && ! use python && ! use qalculate && ! use R; then
+	if ! use analitza && ! use qalculate && ! use R; then
 		echo
 		ewarn "You have decided to build ${PN} with no backend."
 		ewarn "To have this application functional, please do one of below:"
-		ewarn "    # emerge -va1 '='${CATEGORY}/${P} with 'analitza', 'python', 'qalculate' or 'R' USE flag enabled"
+		ewarn "    # emerge -va1 '='${CATEGORY}/${P} with 'analitza', 'qalculate' or 'R' USE flag enabled"
 		ewarn "    # emerge -vaDu sci-mathematics/maxima"
 		echo
 	fi
