@@ -1,11 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-PYTHON_COMPAT=( python2_7 )
-inherit eutils multilib python-any-r1 qmake-utils toolchain-funcs multilib-minimal
+EAPI=7
 
 MY_PV=${PV/4.10/2.3}
+PYTHON_COMPAT=( python2_7 )
+inherit python-any-r1 qmake-utils toolchain-funcs multilib-minimal
 
 DESCRIPTION="The WebKit module for the Qt toolkit"
 HOMEPAGE="https://www.qt.io/ http://trac.webkit.org/wiki/QtWebKit"
@@ -69,9 +69,7 @@ src_prepare() {
 		Source/WTF/WTF.pro \
 		Source/JavaScriptCore/Target.pri || die
 
-	# apply patches
-	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
-	epatch_user
+	default
 }
 
 multilib_src_compile() {
