@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,7 +8,7 @@ KDE_HANDBOOK="optional"
 inherit kde4-base
 
 DESCRIPTION="Full-featured burning and ripping application by KDE"
-HOMEPAGE="http://www.k3b.org/"
+HOMEPAGE="https://userbase.kde.org/K3b"
 SRC_URI="mirror://kde/stable/${PN}/${P}a.tar.xz"
 
 LICENSE="GPL-2 FDL-1.2"
@@ -34,9 +34,9 @@ DEPEND="${CDEPEND}
 "
 RDEPEND="${CDEPEND}
 	app-cdr/cdrdao
+	app-cdr/cdrtools
 	kde-frameworks/kdelibs:4[udev,udisks(+)]
 	media-sound/cdparanoia
-	virtual/cdrtools
 	dvd? (
 		>=app-cdr/dvd+rw-tools-7
 		encode? ( media-video/transcode[dvd] )
