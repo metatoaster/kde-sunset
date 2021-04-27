@@ -13,9 +13,7 @@ fi
 
 IUSE="freetds mysql odbc postgres qt3support +sqlite"
 
-REQUIRED_USE="
-	|| ( freetds mysql odbc postgres sqlite )
-"
+REQUIRED_USE="|| ( freetds mysql odbc postgres sqlite )"
 
 DEPEND="
 	~dev-qt/qtcore-${PV}[debug=,qt3support=,${MULTILIB_USEDEP}]
@@ -33,6 +31,8 @@ RDEPEND="${DEPEND}"
 QT4_TARGET_DIRECTORIES="
 	src/sql
 	src/plugins/sqldrivers"
+
+PATCHES=( "${FILESDIR}/${P}-mysql-8.patch" )
 
 multilib_src_configure() {
 	local myconf=(
