@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # note: files that need to be checked for dependencies etc:
@@ -12,7 +12,7 @@ KDE_HANDBOOK="optional"
 KDE_LINGUAS_LIVE_OVERRIDE="true"
 OPENGL_REQUIRED="optional"
 WEBKIT_REQUIRED="optional"
-inherit check-reqs kde4-base versionator
+inherit check-reqs kde4-base
 
 DESCRIPTION="KDE Office Suite"
 HOMEPAGE="https://calligra.org/"
@@ -22,7 +22,7 @@ LICENSE="GPL-2"
 SLOT="4"
 KEYWORDS="amd64 x86"
 IUSE="color-management +crypt +eigen +exif fftw +fontconfig freetds +glew +glib
-+gsf gsl import-filter +jpeg jpeg2k +lcms mysql openexr +pdf +pim
++gsf gsl import-filter +jpeg +lcms mysql openexr +pdf +pim
 postgres spacenav sybase test tiff +threads +truetype +xml"
 
 # Don't use Active, it's broken on desktops.
@@ -70,7 +70,6 @@ RDEPEND="
 		media-libs/libvisio
 	)
 	jpeg? ( virtual/jpeg:0 )
-	jpeg2k? ( media-libs/openjpeg:0 )
 	lcms? (
 		media-libs/lcms:2
 		x11-libs/libX11
@@ -109,7 +108,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	x11-misc/shared-mime-info
 "
-PDEPEND=">=app-office/calligra-l10n-$(get_version_component_range 1-2)"
+PDEPEND=">=app-office/calligra-l10n-2.9:4"
 
 # bug 394273
 RESTRICT=test
@@ -174,7 +173,7 @@ src_configure() {
 		-DWITH_LibWpg=$(usex import-filter)
 		-DWITH_LibWps=$(usex import-filter)
 		-DWITH_JPEG=$(usex jpeg)
-		-DWITH_OpenJPEG=$(usex jpeg2k)
+		-DWITH_OpenJPEG=OFF
 		-DWITH_Kdcraw=OFF
 		-DWITH_LCMS2=$(usex lcms)
 		-DWITH_MySQL=$(usex mysql)
