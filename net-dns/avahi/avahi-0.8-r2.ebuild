@@ -3,12 +3,12 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python3_{7,8} )
+PYTHON_COMPAT=( python3_{7..9} )
 PYTHON_REQ_USE="gdbm"
 inherit autotools flag-o-matic multilib-minimal mono-env python-r1 systemd
 
 DESCRIPTION="System which facilitates service discovery on a local network"
-HOMEPAGE="http://avahi.org/"
+HOMEPAGE="https://avahi.org/"
 SRC_URI="https://github.com/lathiat/avahi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
@@ -39,10 +39,7 @@ DEPEND="
 	dbus? ( sys-apps/dbus[${MULTILIB_USEDEP}] )
 	kernel_linux? ( sys-libs/libcap )
 	introspection? ( dev-libs/gobject-introspection:= )
-	mono? (
-		dev-lang/mono
-		gtk2? ( dev-dotnet/gtk-sharp:2 )
-	)
+	mono? ( dev-lang/mono )
 	python? (
 		${PYTHON_DEPS}
 		dbus? ( dev-python/dbus-python[${PYTHON_USEDEP}] )
@@ -77,16 +74,17 @@ MULTILIB_WRAPPED_HEADERS=(
 	/usr/include/avahi-qt5/qt-watch.h
 )
 
+PATCHES=(
+	"${FILESDIR}/${P}-disable-avahi-ui-sharp.patch" # bug 769062
 # These patches do not apply cleanly but may need to be re-instated.
 # I'll leave them commented out for now.
-#PATCHES=(
 #	"${FILESDIR}/${PN}-0.7-qt5.patch"
 #	"${FILESDIR}/${PN}-0.7-CVE-2017-6519.patch"
 #	"${FILESDIR}/${PN}-0.7-remove-empty-avahi_discover.patch"
 #	"${FILESDIR}/${PN}-0.7-python3.patch"
 #	"${FILESDIR}/${PN}-0.7-python3-unittest.patch"
 #	"${FILESDIR}/${PN}-0.7-python3-gdbm.patch"
-#)
+)
 
 pkg_setup() {
 	use mono && mono-env_pkg_setup
