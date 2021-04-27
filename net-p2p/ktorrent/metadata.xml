@@ -7,7 +7,6 @@
 		<flag name="downloadorder">Enable plugin for user selected download order</flag>
 		<flag name="infowidget">Enable the infowidget plugin</flag>
 		<flag name="ipfilter">Enable the ipfilter plugin</flag>
-		<flag name="kross">Enable kross scripting support</flag>
 		<flag name="logviewer">Enable the logviewer plugin</flag>
 		<flag name="magnetgenerator">Generates magnet URI's</flag>
 		<flag name="mediaplayer">Enable the mediaplayer plugin</flag>
