@@ -1,8 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib
 
 DESCRIPTION="Library for mapping JSON data to QVariant objects"
@@ -37,14 +38,14 @@ multilib_src_configure() {
 		-DQJSON_BUILD_TESTS=$(usex test)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 multilib_src_install_all() {
 	if use doc && is_final_abi; then
 		pushd doc > /dev/null || die
 			doxygen Doxyfile || die "Generating documentation failed"
-			HTML_DOCS=( doc/html/. )
+			local HTML_DOCS=( doc/html/. )
 		popd > /dev/null || die
 		einstalldocs
 	fi
