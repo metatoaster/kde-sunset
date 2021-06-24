@@ -17,7 +17,7 @@ RESTRICT=test
 
 # krunner is only needed to generate dbus interface for lancelot
 COMMON_DEPEND="
-	app-crypt/qca:2[qt4(+)]
+	app-crypt/qca:2-qt4
 	kde-plasma/krunner:4
 	kde-plasma/plasma-workspace:4
 	x11-misc/shared-mime-info
@@ -37,7 +37,7 @@ DEPEND="${COMMON_DEPEND}
 	eigen? ( dev-cpp/eigen:2 )
 "
 RDEPEND="${COMMON_DEPEND}
-	app-crypt/qca:2[ssl]
+	app-crypt/qca:2-qt4[ssl]
 "
 
 PATCHES=(
