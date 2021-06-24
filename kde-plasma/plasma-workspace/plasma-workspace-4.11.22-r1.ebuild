@@ -7,16 +7,13 @@ DECLARATIVE_REQUIRED="always"
 KDE_HANDBOOK="optional"
 KMNAME="kde-workspace"
 KMMODULE="plasma"
-PYTHON_COMPAT=( python2_7 )
 OPENGL_REQUIRED="always"
 WEBKIT_REQUIRED="always"
-inherit python-single-r1 kde4-meta
+inherit kde4-meta
 
 DESCRIPTION="Plasma: KDE desktop framework"
 KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
-IUSE="debug gps json +pim python qalculate"
-
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+IUSE="debug gps json +pim qalculate"
 
 COMMONDEPEND="
 	dev-libs/libdbusmenu-qt
@@ -38,11 +35,6 @@ COMMONDEPEND="
 	gps? ( >=sci-geosciences/gpsd-2.37 )
 	json? ( dev-libs/qjson )
 	pim? ( $(add_kdeapps_dep kdepimlibs) )
-	python? (
-		${PYTHON_DEPS}
-		>=dev-python/PyQt4-4.4.0[X,${PYTHON_SINGLE_USEDEP}]
-		$(add_kdeapps_dep pykde4 "${PYTHON_SINGLE_USEDEP}")
-	)
 	qalculate? ( sci-libs/libqalculate )
 "
 DEPEND="${COMMONDEPEND}
@@ -77,13 +69,6 @@ KMEXTRACTONLY="
 	ksysguard/
 "
 
-pkg_setup() {
-	if use python ; then
-		python-single-r1_pkg_setup
-	fi
-	kde4-meta_pkg_setup
-}
-
 src_unpack() {
 	if use handbook; then
 		KMEXTRA+=" doc/plasma-desktop"
@@ -102,7 +87,7 @@ src_configure() {
 		$(cmake-utils_use_with json QJSON)
 		$(cmake-utils_use_with pim Akonadi)
 		$(cmake-utils_use_with pim KdepimLibs)
-		$(cmake-utils_use_with python PythonLibrary)
+		-DWITH_PythonLibs=OFF
 		$(cmake-utils_use_with qalculate)
 	)
 
@@ -111,8 +96,4 @@ src_configure() {
 
 src_install() {
 	kde4-meta_src_install
-
-	if use python; then
-		python_optimize "${ED}"
-	fi
 }
