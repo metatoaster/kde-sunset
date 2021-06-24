@@ -104,7 +104,7 @@ RDEPEND="${COMMON_DEPEND}
 	plasma? ( !sci-libs/plasma )
 	udev? ( app-misc/media-player-info )
 	udisks? ( sys-fs/udisks:2 )
-	upower? ( >=sys-power/upower-0.9.23 )
+	upower? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )
 "
 BDEPEND="
 	doc? ( app-doc/doxygen )
