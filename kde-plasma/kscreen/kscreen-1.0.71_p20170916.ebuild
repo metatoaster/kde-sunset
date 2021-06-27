@@ -6,8 +6,6 @@ EAPI=5
 COMMIT=2269c30f4e75c4490af8cd91e512e7ffbb4c8729
 VIRTUALX_REQUIRED="test"
 DECLARATIVE_REQUIRED="always"
-KDE_LINGUAS="ast bg bs ca ca@valencia cs da de el en_GB es et fi fr ga gl hu it
-ja ko lt mr nb nds nl nn pa pl pt pt_BR ro ru sk sl sv tr ug uk zh_CN zh_TW"
 inherit kde4-base
 
 DESCRIPTION="Plasma screen management"
