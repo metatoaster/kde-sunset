@@ -31,7 +31,10 @@ RDEPEND="
 	$(add_kdeapps_dep kcmshell)
 "
 
-PATCHES=( "${FILESDIR}/${P}-kdelibs-4.14.11.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-kdelibs-4.14.11.patch"
+	"${FILESDIR}/${P}-pango-1.48.5-r1.patch"
+)
 
 pkg_postinst() {
 	kde4-base_pkg_postinst

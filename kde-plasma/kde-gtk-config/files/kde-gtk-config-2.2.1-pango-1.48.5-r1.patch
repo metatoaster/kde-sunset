@@ -1,0 +1,60 @@
+diff --git a/cmake/modules/FindGTK2.cmake b/cmake/modules/FindGTK2.cmake
+index 75c2aba..3a8699f 100644
+--- a/cmake/modules/FindGTK2.cmake
++++ b/cmake/modules/FindGTK2.cmake
+@@ -168,6 +168,7 @@ function(_GTK2_FIND_INCLUDE_DIR _var _hdr)
+         libglade-2.0
+         libglademm-2.4
+         pango-1.0
++        harfbuzz
+         pangomm-1.4
+         sigc++-2.0
+     )
+@@ -453,6 +454,9 @@ foreach(_GTK2_component ${GTK2_FIND_COMPONENTS})
+         _GTK2_FIND_INCLUDE_DIR(GTK2_PANGO_INCLUDE_DIR pango/pango.h)
+         _GTK2_FIND_LIBRARY    (GTK2_PANGO_LIBRARY pango false true)
+ 
++        _GTK2_FIND_INCLUDE_DIR(GTK2_HARFBUZZ_INCLUDE_DIR hb.h)
++        _GTK2_FIND_LIBRARY    (GTK2_HARFBUZZ_LIBRARY harfbuzz false false)
++
+         _GTK2_FIND_INCLUDE_DIR(GTK2_ATK_INCLUDE_DIR atk/atk.h)
+         _GTK2_FIND_LIBRARY    (GTK2_ATK_LIBRARY atk false true)
+ 
+diff --git a/cmake/modules/FindGTK3.cmake b/cmake/modules/FindGTK3.cmake
+index 8da67fd..df551bd 100644
+--- a/cmake/modules/FindGTK3.cmake
++++ b/cmake/modules/FindGTK3.cmake
+@@ -86,6 +86,22 @@ FIND_LIBRARY(
+ 	PANGO_LIBRARY NAMES pango-1.0
+ 	HINTS ${PC_PANGO_LIBDIR} ${PC_PANGO_LIBRARY_DIRS})
+ 
++#
++# harfbuzz
++#
++PKG_CHECK_MODULES(PC_HARFBUZZ REQUIRED harfbuzz)
++
++SET(HARFBUZZ_DEFINITIONS ${PC_HARFBUZZ_CXXFLAGS_OTHER})
++
++FIND_PATH(
++	HARFBUZZ_INCLUDE_DIR hb.h
++	HINTS ${PC_HARFBUZZ_INCLUDEDIR} ${PC_HARFBUZZ_INCLUDE_DIRS}
++	PATH_SUFFIXES harfbuzz-1.0)
++
++FIND_LIBRARY(
++	HARFBUZZ_LIBRARY NAMES harfbuzz-1.0
++	HINTS ${PC_HARFBUZZ_LIBDIR} ${PC_HARFBUZZ_LIBRARY_DIRS})
++
+ #
+ # cairo
+ #
+@@ -139,8 +155,8 @@ FIND_LIBRARY(
+ #result
+ #
+ #
+-SET(GTK3_LIBRARY_DIRS ${GTK3_LIBRARY} ${GLIB2_LIBRARY} ${PANGO_LIBRARY} ${CAIRO_LIBRARY} ${GDKPIXBUF_LIBRARY} ${ATK_LIBRARY})
+-SET(GTK3_INCLUDE_DIRS ${GTK3_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR} ${PANGO_INCLUDE_DIR} ${CAIRO_INCLUDE_DIR} ${GDKPIXBUF_INCLUDE_DIR} ${ATK_INCLUDE_DIR})
++SET(GTK3_LIBRARY_DIRS ${GTK3_LIBRARY} ${GLIB2_LIBRARY} ${PANGO_LIBRARY} ${HARFBUZZ_LIBRARY} ${CAIRO_LIBRARY} ${GDKPIXBUF_LIBRARY} ${ATK_LIBRARY})
++SET(GTK3_INCLUDE_DIRS ${GTK3_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR} ${PANGO_INCLUDE_DIR} ${HARFBUZZ_INCLUDE_DIR} ${CAIRO_INCLUDE_DIR} ${GDKPIXBUF_INCLUDE_DIR} ${ATK_INCLUDE_DIR})
+ 
+ INCLUDE(FindPackageHandleStandardArgs)
+ 
