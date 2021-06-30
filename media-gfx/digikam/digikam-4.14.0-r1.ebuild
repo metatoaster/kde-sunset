@@ -52,7 +52,7 @@ CDEPEND="
 "
 RDEPEND="${CDEPEND}
 	$(add_kdeapps_dep kreadconfig)
-	media-plugins/kipi-plugins:4
+	kde-apps/kipi-plugins:4
 	video? ( $(add_kdeapps_dep ffmpegthumbs) )
 "
 DEPEND="${CDEPEND}
