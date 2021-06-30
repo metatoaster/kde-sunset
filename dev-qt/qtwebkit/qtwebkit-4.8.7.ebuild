@@ -15,9 +15,9 @@ IUSE="icu +jit"
 # libxml2[!icu?] is needed for bugs 407315 and 411091
 DEPEND="
 	>=dev-db/sqlite-3.8.3:3[${MULTILIB_USEDEP}]
-	~dev-qt/qtcore-${PV}[aqua=,debug=,ssl,${MULTILIB_USEDEP}]
-	~dev-qt/qtgui-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
-	~dev-qt/qtxmlpatterns-${PV}[aqua=,debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtcore-${PV}[debug=,ssl,${MULTILIB_USEDEP}]
+	~dev-qt/qtgui-${PV}[debug=,${MULTILIB_USEDEP}]
+	~dev-qt/qtxmlpatterns-${PV}[debug=,${MULTILIB_USEDEP}]
 	>=x11-libs/libX11-1.5.0-r1[${MULTILIB_USEDEP}]
 	>=x11-libs/libXrender-0.9.7-r1[${MULTILIB_USEDEP}]
 	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
