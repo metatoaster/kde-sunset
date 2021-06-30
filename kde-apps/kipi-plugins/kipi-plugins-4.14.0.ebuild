@@ -44,14 +44,14 @@ COMMONDEPEND="
 	media-libs/tiff:0
 	virtual/jpeg:0
 	calendar? ( $(add_kdeapps_dep kdepimlibs) )
-	crypt? ( app-crypt/qca:2[qt4(+)] )
+	crypt? ( app-crypt/qca:2-qt4 )
 	ipod? (
 		media-libs/libgpod
 		x11-libs/gtk+:2
 	)
 	mediawiki? ( >=net-libs/libmediawiki-3.0.0:4 )
 	opengl? (
-		media-libs/phonon[qt4]
+		media-libs/phonon:0-qt4
 		x11-libs/libXrandr
 	)
 	redeyes? ( media-libs/opencv:=[contrib(+)] )
